@@ -1,0 +1,226 @@
+{
+  "categories": [
+    {
+      "name": "Prompt Injection & Agent Security Research",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "A significant cluster of research papers and tools focused on prompt injection vulnerabilities in LLM agents emerged today. Key themes include indirect prompt injection via web browsing proxies, clarification-seeking behavior amplifying attack surfaces, and contextual integrity as an evaluation framework. The research collectively highlights that traditional data-vs-instruction separation is insufficient for securing agentic systems.",
+      "key_items": [
+        {
+          "title": "IPI-proxy: Red-teaming web-browsing agents via intercepting proxy",
+          "detail": "An intercepting proxy that rewrites HTTP responses to embed hidden instruction payloads, enabling realistic prompt injection testing on production-like browsing flows rather than static benchmarks.",
+          "url": "https://arxiv.org/abs/2605.11868",
+          "tags": [
+            "PromptInjection",
+            "RedTeam",
+            "Research"
+          ]
+        },
+        {
+          "title": "ASPI: Clarification requests amplify prompt injection vulnerability",
+          "detail": "Research demonstrating that prompt injection success rates increase significantly when agents solicit clarification from users, establishing clarification channels as distinct trust boundaries requiring gating.",
+          "url": "https://arxiv.org/abs/2605.17324",
+          "tags": [
+            "PromptInjection",
+            "AgentSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "Contextual Integrity framework for evaluating agent injection failures",
+          "detail": "Paper arguing that attackers can craft context to make blocked information flows appear norm-compliant, proposing Contextual Integrity as a lens for context-sensitive agent security evaluation.",
+          "url": "https://arxiv.org/abs/2605.17634",
+          "tags": [
+            "PromptInjection",
+            "AIAlignment",
+            "Research"
+          ]
+        },
+        {
+          "title": "LLM Threats Analysis: Checklist-style threat model for injection vectors",
+          "detail": "A practical threat model covering where untrusted instructions cross trust boundaries in LLM apps and MCP tool flows, helping teams place controls outside the model.",
+          "url": "https://github.com/bntdeep/LLMThreatsAnalysis",
+          "tags": [
+            "ThreatModeling",
+            "MCP",
+            "Tool"
+          ]
+        }
+      ],
+      "message_count": 5
+    },
+    {
+      "name": "Security Tools & Detection Systems",
+      "emoji": "\ud83d\udd27",
+      "summary": "Several new security tools were released targeting MCP tool poisoning detection and prompt injection simulation. These tools enable security teams to implement pre-invocation guardrails and conduct hands-on testing of injection scenarios before deploying agents with elevated privileges.",
+      "key_items": [
+        {
+          "title": "MCP Prompt Injection Detector with explainable ML",
+          "detail": "Hybrid embeddings + XGBoost system for pre-invocation detection of tool-poisoning or prompt-injection content in MCP tool calls, providing explainable guardrail signals.",
+          "url": "https://github.com/thilinawishvekeerthi/mcp-prompt-injection-detector",
+          "tags": [
+            "MCP",
+            "Detection",
+            "Tool"
+          ]
+        },
+        {
+          "title": "PromptForage: Interactive LLM prompt injection security lab",
+          "detail": "A hands-on testing environment for exercising prompt injection scenarios in controlled settings, useful for documenting injection patterns before granting tool or data-access privileges.",
+          "url": "https://github.com/Jaganbhasker1122/PromptForage-LLM-Attack-Simulation",
+          "tags": [
+            "PromptInjection",
+            "Training",
+            "Tool"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Agent Supply Chain & Credential Security",
+      "emoji": "\ud83d\udd10",
+      "summary": "Research and industry solutions emerged addressing agent supply chain attacks and credential management. A notable paper demonstrated payload-less skill attacks that evade signature scanners, while credential brokering solutions aim to reduce prompt injection blast radius by keeping secrets out of model context.",
+      "key_items": [
+        {
+          "title": "Payload-less skills exploit LLM agent supply chains",
+          "detail": "Research showing that benign-looking skills can steer agents via natural-language compliance rules, causing harmful action synthesis at runtime\u2014highlighting the need to evaluate skills by intent, not just static payload detection.",
+          "url": "https://arxiv.org/abs/2605.14460",
+          "tags": [
+            "SupplyChain",
+            "AgentSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "Credential brokering architecture for AI agents explained",
+          "detail": "Architectural pattern that reduces prompt injection blast radius by brokering short-lived, policy-scoped access at tool boundaries rather than including long-lived secrets in model context.",
+          "url": "https://infisical.com/blog/credential-brokering-for-ai-agents",
+          "tags": [
+            "CredentialManagement",
+            "AgentSecurity",
+            "Blog"
+          ]
+        },
+        {
+          "title": "Proton Pass adds monitored credential sharing for AI agents",
+          "detail": "New feature providing scoped tokens for selected vault items with activity visibility, offering narrower delegation paths than full credential handover for agent use cases.",
+          "url": "https://helpnetsecurity.com/2026/05/22/proton-pass-adds-monitored-credential-sharing-for-ai-agents",
+          "tags": [
+            "CredentialManagement",
+            "Product",
+            "News"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Vulnerability Disclosures & CVEs",
+      "emoji": "\u26a0\ufe0f",
+      "summary": "Two notable CVEs affecting AI tooling were disclosed: a PydanticAI SSRF bypass via IPv4-mapped IPv6 encoding, and a Kiro CLI authorization bypass through piped stdin. Both highlight the brittleness of blocklist-only defenses and the importance of treating non-interactive inputs as untrusted in CLI agent contexts.",
+      "key_items": [
+        {
+          "title": "CVE-2026-46678: PydanticAI SSRF cloud-metadata blocklist bypass",
+          "detail": "IPv4-mapped IPv6 encoding bypasses cloud-metadata IP blocklist when forcedownload='allow-local' is enabled\u2014an incomplete fix of CVE-2026-25580. Reinforces need for network-boundary egress enforcement.",
+          "url": "https://github.com/advisories/GHSA-cqp8-fcvh-x7r3",
+          "tags": [
+            "SSRF",
+            "PydanticAI",
+            "CVE"
+          ]
+        },
+        {
+          "title": "CVE-2026-9255: Kiro CLI tool execution without authorization via stdin",
+          "detail": "Missing input-source validation allows piped stdin to bypass authorization prompts, enabling tool execution including shell commands without user approval in the AWS Kiro CLI.",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-035-aws",
+          "tags": [
+            "CLI",
+            "Authorization",
+            "CVE"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI-Powered Vulnerability Discovery",
+      "emoji": "\ud83d\udd0d",
+      "summary": "Anthropic's Project Glasswing update revealed that Claude Mythos Preview has discovered over 10,000 high/critical vulnerabilities in essential software within one month, prompting recommendations for shortened patch cycles. This signals a potential acceleration in the vulnerability discovery landscape driven by frontier AI models.",
+      "key_items": [
+        {
+          "title": "Anthropic Glasswing update: Claude Mythos finds 10,000+ critical vulnerabilities",
+          "detail": "One-month update on Project Glasswing reveals the unreleased Claude Mythos Preview model has helped partners uncover thousands of high-severity vulnerabilities, with Anthropic advising developers to shorten patch cycles.",
+          "url": "https://techau.com.au/anthropic-advises-software-developers-to-shorten-patch-cycles-in-the-wake-of-claude-mythos-vulnerability-discovery",
+          "tags": [
+            "Anthropic",
+            "VulnDiscovery",
+            "FrontierAI"
+          ]
+        },
+        {
+          "title": "Anthropic Glasswing initial research update",
+          "detail": "Official Anthropic research post on the Glasswing project's initial findings and methodology for AI-assisted vulnerability discovery.",
+          "url": "https://www.anthropic.com/research/glasswing-initial-update",
+          "tags": [
+            "Anthropic",
+            "Research",
+            "VulnDiscovery"
+          ]
+        },
+        {
+          "title": "CERT.PL: Autonomous fuzzing techniques",
+          "detail": "Technical post from CERT Poland on autonomous fuzzing approaches, complementing the AI-driven vulnerability discovery trend.",
+          "url": "https://cert.pl/en/posts/2026/05/autonomous-fuzzing/",
+          "tags": [
+            "Fuzzing",
+            "Automation",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 3
+    }
+  ],
+  "top_insights": [
+    "Prompt injection research is maturing beyond simple injection-detection toward understanding contextual and behavioral amplifiers\u2014clarification-seeking behavior and contextual manipulation now recognized as distinct attack surfaces requiring dedicated controls.",
+    "The MCP (Model Context Protocol) ecosystem is receiving focused security tooling attention, with multiple detection and threat analysis tools released specifically for MCP tool poisoning scenarios.",
+    "Agent supply chain security is emerging as a critical concern, with research demonstrating that payload-less, natural-language compliance rules can weaponize ostensibly benign skills without triggering traditional signature-based detection.",
+    "AI-powered vulnerability discovery is entering production scale\u2014Anthropic's 10,000+ vulnerability findings in one month signals that organizations may need to fundamentally reassess patch cycle timelines.",
+    "Defense-in-depth for AI agents increasingly requires architectural controls (credential brokering, network-boundary enforcement, tool-call policy) rather than relying on prompt-level or blocklist-based mitigations alone."
+  ],
+  "stats": {
+    "total_links": 15,
+    "most_linked_domains": [
+      "arxiv.org",
+      "github.com",
+      "anthropic.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 1,
+      "02": 1,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 1,
+      "14": 0,
+      "15": 2,
+      "16": 2,
+      "17": 4,
+      "18": 0,
+      "19": 4,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 15
+}
