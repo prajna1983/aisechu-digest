@@ -292,15 +292,15 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">15</span>
+    <span class="stat-value">12</span>
     <span class="stat-label">Messages</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">5</span>
+    <span class="stat-value">4</span>
     <span class="stat-label">Categories</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">15</span>
+    <span class="stat-value">12</span>
     <span class="stat-label">Links Shared</span>
   </div>
   <div class="stat-card">
@@ -329,11 +329,11 @@
 
   <div class="section-title">💡 Top Insights</div>
   <div class="insights-list">
-    <div class="insight-item">🔹 Prompt injection research is maturing beyond simple injection-detection toward understanding contextual and behavioral amplifiers—clarification-seeking behavior and contextual manipulation now recognized as distinct attack surfaces requiring dedicated controls.</div>
-<div class="insight-item">🔹 The MCP (Model Context Protocol) ecosystem is receiving focused security tooling attention, with multiple detection and threat analysis tools released specifically for MCP tool poisoning scenarios.</div>
-<div class="insight-item">🔹 Agent supply chain security is emerging as a critical concern, with research demonstrating that payload-less, natural-language compliance rules can weaponize ostensibly benign skills without triggering traditional signature-based detection.</div>
-<div class="insight-item">🔹 AI-powered vulnerability discovery is entering production scale—Anthropic's 10,000+ vulnerability findings in one month signals that organizations may need to fundamentally reassess patch cycle timelines.</div>
-<div class="insight-item">🔹 Defense-in-depth for AI agents increasingly requires architectural controls (credential brokering, network-boundary enforcement, tool-call policy) rather than relying on prompt-level or blocklist-based mitigations alone.</div>
+    <div class="insight-item">🔹 Prompt injection attack surface is expanding beyond execution-time tool returns to include clarification flows and contextual manipulation, requiring trust boundary reevaluation.</div>
+<div class="insight-item">🔹 AI agent credential security is maturing toward brokered, short-lived, policy-scoped access patterns rather than passing credentials through model context.</div>
+<div class="insight-item">🔹 Supply-chain attacks on AI agents can leverage natural-language 'compliance rules' in skills that evade traditional static analysis—intent-based evaluation is essential.</div>
+<div class="insight-item">🔹 AI-assisted vulnerability discovery is scaling dramatically; Anthropic's 10,000+ findings in one month signals a potential shift in attacker-defender dynamics requiring faster patch cycles.</div>
+<div class="insight-item">🔹 Multiple CVEs show that blocklist-only and input-source validation approaches remain brittle; defense-in-depth at network and architectural layers is critical.</div>
   </div>
 
   <div class="section-title">📂 Categories</div>
@@ -341,121 +341,101 @@
     
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🛡️</div>
-        <div class="cat-name">Prompt Injection & Agent Security Research</div>
-        <div class="cat-count">5 msgs</div>
+        <div class="cat-emoji">💉</div>
+        <div class="cat-name">Prompt Injection Research</div>
+        <div class="cat-count">4 msgs</div>
       </div>
-      <div class="cat-summary">A significant cluster of research papers and tools focused on prompt injection vulnerabilities in LLM agents emerged today. Key themes include indirect prompt injection via web browsing proxies, clarification-seeking behavior amplifying attack surfaces, and contextual integrity as an evaluation framework. The research collectively highlights that traditional data-vs-instruction separation is insufficient for securing agentic systems.</div>
+      <div class="cat-summary">Heavy research focus on prompt injection attack vectors and defenses. Studies reveal that clarification-seeking behaviors in agents amplify injection vulnerability, while contextual manipulation can bypass traditional data/instruction separation. Practical tools for testing injection scenarios in controlled environments are emerging.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://arxiv.org/abs/2605.11868" target="_blank" rel="noopener">IPI-proxy: Red-teaming web-browsing agents via intercepting proxy ↗</a></div>
-          <div class="item-detail">An intercepting proxy that rewrites HTTP responses to embed hidden instruction payloads, enabling realistic prompt injection testing on production-like browsing flows rather than static benchmarks.</div>
-          <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">RedTeam</span><span class="tag">Research</span></div>
+          <div class="item-title"><a href="https://arxiv.org/abs/2605.17324" target="_blank" rel="noopener">Clarification requests amplify prompt injection success rates ↗</a></div>
+          <div class="item-detail">ASPI research shows prompt injection succeeds more often when agents solicit clarification from users, suggesting clarification channels need distinct trust boundary treatment.</div>
+          <div class='item-tags'><span class="tag">prompt-injection</span><span class="tag">agent-security</span><span class="tag">research</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://arxiv.org/abs/2605.17324" target="_blank" rel="noopener">ASPI: Clarification requests amplify prompt injection vulnerability ↗</a></div>
-          <div class="item-detail">Research demonstrating that prompt injection success rates increase significantly when agents solicit clarification from users, establishing clarification channels as distinct trust boundaries requiring gating.</div>
-          <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">AgentSecurity</span><span class="tag">Research</span></div>
+          <div class="item-title"><a href="https://arxiv.org/abs/2605.17634" target="_blank" rel="noopener">Contextual Integrity as evaluation lens for injection attacks ↗</a></div>
+          <div class="item-detail">New paper argues traditional data/instruction separation fails against contextual manipulation, proposing CI-aware alignment to detect context-sensitive agent failures.</div>
+          <div class='item-tags'><span class="tag">prompt-injection</span><span class="tag">alignment</span><span class="tag">research</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://arxiv.org/abs/2605.17634" target="_blank" rel="noopener">Contextual Integrity framework for evaluating agent injection failures ↗</a></div>
-          <div class="item-detail">Paper arguing that attackers can craft context to make blocked information flows appear norm-compliant, proposing Contextual Integrity as a lens for context-sensitive agent security evaluation.</div>
-          <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">AIAlignment</span><span class="tag">Research</span></div>
+          <div class="item-title"><a href="https://arxiv.org/abs/2605.11868" target="_blank" rel="noopener">IPI-proxy for red-teaming web-browsing agents ↗</a></div>
+          <div class="item-detail">Intercepting proxy enables testing indirect prompt injection on live retrieval paths by injecting payloads into whitelisted HTTP responses.</div>
+          <div class='item-tags'><span class="tag">red-team</span><span class="tag">tooling</span><span class="tag">research</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://github.com/bntdeep/LLMThreatsAnalysis" target="_blank" rel="noopener">LLM Threats Analysis: Checklist-style threat model for injection vectors ↗</a></div>
-          <div class="item-detail">A practical threat model covering where untrusted instructions cross trust boundaries in LLM apps and MCP tool flows, helping teams place controls outside the model.</div>
-          <div class='item-tags'><span class="tag">ThreatModeling</span><span class="tag">MCP</span><span class="tag">Tool</span></div>
-        </div></div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-header">
-        <div class="cat-emoji">🔧</div>
-        <div class="cat-name">Security Tools & Detection Systems</div>
-        <div class="cat-count">2 msgs</div>
-      </div>
-      <div class="cat-summary">Several new security tools were released targeting MCP tool poisoning detection and prompt injection simulation. These tools enable security teams to implement pre-invocation guardrails and conduct hands-on testing of injection scenarios before deploying agents with elevated privileges.</div>
-      <div class="cat-items">
-        <div class="item-card">
-          <div class="item-title"><a href="https://github.com/thilinawishvekeerthi/mcp-prompt-injection-detector" target="_blank" rel="noopener">MCP Prompt Injection Detector with explainable ML ↗</a></div>
-          <div class="item-detail">Hybrid embeddings + XGBoost system for pre-invocation detection of tool-poisoning or prompt-injection content in MCP tool calls, providing explainable guardrail signals.</div>
-          <div class='item-tags'><span class="tag">MCP</span><span class="tag">Detection</span><span class="tag">Tool</span></div>
-        </div>
-        <div class="item-card">
-          <div class="item-title"><a href="https://github.com/Jaganbhasker1122/PromptForage-LLM-Attack-Simulation" target="_blank" rel="noopener">PromptForage: Interactive LLM prompt injection security lab ↗</a></div>
-          <div class="item-detail">A hands-on testing environment for exercising prompt injection scenarios in controlled settings, useful for documenting injection patterns before granting tool or data-access privileges.</div>
-          <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">Training</span><span class="tag">Tool</span></div>
+          <div class="item-title"><a href="https://github.com/Jaganbhasker1122/PromptForage-LLM-Attack-Simulation" target="_blank" rel="noopener">PromptForage hands-on injection lab released ↗</a></div>
+          <div class="item-detail">Interactive lab environment for reproducing and documenting prompt injection patterns before deploying tool or data-access privileges.</div>
+          <div class='item-tags'><span class="tag">tool</span><span class="tag">testing</span><span class="tag">education</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
         <div class="cat-emoji">🔐</div>
-        <div class="cat-name">Agent Supply Chain & Credential Security</div>
+        <div class="cat-name">Agent Security & Credential Management</div>
         <div class="cat-count">3 msgs</div>
       </div>
-      <div class="cat-summary">Research and industry solutions emerged addressing agent supply chain attacks and credential management. A notable paper demonstrated payload-less skill attacks that evade signature scanners, while credential brokering solutions aim to reduce prompt injection blast radius by keeping secrets out of model context.</div>
+      <div class="cat-summary">Significant attention on securing AI agent credential flows and supply chains. Credential brokering emerges as a key pattern to limit blast radius, while supply-chain attacks via 'payload-less skills' highlight gaps in static analysis. Major password manager adds scoped token sharing for agents.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://arxiv.org/abs/2605.14460" target="_blank" rel="noopener">Payload-less skills exploit LLM agent supply chains ↗</a></div>
-          <div class="item-detail">Research showing that benign-looking skills can steer agents via natural-language compliance rules, causing harmful action synthesis at runtime—highlighting the need to evaluate skills by intent, not just static payload detection.</div>
-          <div class='item-tags'><span class="tag">SupplyChain</span><span class="tag">AgentSecurity</span><span class="tag">Research</span></div>
+          <div class="item-title"><a href="https://infisical.com/blog/credential-brokering-for-ai-agents" target="_blank" rel="noopener">Credential brokering reduces prompt injection blast radius ↗</a></div>
+          <div class="item-detail">Pattern keeps long-lived secrets out of model context, brokering short-lived policy-scoped access at tool boundaries with authZ enforced outside the agent.</div>
+          <div class='item-tags'><span class="tag">credential-management</span><span class="tag">architecture</span><span class="tag">best-practice</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://infisical.com/blog/credential-brokering-for-ai-agents" target="_blank" rel="noopener">Credential brokering architecture for AI agents explained ↗</a></div>
-          <div class="item-detail">Architectural pattern that reduces prompt injection blast radius by brokering short-lived, policy-scoped access at tool boundaries rather than including long-lived secrets in model context.</div>
-          <div class='item-tags'><span class="tag">CredentialManagement</span><span class="tag">AgentSecurity</span><span class="tag">Blog</span></div>
+          <div class="item-title"><a href="https://arxiv.org/abs/2605.14460" target="_blank" rel="noopener">Payload-less skills exploit agent supply chains ↗</a></div>
+          <div class="item-detail">Research shows benign-looking skills can steer agents via natural-language compliance rules, bypassing signature and code scanners entirely.</div>
+          <div class='item-tags'><span class="tag">supply-chain</span><span class="tag">agent-security</span><span class="tag">research</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://helpnetsecurity.com/2026/05/22/proton-pass-adds-monitored-credential-sharing-for-ai-agents" target="_blank" rel="noopener">Proton Pass adds monitored credential sharing for AI agents ↗</a></div>
-          <div class="item-detail">New feature providing scoped tokens for selected vault items with activity visibility, offering narrower delegation paths than full credential handover for agent use cases.</div>
-          <div class='item-tags'><span class="tag">CredentialManagement</span><span class="tag">Product</span><span class="tag">News</span></div>
+          <div class="item-title"><a href="https://helpnetsecurity.com/2026/05/22/proton-pass-adds-monitored-credential-sharing-for-ai-agents" target="_blank" rel="noopener">Proton Pass adds scoped AI agent credential sharing ↗</a></div>
+          <div class="item-detail">New feature provides monitored, scoped tokens for vault items with activity visibility, though enforcement must occur at token layer not UX.</div>
+          <div class='item-tags'><span class="tag">product</span><span class="tag">credential-management</span><span class="tag">news</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">⚠️</div>
-        <div class="cat-name">Vulnerability Disclosures & CVEs</div>
+        <div class="cat-emoji">🚨</div>
+        <div class="cat-name">Vulnerabilities & CVEs</div>
         <div class="cat-count">2 msgs</div>
       </div>
-      <div class="cat-summary">Two notable CVEs affecting AI tooling were disclosed: a PydanticAI SSRF bypass via IPv4-mapped IPv6 encoding, and a Kiro CLI authorization bypass through piped stdin. Both highlight the brittleness of blocklist-only defenses and the importance of treating non-interactive inputs as untrusted in CLI agent contexts.</div>
+      <div class="cat-summary">Two notable CVEs affecting AI tooling disclosed. PydanticAI's SSRF blocklist can be bypassed via IPv4-mapped IPv6 addresses, and Kiro CLI allows unauthorized tool execution through piped stdin. Both highlight the brittleness of blocklist-only and input-source validation approaches.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://github.com/advisories/GHSA-cqp8-fcvh-x7r3" target="_blank" rel="noopener">CVE-2026-46678: PydanticAI SSRF cloud-metadata blocklist bypass ↗</a></div>
-          <div class="item-detail">IPv4-mapped IPv6 encoding bypasses cloud-metadata IP blocklist when forcedownload='allow-local' is enabled—an incomplete fix of CVE-2026-25580. Reinforces need for network-boundary egress enforcement.</div>
-          <div class='item-tags'><span class="tag">SSRF</span><span class="tag">PydanticAI</span><span class="tag">CVE</span></div>
+          <div class="item-title"><a href="https://github.com/advisories/GHSA-cqp8-fcvh-x7r3" target="_blank" rel="noopener">CVE-2026-46678: PydanticAI SSRF blocklist bypass ↗</a></div>
+          <div class="item-detail">Cloud-metadata IP blocklist bypassed using IPv6 transition form encoding; network-boundary egress validation recommended over blocklist-only defenses.</div>
+          <div class='item-tags'><span class="tag">CVE</span><span class="tag">SSRF</span><span class="tag">PydanticAI</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://aws.amazon.com/security/security-bulletins/2026-035-aws" target="_blank" rel="noopener">CVE-2026-9255: Kiro CLI tool execution without authorization via stdin ↗</a></div>
-          <div class="item-detail">Missing input-source validation allows piped stdin to bypass authorization prompts, enabling tool execution including shell commands without user approval in the AWS Kiro CLI.</div>
-          <div class='item-tags'><span class="tag">CLI</span><span class="tag">Authorization</span><span class="tag">CVE</span></div>
+          <div class="item-title"><a href="https://aws.amazon.com/security/security-bulletins/2026-035-aws" target="_blank" rel="noopener">CVE-2026-9255: Kiro CLI stdin authorization bypass ↗</a></div>
+          <div class="item-detail">Missing input-source validation allows piped stdin to be treated as trusted, enabling shell execution without user approval.</div>
+          <div class='item-tags'><span class="tag">CVE</span><span class="tag">CLI</span><span class="tag">AWS</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🔍</div>
-        <div class="cat-name">AI-Powered Vulnerability Discovery</div>
+        <div class="cat-emoji">🔬</div>
+        <div class="cat-name">AI-Assisted Vulnerability Discovery</div>
         <div class="cat-count">3 msgs</div>
       </div>
-      <div class="cat-summary">Anthropic's Project Glasswing update revealed that Claude Mythos Preview has discovered over 10,000 high/critical vulnerabilities in essential software within one month, prompting recommendations for shortened patch cycles. This signals a potential acceleration in the vulnerability discovery landscape driven by frontier AI models.</div>
+      <div class="cat-summary">Anthropic's Project Glasswing update reveals Claude Mythos Preview has identified over 10,000 high/critical vulnerabilities in essential software within one month. This accelerates pressure on developers to shorten patch cycles as AI-powered vulnerability discovery scales.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://techau.com.au/anthropic-advises-software-developers-to-shorten-patch-cycles-in-the-wake-of-claude-mythos-vulnerability-discovery" target="_blank" rel="noopener">Anthropic Glasswing update: Claude Mythos finds 10,000+ critical vulnerabilities ↗</a></div>
-          <div class="item-detail">One-month update on Project Glasswing reveals the unreleased Claude Mythos Preview model has helped partners uncover thousands of high-severity vulnerabilities, with Anthropic advising developers to shorten patch cycles.</div>
-          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">VulnDiscovery</span><span class="tag">FrontierAI</span></div>
+          <div class="item-title"><a href="https://techau.com.au/anthropic-advises-software-developers-to-shorten-patch-cycles-in-the-wake-of-claude-mythos-vulnerability-discovery" target="_blank" rel="noopener">Claude Mythos discovers 10,000+ critical vulnerabilities ↗</a></div>
+          <div class="item-detail">Anthropic's unreleased frontier model has uncovered massive vulnerability counts, prompting advice to shorten patch cycles across the industry.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">vulnerability-discovery</span><span class="tag">frontier-AI</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://www.anthropic.com/research/glasswing-initial-update" target="_blank" rel="noopener">Anthropic Glasswing initial research update ↗</a></div>
-          <div class="item-detail">Official Anthropic research post on the Glasswing project's initial findings and methodology for AI-assisted vulnerability discovery.</div>
-          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">Research</span><span class="tag">VulnDiscovery</span></div>
+          <div class="item-title"><a href="https://www.anthropic.com/research/glasswing-initial-update" target="_blank" rel="noopener">Glasswing initial research update published ↗</a></div>
+          <div class="item-detail">Anthropic releases details on their AI-assisted security research initiative and early findings.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">research</span><span class="tag">announcement</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://cert.pl/en/posts/2026/05/autonomous-fuzzing/" target="_blank" rel="noopener">CERT.PL: Autonomous fuzzing techniques ↗</a></div>
-          <div class="item-detail">Technical post from CERT Poland on autonomous fuzzing approaches, complementing the AI-driven vulnerability discovery trend.</div>
-          <div class='item-tags'><span class="tag">Fuzzing</span><span class="tag">Automation</span><span class="tag">Research</span></div>
+          <div class="item-title"><a href="https://cert.pl/en/posts/2026/05/autonomous-fuzzing/" target="_blank" rel="noopener">CERT.PL on autonomous fuzzing ↗</a></div>
+          <div class="item-detail">Technical post exploring autonomous fuzzing techniques for vulnerability discovery.</div>
+          <div class='item-tags'><span class="tag">fuzzing</span><span class="tag">automation</span><span class="tag">research</span></div>
         </div></div>
     </div>
   </div>
@@ -467,7 +447,7 @@
 </main>
 
 <footer>
-  Generated 2026-05-25 03:28 UTC &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+  Generated 2026-05-25 16:10 UTC &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
 </footer>
 
 <script>
@@ -477,7 +457,7 @@ const PALETTE = [
 ];
 
 // Category distribution chart
-const catData = {"labels": ["Prompt Injection & Agent Security Research", "Security Tools & Detection Systems", "Agent Supply Chain & Credential Security", "Vulnerability Disclosures & CVEs", "AI-Powered Vulnerability Discovery"], "values": [5, 2, 3, 2, 3]};
+const catData = {"labels": ["Prompt Injection Research", "Agent Security & Credential Management", "Vulnerabilities & CVEs", "AI-Assisted Vulnerability Discovery"], "values": [4, 3, 2, 3]};
 new Chart(document.getElementById("categoryChart"), {
   type: "doughnut",
   data: {
@@ -502,7 +482,7 @@ new Chart(document.getElementById("categoryChart"), {
 });
 
 // Activity by hour chart
-const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2, 4, 0, 4, 0, 0, 0, 0]};
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 0, 4, 0, 0, 0, 0]};
 new Chart(document.getElementById("activityChart"), {
   type: "bar",
   data: {
