@@ -1,0 +1,233 @@
+{
+  "categories": [
+    {
+      "name": "Prompt Injection & Agent Security",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "A dominant theme this period with multiple research papers and tools addressing prompt injection vulnerabilities in LLM agents. Key findings include how clarification-seeking behaviors amplify injection success rates, supply chain risks from 'payload-less' skills that bypass static scanners, and the inadequacy of simple data/instruction separation. New defensive tooling emerged for MCP tool poisoning detection and interactive security labs.",
+      "key_items": [
+        {
+          "title": "MCP Prompt Injection Detector",
+          "detail": "Explainable ML system using hybrid embeddings and XGBoost to flag tool-poisoning or prompt-injection content before MCP tool invocation.",
+          "url": "https://github.com/thilinawishvekeerthi/mcp-prompt-injection-detector",
+          "tags": [
+            "MCP",
+            "AgentSecurity",
+            "Tool"
+          ]
+        },
+        {
+          "title": "LLM Threats Analysis Framework",
+          "detail": "Checklist-style threat model for identifying where untrusted instructions cross trust boundaries in LLM apps and MCP tool flows.",
+          "url": "https://github.com/bntdeep/LLMThreatsAnalysis",
+          "tags": [
+            "MCP",
+            "ThreatModeling",
+            "Tool"
+          ]
+        },
+        {
+          "title": "ASPI: Clarification Amplifies Injection Risk",
+          "detail": "Research showing prompt injection success rises sharply when agents solicit clarification input, highlighting need to gate clarification channels as distinct trust boundaries.",
+          "url": "https://arxiv.org/abs/2605.17324",
+          "tags": [
+            "PromptInjection",
+            "Research"
+          ]
+        },
+        {
+          "title": "Payload-less Skills Exploit Agent Supply Chains",
+          "detail": "Paper demonstrates how benign-looking skills can steer agents via natural-language compliance rules, bypassing signature detection entirely.",
+          "url": "https://arxiv.org/abs/2605.14460",
+          "tags": [
+            "SupplyChain",
+            "AgentSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "IPI-proxy for Red-Teaming Browser Agents",
+          "detail": "Intercepting proxy that rewrites HTTP responses to embed injection payloads, enabling realistic testing of indirect prompt injection on production-like flows.",
+          "url": "https://arxiv.org/abs/2605.11868",
+          "tags": [
+            "RedTeam",
+            "BrowserAgent",
+            "Research"
+          ]
+        },
+        {
+          "title": "Contextual Integrity Lens for Injection Failures",
+          "detail": "Research argues data/instruction separation is insufficient; proposes Contextual Integrity as evaluation framework for context-sensitive agent manipulation.",
+          "url": "https://arxiv.org/abs/2605.17634",
+          "tags": [
+            "PromptInjection",
+            "Alignment",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 7
+    },
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udd13",
+      "summary": "Two notable CVEs affecting AI tooling were disclosed. PydanticAI's SSRF blocklist can be bypassed using IPv4-mapped IPv6 addresses, reinforcing that blocklist-only defenses remain brittle. AWS Kiro CLI has a critical flaw allowing unauthorized tool execution via piped stdin, emphasizing that CLI agents must treat non-interactive inputs as untrusted.",
+      "key_items": [
+        {
+          "title": "CVE-2026-46678: PydanticAI SSRF Bypass",
+          "detail": "Cloud-metadata blocklist bypassed via IPv6 transition encoding; incomplete fix of prior CVE. Network-boundary egress enforcement recommended.",
+          "url": "https://github.com/advisories/GHSA-cqp8-fcvh-x7r3",
+          "tags": [
+            "SSRF",
+            "PydanticAI",
+            "Advisory"
+          ]
+        },
+        {
+          "title": "CVE-2026-9255: Kiro CLI Unauthorized Execution",
+          "detail": "Missing input-source validation lets piped stdin bypass authorization prompts, enabling shell execution without user approval.",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-035-aws",
+          "tags": [
+            "AWS",
+            "CLI",
+            "Advisory"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI-Assisted Vulnerability Research",
+      "emoji": "\ud83d\udd2c",
+      "summary": "Anthropic's Project Glasswing update reveals Claude Mythos Preview has helped uncover over 10,000 high/critical vulnerabilities in essential software within one month. This signals a paradigm shift in vulnerability discovery speed, with Anthropic advising developers to shorten patch cycles accordingly. CERT.PL also published on autonomous fuzzing capabilities.",
+      "key_items": [
+        {
+          "title": "Claude Mythos Finds 10K+ Critical Vulns",
+          "detail": "Anthropic's unreleased frontier model has accelerated vulnerability discovery dramatically, prompting calls for faster patch cycles across the industry.",
+          "url": "https://techau.com.au/anthropic-advises-software-developers-to-shorten-patch-cycles-in-the-wake-of-claude-mythos-vulnerability-discovery",
+          "tags": [
+            "Anthropic",
+            "VulnResearch",
+            "FrontierAI"
+          ]
+        },
+        {
+          "title": "Project Glasswing Initial Update",
+          "detail": "Anthropic's official research update on their AI-assisted security research initiative.",
+          "url": "https://www.anthropic.com/research/glasswing-initial-update",
+          "tags": [
+            "Anthropic",
+            "Research"
+          ]
+        },
+        {
+          "title": "CERT.PL on Autonomous Fuzzing",
+          "detail": "Technical post exploring autonomous fuzzing techniques leveraging AI capabilities.",
+          "url": "https://cert.pl/en/posts/2026/05/autonomous-fuzzing/",
+          "tags": [
+            "Fuzzing",
+            "Automation",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Agent Credential & Access Management",
+      "emoji": "\ud83d\udd11",
+      "summary": "Two items address the critical challenge of secure credential handling for AI agents. Credential brokering patterns keep long-lived secrets out of model context by issuing short-lived, policy-scoped tokens at tool boundaries. Proton Pass now offers monitored credential sharing with scoped tokens and activity visibility, though enforcement must remain at the token layer.",
+      "key_items": [
+        {
+          "title": "Credential Brokering for AI Agents Explained",
+          "detail": "Pattern reduces prompt-injection blast radius by brokering short-lived, scoped access at tool boundaries rather than exposing secrets in context.",
+          "url": "https://infisical.com/blog/credential-brokering-for-ai-agents",
+          "tags": [
+            "CredentialManagement",
+            "BestPractices",
+            "Blog"
+          ]
+        },
+        {
+          "title": "Proton Pass AI Access Tokens",
+          "detail": "New feature enables scoped token delegation for vault items with activity monitoring; user-approved reasons serve as audit controls.",
+          "url": "https://helpnetsecurity.com/2026/05/22/proton-pass-adds-monitored-credential-sharing-for-ai-agents",
+          "tags": [
+            "ProtonPass",
+            "Delegation",
+            "News"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83e\uddf0",
+      "summary": "PromptForage emerged as a hands-on lab environment for exercising prompt injection scenarios in controlled settings, useful for documenting attack patterns before granting tool privileges. Perplexity AI also released Bumblebee on GitHub.",
+      "key_items": [
+        {
+          "title": "PromptForage: Interactive Injection Lab",
+          "detail": "Security lab for reproducing and documenting prompt injection patterns in a controlled test harness environment.",
+          "url": "https://github.com/Jaganbhasker1122/PromptForage-LLM-Attack-Simulation",
+          "tags": [
+            "Lab",
+            "Training",
+            "Tool"
+          ]
+        },
+        {
+          "title": "Perplexity Bumblebee Release",
+          "detail": "New open-source release from Perplexity AI.",
+          "url": "https://github.com/perplexityai/bumblebee",
+          "tags": [
+            "PerplexityAI",
+            "OpenSource"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "Prompt injection research is maturing beyond simple data/instruction separation toward contextual and trust-boundary-aware defenses, with multiple papers highlighting novel attack surfaces like clarification channels and payload-less skills.",
+    "AI-assisted vulnerability discovery is accelerating dramatically\u2014Anthropic's Claude Mythos finding 10K+ critical vulns in one month signals defenders must compress patch timelines significantly.",
+    "MCP (Model Context Protocol) tool security is emerging as a distinct attack surface requiring pre-invocation detection layers and threat modeling beyond traditional code scanning.",
+    "Credential management for AI agents is crystallizing around brokering patterns that enforce authorization outside the model context, treating the prompt layer as untrusted.",
+    "CLI and non-interactive agent interfaces present overlooked attack vectors where stdin/pipe inputs can bypass authorization prompts intended for human operators."
+  ],
+  "stats": {
+    "total_links": 15,
+    "most_linked_domains": [
+      "arxiv.org",
+      "github.com",
+      "anthropic.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 1,
+      "02": 1,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 1,
+      "14": 0,
+      "15": 2,
+      "16": 2,
+      "17": 3,
+      "18": 0,
+      "19": 5,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 15
+}

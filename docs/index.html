@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISecHub Daily Digest</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2e3250;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .icon { font-size: 56px; margin-bottom: 20px; }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #e8eaf6 30%, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    p { color: var(--muted); font-size: 15px; max-width: 420px; line-height: 1.65; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 8px 20px;
+      font-size: 14px;
+      color: var(--accent);
+      margin-top: 28px;
+      text-decoration: none;
+    }
+    .badge:hover { background: rgba(108,99,255,0.25); }
+    .note {
+      margin-top: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 420px;
+    }
+    .note code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent2);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="icon">🛡️</div>
+  <h1>AISecHub Daily Digest</h1>
+  <p>Your AI-powered daily summary of the AISecHub Telegram channel is being set up. The first digest will appear here after the GitHub Action runs for the first time.</p>
+
+  <a class="badge" href="https://t.me/AISecHub" target="_blank">
+    ✈️ View source channel on Telegram
+  </a>
+
+  <div class="note">
+    To generate the first digest immediately, go to your GitHub repo →
+    <strong>Actions</strong> → <strong>Daily AISecHub Digest</strong> →
+    <strong>Run workflow</strong>.
+    <br/><br/>
+    After that, this page will automatically update every day at <code>07:00 UTC</code>.
+  </div>
+</body>
+</html>
