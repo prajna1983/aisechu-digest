@@ -292,15 +292,15 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">7</span>
+    <span class="stat-value">14</span>
     <span class="stat-label">Messages</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">4</span>
+    <span class="stat-value">7</span>
     <span class="stat-label">Categories</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">7</span>
+    <span class="stat-value">13</span>
     <span class="stat-label">Links Shared</span>
   </div>
   <div class="stat-card">
@@ -329,11 +329,11 @@
 
   <div class="section-title">💡 Top Insights</div>
   <div class="insights-list">
-    <div class="insight-item">🔹 Frontier AI models are accelerating vulnerability discovery at unprecedented scale, with Claude Mythos finding 10K+ critical bugs in one month—fundamentally changing the attacker-defender timeline.</div>
-<div class="insight-item">🔹 The integration of vulnerability-discovery models into coding agents represents a significant shift requiring new security control paradigms around scope, execution, and disclosure.</div>
-<div class="insight-item">🔹 Traditional security detection (WAF/EDR) is increasingly blind to AI-specific attack vectors where malicious payloads arrive as trusted context through RAG and tool calls.</div>
-<div class="insight-item">🔹 Open-source AI security tooling is maturing rapidly, with both offensive (Cryptex OSS red-teaming) and defensive (OpenHack research workspaces) capabilities becoming accessible.</div>
-<div class="insight-item">🔹 Supply-chain trust boundaries around AI agent harnesses are emerging as a critical security consideration as autonomous security tools move into production.</div>
+    <div class="insight-item">🔹 The security community is converging on a 'zero trust model' paradigm—treating LLMs as fundamentally untrusted components requiring external enforcement rather than internal robustness improvements.</div>
+<div class="insight-item">🔹 Agent 'skills' and MCP integrations represent the new software supply chain threat vector, with multiple papers releasing detection tools and acknowledging static analysis limitations.</div>
+<div class="insight-item">🔹 SSRF via prompt injection is now a documented attack pattern against production MCP servers, with concrete IAM credential exposure risks in cloud environments.</div>
+<div class="insight-item">🔹 Invisible/hidden text prompt injection remains effective against state-of-the-art models in automated workflows, from peer review to coding assistants.</div>
+<div class="insight-item">🔹 Hierarchical policy composition with 'only-tighten' semantics is emerging as an architectural pattern for preventing silent privilege escalation in multi-agent systems.</div>
   </div>
 
   <div class="section-title">📂 Categories</div>
@@ -341,88 +341,138 @@
     
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🔍</div>
-        <div class="cat-name">AI-Powered Vulnerability Research</div>
-        <div class="cat-count">3 msgs</div>
+        <div class="cat-emoji">🤖</div>
+        <div class="cat-name">Agent Security Research</div>
+        <div class="cat-count">4 msgs</div>
       </div>
-      <div class="cat-summary">Major developments in AI-assisted vulnerability discovery dominated today's feed. Anthropic's Claude Mythos Preview has uncovered over 10,000 high/critical vulnerabilities through Project Glasswing, prompting calls for shorter patch cycles. New open-source frameworks like OpenHack are packaging agent-driven vuln research into accessible coding harnesses, signaling maturation of AI security tooling.</div>
+      <div class="cat-summary">A dominant theme today centers on treating AI agents as untrusted system components requiring external controls rather than relying on model robustness alone. Multiple papers explore the attack surface created by agent 'skills' and third-party integrations, with researchers mapping real attacks to classic systems-security failures like missing least privilege and instruction/data separation.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://techau.com.au/anthropic-advises-software-developers-to-shorten-patch-cycles-in-the-wake-of-claude-mythos-vulnerability-discovery" target="_blank" rel="noopener">Claude Mythos discovers 10K+ critical vulnerabilities in one month ↗</a></div>
-          <div class="item-detail">Anthropic's unreleased frontier model has surfaced massive vulnerability counts in essential software, pushing the company to advise developers to accelerate patching cadence.</div>
-          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">VulnerabilityResearch</span><span class="tag">PatchManagement</span></div>
+          <div class="item-title"><a href="https://www.csoonline.com/article/4176725/ai-security-needs-a-shift-from-models-to-systems-researchers-argue.html" target="_blank" rel="noopener">Agent security requires systems thinking, not model hardening ↗</a></div>
+          <div class="item-detail">CSO coverage of research mapping 11 real agent attacks to systems-security failures argues models should be treated as untrusted with controls enforced around them.</div>
+          <div class='item-tags'><span class="tag">AgentSecurity</span><span class="tag">LLMSecurity</span><span class="tag">SystemsSecurity</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://helpnetsecurity.com/2026/05/25/openhack-open-source-ai-powered-vulnerability-research" target="_blank" rel="noopener">OpenHack: Open-source AI vulnerability research workspace ↗</a></div>
-          <div class="item-detail">New file-based workspace enables agent-driven vuln research in coding harnesses like Claude Code and Cursor; emphasizes treating inputs and toolchains as supply-chain trust boundaries.</div>
-          <div class='item-tags'><span class="tag">OpenSource</span><span class="tag">AgentSecurity</span><span class="tag">SupplyChain</span></div>
+          <div class="item-title"><a href="https://arxiv.org/abs/2605.25871" target="_blank" rel="noopener">Agentic coding assistants as attacker shells ↗</a></div>
+          <div class="item-detail">Research demonstrates how unvetted external artifacts with hidden prompt-injection can steer coding agents to execute file edits or commands, emphasizing tool/action policy enforcement.</div>
+          <div class='item-tags'><span class="tag">CodingAssistants</span><span class="tag">PromptInjection</span><span class="tag">TrustBoundary</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://cert.pl/en/posts/2026/05/autonomous-fuzzing/" target="_blank" rel="noopener">CERT.PL on autonomous fuzzing ↗</a></div>
-          <div class="item-detail">Technical post exploring autonomous fuzzing methodologies for vulnerability discovery.</div>
-          <div class='item-tags'><span class="tag">Fuzzing</span><span class="tag">Automation</span><span class="tag">Research</span></div>
+          <div class="item-title"><a href="https://openreview.net/forum?id=Er0p92BsmW" target="_blank" rel="noopener">Agent Skills architecture and security path forward ↗</a></div>
+          <div class="item-detail">Paper examines how on-demand skill loading via MCP shifts trust boundaries to the skill acquisition layer, questioning how progressive disclosure can constrain untrusted skills.</div>
+          <div class='item-tags'><span class="tag">MCP</span><span class="tag">SkillSecurity</span><span class="tag">TrustBoundary</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🤖</div>
-        <div class="cat-name">AI Agent Security & Controls</div>
+        <div class="cat-emoji">📦</div>
+        <div class="cat-name">AI Supply Chain Security</div>
         <div class="cat-count">2 msgs</div>
       </div>
-      <div class="cat-summary">As AI agents move from demos to production toolchains, security boundaries around agent harnesses are becoming critical. Multiple posts emphasized the need for explicit controls on repo scope, tool execution, and disclosure workflows—especially as frontier models like Mythos may soon integrate into coding environments.</div>
+      <div class="cat-summary">Research efforts focus on scanning and validating agent 'skills' before they enter production environments. Tools like SkillSpector and SkillsMetric address the emerging threat of malicious skill packages through static analysis, while acknowledging limitations that necessitate runtime controls for certain attack patterns.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropics-restricted-claude-mythos-model-may-be-coming-to-claude-code" target="_blank" rel="noopener">Claude Mythos may integrate into Claude Code ↗</a></div>
-          <div class="item-detail">BleepingComputer reports signals of Mythos model surfacing in Claude Code; teams will need controls for scope, execution, triage, and disclosure if frontier vuln-discovery models enter coding agents.</div>
-          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">ClaudeCode</span><span class="tag">AgentControls</span></div>
+          <div class="item-title"><a href="https://openreview.net/pdf?id=rVAPXHmGHN" target="_blank" rel="noopener">SkillSpector scans agent skills pre-deployment ↗</a></div>
+          <div class="item-detail">Scanner examines skills as code plus model-visible instructions, detecting prompt injection, metadata poisoning, permission mismatches, and vulnerable dependencies with SARIF-ready output.</div>
+          <div class='item-tags'><span class="tag">StaticAnalysis</span><span class="tag">SupplyChain</span><span class="tag">SARIF</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://cybersecuritynews.com/pentest-agent-suite-bug-bounty-framework/" target="_blank" rel="noopener">Pentest Agent Suite for autonomous bug bounty ↗</a></div>
-          <div class="item-detail">Framework brings autonomous bug-bounty capabilities to Claude Code and AI coding tools; security boundary is the harness controlling scope files, MCP servers, and exploit steps.</div>
-          <div class='item-tags'><span class="tag">BugBounty</span><span class="tag">AgentSecurity</span><span class="tag">Automation</span></div>
+          <div class="item-title"><a href="https://openreview.net/forum?id=P6x9c2cSHu" target="_blank" rel="noopener">SkillsMetric maps static analysis detection limits ↗</a></div>
+          <div class="item-detail">Framework scores skill packages with static signals and measures where detection breaks on adversarial datasets, identifying which behaviors require runtime rather than scan-time controls.</div>
+          <div class='item-tags'><span class="tag">StaticAnalysis</span><span class="tag">DetectionBoundary</span><span class="tag">Adversarial</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
         <div class="cat-emoji">💉</div>
-        <div class="cat-name">LLM Security & Prompt Injection</div>
-        <div class="cat-count">1 msgs</div>
+        <div class="cat-name">Prompt Injection & SSRF Vulnerabilities</div>
+        <div class="cat-count">2 msgs</div>
       </div>
-      <div class="cat-summary">Detection gaps in AI security stacks continue to be a concern. Today's coverage highlighted prompt injection patterns that bypass traditional WAF/EDR because payloads arrive as trusted context through RAG retrieval and agent tool calls, requiring logging of retrieval slices and tool I/O before privileged actions.</div>
+      <div class="cat-summary">Concrete vulnerability disclosures and research highlight how prompt injection chains can drive agents toward dangerous actions. A notable advisory demonstrates SSRF attacks against MCP servers that can expose IAM credentials through cloud metadata endpoints, with specific defensive mitigations provided.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://www.cybersecurity-insiders.com/ai-security-prompt-injection-detection-gaps/" target="_blank" rel="noopener">Three prompt injection patterns evading detection stacks ↗</a></div>
-          <div class="item-detail">Patterns bypass WAF/EDR by embedding payloads in trusted context; mitigation requires logging RAG slices, tool-call I/O, and conversation changes before model actions.</div>
-          <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">DetectionGaps</span><span class="tag">RAG</span></div>
+          <div class="item-title"><a href="https://seclists.org/fulldisclosure/2026/May/22" target="_blank" rel="noopener">MCP SSRF advisory for Anthropic and Microsoft tools ↗</a></div>
+          <div class="item-detail">Full Disclosure advisory describes prompt-injection driven SSRF chains reaching cloud metadata endpoints. Defenses include URL allowlists, RFC1918 blocking, redirect validation, and IMDSv2.</div>
+          <div class='item-tags'><span class="tag">SSRF</span><span class="tag">MCP</span><span class="tag">IAMCredentials</span><span class="tag">Advisory</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2605.25415" target="_blank" rel="noopener">LLM reviewers vulnerable to invisible-font injection ↗</a></div>
+          <div class="item-detail">Benchmark across 12 LLMs shows hidden instructions in papers can steer review scores to acceptance-level, necessitating input sanitization for automated review workflows.</div>
+          <div class='item-tags'><span class="tag">InvisibleText</span><span class="tag">PeerReview</span><span class="tag">Benchmark</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🛠️</div>
-        <div class="cat-name">Security Tools & Releases</div>
+        <div class="cat-emoji">🛡️</div>
+        <div class="cat-name">AI Governance & Trust Frameworks</div>
         <div class="cat-count">1 msgs</div>
       </div>
-      <div class="cat-summary">A notable LLM red-teaming toolkit was released today. Cryptex OSS provides 162 transforms, 36 mutators, and 25 tool surfaces for testing prompt and agent defenses, enabling repeatable security evaluations across mutation variants.</div>
+      <div class="cat-summary">New research proposes architectural approaches to agent governance through verifiable provenance and hierarchical policy composition. The KYA framework introduces an 'only-tighten' rule for policy inheritance and signed recommendation verification to prevent silent behavioral drift.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://github.com/m4xx101/cryptex-oss" target="_blank" rel="noopener">Cryptex OSS: LLM red-team toolkit released ↗</a></div>
-          <div class="item-detail">MIT-licensed toolkit with extensive transforms and mutators for testing AI defenses; recommends isolated runs with logged payloads for reproducibility.</div>
-          <div class='item-tags'><span class="tag">RedTeam</span><span class="tag">OpenSource</span><span class="tag">SecurityEvals</span></div>
+          <div class="item-title"><a href="https://arxiv.org/abs/2605.25376" target="_blank" rel="noopener">KYA trust layer for autonomous systems ↗</a></div>
+          <div class="item-detail">Framework-agnostic trust layer verifies signed recommendations at ingest and composes hierarchical policies with only-tighten rules, adding principal scoring and audit-friendly delegation attribution.</div>
+          <div class='item-tags'><span class="tag">TrustLayer</span><span class="tag">PolicyComposition</span><span class="tag">Provenance</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🧪</div>
+        <div class="cat-name">Security Evaluation Frameworks</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">ClawDojo emerges as a benchmark harness for systematically testing prompt-injection and supply-chain attacks against defensive measures, focusing on architectural attack surfaces like persistent memory and third-party skill integrations in OpenClaw-style agents.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://openreview.net/forum?id=MmytvTGycS" target="_blank" rel="noopener">ClawDojo evaluation framework for agent attacks and defenses ↗</a></div>
+          <div class="item-detail">Dynamic benchmark harness tests prompt-injection and supply-chain skill abuse against candidate defenses, framing security around architectural attack surface analysis.</div>
+          <div class='item-tags'><span class="tag">Benchmark</span><span class="tag">AttackSurface</span><span class="tag">DefenseEvaluation</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📋</div>
+        <div class="cat-name">Standards & Reference Materials</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">OWASP continues expanding its agentic AI security guidance with crosswalk documentation mapping the Top 10 for Agentic Applications to related frameworks, providing practitioners with actionable reference materials for securing agent deployments.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://genai.owasp.org/resource/aiuc-1-crosswalks-owasp-top-10-for-agentic-applications/" target="_blank" rel="noopener">OWASP Top 10 for Agentic Applications crosswalks ↗</a></div>
+          <div class="item-detail">Reference resource mapping OWASP's agentic application risks to other security frameworks for compliance and implementation alignment.</div>
+          <div class='item-tags'><span class="tag">OWASP</span><span class="tag">AgenticApps</span><span class="tag">Crosswalk</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔍</div>
+        <div class="cat-name">Threat Intelligence</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Research into background C2 agent techniques surfaces, indicating ongoing investigation into how AI agents could be weaponized for command-and-control operations, representing an evolution in threat actor tradecraft.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.originhq.com/research/background-c2-agent" target="_blank" rel="noopener">Background C2 agent research ↗</a></div>
+          <div class="item-detail">Origin HQ publishes research on background command-and-control agent techniques, exploring adversarial use of AI agent capabilities.</div>
+          <div class='item-tags'><span class="tag">C2</span><span class="tag">ThreatResearch</span><span class="tag">Adversarial</span></div>
         </div></div>
     </div>
   </div>
 
   
     <div class="section-title">🌐 Most-Referenced Domains</div>
-    <div class="domain-chips"><span class="domain-chip">🔗 techau.com.au</span><span class="domain-chip">🔗 helpnetsecurity.com</span><span class="domain-chip">🔗 cybersecuritynews.com</span></div>
+    <div class="domain-chips"><span class="domain-chip">🔗 openreview.net</span><span class="domain-chip">🔗 arxiv.org</span><span class="domain-chip">🔗 genai.owasp.org</span></div>
 
 </main>
 
 <footer>
-  Generated 2026-05-26 00:50 UTC &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+  Generated 2026-05-26 23:38 UTC &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
 </footer>
 
 <script>
@@ -432,7 +482,7 @@ const PALETTE = [
 ];
 
 // Category distribution chart
-const catData = {"labels": ["AI-Powered Vulnerability Research", "AI Agent Security & Controls", "LLM Security & Prompt Injection", "Security Tools & Releases"], "values": [3, 2, 1, 1]};
+const catData = {"labels": ["Agent Security Research", "AI Supply Chain Security", "Prompt Injection & SSRF Vulnerabilities", "AI Governance & Trust Frameworks", "Security Evaluation Frameworks", "Standards & Reference Materials", "Threat Intelligence"], "values": [4, 2, 2, 1, 1, 2, 1]};
 new Chart(document.getElementById("categoryChart"), {
   type: "doughnut",
   data: {
@@ -457,7 +507,7 @@ new Chart(document.getElementById("categoryChart"), {
 });
 
 // Activity by hour chart
-const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 2, 0, 0]};
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 4, 3, 0, 0, 0, 3, 1, 0]};
 new Chart(document.getElementById("activityChart"), {
   type: "bar",
   data: {
