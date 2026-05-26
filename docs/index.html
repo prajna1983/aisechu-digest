@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AISecHub Daily Digest</title>
+  <title>AISecHub Digest Archive</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     :root {
       --bg: #0f1117;
       --surface: #1a1d27;
+      --surface2: #22263a;
       --border: #2e3250;
       --accent: #6c63ff;
       --accent2: #00d4aa;
       --text: #e8eaf6;
       --muted: #8892b0;
+      --link: #79c0ff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -20,14 +23,28 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
     }
-    .icon { font-size: 56px; margin-bottom: 20px; }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #0d1b2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 24px 24px;
+      text-align: center;
+    }
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
     h1 {
       font-size: 2rem;
       font-weight: 700;
@@ -35,57 +52,300 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    p { color: var(--muted); font-size: 15px; max-width: 420px; line-height: 1.65; }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(108,99,255,0.15);
-      border: 1px solid rgba(108,99,255,0.4);
-      border-radius: 24px;
-      padding: 8px 20px;
-      font-size: 14px;
-      color: var(--accent);
-      margin-top: 28px;
-      text-decoration: none;
+    .subtitle { color: var(--muted); font-size: 14px; }
+
+    /* ── Summary stats ── */
+    .stats-bar {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
     }
-    .badge:hover { background: rgba(108,99,255,0.25); }
-    .note {
-      margin-top: 40px;
+    .stat-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 16px 24px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .stat-value { font-size: 2rem; font-weight: 700; color: var(--accent2); display: block; }
+    .stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+    /* ── Trend chart ── */
+    .main { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+    .section-title {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--muted); margin: 36px 0 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .chart-card h3 {
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .chart-wrap { position: relative; height: 200px; }
+
+    /* ── Digest cards grid ── */
+    .digests-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .digest-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+      transition: border-color 0.2s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .digest-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .digest-card.today { border-color: var(--accent2); }
+    .digest-date {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .today-badge {
+      background: rgba(0,212,170,0.2);
+      color: var(--accent2);
+      border: 1px solid rgba(0,212,170,0.4);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .digest-insights {
       font-size: 13px;
       color: var(--muted);
-      max-width: 420px;
+      line-height: 1.5;
+      margin-top: 6px;
     }
-    .note code {
-      background: rgba(255,255,255,0.08);
-      padding: 2px 6px;
-      border-radius: 4px;
+    .digest-insight-item { margin-top: 4px; }
+    .digest-insight-item::before { content: "→ "; color: var(--accent); }
+    .digest-mini-stats {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mini-stat {
+      text-align: center;
+      min-width: 60px;
+    }
+    .mini-stat-value {
+      font-size: 20px;
+      font-weight: 700;
       color: var(--accent2);
+      display: block;
+    }
+    .mini-stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .digest-cats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .cat-tag {
+      background: rgba(108,99,255,0.12);
+      color: var(--accent);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+    }
+    .open-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: white;
+      border-radius: 10px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      align-self: center;
+    }
+    .open-btn:hover { background: #5a52e0; }
+
+    /* ── Empty state ── */
+    .empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 60px 0;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
       font-size: 12px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
     }
   </style>
 </head>
 <body>
-  <div class="icon">🛡️</div>
-  <h1>AISecHub Daily Digest</h1>
-  <p>Your AI-powered daily summary of the AISecHub Telegram channel is being set up. The first digest will appear here after the GitHub Action runs for the first time.</p>
 
-  <a class="badge" href="https://t.me/AISecHub" target="_blank">
-    ✈️ View source channel on Telegram
-  </a>
+<header class="header">
+  <a class="channel-badge" href="https://t.me/AISecHub" target="_blank">✈️ t.me/AISecHub</a>
+  <h1>AISecHub Digest Archive</h1>
+  <p class="subtitle">Rolling 3-month archive &nbsp;·&nbsp; Updated daily &nbsp;·&nbsp; Powered by Claude</p>
+</header>
 
-  <div class="note">
-    To generate the first digest immediately, go to your GitHub repo →
-    <strong>Actions</strong> → <strong>Daily AISecHub Digest</strong> →
-    <strong>Run workflow</strong>.
-    <br/><br/>
-    After that, this page will automatically update every day at <code>07:00 UTC</code>.
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-value">2</span>
+    <span class="stat-label">Digests Archived</span>
   </div>
+  <div class="stat-card">
+    <span class="stat-value">19</span>
+    <span class="stat-label">Messages Processed</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">19</span>
+    <span class="stat-label">Links Catalogued</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">2</span>
+    <span class="stat-label">Days of History</span>
+  </div>
+</div>
+
+<main class="main">
+
+  
+  <div class="section-title">📈 Activity Trend (last 2 days)</div>
+  <div class="chart-card">
+    <h3>Messages &amp; Links per Day</h3>
+    <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
+  </div>
+
+  <div class="section-title">📅 All Digests</div>
+  <div class="digests-grid">
+    
+    <a class="digest-card today" href="aisechu_digest_2026-05-26.html">
+      <div>
+        <div class="digest-date">
+          Tuesday, May 26 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">AI-Powered Vulnerability Research</span><span class="cat-tag">AI Agent Security & Controls</span><span class="cat-tag">LLM Security & Prompt Injection</span><span class="cat-tag">Security Tools & Releases</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">Frontier AI models are accelerating vulnerability discovery at unprecedented scale, with Claude Mythos finding 10K+ critical bugs in one month—fundamentally changing the attacker-defender timeline.</div><div class="digest-insight-item">The integration of vulnerability-discovery models into coding agents represents a significant shift requiring new security control paradigms around scope, execution, and disclosure.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">7</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">7</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-05-25.html">
+      <div>
+        <div class="digest-date">
+          Monday, May 25 2026
+          
+        </div>
+        <div class="digest-cats"><span class="cat-tag">Prompt Injection Research</span><span class="cat-tag">Agent Security & Credential Management</span><span class="cat-tag">Vulnerabilities & CVEs</span><span class="cat-tag">AI-Assisted Vulnerability Discovery</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">Prompt injection attack surface is expanding beyond execution-time tool returns to include clarification flows and contextual manipulation, requiring trust boundary reevaluation.</div><div class="digest-insight-item">AI agent credential security is maturing toward brokered, short-lived, policy-scoped access patterns rather than passing credentials through model context.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">12</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">12</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  Archive updated 2026-05-26 00:50 UTC &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+</footer>
+
+<script>
+
+const trendData = {"labels": ["05-25", "05-26"], "messages": [12, 7], "links": [12, 7]};
+new Chart(document.getElementById("trendChart"), {
+  type: "line",
+  data: {
+    labels: trendData.labels,
+    datasets: [
+      {
+        label: "Messages",
+        data: trendData.messages,
+        borderColor: "#6c63ff",
+        backgroundColor: "rgba(108,99,255,0.1)",
+        tension: 0.3,
+        fill: true,
+        pointRadius: 4,
+      },
+      {
+        label: "Links",
+        data: trendData.links,
+        borderColor: "#00d4aa",
+        backgroundColor: "rgba(0,212,170,0.08)",
+        tension: 0.3,
+        fill: true,
+        pointRadius: 4,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: "#8892b0", font: { size: 12 } } }
+    },
+    scales: {
+      x: { ticks: { color: "#8892b0", font: { size: 10 }, maxTicksLimit: 15 }, grid: { color: "#2e3250" } },
+      y: { ticks: { color: "#8892b0", font: { size: 10 } }, grid: { color: "#2e3250" } }
+    }
+  }
+});
+</script>
 </body>
 </html>
