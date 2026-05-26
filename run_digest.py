@@ -87,18 +87,29 @@ def main():
     from generate_report import generate_html
     generate_html(analysis, output_path=str(output_path))
 
+    # ── Step 4: Archive management — prune files older than 90 days ──
+    from archive_manager import run_archive
+    retained_digests = run_archive(output_dir)
+
+    # ── Step 5: Regenerate the browsable archive index ──
+    from generate_index import generate_index
+    generate_index(retained_digests, output_dir)
+
+    index_path = output_dir / "index.html"
+
     print()
     print("=" * 55)
-    print(f"  Digest ready: {output_path}")
+    print(f"  Today's digest : {output_path}")
+    print(f"  Archive index  : {index_path}")
     print("=" * 55)
     print()
 
-    # Open in browser automatically
+    # Open the archive index in browser (it links to today's digest at the top)
     try:
-        webbrowser.open(output_path.resolve().as_uri())
-        print("[main] Opening in your browser...")
+        webbrowser.open(index_path.resolve().as_uri())
+        print("[main] Opening archive index in your browser...")
     except Exception:
-        print(f"[main] Open manually: file://{output_path.resolve()}")
+        print(f"[main] Open manually: file://{index_path.resolve()}")
 
 
 if __name__ == "__main__":
