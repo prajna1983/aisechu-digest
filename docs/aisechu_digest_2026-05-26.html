@@ -296,7 +296,7 @@
     <span class="stat-label">Messages</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">5</span>
+    <span class="stat-value">4</span>
     <span class="stat-label">Categories</span>
   </div>
   <div class="stat-card">
@@ -304,7 +304,7 @@
     <span class="stat-label">Links Shared</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">4</span>
+    <span class="stat-value">5</span>
     <span class="stat-label">Key Insights</span>
   </div>
 </div>
@@ -329,10 +329,11 @@
 
   <div class="section-title">💡 Top Insights</div>
   <div class="insights-list">
-    <div class="insight-item">🔹 Frontier AI models are dramatically accelerating vulnerability discovery timelines—Anthropic's Mythos finding 10,000+ critical bugs in one month signals that traditional patch cycles are now dangerously slow.</div>
-<div class="insight-item">🔹 Agent-driven security toolchains are transitioning from proof-of-concept to production, creating new critical trust boundaries around harnesses, MCP servers, and tool execution that require explicit security controls.</div>
-<div class="insight-item">🔹 Traditional security detection stacks (WAF/EDR) are blind to prompt injection attacks that leverage trusted context, requiring new logging approaches at RAG retrieval and agent tool-call boundaries.</div>
-<div class="insight-item">🔹 The potential integration of frontier vuln-discovery models into coding agents like Claude Code will force organizations to implement disclosure workflows and execution privilege gates they may not currently have.</div>
+    <div class="insight-item">🔹 Frontier AI models are accelerating vulnerability discovery at unprecedented scale, with Claude Mythos finding 10K+ critical bugs in one month—fundamentally changing the attacker-defender timeline.</div>
+<div class="insight-item">🔹 The integration of vulnerability-discovery models into coding agents represents a significant shift requiring new security control paradigms around scope, execution, and disclosure.</div>
+<div class="insight-item">🔹 Traditional security detection (WAF/EDR) is increasingly blind to AI-specific attack vectors where malicious payloads arrive as trusted context through RAG and tool calls.</div>
+<div class="insight-item">🔹 Open-source AI security tooling is maturing rapidly, with both offensive (Cryptex OSS red-teaming) and defensive (OpenHack research workspaces) capabilities becoming accessible.</div>
+<div class="insight-item">🔹 Supply-chain trust boundaries around AI agent harnesses are emerging as a critical security consideration as autonomous security tools move into production.</div>
   </div>
 
   <div class="section-title">📂 Categories</div>
@@ -340,20 +341,25 @@
     
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🔬</div>
+        <div class="cat-emoji">🔍</div>
         <div class="cat-name">AI-Powered Vulnerability Research</div>
-        <div class="cat-count">2 msgs</div>
+        <div class="cat-count">3 msgs</div>
       </div>
-      <div class="cat-summary">Major developments in AI-assisted vulnerability discovery dominated the day, with Anthropic's Claude Mythos Preview reportedly uncovering over 10,000 high/critical vulnerabilities in essential software. This signals a paradigm shift in patch cycle expectations, as frontier models accelerate the discovery-to-exploit timeline significantly.</div>
+      <div class="cat-summary">Major developments in AI-assisted vulnerability discovery dominated today's feed. Anthropic's Claude Mythos Preview has uncovered over 10,000 high/critical vulnerabilities through Project Glasswing, prompting calls for shorter patch cycles. New open-source frameworks like OpenHack are packaging agent-driven vuln research into accessible coding harnesses, signaling maturation of AI security tooling.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://techau.com.au/anthropic-advises-software-developers-to-shorten-patch-cycles-in-the-wake-of-claude-mythos-vulnerability-discovery" target="_blank" rel="noopener">Claude Mythos discovers 10,000+ critical vulnerabilities in one month ↗</a></div>
-          <div class="item-detail">Anthropic's Project Glasswing update reveals their unreleased frontier model has already found massive numbers of high-severity bugs, prompting calls for developers to shorten patch cycles.</div>
+          <div class="item-title"><a href="https://techau.com.au/anthropic-advises-software-developers-to-shorten-patch-cycles-in-the-wake-of-claude-mythos-vulnerability-discovery" target="_blank" rel="noopener">Claude Mythos discovers 10K+ critical vulnerabilities in one month ↗</a></div>
+          <div class="item-detail">Anthropic's unreleased frontier model has surfaced massive vulnerability counts in essential software, pushing the company to advise developers to accelerate patching cadence.</div>
           <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">VulnerabilityResearch</span><span class="tag">PatchManagement</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://cert.pl/en/posts/2026/05/autonomous-fuzzing/" target="_blank" rel="noopener">CERT.PL publishes autonomous fuzzing research ↗</a></div>
-          <div class="item-detail">New research on autonomous fuzzing techniques from Poland's national CERT, advancing automated vulnerability discovery methodologies.</div>
+          <div class="item-title"><a href="https://helpnetsecurity.com/2026/05/25/openhack-open-source-ai-powered-vulnerability-research" target="_blank" rel="noopener">OpenHack: Open-source AI vulnerability research workspace ↗</a></div>
+          <div class="item-detail">New file-based workspace enables agent-driven vuln research in coding harnesses like Claude Code and Cursor; emphasizes treating inputs and toolchains as supply-chain trust boundaries.</div>
+          <div class='item-tags'><span class="tag">OpenSource</span><span class="tag">AgentSecurity</span><span class="tag">SupplyChain</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://cert.pl/en/posts/2026/05/autonomous-fuzzing/" target="_blank" rel="noopener">CERT.PL on autonomous fuzzing ↗</a></div>
+          <div class="item-detail">Technical post exploring autonomous fuzzing methodologies for vulnerability discovery.</div>
           <div class='item-tags'><span class="tag">Fuzzing</span><span class="tag">Automation</span><span class="tag">Research</span></div>
         </div></div>
     </div>
@@ -361,77 +367,62 @@
     <div class="cat-card">
       <div class="cat-header">
         <div class="cat-emoji">🤖</div>
-        <div class="cat-name">AI Agent Security Toolchains</div>
+        <div class="cat-name">AI Agent Security & Controls</div>
         <div class="cat-count">2 msgs</div>
       </div>
-      <div class="cat-summary">The emergence of production-ready agent-driven security toolchains is creating new trust boundaries. OpenHack and Pentest Agent Suite represent the maturation of autonomous bug bounty and vuln-research workflows, but security teams must treat agent harnesses, tool execution, and MCP servers as critical supply-chain boundaries requiring explicit logging and privilege gates.</div>
+      <div class="cat-summary">As AI agents move from demos to production toolchains, security boundaries around agent harnesses are becoming critical. Multiple posts emphasized the need for explicit controls on repo scope, tool execution, and disclosure workflows—especially as frontier models like Mythos may soon integrate into coding environments.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://helpnetsecurity.com/2026/05/25/openhack-open-source-ai-powered-vulnerability-research" target="_blank" rel="noopener">OpenHack: Open-source agent-driven vulnerability research workspace ↗</a></div>
-          <div class="item-detail">File-based workspace compatible with Claude Code/Codex/Cursor that packages vuln-research workflows. Critical to treat workspace inputs and agent toolchains as trust boundaries.</div>
-          <div class='item-tags'><span class="tag">OpenSource</span><span class="tag">AgentSecurity</span><span class="tag">CodingAgents</span></div>
+          <div class="item-title"><a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropics-restricted-claude-mythos-model-may-be-coming-to-claude-code" target="_blank" rel="noopener">Claude Mythos may integrate into Claude Code ↗</a></div>
+          <div class="item-detail">BleepingComputer reports signals of Mythos model surfacing in Claude Code; teams will need controls for scope, execution, triage, and disclosure if frontier vuln-discovery models enter coding agents.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">ClaudeCode</span><span class="tag">AgentControls</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://cybersecuritynews.com/pentest-agent-suite-bug-bounty-framework/" target="_blank" rel="noopener">Pentest Agent Suite for autonomous bug bounty hunting ↗</a></div>
-          <div class="item-detail">Framework for Claude Code and AI coding tools moving autonomous bug bounty from demos to working toolchains. Security controls needed for scope files, MCP servers, and exploit steps.</div>
-          <div class='item-tags'><span class="tag">BugBounty</span><span class="tag">Automation</span><span class="tag">PenTesting</span></div>
+          <div class="item-title"><a href="https://cybersecuritynews.com/pentest-agent-suite-bug-bounty-framework/" target="_blank" rel="noopener">Pentest Agent Suite for autonomous bug bounty ↗</a></div>
+          <div class="item-detail">Framework brings autonomous bug-bounty capabilities to Claude Code and AI coding tools; security boundary is the harness controlling scope files, MCP servers, and exploit steps.</div>
+          <div class='item-tags'><span class="tag">BugBounty</span><span class="tag">AgentSecurity</span><span class="tag">Automation</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
         <div class="cat-emoji">💉</div>
-        <div class="cat-name">Prompt Injection & LLM Defense Gaps</div>
+        <div class="cat-name">LLM Security & Prompt Injection</div>
         <div class="cat-count">1 msgs</div>
       </div>
-      <div class="cat-summary">Detection gaps in AI security stacks are being exposed as prompt injection patterns bypass traditional WAF/EDR controls by exploiting trusted context. Organizations need to implement logging at RAG retrieval, agent tool-call I/O, and conversation state changes before any privileged model actions.</div>
+      <div class="cat-summary">Detection gaps in AI security stacks continue to be a concern. Today's coverage highlighted prompt injection patterns that bypass traditional WAF/EDR because payloads arrive as trusted context through RAG retrieval and agent tool calls, requiring logging of retrieval slices and tool I/O before privileged actions.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://www.cybersecurity-insiders.com/ai-security-prompt-injection-detection-gaps/" target="_blank" rel="noopener">Three prompt injection patterns bypassing current detection stacks ↗</a></div>
-          <div class="item-detail">Analysis of injection techniques that evade WAF/EDR because payloads appear as trusted context, requiring new detection approaches focused on RAG slices and tool-call monitoring.</div>
+          <div class="item-title"><a href="https://www.cybersecurity-insiders.com/ai-security-prompt-injection-detection-gaps/" target="_blank" rel="noopener">Three prompt injection patterns evading detection stacks ↗</a></div>
+          <div class="item-detail">Patterns bypass WAF/EDR by embedding payloads in trusted context; mitigation requires logging RAG slices, tool-call I/O, and conversation changes before model actions.</div>
           <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">DetectionGaps</span><span class="tag">RAG</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🔴</div>
-        <div class="cat-name">AI Red-Teaming Tools</div>
+        <div class="cat-emoji">🛠️</div>
+        <div class="cat-name">Security Tools & Releases</div>
         <div class="cat-count">1 msgs</div>
       </div>
-      <div class="cat-summary">The release of Cryptex OSS provides security teams with a comprehensive MIT-licensed toolkit for testing LLM defenses, featuring 162 transforms, 36 mutators, and 25 tool surfaces for systematic evaluation of prompt and agent vulnerabilities.</div>
+      <div class="cat-summary">A notable LLM red-teaming toolkit was released today. Cryptex OSS provides 162 transforms, 36 mutators, and 25 tool surfaces for testing prompt and agent defenses, enabling repeatable security evaluations across mutation variants.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://github.com/m4xx101/cryptex-oss" target="_blank" rel="noopener">Cryptex OSS: Comprehensive LLM red-team toolkit ↗</a></div>
-          <div class="item-detail">MIT-licensed toolkit with extensive mutation and tool-use testing capabilities. Requires isolated test environments and thorough payload/result logging for repeatable security evaluations.</div>
-          <div class='item-tags'><span class="tag">RedTeam</span><span class="tag">OpenSource</span><span class="tag">SecurityTesting</span></div>
-        </div></div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-header">
-        <div class="cat-emoji">📰</div>
-        <div class="cat-name">Industry News & Frontier Model Access</div>
-        <div class="cat-count">1 msgs</div>
-      </div>
-      <div class="cat-summary">Signals indicate Anthropic may bring the restricted Mythos model to Claude Code, which would democratize access to frontier vulnerability-discovery capabilities. This raises urgent questions about implementing controls for repository scope, tool execution privileges, result triage workflows, and responsible disclosure processes.</div>
-      <div class="cat-items">
-        <div class="item-card">
-          <div class="item-title"><a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropics-restricted-claude-mythos-model-may-be-coming-to-claude-code" target="_blank" rel="noopener">Claude Mythos may be coming to Claude Code ↗</a></div>
-          <div class="item-detail">BleepingComputer reports signals of Mythos integration into Claude Code. Teams will need explicit controls for repo scope, execution privileges, and disclosure workflows if deployed.</div>
-          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">ClaudeCode</span><span class="tag">FrontierModels</span></div>
+          <div class="item-title"><a href="https://github.com/m4xx101/cryptex-oss" target="_blank" rel="noopener">Cryptex OSS: LLM red-team toolkit released ↗</a></div>
+          <div class="item-detail">MIT-licensed toolkit with extensive transforms and mutators for testing AI defenses; recommends isolated runs with logged payloads for reproducibility.</div>
+          <div class='item-tags'><span class="tag">RedTeam</span><span class="tag">OpenSource</span><span class="tag">SecurityEvals</span></div>
         </div></div>
     </div>
   </div>
 
   
     <div class="section-title">🌐 Most-Referenced Domains</div>
-    <div class="domain-chips"><span class="domain-chip">🔗 techau.com.au</span><span class="domain-chip">🔗 helpnetsecurity.com</span><span class="domain-chip">🔗 bleepingcomputer.com</span></div>
+    <div class="domain-chips"><span class="domain-chip">🔗 techau.com.au</span><span class="domain-chip">🔗 helpnetsecurity.com</span><span class="domain-chip">🔗 cybersecuritynews.com</span></div>
 
 </main>
 
 <footer>
-  Generated 2026-05-26 00:32 UTC &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+  Generated 2026-05-26 00:50 UTC &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
 </footer>
 
 <script>
@@ -441,7 +432,7 @@ const PALETTE = [
 ];
 
 // Category distribution chart
-const catData = {"labels": ["AI-Powered Vulnerability Research", "AI Agent Security Toolchains", "Prompt Injection & LLM Defense Gaps", "AI Red-Teaming Tools", "Industry News & Frontier Model Access"], "values": [2, 2, 1, 1, 1]};
+const catData = {"labels": ["AI-Powered Vulnerability Research", "AI Agent Security & Controls", "LLM Security & Prompt Injection", "Security Tools & Releases"], "values": [3, 2, 1, 1]};
 new Chart(document.getElementById("categoryChart"), {
   type: "doughnut",
   data: {
