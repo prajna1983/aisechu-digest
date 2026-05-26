@@ -52,6 +52,8 @@ jobs:
             echo "No changes to commit — digest may already be up to date."
           else
             git commit -m "digest: $(date -u +%Y-%m-%d)"
+            # Pull any commits that arrived since the job started, then push
+            git pull --rebase origin main
             git push
             echo "Digest committed and pushed successfully."
           fi
