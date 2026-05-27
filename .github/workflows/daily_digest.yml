@@ -6,6 +6,9 @@ on:
     - cron: '0 23 * * *'
   workflow_dispatch:
     # Allows manual trigger from GitHub Actions tab
+  push:
+    branches:
+      - main  # Also run on every push so GitHub doesn't disable the schedule
 
 # Prevent multiple runs overlapping — if a new run starts, wait for current one to finish
 concurrency:
@@ -57,7 +60,9 @@ jobs:
             echo "No changes to commit — digest already up to date."
             exit 0
           fi
-          git commit -m "digest: $(date -u +%Y-%m-%d)"
+          # Use SGT date for the commit message and filename consistency
+          SGT_DATE=$(TZ='Asia/Singapore' date +%Y-%m-%d)
+          git commit -m "digest: ${SGT_DATE}"
 
           # Retry push up to 3 times, rebasing on each failure
           for attempt in 1 2 3; do
