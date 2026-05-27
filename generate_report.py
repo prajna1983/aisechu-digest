@@ -7,7 +7,10 @@ Generates a self-contained, beautiful HTML digest report from the analysis data.
 import json
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from typing import Dict, Any
+
+SGT = ZoneInfo("Asia/Singapore")
 
 
 HTML_TEMPLATE = """<!DOCTYPE html>
@@ -332,7 +335,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       </div>
     </div>
     <div class="chart-card">
-      <h3>Posting Activity (UTC hour)</h3>
+      <h3>Posting Activity (SGT hour)</h3>
       <div class="chart-wrap">
         <canvas id="activityChart"></canvas>
       </div>
@@ -354,7 +357,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </main>
 
 <footer>
-  Generated {generated_at} UTC &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+  Generated {generated_at} SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
 </footer>
 
 <script>
@@ -455,7 +458,7 @@ def generate_html(analysis: Dict[str, Any], output_path: str | None = None) -> s
     Build the HTML report from analysis data.
     Returns the HTML string and optionally writes it to output_path.
     """
-    now = datetime.now(timezone.utc)
+    now = datetime.now(SGT)
     date_str = now.strftime("%A, %B %-d %Y")
     generated_at = now.strftime("%Y-%m-%d %H:%M")
 
