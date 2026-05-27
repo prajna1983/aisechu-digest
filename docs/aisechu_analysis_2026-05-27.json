@@ -3,55 +3,59 @@
     {
       "name": "Agent Security & Trust Boundaries",
       "emoji": "\ud83e\udd16",
-      "summary": "A dominant theme emerged around treating AI agents as untrusted components requiring systems-level security controls rather than relying on model robustness alone. Multiple papers and articles emphasized that agent security failures map to classic systems-security principles: least privilege, complete mediation, and instruction/data separation. The shift from sandboxed evals to real-world privilege analysis and the emergence of frameworks like CIK (Capability/Identity/Knowledge) taxonomy reflect maturing threat models for agentic deployments.",
+      "summary": "A dominant theme this period centers on treating AI agents as untrusted system components rather than secure endpoints. Multiple research papers and industry blogs emphasize that agent security is fundamentally a systems architecture problem\u2014requiring least privilege, complete mediation, and instruction/data separation enforced outside the model itself. The emerging consensus is that skills, tools, and connectors represent the true attack surface in agentic deployments.",
       "key_items": [
         {
-          "title": "Agent security requires systems thinking, not model fixes",
-          "detail": "CSO coverage of research mapping 11 real agent attacks to systems-security failures argues for treating the model as untrusted and enforcing controls externally.",
+          "title": "Agent security requires systems-level controls, not model robustness",
+          "detail": "CSO coverage of research mapping 11 real agent attacks to classic systems-security failures argues that models should be treated as untrusted and controls enforced around them.",
           "url": "https://www.csoonline.com/article/4176725/ai-security-needs-a-shift-from-models-to-systems-researchers-argue.html",
           "tags": [
             "AgentSecurity",
-            "LLMSecurity"
+            "LLMSecurity",
+            "Research"
           ]
         },
         {
-          "title": "OpenClaw safety analysis with CIK taxonomy",
-          "detail": "Paper introduces Capability/Identity/Knowledge framework and tests 12 live attack scenarios against agents with broad local and service privileges.",
-          "url": "https://openreview.net/forum?id=vRpKSoRu4X",
+          "title": "Coding agents can become attacker shells via prompt injection",
+          "detail": "Research demonstrates how unvetted external artifacts with hidden prompt-injection strings can cross trust boundaries to steer file edits or command execution in coding assistants.",
+          "url": "https://arxiv.org/abs/2605.25871",
           "tags": [
+            "PromptInjection",
             "AgentSecurity",
             "Research"
           ]
         },
         {
-          "title": "Shadow agents expand endpoint attack surface",
-          "detail": "Cyberhaven guidance recommends treating agents like endpoint apps with inventory, permission constraints, and OS/network-level egress controls.",
-          "url": "https://cyberhaven.com/blog/governing-shadow-ai-agents",
+          "title": "OpenClaw real-world safety analysis with CIK taxonomy",
+          "detail": "Paper introduces Capability/Identity/Knowledge taxonomy treating persistent state as the analysis surface, testing 12 live attack scenarios across multiple LLM backbones.",
+          "url": "https://openreview.net/forum?id=vRpKSoRu4X",
           "tags": [
             "AgentSecurity",
-            "Endpoints"
+            "LLMSecurity",
+            "Research"
           ]
         },
         {
-          "title": "Auto-policy vs auto-skill gap in physical agents",
-          "detail": "Research highlights that scaling auto-generated skills without external policy enforcement widens tool-to-action trust boundaries in IoT workflows.",
-          "url": "https://openreview.net/forum?id=6RBvYq21uw",
+          "title": "Governing shadow agents on endpoints",
+          "detail": "Guidance to treat endpoint agents like managed applications: inventory them, constrain permissions, and enforce egress/logging at OS and network layers.",
+          "url": "https://cyberhaven.com/blog/governing-shadow-ai-agents",
           "tags": [
             "AgentSecurity",
-            "IoT"
+            "Endpoints",
+            "Blog"
           ]
         }
       ],
-      "message_count": 6
+      "message_count": 7
     },
     {
-      "name": "MCP Security & Supply Chain",
+      "name": "MCP Protocol Security",
       "emoji": "\ud83d\udd17",
-      "summary": "Model Context Protocol (MCP) emerged as a critical attack surface with multiple advisories and research papers addressing SSRF vulnerabilities, skill/connector trust boundaries, and supply chain risks. The consensus is that MCP deployments require end-to-end controls: URL allowlists, connector authentication, tool permission constraints, and data-leakage monitoring around MCP servers.",
+      "summary": "The Model Context Protocol (MCP) continues to surface as a critical attack vector. Disclosures reveal SSRF vulnerabilities in major implementations including Anthropic and Microsoft tooling, while guidance emphasizes that MCP deployments fail when untrusted tool outputs cross into privileged calls. End-to-end controls\u2014connector authentication, tool permission constraints, and supply-chain checks\u2014are essential.",
       "key_items": [
         {
-          "title": "MCP SSRF vulnerability in Anthropic and Microsoft tools",
-          "detail": "Full Disclosure advisory describes prompt-injection-driven SSRF chain exposing IAM credentials via cloud metadata endpoints; mitigations include RFC1918 blocking and IMDSv2.",
+          "title": "SSRF vulnerability disclosed in Anthropic and Microsoft MCP servers",
+          "detail": "Full Disclosure advisory describes how prompt-injected content can drive agent fetches toward cloud metadata endpoints, exposing IAM credentials. Mitigations include URL allowlists and IMDSv2.",
           "url": "https://seclists.org/fulldisclosure/2026/May/22",
           "tags": [
             "MCP",
@@ -60,181 +64,213 @@
           ]
         },
         {
-          "title": "SkillSpector scans agent skills pre-deployment",
-          "detail": "Scanner checks for prompt injection, metadata poisoning, permission mismatch, tool misuse, and vulnerable packages with SARIF-ready output.",
-          "url": "https://openreview.net/pdf?id=rVAPXHmGHN",
-          "tags": [
-            "AISupplyChain",
-            "Scanning"
-          ]
-        },
-        {
-          "title": "MCP Security hardening guide from Strac",
-          "detail": "Comprehensive framing for securing MCP servers, connectors, and data flows with authentication, permission constraints, and supply-chain checks.",
-          "url": "https://strac.io/blog/mcp-security",
-          "tags": [
-            "MCP",
-            "Hardening"
-          ]
-        },
-        {
-          "title": "Agent Skills architecture and security path forward",
-          "detail": "Paper examines how trust boundaries shift from model weights to skill acquisition/runtime layers as agents load instructions/code on demand.",
+          "title": "Agent Skills architecture shifts trust to skill acquisition layer",
+          "detail": "As agents load skills on demand via MCP, security must focus on progressive disclosure and portable skill definitions to prevent silent privilege expansion.",
           "url": "https://openreview.net/forum?id=Er0p92BsmW",
           "tags": [
             "MCP",
-            "AgentSecurity"
-          ]
-        }
-      ],
-      "message_count": 5
-    },
-    {
-      "name": "Prompt Injection & LLM Exploitation",
-      "emoji": "\ud83d\udc89",
-      "summary": "Prompt injection continues to be validated as a high-impact attack vector across diverse contexts including academic peer review, coding assistants, and agent skill packages. Research demonstrated that invisible-font injections can steer LLM reviewer scores to acceptance levels, and that coding agents can be weaponized as attacker shells through unvetted external artifacts.",
-      "key_items": [
-        {
-          "title": "LLM-as-Reviewer benchmark exposes injection risks",
-          "detail": "Study of 12 LLMs on 898 papers shows hidden instructions can steer review scores; recommends input sanitization and out-of-band verification.",
-          "url": "https://arxiv.org/abs/2605.25415",
-          "tags": [
-            "PromptInjection",
+            "AgentSecurity",
             "Research"
           ]
         },
         {
-          "title": "Agentic coding assistants become attacker shells",
-          "detail": "Research shows how hidden prompt-injection in external artifacts crosses trust boundaries to steer file edits and command execution.",
-          "url": "https://arxiv.org/abs/2605.25871",
+          "title": "End-to-end MCP security hardening guide",
+          "detail": "Strac blog provides practical control framing: authenticate connectors, constrain tool permissions, add supply-chain and data-leakage checks around MCP servers.",
+          "url": "https://strac.io/blog/mcp-security",
           "tags": [
-            "PromptInjection",
-            "CodingAgents"
-          ]
-        },
-        {
-          "title": "SkillsMetric maps static analysis detection limits",
-          "detail": "Framework scores agent skill packages and identifies where malicious behaviors evade static analysis, indicating need for runtime controls.",
-          "url": "https://openreview.net/forum?id=P6x9c2cSHu",
-          "tags": [
-            "PromptInjection",
-            "StaticAnalysis"
-          ]
-        },
-        {
-          "title": "ClawDojo benchmark for agent attack/defense evaluation",
-          "detail": "Framework tests prompt-injection and supply-chain skill abuse against defenses using OpenClaw-style architectural attack surfaces.",
-          "url": "https://openreview.net/forum?id=MmytvTGycS",
-          "tags": [
-            "PromptInjection",
-            "Benchmarking"
+            "MCP",
+            "Hardening",
+            "Blog"
           ]
         }
       ],
       "message_count": 4
     },
     {
-      "name": "AI Governance & Trust Frameworks",
-      "emoji": "\ud83c\udfdb\ufe0f",
-      "summary": "New frameworks emerged for establishing verifiable trust in autonomous systems, including hierarchical policy composition with only-tighten rules and unified principal scoring. The focus shifted toward making drift and data leakage diagnosable through audit-friendly delegation attribution and signed recommendation verification at ingest time.",
+      "name": "Prompt Injection & LLM Robustness",
+      "emoji": "\ud83d\udc89",
+      "summary": "Prompt injection remains a persistent threat vector across multiple contexts. Research this period demonstrates injection attacks succeeding in academic peer review workflows via invisible-font manipulation, while static analysis tools struggle to detect certain malicious skill behaviors\u2014indicating runtime controls are essential complements to code scanning.",
       "key_items": [
         {
-          "title": "KYA trust layer for autonomous systems",
-          "detail": "Proposes verifiable provenance and hierarchical policy composition with only-tighten rules to prevent untrusted config from silently changing agent behavior.",
-          "url": "https://arxiv.org/abs/2605.25376",
+          "title": "LLM-as-Reviewer benchmark exposes injection vulnerabilities in paper reviews",
+          "detail": "Testing across 12 LLMs on 898 papers shows hidden instructions can still steer scores to acceptance-level, requiring input sanitization and out-of-band verification.",
+          "url": "https://arxiv.org/abs/2605.25415",
           "tags": [
-            "AIGovernance",
-            "TrustFramework"
+            "PromptInjection",
+            "LLMSecurity",
+            "Research"
           ]
         },
         {
-          "title": "2026 Cloud Security Report on AI transformation gaps",
-          "detail": "Check Point report identifies enforcement and visibility gaps at privileged-access boundaries as GenAI workloads move to production.",
-          "url": "https://blog.checkpoint.com/securing-the-cloud/2026-cloud-security-report-why-traditional-network-cloud-and-security-architecture-are-lagging-behind-the-ai-transformation",
+          "title": "SkillsMetric maps static analysis detection boundaries",
+          "detail": "Research scores agent skill packages with static signals and measures where detection breaks on adversarial datasets\u2014useful for identifying which behaviors require runtime controls.",
+          "url": "https://openreview.net/forum?id=P6x9c2cSHu",
           "tags": [
-            "AIGovernance",
-            "CloudSecurity"
+            "PromptInjection",
+            "StaticAnalysis",
+            "Research"
+          ]
+        },
+        {
+          "title": "ClawDojo benchmark framework for agent attack/defense evaluation",
+          "detail": "Framework tests prompt-injection and supply-chain skill abuse against candidate defenses in controlled environments, focusing on architectural attack surfaces like persistent memory.",
+          "url": "https://openreview.net/forum?id=MmytvTGycS",
+          "tags": [
+            "PromptInjection",
+            "Benchmarking",
+            "Research"
           ]
         }
       ],
-      "message_count": 2
+      "message_count": 4
+    },
+    {
+      "name": "AI Supply Chain & Skill Security",
+      "emoji": "\ud83d\udce6",
+      "summary": "The supply chain for AI agent skills emerges as a new attack surface requiring dedicated tooling. SkillSpector and related research treat skills as code plus model-visible instructions with associated permissions, scanning for metadata poisoning, permission mismatches, and vulnerable dependencies before skills enter production pipelines.",
+      "key_items": [
+        {
+          "title": "SkillSpector scans agent skills before supply chain entry",
+          "detail": "Scanner examines skills for prompt injection, metadata poisoning, permission mismatch, tool misuse, data exfiltration, and vulnerable packages with SARIF-ready output.",
+          "url": "https://openreview.net/pdf?id=rVAPXHmGHN",
+          "tags": [
+            "AISupplyChain",
+            "SkillSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "Auto-policy vs auto-skill distinction for physical world agents",
+          "detail": "Research highlights that scaling auto-generated skills without external enforceable policy checks pushes excessive trust into models, widening tool-to-action boundaries in IoT workflows.",
+          "url": "https://openreview.net/forum?id=6RBvYq21uw",
+          "tags": [
+            "AgentSecurity",
+            "IoT",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 3
     },
     {
       "name": "Microsoft AI Ecosystem Security",
       "emoji": "\ud83e\ude9f",
-      "summary": "Dedicated resources emerged for securing Microsoft's AI ecosystem, including a community knowledge hub cataloging Copilot connectors and capabilities with associated audit queries, and practical hardening guidance for Copilot Studio deployments focusing on channel/connector restrictions and subagent inventory.",
+      "summary": "Dedicated resources emerged for securing Microsoft's expanding AI ecosystem. CopilotSec provides a community-driven trust-boundary map cataloging connectors and capabilities with paired audit queries, while hardening guidance for Copilot Studio emphasizes treating HTTP topic passthrough and response paths as attacker-influenced inputs.",
       "key_items": [
         {
-          "title": "CopilotSec community knowledge hub launched",
-          "detail": "Trust-boundary map for Copilot deployments cataloging connectors/capabilities paired with audit queries and controls for agentic flows.",
+          "title": "CopilotSec knowledge hub for Microsoft AI security",
+          "detail": "Catalogs connectors/capabilities paired with audit queries and controls, helping teams identify where external data or tool access could translate into privileged actions.",
           "url": "https://pluto.security/blog/introducing-copilotsec-a-community-knowledge-hub-for-security-of-the-microsoft-ai-ecosystem",
           "tags": [
             "Copilot",
-            "SecurityHub"
+            "MicrosoftAI",
+            "Tool"
           ]
         },
         {
           "title": "Copilot Studio practical hardening guide",
-          "detail": "Guidance on restricting channels/connectors, treating HTTP topic passthrough as attacker-influenced, and maintaining subagent inventories.",
+          "detail": "Focus on controlling trust boundaries: restrict channels/connectors, treat HTTP passthrough as attacker-influenced, maintain inventory and audit queries for subagents.",
           "url": "https://pluto.security/blog/securing-copilot-studio-a-practical-hardening-guide",
           "tags": [
             "CopilotStudio",
-            "Hardening"
+            "Hardening",
+            "Blog"
           ]
         }
       ],
       "message_count": 2
+    },
+    {
+      "name": "AI Governance & Trust Frameworks",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "Novel approaches to AI governance propose architectural trust layers rather than relying on model behavior. The KYA framework introduces signed recommendation verification at ingest time with hierarchical policy composition using only-tighten rules, aiming to prevent untrusted configurations from silently altering agent behavior while maintaining audit-friendly attribution.",
+      "key_items": [
+        {
+          "title": "KYA framework-agnostic trust layer for autonomous systems",
+          "detail": "Proposes verifying signed recommendations at ingest and composing hierarchical policies with only-tighten rules to prevent untrusted config from changing agent behavior.",
+          "url": "https://arxiv.org/abs/2605.25376",
+          "tags": [
+            "AIGovernance",
+            "TrustFramework",
+            "Research"
+          ]
+        },
+        {
+          "title": "OWASP Top 10 crosswalks for agentic applications",
+          "detail": "Resource mapping OWASP security considerations specifically to agentic AI application architectures.",
+          "url": "https://genai.owasp.org/resource/aiuc-1-crosswalks-owasp-top-10-for-agentic-applications/",
+          "tags": [
+            "OWASP",
+            "AgenticAI",
+            "Framework"
+          ]
+        }
+      ],
+      "message_count": 3
     },
     {
       "name": "Vulnerability Research & Advisories",
       "emoji": "\ud83d\udd13",
-      "summary": "Infrastructure-level vulnerabilities affecting AI/ML stacks were disclosed, notably the BADHOST vulnerability in Starlette affecting FastAPI, LiteLLM/vLLM, and MCP harnesses. The threat landscape digest from Check Point provided operational intelligence on AI-orchestrated abuse patterns emerging as TTPs rather than anomalies.",
+      "summary": "Traditional web security vulnerabilities gain renewed significance in AI application stacks. The BADHOST vulnerability in Starlette affects host-header handling across FastAPI, LiteLLM/vLLM, and MCP harnesses, demonstrating how classic web security issues can compromise AI infrastructure trust boundaries.",
       "key_items": [
         {
-          "title": "BADHOST vulnerability in Starlette disclosed",
-          "detail": "Host-header handling bugs affect LLM app stacks; guidance recommends treating Host as untrusted and validating at the edge.",
+          "title": "BADHOST vulnerability in Starlette affects LLM app stacks",
+          "detail": "Host-header handling bugs can turn request routing into attacker-controlled trust boundaries in FastAPI, LiteLLM/vLLM, and MCP harnesses. Validate Host headers at the edge.",
           "url": "https://ostif.org/disclosing-the-badhost-vulnerability-in-starlette",
           "tags": [
+            "Starlette",
             "VulnerabilityResearch",
-            "Starlette"
+            "Advisory"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Threat Intelligence & Industry Reports",
+      "emoji": "\ud83d\udcca",
+      "summary": "Industry threat reports highlight the operational reality of AI-related attacks moving from theoretical to practical concerns. Check Point's digest emphasizes treating agent configuration and tool permissions as first-class attack surface, while cloud security reports reveal enforcement and visibility gaps at privileged-access boundaries in GenAI workloads.",
+      "key_items": [
+        {
+          "title": "AI Threat Landscape Digest (Mar\u2013Apr 2026)",
+          "detail": "Maps agentic risk to concrete control points, tracking AI-orchestrated abuse patterns as operational TTPs rather than one-off anomalies.",
+          "url": "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026",
+          "tags": [
+            "ThreatIntelligence",
+            "Report",
+            "CheckPoint"
           ]
         },
         {
-          "title": "AI Threat Landscape Digest (Mar-Apr 2026)",
-          "detail": "Check Point maps agentic risk to control points and tracks AI-orchestrated abuse patterns as operational TTPs.",
-          "url": "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026",
+          "title": "2026 Cloud Security Report on AI transformation gaps",
+          "detail": "Highlights enforcement and visibility gaps at privileged-access boundaries as GenAI workloads move to production; useful for control-plane guardrail planning.",
+          "url": "https://blog.checkpoint.com/securing-the-cloud/2026-cloud-security-report-why-traditional-network-cloud-and-security-architecture-are-lagging-behind-the-ai-transformation",
           "tags": [
-            "ThreatIntel",
+            "CloudSecurity",
+            "AIGovernance",
             "Report"
           ]
-        }
-      ],
-      "message_count": 2
-    },
-    {
-      "name": "Standards & Frameworks",
-      "emoji": "\ud83d\udccb",
-      "summary": "OWASP released crosswalks mapping the Top 10 for Agentic Applications, providing standardized risk categorization for teams building agent-based systems. This represents continued maturation of security frameworks specific to AI agent deployments.",
-      "key_items": [
+        },
         {
-          "title": "OWASP Top 10 for Agentic Applications crosswalks",
-          "detail": "OWASP GenAI resource mapping security risks specific to agentic application architectures.",
-          "url": "https://genai.owasp.org/resource/aiuc-1-crosswalks-owasp-top-10-for-agentic-applications/",
+          "title": "Background C2 agent research",
+          "detail": "Origin HQ research on command-and-control patterns in agent contexts.",
+          "url": "https://www.originhq.com/research/background-c2-agent",
           "tags": [
-            "OWASP",
-            "Standards"
+            "C2",
+            "ThreatResearch",
+            "Research"
           ]
         }
       ],
-      "message_count": 2
+      "message_count": 3
     }
   ],
   "top_insights": [
-    "Agent security is fundamentally a systems-security problem requiring external enforcement of least privilege, complete mediation, and instruction/data separation\u2014not just model robustness improvements.",
-    "MCP (Model Context Protocol) has emerged as a critical attack surface with SSRF, supply chain, and connector trust boundary risks requiring end-to-end controls beyond prompt-level defenses.",
-    "Prompt injection remains highly effective across contexts from academic peer review to coding assistants, with invisible-font attacks demonstrating that input sanitization and out-of-band verification are essential.",
-    "The industry is shifting from sandboxed evaluations to real-world privilege analysis using frameworks like CIK (Capability/Identity/Knowledge) to assess agent risks under production conditions.",
-    "Static analysis alone cannot detect all malicious agent behaviors\u2014runtime controls are necessary as research maps the detection boundaries of code scanning approaches."
+    "Agent security is converging on a systems-architecture paradigm: treat the model as untrusted and enforce least privilege, mediation, and instruction/data separation at the infrastructure layer rather than relying on prompt engineering or model alignment.",
+    "MCP (Model Context Protocol) has emerged as a critical trust boundary, with SSRF vulnerabilities in major implementations (Anthropic, Microsoft) demonstrating that cloud metadata and IAM credential exposure are realistic attack outcomes.",
+    "The AI supply chain now includes 'skills' as first-class security artifacts requiring pre-deployment scanning for prompt injection, metadata poisoning, permission mismatches, and dependency vulnerabilities.",
+    "Prompt injection attacks are successfully crossing into unexpected domains including academic peer review workflows, indicating that any system accepting model-visible external content requires input sanitization and out-of-band verification.",
+    "Enterprise AI deployments (particularly Microsoft Copilot ecosystem) are receiving dedicated security tooling and hardening guidance, reflecting production-scale adoption and corresponding attack surface expansion."
   ],
   "stats": {
     "total_links": 22,
@@ -245,7 +281,7 @@
     ],
     "activity_by_hour": {
       "00": 4,
-      "01": 3,
+      "01": 2,
       "02": 0,
       "03": 0,
       "04": 0,
@@ -260,7 +296,7 @@
       "13": 0,
       "14": 2,
       "15": 0,
-      "16": 4,
+      "16": 5,
       "17": 3,
       "18": 0,
       "19": 0,
