@@ -19,7 +19,10 @@ import json
 import subprocess
 import webbrowser
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
+
+SGT = ZoneInfo("Asia/Singapore")
 
 
 def check_dependencies():
@@ -54,7 +57,7 @@ def main():
     output_dir = Path(os.environ.get("DIGEST_OUTPUT_DIR", "./reports"))
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    date_tag = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    date_tag = datetime.now(SGT).strftime("%Y-%m-%d")
     output_path = output_dir / f"aisechu_digest_{date_tag}.html"
 
     print("=" * 55)
