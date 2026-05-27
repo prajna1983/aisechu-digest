@@ -7,7 +7,10 @@ daily digests with their stats and a quick-open link.
 
 import json
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
+
+SGT = ZoneInfo("Asia/Singapore")
 from typing import List, Dict, Any
 
 
@@ -264,7 +267,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 </main>
 
 <footer>
-  Archive updated {generated_at} UTC &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated {generated_at} SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
@@ -318,7 +321,7 @@ def _make_card(entry: Dict, is_today: bool) -> str:
 
 def generate_index(digests: List[Dict], reports_dir: Path) -> None:
     """Generate reports/index.html from the list of retained digests."""
-    now = datetime.now(timezone.utc)
+    now = datetime.now(SGT)
     today_str = now.strftime("%Y-%m-%d")
     generated_at = now.strftime("%Y-%m-%d %H:%M")
 
