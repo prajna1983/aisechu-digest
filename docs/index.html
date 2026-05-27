@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">2</span>
+    <span class="stat-value">3</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">26</span>
+    <span class="stat-value">49</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">25</span>
+    <span class="stat-value">47</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">2</span>
+    <span class="stat-value">3</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -242,7 +242,7 @@
 <main class="main">
 
   
-  <div class="section-title">📈 Activity Trend (last 2 days)</div>
+  <div class="section-title">📈 Activity Trend (last 3 days)</div>
   <div class="chart-card">
     <h3>Messages &amp; Links per Day</h3>
     <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-05-26.html">
+    <a class="digest-card today" href="aisechu_digest_2026-05-27.html">
+      <div>
+        <div class="digest-date">
+          Wednesday, May 27 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">Agent Security & Trust Boundaries</span><span class="cat-tag">MCP Security & Supply Chain</span><span class="cat-tag">Prompt Injection & LLM Exploitation</span><span class="cat-tag">AI Governance & Trust Frameworks</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">Agent security is fundamentally a systems-security problem requiring external enforcement of least privilege, complete mediation, and instruction/data separation—not just model robustness improvements.</div><div class="digest-insight-item">MCP (Model Context Protocol) has emerged as a critical attack surface with SSRF, supply chain, and connector trust boundary risks requiring end-to-end controls beyond prompt-level defenses.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">23</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">22</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-05-26.html">
       <div>
         <div class="digest-date">
           Tuesday, May 26 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">Agent Security Research</span><span class="cat-tag">AI Supply Chain Security</span><span class="cat-tag">Prompt Injection & SSRF Vulnerabilities</span><span class="cat-tag">AI Governance & Trust Frameworks</span></div>
         <div class="digest-insights"><div class="digest-insight-item">The security community is converging on a 'zero trust model' paradigm—treating LLMs as fundamentally untrusted components requiring external enforcement rather than internal robustness improvements.</div><div class="digest-insight-item">Agent 'skills' and MCP integrations represent the new software supply chain threat vector, with multiple papers releasing detection tools and acknowledging static analysis limitations.</div></div>
@@ -303,12 +327,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-05-26 23:38 UTC &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-05-27 06:46 UTC &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26"], "messages": [12, 14], "links": [12, 13]};
+const trendData = {"labels": ["05-25", "05-26", "05-27"], "messages": [12, 14, 23], "links": [12, 13, 22]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
