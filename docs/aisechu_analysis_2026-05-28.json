@@ -1,0 +1,183 @@
+{
+  "categories": [
+    {
+      "name": "LLM Agent Security Research",
+      "emoji": "\ud83d\udd2c",
+      "summary": "A strong cluster of academic research focused on securing LLM agents against prompt injection and unauthorized tool use. Multiple papers introduce formal frameworks for evaluating agent security, including benchmarking suites and graph-based defense mechanisms that compare execution provenance against authorized intent.",
+      "key_items": [
+        {
+          "title": "AgentSecBench: New Benchmark for LLM Agent Security",
+          "detail": "Introduces a formal framework treating agent security as intent-to-execution noninterference across three security games: instruction integrity, retrieval confidentiality, and capability integrity.",
+          "url": "https://arxiv.org/abs/2605.26269",
+          "tags": [
+            "benchmark",
+            "prompt-injection",
+            "research"
+          ]
+        },
+        {
+          "title": "Prompt Injection Detection Is Regime-Dependent",
+          "detail": "Demonstrates that detectors performing well on ranking metrics can fail under real deployment constraints with low false-positive requirements; no single detector dominates across all regimes.",
+          "url": "https://arxiv.org/abs/2605.26999",
+          "tags": [
+            "prompt-injection",
+            "detection",
+            "evaluation"
+          ]
+        },
+        {
+          "title": "AuthGraph: Dual-Graph Defense Against Indirect Prompt Injection",
+          "detail": "Proposes detecting attacks by comparing runtime provenance graphs against clean authorization graphs derived from user intent, flagging when untrusted data influences privileged actions.",
+          "url": "https://arxiv.org/abs/2605.26497",
+          "tags": [
+            "defense",
+            "agent-security",
+            "provenance"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI Supply Chain & Tool Attacks",
+      "emoji": "\u26d3\ufe0f",
+      "summary": "Emerging attack vectors targeting AI coding agents through supply chain manipulation. The SymJack attack demonstrates how symlink-based repository tricks can coerce agents into installing malicious MCP servers, highlighting the need for strict server allowlisting and out-of-band approval workflows.",
+      "key_items": [
+        {
+          "title": "SymJack: AI Coding Agents as Supply Chain Attack Vectors",
+          "detail": "A symlink-based attack where malicious repo content tricks coding agents into installing attacker-controlled MCP servers, turning development tools into supply chain compromise mechanisms.",
+          "url": "https://securityweek.com/symjack-attack-turns-ai-coding-agents-into-supply-chain-attack-delivery-systems",
+          "tags": [
+            "supply-chain",
+            "MCP",
+            "coding-agents"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Defence & Policy Reports",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "The Alan Turing Institute released a report on resilient defence AI, emphasizing sustainability and operational effectiveness by design. This signals growing institutional focus on building robust AI systems for critical defence applications.",
+      "key_items": [
+        {
+          "title": "Alan Turing Institute: Resilient Defence AI Report",
+          "detail": "Comprehensive report addressing how to build sustainable and operationally effective AI capabilities for defence contexts with resilience baked in by design.",
+          "url": "https://www.turing.ac.uk/sites/default/files/2026-05/the_alan_turing_institute_daic_-_resilient_defence_ai_report.pdf",
+          "tags": [
+            "defence",
+            "policy",
+            "resilience"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Tools & Resources",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "New tooling shared for vulnerability management and malware analysis. A CVE-focused MCP server enables AI agents to query vulnerability databases, while MalShark offers AI-powered malware traffic analysis with real-world benchmarking.",
+      "key_items": [
+        {
+          "title": "CVE MCP Server",
+          "detail": "An MCP server implementation enabling AI agents to query and interact with CVE vulnerability data programmatically.",
+          "url": "https://github.com/mukul975/cve-mcp-server",
+          "tags": [
+            "MCP",
+            "CVE",
+            "tooling"
+          ]
+        },
+        {
+          "title": "MalShark: AI-Powered Malware Traffic Analysis",
+          "detail": "AI-based malware traffic analysis tool benchmarked against real malware samples, offering practical detection capabilities.",
+          "url": "http://mohitdabas.in/blog/malshark-ai-powered-malware-traffic-analysis-benchmarked-against-real-malware/",
+          "tags": [
+            "malware",
+            "traffic-analysis",
+            "detection"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Security Vulnerabilities",
+      "emoji": "\ud83d\udc1b",
+      "summary": "A writeup on Strix AI Pentester reveals remote code execution vulnerabilities in AI-powered security tools themselves, a concerning reminder that AI security products can introduce new attack surfaces.",
+      "key_items": [
+        {
+          "title": "Strix AI Pentester RCE Vulnerability",
+          "detail": "Technical writeup detailing remote code execution vulnerabilities discovered in Strix, an AI-powered pentesting tool.",
+          "url": "https://baldur.dk/blog/strix-ai-pentester-rce.html",
+          "tags": [
+            "RCE",
+            "vulnerability",
+            "AI-tools"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Community & Channel Updates",
+      "emoji": "\ud83d\udce2",
+      "summary": "AISecHub reached 9,000 followers on X, reflecting growing community interest in the intersection of AI and cybersecurity topics.",
+      "key_items": [
+        {
+          "title": "AISecHub Reaches 9K Followers on X",
+          "detail": "Milestone announcement celebrating community growth for the AI security intelligence channel.",
+          "url": "https://x.com/aisechub",
+          "tags": [
+            "community",
+            "milestone"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Prompt injection defense research is maturing beyond simple detection toward formal security frameworks that model agent behavior as information-flow problems with measurable noninterference properties.",
+    "MCP (Model Context Protocol) servers are emerging as both a critical integration point and a high-value attack surface\u2014expect more research on securing agent-to-tool communication channels.",
+    "The gap between academic detector performance and real-world deployment constraints (especially low false-positive requirements) remains a significant challenge for production AI security systems.",
+    "AI security tools themselves are becoming attack targets, creating a meta-security problem where the tools meant to protect systems can introduce new vulnerabilities.",
+    "Institutional interest in defence AI resilience signals that reliability and robustness are becoming first-class design requirements rather than afterthoughts."
+  ],
+  "stats": {
+    "total_links": 10,
+    "most_linked_domains": [
+      "arxiv.org",
+      "turing.ac.uk",
+      "securityweek.com"
+    ],
+    "activity_by_hour": {
+      "00": 2,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 5,
+      "16": 0,
+      "17": 1,
+      "18": 0,
+      "19": 0,
+      "20": 1,
+      "21": 0,
+      "22": 1,
+      "23": 0
+    }
+  },
+  "total_messages": 10
+}
