@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">6</span>
+    <span class="stat-value">7</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">74</span>
+    <span class="stat-value">82</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">73</span>
+    <span class="stat-value">82</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">6</span>
+    <span class="stat-value">7</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -242,7 +242,7 @@
 <main class="main">
 
   
-  <div class="section-title">📈 Activity Trend (last 6 days)</div>
+  <div class="section-title">📈 Activity Trend (last 7 days)</div>
   <div class="chart-card">
     <h3>Messages &amp; Links per Day</h3>
     <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-05-30.html">
+    <a class="digest-card today" href="aisechu_digest_2026-05-31.html">
+      <div>
+        <div class="digest-date">
+          Sunday, May 31 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">Cybersecurity Vulnerabilities & CVEs</span><span class="cat-tag">Security Tools & Releases</span><span class="cat-tag">Tutorials & Learning Resources</span><span class="cat-tag">Miscellaneous</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">AI agent frameworks are exhibiting recurring vulnerability patterns around authentication bypass and trust boundary failures—MCP handlers and A2A protocols require security-first design.</div><div class="digest-insight-item">Three CVEs in a single day targeting AI tooling suggests security researchers are increasingly auditing the emerging AI agent infrastructure stack.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">8</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">9</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-05-30.html">
       <div>
         <div class="digest-date">
           Saturday, May 30 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI Agent Security Research</span><span class="cat-tag">Prompt Injection Research</span><span class="cat-tag">Cybersecurity Vulnerabilities & CVEs</span><span class="cat-tag">Zero Trust Architecture</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Agent-level security is maturing rapidly: multiple papers address retrieval, tool authorization, and runtime controls as distinct attack surfaces requiring purpose-built defenses rather than prompt-level mitigations alone.</div><div class="digest-insight-item">Real-world prompt injection is more subtle than lab examples—the ~1% prevalence in resumes using evasive phrasing suggests detection systems need semantic understanding, not just pattern matching.</div></div>
@@ -399,12 +423,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-05-30 16:10 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-05-31 17:38 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30"], "messages": [12, 14, 23, 10, 7, 8], "links": [12, 13, 22, 10, 9, 7]};
+const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31"], "messages": [12, 14, 23, 10, 7, 8, 8], "links": [12, 13, 22, 10, 9, 7, 9]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
