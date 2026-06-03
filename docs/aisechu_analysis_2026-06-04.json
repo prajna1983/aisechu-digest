@@ -1,0 +1,178 @@
+{
+  "categories": [
+    {
+      "name": "AI Agent Security & Vulnerabilities",
+      "emoji": "\ud83e\udd16",
+      "summary": "A significant focus this period centers on the security posture of agentic AI systems. Research reveals that only 11% of production agents meet basic security standards, with many vulnerable to hostile document takeover attacks. Critical vulnerabilities in AI-powered development tools like Kiro IDE demonstrate how file-write capabilities can be escalated to command execution, while supply-chain prompt injection attacks via protestware highlight the need to treat all external inputs as untrusted data.",
+      "key_items": [
+        {
+          "title": "Only 11% of production AI agents pass security assessment",
+          "detail": "Assessment of 100 production agents shows widespread vulnerability to hostile document takeover where untrusted content is processed as instructions under standing credentials.",
+          "url": "https://helpnetsecurity.com/2026/06/03/research-ai-agent-security-capability",
+          "tags": [
+            "AgentSecurity",
+            "LLMSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "CVE-2026-10591: Kiro IDE file-write path traversal vulnerability",
+          "detail": "AWS security bulletin details how untrusted instructions can exploit file-write tools to target auto-executed workspace files, turning write capabilities into command execution.",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-037-aws",
+          "tags": [
+            "CVE",
+            "AppSec",
+            "AgenticIDE"
+          ]
+        },
+        {
+          "title": "Protestware in jqwik 1.10.0 uses prompt injection",
+          "detail": "Supply-chain attack uses terminal escape codes to hide malicious instructions from human reviewers while remaining visible to agentic coding tools that ingest logs.",
+          "url": "https://snyk.io/blog/protestware-open-source-maintainer-qwik-1-10-0-prompt-injection",
+          "tags": [
+            "PromptInjection",
+            "SupplyChain",
+            "Protestware"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "AI Governance & Policy",
+      "emoji": "\u2696\ufe0f",
+      "summary": "Governance frameworks and regulatory actions dominated policy discussions. OWASP released version 2.01 of their State of Agentic AI Security and Governance report, providing control-mapping references for translating responsible agent goals into concrete policies. Meanwhile, Florida initiated legal action against OpenAI alleging concealment of ChatGPT risks from users, signaling increased regulatory scrutiny of AI companies.",
+      "key_items": [
+        {
+          "title": "OWASP State of Agentic AI Security and Governance v2.01",
+          "detail": "Comprehensive control-mapping reference tying agent security concerns to governance frameworks, helping teams develop concrete policies and assurance artifacts.",
+          "url": "https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance",
+          "tags": [
+            "Governance",
+            "OWASP",
+            "Framework"
+          ]
+        },
+        {
+          "title": "Florida sues OpenAI over alleged risk concealment",
+          "detail": "State lawsuit claims OpenAI and CEO Sam Altman hid ChatGPT risks from users, representing significant regulatory escalation against major AI providers.",
+          "url": "https://www.pbs.org/newshour/nation/florida-sues-openai-and-ceo-sam-altman-claiming-company-hid-chatgpt-risks-from-users",
+          "tags": [
+            "Litigation",
+            "OpenAI",
+            "Regulation"
+          ]
+        },
+        {
+          "title": "White House executive action on AI innovation and security",
+          "detail": "New presidential action addresses promoting advanced AI innovation while balancing security considerations at the federal level.",
+          "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+          "tags": [
+            "Policy",
+            "WhiteHouse",
+            "Federal"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "Supply Chain & Token Security",
+      "emoji": "\ud83d\udd17",
+      "summary": "Multiple reports highlighted supply chain attack vectors targeting developer workflows. Research on Claude Code poisoning demonstrates how a single GitHub issue can compromise the broader supply chain, while separate analysis detailed GitHub token stealing techniques. These findings underscore the critical importance of securing development tooling and credential management.",
+      "key_items": [
+        {
+          "title": "Poisoning Claude Code via GitHub issues",
+          "detail": "Research shows how a single malicious GitHub issue can be leveraged to break supply chain integrity through Claude Code poisoning attacks.",
+          "url": "https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain/",
+          "tags": [
+            "SupplyChain",
+            "ClaudeCode",
+            "GitHub"
+          ]
+        },
+        {
+          "title": "GitHub token stealing techniques exposed",
+          "detail": "Technical deep-dive into methods attackers use to exfiltrate GitHub tokens from developer environments and CI/CD pipelines.",
+          "url": "https://blog.ammaraskar.com/github-token-stealing/",
+          "tags": [
+            "TokenSecurity",
+            "GitHub",
+            "CredentialTheft"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Tools & Methodologies",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "Practical security engineering content included guidance on building AI-based vulnerability detection workflows and analysis of skill distribution challenges in the security industry. These resources provide actionable frameworks for teams looking to integrate AI into their security operations while acknowledging current limitations.",
+      "key_items": [
+        {
+          "title": "Building AI-based vulnerability detection workflows",
+          "detail": "Technical blog post from Cykor detailing practical approaches to implementing AI-powered vulnerability detection in security workflows.",
+          "url": "https://blog.cykor.kr/2026/06/Building-an-AI-Based-Vulnerability-Detection-Workflow",
+          "tags": [
+            "VulnDetection",
+            "AI",
+            "Workflow"
+          ]
+        },
+        {
+          "title": "Trail of Bits on security skill distribution challenges",
+          "detail": "Analysis examining the current state of skill distribution in security engineering and its implications for the industry.",
+          "url": "https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/",
+          "tags": [
+            "TrailOfBits",
+            "Industry",
+            "Skills"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "Agentic AI systems face a systemic security crisis with only 11% passing basic security assessments, indicating the industry is deploying agents far faster than security practices can mature.",
+    "Supply chain attacks are increasingly targeting AI-assisted development tools, exploiting the trust boundary between human-readable and machine-processed content through prompt injection techniques.",
+    "Regulatory pressure on AI companies is intensifying across multiple fronts, from state-level litigation against OpenAI to new federal executive actions balancing innovation with security mandates.",
+    "The core defensive principle emerging across multiple reports: treat all retrieved, browsed, or logged content as untrusted data, and enforce tool-call policies outside the model itself.",
+    "Developer tooling represents a high-value attack surface as IDEs and coding assistants gain agentic capabilities with file-write and command execution privileges."
+  ],
+  "stats": {
+    "total_links": 11,
+    "most_linked_domains": [
+      "snyk.io",
+      "helpnetsecurity.com",
+      "genai.owasp.org"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 1,
+      "03": 0,
+      "04": 1,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 1,
+      "12": 0,
+      "13": 0,
+      "14": 2,
+      "15": 6,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 2,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 13
+}
