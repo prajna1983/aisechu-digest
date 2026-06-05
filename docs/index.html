@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">9</span>
+    <span class="stat-value">10</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">95</span>
+    <span class="stat-value">103</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">93</span>
+    <span class="stat-value">100</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">11</span>
+    <span class="stat-value">12</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -242,7 +242,7 @@
 <main class="main">
 
   
-  <div class="section-title">📈 Activity Trend (last 9 days)</div>
+  <div class="section-title">📈 Activity Trend (last 10 days)</div>
   <div class="chart-card">
     <h3>Messages &amp; Links per Day</h3>
     <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-06-04.html">
+    <a class="digest-card today" href="aisechu_digest_2026-06-05.html">
+      <div>
+        <div class="digest-date">
+          Friday, June 5 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">AI-Powered Vulnerability Research</span><span class="cat-tag">Critical AI Tool Vulnerabilities</span><span class="cat-tag">AI Threat Intelligence & MITRE Framework</span><span class="cat-tag">AI Agent Security Concerns</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">AI systems are transitioning from vulnerability research tools to vulnerability sources themselves, with critical flaws in AI tooling (Gemini CLI CVSS 10) emerging alongside AI-discovered bugs in traditional software (Redis CVE).</div><div class="digest-insight-item">The security industry is formalizing AI threat understanding through frameworks like MITRE ATT&CK mapping, signaling maturation of AI threat intelligence practices.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">8</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">7</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-06-04.html">
       <div>
         <div class="digest-date">
           Thursday, June 4 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI Agent Security & Vulnerabilities</span><span class="cat-tag">Prompt Injection & Supply Chain Attacks</span><span class="cat-tag">AI Governance & Frameworks</span><span class="cat-tag">Industry News & Legal Developments</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Agentic AI security is reaching a critical inflection point—with only 11% of production agents passing security assessments, the gap between deployment velocity and security maturity is alarming.</div><div class="digest-insight-item">Supply chain attacks are evolving to specifically target AI coding assistants, using techniques like terminal escape codes that exploit the difference between human and machine parsing of output.</div></div>
@@ -471,12 +495,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-06-04 08:27 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-06-05 08:00 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10]};
+const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
