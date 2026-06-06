@@ -1,0 +1,175 @@
+{
+  "categories": [
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Multiple critical CVEs emerged today affecting AI development tools and infrastructure. AWS disclosed vulnerabilities in both Amazon Q Developer VS Code extension and Kiro GitLab tools, while a significant authorization bypass was found in NocoDB's MCP implementation. These vulnerabilities highlight the expanding attack surface of AI-assisted development environments.",
+      "key_items": [
+        {
+          "title": "Malicious Code in Amazon Q Developer VS Code Extension (CVE-2025-8217)",
+          "detail": "AWS confirmed malicious code was distributed in v1.84.0, though a syntax error prevented execution and no customer environments were impacted.",
+          "url": "https://aws.amazon.com/security/security-bulletins/aws-2025-015",
+          "tags": [
+            "AWS",
+            "VSCode",
+            "supply-chain"
+          ]
+        },
+        {
+          "title": "Command Injection in Kiro GitLab Merge Request Helper (CVE-2026-0830)",
+          "detail": "Maliciously crafted workspace folder names can trigger command injection; users must upgrade to Kiro 0.6.18 or later.",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-001-aws",
+          "tags": [
+            "AWS",
+            "Kiro",
+            "command-injection"
+          ]
+        },
+        {
+          "title": "NocoDB MCP readAttachment Missing Ownership Check (CVE-2026-47388)",
+          "detail": "Authorization flaw allows low-privilege MCP token holders to read attachments across bases and workspaces if they know the file path.",
+          "url": "https://github.com/advisories/GHSA-xxpj-q764-9r6q",
+          "tags": [
+            "MCP",
+            "authorization",
+            "data-exposure"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI Agent Security Research",
+      "emoji": "\ud83e\udd16",
+      "summary": "Significant research dropped on AI agent security risks, with both academic and industry perspectives. A new paper details WebMCP tool surface poisoning attacks that can manipulate agent behavior at runtime, while CSA's assessment of 100 production agents reveals widespread security failures. The theme is clear: agent capabilities are outpacing their guardrails.",
+      "key_items": [
+        {
+          "title": "WebMCP Tool Surface Poisoning Attack Research",
+          "detail": "Paper reveals how third-party scripts can inject or alter tools mid-session through registration races and metadata poisoning, fundamentally shifting trust boundaries from prompts to tool lifecycles.",
+          "url": "https://arxiv.org/abs/2606.06387",
+          "tags": [
+            "MCP",
+            "tool-injection",
+            "research"
+          ]
+        },
+        {
+          "title": "CSA 'Lethal Trifecta' Agent Security Assessment",
+          "detail": "Cloud Security Alliance found most of 100 evaluated production AI agents failed baseline security benchmarks, emphasizing need for end-to-end tool use and trust-boundary testing.",
+          "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-agent-lethal-trifecta-capability-securi",
+          "tags": [
+            "CSA",
+            "agent-security",
+            "benchmarks"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udd27",
+      "summary": "Several security-focused repositories and tools were shared today, including Anthropic's reference harness for defending code and a new tool from TryNullSec. These releases reflect growing investment in practical AI security tooling.",
+      "key_items": [
+        {
+          "title": "Anthropic Defending Code Reference Harness",
+          "detail": "Anthropic released a reference implementation for code defense mechanisms, providing a framework for security testing.",
+          "url": "https://github.com/anthropics/defending-code-reference-harness",
+          "tags": [
+            "Anthropic",
+            "defense",
+            "open-source"
+          ]
+        },
+        {
+          "title": "NullSec S1 Security Tool",
+          "detail": "New security tool release from TryNullSec available on GitHub.",
+          "url": "https://github.com/trynullsec/nullsec-s1",
+          "tags": [
+            "security-tool",
+            "open-source"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\u26a0\ufe0f",
+      "summary": "Open source malware tracking reports indicate the Miasma campaign has expanded to Azure infrastructure, representing a notable evolution in cloud-targeting threats.",
+      "key_items": [
+        {
+          "title": "Miasma Malware Campaign Reaches Azure",
+          "detail": "The Miasma malware operation has expanded its targeting to include Microsoft Azure environments.",
+          "url": "https://opensourcemalware.com/blog/miasma-reaches-azure",
+          "tags": [
+            "malware",
+            "Azure",
+            "cloud-security"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Resources",
+      "emoji": "\ud83d\udcf0",
+      "summary": "The monthly AI Security Newsletter for May 2026 was published and pinned, consolidating research, tools, events, and resources for the community.",
+      "key_items": [
+        {
+          "title": "AI Security Newsletter - May 2026",
+          "detail": "Comprehensive monthly digest covering AI security research, insights, reports, upcoming events, tools, and learning resources.",
+          "url": "https://www.linkedin.com/pulse/ai-security-newsletter-may-2026-tal-eliyahu-8byke",
+          "tags": [
+            "newsletter",
+            "digest",
+            "resources"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "MCP (Model Context Protocol) is emerging as a critical attack surface, with both CVEs and academic research highlighting tool injection and authorization bypass risks in agent architectures.",
+    "AI development tooling (VS Code extensions, GitLab integrations) is becoming a supply chain attack vector, with multiple AWS-related CVEs disclosed in a single day.",
+    "Industry assessments confirm a capability-security gap: most production AI agents have real-world capabilities but lack proportionate security guardrails.",
+    "The trust model for AI agents is shifting from prompt-level security to tool lifecycle and metadata integrity\u2014a fundamental architectural concern.",
+    "Cloud infrastructure (AWS, Azure) remains a high-value target, with both AI tool vulnerabilities and traditional malware campaigns converging on these platforms."
+  ],
+  "stats": {
+    "total_links": 11,
+    "most_linked_domains": [
+      "aws.amazon.com",
+      "github.com",
+      "arxiv.org"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 4,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 5,
+      "15": 1,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 4,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 15
+}

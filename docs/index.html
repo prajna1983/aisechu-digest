@@ -222,15 +222,15 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">11</span>
+    <span class="stat-value">12</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">119</span>
+    <span class="stat-value">134</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">108</span>
+    <span class="stat-value">119</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
@@ -242,7 +242,7 @@
 <main class="main">
 
   
-  <div class="section-title">📈 Activity Trend (last 11 days)</div>
+  <div class="section-title">📈 Activity Trend (last 12 days)</div>
   <div class="chart-card">
     <h3>Messages &amp; Links per Day</h3>
     <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-06-06.html">
+    <a class="digest-card today" href="aisechu_digest_2026-06-07.html">
+      <div>
+        <div class="digest-date">
+          Sunday, June 7 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">Cybersecurity Vulnerabilities & CVEs</span><span class="cat-tag">AI Agent Security Research</span><span class="cat-tag">Security Tools & Releases</span><span class="cat-tag">Threat Intelligence</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">MCP (Model Context Protocol) is emerging as a critical attack surface, with both CVEs and academic research highlighting tool injection and authorization bypass risks in agent architectures.</div><div class="digest-insight-item">AI development tooling (VS Code extensions, GitLab integrations) is becoming a supply chain attack vector, with multiple AWS-related CVEs disclosed in a single day.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">15</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">11</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-06-06.html">
       <div>
         <div class="digest-date">
           Saturday, June 6 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI Supply Chain Security</span><span class="cat-tag">Agentic AI Security Standards</span><span class="cat-tag">Vulnerability Research & Exploitation</span><span class="cat-tag">AI Red Teaming & Failure Modes</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Agentic AI security is rapidly maturing with both Microsoft's red team learnings and CSA's MCP security standards addressing the unique challenges of autonomous AI systems and multi-agent architectures.</div><div class="digest-insight-item">Supply chain attacks are increasingly targeting AI-specific tooling, as demonstrated by the ai-sdk-ollama compromise, indicating threat actors recognize the high-value nature of AI developer environments.</div></div>
@@ -519,12 +543,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-06-06 08:01 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-06-07 07:58 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8]};
+const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
