@@ -1,0 +1,118 @@
+{
+  "categories": [
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Critical research from the Cloud Security Alliance highlights prompt injection vulnerabilities in agentic CI/CD workflows, specifically targeting GitHub Actions with Claude Code integration. This represents an emerging attack vector where trust boundary failures allow external actors to inject malicious instructions into AI agent workflows, expanding the traditional supply chain threat model.",
+      "key_items": [
+        {
+          "title": "Claude Code GitHub Action Vulnerable to Prompt Injection",
+          "detail": "CSA research note documents how CI/CD pipelines treating untrusted GitHub App actors as trusted create prompt injection attack surfaces, requiring permission checks and actor validation as defensive measures.",
+          "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-claude-code-github-action-prompt-injection",
+          "tags": [
+            "PromptInjection",
+            "LLMSecurity",
+            "SupplyChain",
+            "GitHubActions"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udd27",
+      "summary": "Lenny Zeltser published guidance on leveraging AI for malware analysis within the REMnux distribution, continuing the trend of integrating AI capabilities into established security toolchains for enhanced threat analysis workflows.",
+      "key_items": [
+        {
+          "title": "AI-Assisted Malware Analysis with REMnux",
+          "detail": "New resource covering the integration of AI tools into REMnux for streamlining malware analysis processes.",
+          "url": "https://zeltser.com/ai-malware-analysis-remnux",
+          "tags": [
+            "MalwareAnalysis",
+            "REMnux",
+            "AITools"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83d\udcf0",
+      "summary": "Practical guidance emerged on virtual CISO service pricing models, reflecting the continued growth of fractional security leadership services as organizations seek cost-effective ways to maintain security governance without full-time executive hires.",
+      "key_items": [
+        {
+          "title": "Virtual CISO Cost Breakdown Guide",
+          "detail": "Comprehensive guide detailing pricing structures and cost considerations for organizations evaluating virtual CISO services.",
+          "url": "https://fractionalciso.com/a-guide-to-virtual-ciso-costs/",
+          "tags": [
+            "vCISO",
+            "SecurityLeadership",
+            "CostAnalysis"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Tutorials & Learning Resources",
+      "emoji": "\ud83d\udcda",
+      "summary": "A curated roundup of May 2026 cybersecurity conference recordings showcases diverse learning opportunities spanning vulnerability research, offensive security, open source security foundations, and SOC operations. Notable events include VulnCon, OffensiveCon, and Black Hat Europe.",
+      "key_items": [
+        {
+          "title": "10 Cybersecurity Conference Playlists from May 2026",
+          "detail": "Compilation featuring CVE/FIRST VulnCon, Nullcon Goa, OffensiveCon26, BSides events, OpenSSF Community Day, SANS Secure Your Fortress, Antisyphon SOC Summit, and CyberWarCon recordings.",
+          "url": "https://awesomecybersecurityconferences.com/conference/cve-first-vulncon-2026",
+          "tags": [
+            "Conferences",
+            "Training",
+            "CommunityEvents"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Prompt injection is evolving beyond direct LLM attacks into CI/CD supply chain compromises, with agentic workflows creating new trust boundary vulnerabilities that traditional security models don't address.",
+    "The security community continues integrating AI capabilities into defensive tooling, with established platforms like REMnux adding AI-assisted analysis features.",
+    "Conference content aggregation indicates sustained community investment in knowledge sharing across offensive security, vulnerability management, and SOC operations domains.",
+    "Fractional security leadership services remain a growing market segment as organizations balance security governance needs against budget constraints."
+  ],
+  "stats": {
+    "total_links": 14,
+    "most_linked_domains": [
+      "awesomecybersecurityconferences.com",
+      "labs.cloudsecurityalliance.org",
+      "fractionalciso.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 2,
+      "08": 1,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 1,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 4
+}
