@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">14</span>
+    <span class="stat-value">15</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">147</span>
+    <span class="stat-value">161</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">140</span>
+    <span class="stat-value">154</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">15</span>
+    <span class="stat-value">17</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -242,7 +242,7 @@
 <main class="main">
 
   
-  <div class="section-title">📈 Activity Trend (last 14 days)</div>
+  <div class="section-title">📈 Activity Trend (last 15 days)</div>
   <div class="chart-card">
     <h3>Messages &amp; Links per Day</h3>
     <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-06-09.html">
+    <a class="digest-card today" href="aisechu_digest_2026-06-10.html">
+      <div>
+        <div class="digest-date">
+          Wednesday, June 10 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">AI Agent Security Research</span><span class="cat-tag">AI-Powered Offensive Capabilities</span><span class="cat-tag">Cybersecurity Vulnerabilities & CVEs</span><span class="cat-tag">AI Supply Chain & Infrastructure Security</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">AI-generated exploit capabilities have reached a critical inflection point where full-chain privilege escalations cost only ~$2,000, fundamentally democratizing offensive security capabilities previously limited to well-resourced threat actors.</div><div class="digest-insight-item">Agent security research is maturing rapidly with focus shifting from simple prompt injection to complex multi-stage attacks exploiting provenance gaps, suggesting current guardrails may be insufficient for production agentic systems.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">14</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">14</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-06-09.html">
       <div>
         <div class="digest-date">
           Tuesday, June 9 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI & ML Security</span><span class="cat-tag">Security Tools & Releases</span><span class="cat-tag">Industry News & Policy</span><span class="cat-tag">Tutorials & Learning Resources</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Prompt injection is evolving beyond direct LLM attacks into CI/CD supply chain compromises, with agentic workflows creating new trust boundary vulnerabilities that traditional security models don't address.</div><div class="digest-insight-item">The security community continues integrating AI capabilities into defensive tooling, with established platforms like REMnux adding AI-assisted analysis features.</div></div>
@@ -591,12 +615,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-06-09 07:59 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-06-10 08:06 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14]};
+const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {

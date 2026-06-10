@@ -1,0 +1,231 @@
+{
+  "categories": [
+    {
+      "name": "AI Agent Security Research",
+      "emoji": "\ud83e\udd16",
+      "summary": "Multiple research papers emerged focusing on novel attack vectors against tool-using LLM agents. Key themes include provenance gaps in multi-step agent workflows, reward hacking in benchmarks, and an emerging frontier of brain-computer interface prompt injection attacks. These papers highlight the growing complexity of securing agentic AI systems.",
+      "key_items": [
+        {
+          "title": "Context-Fractured Decomposition Attacks on LLM Agents",
+          "detail": "New attack exploits provenance gaps where individually benign tool actions create artifacts that enable cross-context jailbreaks when recomposed in later agent stages.",
+          "url": "https://arxiv.org/abs/2606.09084",
+          "tags": [
+            "AgentSecurity",
+            "LLMSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "Adversarial Hacker-Fixer Loops for Agent Benchmarks",
+          "detail": "Three-agent iterative loop reduces reward hacking exploit success from 62% to 0% on KernelBench attacks through continuous verifier patching.",
+          "url": "https://arxiv.org/abs/2606.08960",
+          "tags": [
+            "AgentSecurity",
+            "Benchmarks",
+            "Research"
+          ]
+        },
+        {
+          "title": "Brain-Prompt Injection via BCI-to-LLM Agents",
+          "detail": "Novel attack surface where neural signal perturbations can flip routed tool actions in brain-computer interface systems while evading EEG/text monitors.",
+          "url": "https://arxiv.org/abs/2606.09315",
+          "tags": [
+            "PromptInjection",
+            "BCI",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI-Powered Offensive Capabilities",
+      "emoji": "\u2694\ufe0f",
+      "summary": "Anthropic's red team published significant findings on AI-generated exploits, demonstrating that their Mythos Preview model can produce full-chain privilege escalation exploits for approximately $2,000 per exploit. This dramatically lowers the barrier to entry for N-day attackers and represents a paradigm shift in offensive security economics.",
+      "key_items": [
+        {
+          "title": "Mythos Preview Generates Full-Chain Exploits for ~$2K Each",
+          "detail": "Anthropic's red team reports their model produced eight distinct privilege escalation exploits at an average cost of $2,000 each, expanding the pool of capable N-day attackers dramatically.",
+          "url": "https://red.anthropic.com/2026/n-days/",
+          "tags": [
+            "ExploitGeneration",
+            "Anthropic",
+            "RedTeam"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udd13",
+      "summary": "A critical LiteLLM vulnerability was added to CISA's Known Exploited Vulnerabilities catalog, indicating active exploitation in the wild. The command injection flaw allows authenticated users to achieve host-level command execution, representing a serious risk for organizations using this popular LLM proxy library.",
+      "key_items": [
+        {
+          "title": "LiteLLM CVE-2026-42271 Added to CISA KEV",
+          "detail": "Command injection vulnerability in LiteLLM allows authenticated input to reach OS command execution paths, with confirmed active exploitation.",
+          "url": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
+          "tags": [
+            "CVE",
+            "CISA",
+            "LiteLLM",
+            "ActiveExploitation"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Supply Chain & Infrastructure Security",
+      "emoji": "\ud83d\udd17",
+      "summary": "The Cloud Security Alliance released a report highlighting opaque dependencies in AI data collection infrastructure. Organizations using residential proxy and scraping SDKs for model training may unknowingly route traffic through third-party consumer devices, creating significant governance blind spots.",
+      "key_items": [
+        {
+          "title": "AI Scraping SDKs as Enterprise Attack Vectors",
+          "detail": "CSA report reveals how residential proxy infrastructure used for AI data collection creates supply-chain trust boundary issues and governance blind spots for enterprise security teams.",
+          "url": "https://labs.cloudsecurityalliance.org/research/ai-data-supply-chain-residential-proxy-risk-v1-0-csa-styled",
+          "tags": [
+            "AISupplyChain",
+            "CSA",
+            "DataGovernance"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Security Incidents & News",
+      "emoji": "\ud83d\udcf0",
+      "summary": "Multiple high-profile incidents emerged including a supply chain attack targeting Claude and Gemini users through compromised Microsoft infrastructure, and a staggering $500 million accidental spend by an unnamed company due to missing usage limits on Claude API access.",
+      "key_items": [
+        {
+          "title": "Microsoft Compromised to Deliver Malware to AI Users",
+          "detail": "Attackers leveraged compromised Microsoft infrastructure to deliver malware specifically targeting Claude and Gemini users.",
+          "url": "https://www.404media.co/microsoft-hacked-to-deliver-malware-to-claude-and-gemini-users/",
+          "tags": [
+            "SupplyChain",
+            "Malware",
+            "Incident"
+          ]
+        },
+        {
+          "title": "Company Accidentally Spends $500M on Claude in One Month",
+          "detail": "Unnamed company failed to implement usage limits on employee API licenses, resulting in a half-billion dollar bill from Anthropic.",
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/mystery-company-accidentally-blew-usd500-million-on-claude-in-a-single-month-failed-to-put-usage-limit-on-licenses-for-employees",
+          "tags": [
+            "CostManagement",
+            "Governance",
+            "Anthropic"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Safety & Identity Research",
+      "emoji": "\ud83c\udfad",
+      "summary": "New research examines whether AI systems accurately disclose their identity when directly questioned. This work has implications for transparency requirements and potential deception concerns in deployed AI systems.",
+      "key_items": [
+        {
+          "title": "Do AI Systems Disclose Their Identity When Asked?",
+          "detail": "Research paper investigating AI identity disclosure behaviors and their implications for transparency and trust.",
+          "url": "https://arxiv.org/pdf/2606.00168",
+          "tags": [
+            "AIIdentity",
+            "Transparency",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry Standards & Policy",
+      "emoji": "\ud83d\udccb",
+      "summary": "NIST released mathematical proofs supporting the transition to continuous monitoring and update frameworks, signaling a shift from point-in-time assessments to ongoing security validation. Zcash also announced the closure of their vulnerability bounty program.",
+      "key_items": [
+        {
+          "title": "NIST Mathematical Proof for Continuous Monitoring",
+          "detail": "NIST provides mathematical foundations supporting the transition from periodic assessments to continuous monitoring and update security models.",
+          "url": "https://www.nist.gov/news-events/news/2026/06/nist-mathematical-proof-supports-transition-continuous-monitor-and-update",
+          "tags": [
+            "NIST",
+            "ContinuousMonitoring",
+            "Standards"
+          ]
+        },
+        {
+          "title": "Zcash Closes Vulnerability Bounty Program",
+          "detail": "Zcash Community Grants announces the closure of their vulnerability bounty program.",
+          "url": "https://forum.zcashcommunity.com/t/closing-the-zcg-vulnerability-bounty-program/55855",
+          "tags": [
+            "BugBounty",
+            "Zcash",
+            "Cryptocurrency"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Product Announcements",
+      "emoji": "\ud83d\ude80",
+      "summary": "Anthropic announced Claude Fable 5 and Mythos 5, continuing their model release cadence with both consumer and enterprise-focused capabilities.",
+      "key_items": [
+        {
+          "title": "Anthropic Announces Claude Fable 5 and Mythos 5",
+          "detail": "New model releases from Anthropic expanding their Claude product family.",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "tags": [
+            "Anthropic",
+            "ModelRelease",
+            "Claude"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "AI-generated exploit capabilities have reached a critical inflection point where full-chain privilege escalations cost only ~$2,000, fundamentally democratizing offensive security capabilities previously limited to well-resourced threat actors.",
+    "Agent security research is maturing rapidly with focus shifting from simple prompt injection to complex multi-stage attacks exploiting provenance gaps, suggesting current guardrails may be insufficient for production agentic systems.",
+    "Supply chain attacks are increasingly targeting AI infrastructure specifically, with both the Microsoft-to-AI-users malware campaign and the residential proxy SDK risks highlighting the unique attack surface of AI toolchains.",
+    "The LiteLLM CVE addition to CISA KEV indicates threat actors are actively targeting AI infrastructure components, making dependency management in LLM stacks a critical security priority.",
+    "Governance failures around AI usage limits resulted in a $500M incident, underscoring that API cost management is now a critical enterprise security and risk management concern."
+  ],
+  "stats": {
+    "total_links": 14,
+    "most_linked_domains": [
+      "arxiv.org",
+      "nist.gov",
+      "anthropic.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 2,
+      "06": 4,
+      "07": 5,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 14
+}
