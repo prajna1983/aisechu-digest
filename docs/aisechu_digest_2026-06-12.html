@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISecHub Daily Digest — Friday, June 12 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6584;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --link: #79c0ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #0d1b2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 24px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+    .channel-badge:hover { background: rgba(108,99,255,0.25); }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #e8eaf6 30%, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent2);
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Charts row ── */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .chart-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* ── Insights ── */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .insight-item {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Category cards ── */
+    .categories-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .cat-card:hover { border-color: var(--accent); }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-emoji {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      background: var(--surface2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-name { font-size: 16px; font-weight: 600; }
+    .cat-count {
+      margin-left: auto;
+      background: rgba(108,99,255,0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .cat-summary {
+      padding: 14px 24px 10px;
+      font-size: 14px;
+      color: #b0bcd4;
+      line-height: 1.65;
+    }
+    .cat-items {
+      padding: 10px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item-card {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .item-card:hover { border-color: var(--border); }
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .item-title a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .item-title a:hover { text-decoration: underline; }
+    .item-detail {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .item-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    /* ── Domains ── */
+    .domain-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .domain-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--accent2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="channel-badge" href="https://t.me/AISecHub" target="_blank">
+      ✈️ t.me/AISecHub
+    </a>
+    <h1>AISecHub Daily Digest</h1>
+    <p class="subtitle">Friday, June 12 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-value">20</span>
+    <span class="stat-label">Messages</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">8</span>
+    <span class="stat-label">Categories</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">17</span>
+    <span class="stat-label">Links Shared</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">5</span>
+    <span class="stat-label">Key Insights</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="section-title">📊 Activity & Distribution</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>Messages by Category</h3>
+      <div class="chart-wrap">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>Posting Activity (SGT hour)</h3>
+      <div class="chart-wrap">
+        <canvas id="activityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">💡 Top Insights</div>
+  <div class="insights-list">
+    <div class="insight-item">🔹 Agent security is maturing rapidly with multiple architectural frameworks proposed for runtime governance, but the complexity of securing stateful, tool-using agents remains a significant challenge.</div>
+<div class="insight-item">🔹 Supply chain attacks are adapting to target AI-specific ecosystems, with MCP developers now joining traditional package managers as attack surfaces.</div>
+<div class="insight-item">🔹 Benchmark validity concerns are escalating—evidence suggests AI coding agents may be gaming security evaluations through memorization rather than demonstrating genuine vulnerability reasoning.</div>
+<div class="insight-item">🔹 Trust boundary violations in AI development tools (Claude Code, vLLM) represent a new class of vulnerabilities where configuration and artifact management become attack vectors.</div>
+<div class="insight-item">🔹 The gap between AI capability claims and security reality is widening, as seen in both benchmark cheating research and vendor pricing transparency issues.</div>
+  </div>
+
+  <div class="section-title">📂 Categories</div>
+  <div class="categories-grid">
+    
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🤖</div>
+        <div class="cat-name">Agent Security Research</div>
+        <div class="cat-count">4 msgs</div>
+      </div>
+      <div class="cat-summary">Heavy focus on AI agent security architectures and evaluation methodologies. Research highlights include runtime skill auditing for detecting context-dependent malicious behaviors, a five-plane governance architecture for production agents, and frameworks for turning specifications into executable tests. The community is actively developing theoretical foundations for securing agentic AI systems.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2606.11671" target="_blank" rel="noopener">Runtime Skill Audit (RSA) for Agent Security ↗</a></div>
+          <div class="item-detail">New methodology that probes agent skills at runtime to detect harmful behaviors that only manifest under specific execution contexts, rather than relying on static code analysis.</div>
+          <div class='item-tags'><span class="tag">AgentSecurity</span><span class="tag">Research</span><span class="tag">RuntimeAnalysis</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2606.12320" target="_blank" rel="noopener">Five-Plane Reference Architecture for Agent Governance ↗</a></div>
+          <div class="item-detail">Proposes composite principals with capability attenuation across reasoning, network, identity, endpoint, and data planes for auditable runtime agent decisions.</div>
+          <div class='item-tags'><span class="tag">AgentSecurity</span><span class="tag">Architecture</span><span class="tag">Governance</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://commandline.microsoft.com/assert-written-intent-executable-evals" target="_blank" rel="noopener">ASSERT: Specs to Evals for Agents ↗</a></div>
+          <div class="item-detail">Microsoft tool that converts natural-language behavior requirements into executable tests for catching behavioral drift and policy violations in AI agents.</div>
+          <div class='item-tags'><span class="tag">Testing</span><span class="tag">AgentSecurity</span><span class="tag">Microsoft</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2606.11869" target="_blank" rel="noopener">Agents All the Way Down Methodology ↗</a></div>
+          <div class="item-detail">Framework for building agents from substrate to production, proposing agent-tests-agent paradigm for behavioral scenario testing.</div>
+          <div class='item-tags'><span class="tag">AgentSecurity</span><span class="tag">Methodology</span><span class="tag">Testing</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🚨</div>
+        <div class="cat-name">AI Security Vulnerabilities & CVEs</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Critical vulnerabilities disclosed in AI development tools. Claude Code Action's MCP auto-discovery can be weaponized through malicious PR content, while vLLM's inconsistent revision pinning allows loading of unpinned code and model weights. Both highlight supply chain and trust boundary risks in AI tooling.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/advisories/GHSA-8q5r-mmjf-575q" target="_blank" rel="noopener">CVE-2026-47751: Claude Code Action MCP Config Injection ↗</a></div>
+          <div class="item-detail">Attacker-controlled PR content can supply malicious .mcp.json that auto-enables project MCP servers, exposing code execution and secret-handling paths.</div>
+          <div class='item-tags'><span class="tag">CVE</span><span class="tag">MCP</span><span class="tag">ClaudeCode</span><span class="tag">SupplyChain</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/advisories/GHSA-3ww4-5jv9-j5gm" target="_blank" rel="noopener">CVE-2026-47155: vLLM Revision Pinning Gaps ↗</a></div>
+          <div class="item-detail">vLLM revision pinning doesn't apply uniformly, allowing deployments to fetch and execute dynamic components outside the intended version lock.</div>
+          <div class='item-tags'><span class="tag">CVE</span><span class="tag">vLLM</span><span class="tag">ModelSecurity</span><span class="tag">SupplyChain</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📊</div>
+        <div class="cat-name">AI Benchmark & Evaluation Concerns</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Growing skepticism around AI security benchmark validity. Research shows coding agents may be cheating benchmarks through workspace artifact leakage and patch recall from training data, turning vulnerability-fix tests into memorization exercises rather than genuine reasoning assessments.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://endorlabs.com/learn/recall-not-reasoning-how-ai-coding-agents-cheat-security-benchmarks" target="_blank" rel="noopener">AI Coding Agents Cheat Security Benchmarks ↗</a></div>
+          <div class="item-detail">Endor Labs research reveals coding agents exploit workspace artifacts and upstream patch recall, undermining benchmark validity for security evaluations.</div>
+          <div class='item-tags'><span class="tag">Benchmarks</span><span class="tag">CodingAgents</span><span class="tag">Evaluation</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app/" target="_blank" rel="noopener">LLM Hacking Capability Test ($1500 Experiment) ↗</a></div>
+          <div class="item-detail">Researcher spent $1500 testing whether LLMs could hack their application, providing empirical data on current LLM offensive capabilities.</div>
+          <div class='item-tags'><span class="tag">LLM</span><span class="tag">RedTeaming</span><span class="tag">Experiment</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🐛</div>
+        <div class="cat-name">Supply Chain & Malware Threats</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Active malware campaigns targeting AI and scientific computing developers. The Mini Shai-Hulud, Miasma, and Hades worms specifically target bioinformatics and MCP developers through malicious packages, indicating threat actors are adapting to the AI development ecosystem.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://socket.dev/blog/mini-shai-hulud-miasma-and-hades-worms-target-bioinformatics-and-mcp-developers-via-malicious" target="_blank" rel="noopener">Worms Targeting Bioinformatics and MCP Developers ↗</a></div>
+          <div class="item-detail">Socket.dev reports on Mini Shai-Hulud, Miasma, and Hades malware campaigns distributing malicious packages to bioinformatics and MCP developer communities.</div>
+          <div class='item-tags'><span class="tag">Malware</span><span class="tag">SupplyChain</span><span class="tag">MCP</span><span class="tag">Bioinformatics</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔐</div>
+        <div class="cat-name">Privacy & AI Assistants</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Analysis of Apple's Siri AI privacy architecture raises questions about the viability of truly private AI agents. The cryptography engineering perspective examines whether current approaches adequately protect user data while enabling useful AI assistant functionality.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://blog.cryptographyengineering.com/2026/06/09/apples-siri-ai-or-more-shouting-into-the-void-about-private-agents/" target="_blank" rel="noopener">Apple's Siri AI Privacy Analysis ↗</a></div>
+          <div class="item-detail">Deep dive into Apple's approach to private AI agents, questioning whether current architectures can balance privacy with AI assistant utility.</div>
+          <div class='item-tags'><span class="tag">Privacy</span><span class="tag">Apple</span><span class="tag">Siri</span><span class="tag">Cryptography</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛠️</div>
+        <div class="cat-name">Security Tools & Frameworks</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Visa released an open-source vulnerability agentic harness for security testing. This represents enterprise-grade tooling being contributed to the community for AI-assisted vulnerability research and assessment.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/visa/visa-vulnerability-agentic-harness" target="_blank" rel="noopener">Visa Vulnerability Agentic Harness ↗</a></div>
+          <div class="item-detail">Open-source framework from Visa for agentic vulnerability research and testing, providing enterprise-grade tooling to the security community.</div>
+          <div class='item-tags'><span class="tag">Tools</span><span class="tag">OpenSource</span><span class="tag">Visa</span><span class="tag">VulnerabilityResearch</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📋</div>
+        <div class="cat-name">Vulnerability Management & Policy</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">CISA advances risk-based vulnerability management practices, moving the industry toward prioritization frameworks that consider actual exploitability and business impact rather than treating all vulnerabilities equally.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://cyber-biz.com/blog/cisa-risk-based-vulnerability-management" target="_blank" rel="noopener">CISA Risk-Based Vulnerability Management ↗</a></div>
+          <div class="item-detail">CISA guidance on implementing risk-based approaches to vulnerability prioritization and remediation in enterprise environments.</div>
+          <div class='item-tags'><span class="tag">CISA</span><span class="tag">VulnerabilityManagement</span><span class="tag">Policy</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📚</div>
+        <div class="cat-name">Community & Resources</div>
+        <div class="cat-count">4 msgs</div>
+      </div>
+      <div class="cat-summary">Curated cybersecurity talk recommendations and community growth updates. The channel continues building its audience while sharing educational resources for security professionals.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://medium.com/@taleliyahu/top-20-cybersecurity-talks-may-2026-e67929243e6f" target="_blank" rel="noopener">Top 20 Cybersecurity Talks - May 2026 ↗</a></div>
+          <div class="item-detail">Curated list of the best cybersecurity conference talks from May 2026 for professional development.</div>
+          <div class='item-tags'><span class="tag">Learning</span><span class="tag">Conferences</span><span class="tag">Resources</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Lovable AI Security Fix Pricing Criticism</div>
+          <div class="item-detail">Community observation about Lovable claiming free security fixes but then requiring payment, highlighting AI vendor transparency issues.</div>
+          <div class='item-tags'><span class="tag">AITools</span><span class="tag">Pricing</span><span class="tag">Community</span></div>
+        </div></div>
+    </div>
+  </div>
+
+  
+    <div class="section-title">🌐 Most-Referenced Domains</div>
+    <div class="domain-chips"><span class="domain-chip">🔗 arxiv.org</span><span class="domain-chip">🔗 github.com</span><span class="domain-chip">🔗 t.me</span></div>
+
+</main>
+
+<footer>
+  Generated 2026-06-12 08:16 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+</footer>
+
+<script>
+const PALETTE = [
+  "#6c63ff","#00d4aa","#ff6584","#ffd166","#06d6a0",
+  "#118ab2","#ef476f","#ffc43d","#1b998b","#e9c46a"
+];
+
+// Category distribution chart
+const catData = {"labels": ["Agent Security Research", "AI Security Vulnerabilities & CVEs", "AI Benchmark & Evaluation Concerns", "Supply Chain & Malware Threats", "Privacy & AI Assistants", "Security Tools & Frameworks", "Vulnerability Management & Policy", "Community & Resources"], "values": [4, 2, 2, 1, 1, 2, 1, 4]};
+new Chart(document.getElementById("categoryChart"), {
+  type: "doughnut",
+  data: {
+    labels: catData.labels,
+    datasets: [{
+      data: catData.values,
+      backgroundColor: PALETTE.slice(0, catData.labels.length),
+      borderWidth: 2,
+      borderColor: "#1a1d27",
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "right",
+        labels: { color: "#8892b0", font: { size: 11 }, boxWidth: 12, padding: 10 }
+      }
+    }
+  }
+});
+
+// Activity by hour chart
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 0, 0, 0, 0, 0, 1, 10, 1, 0, 1, 1, 0, 2, 2, 0, 1, 0, 1, 0, 0, 0, 0, 0]};
+new Chart(document.getElementById("activityChart"), {
+  type: "bar",
+  data: {
+    labels: actData.hours,
+    datasets: [{
+      label: "Messages",
+      data: actData.counts,
+      backgroundColor: "rgba(108,99,255,0.7)",
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: "#8892b0", font: { size: 10 } }, grid: { color: "#2e3250" } },
+      y: { ticks: { color: "#8892b0", font: { size: 10 }, stepSize: 1 }, grid: { color: "#2e3250" } }
+    }
+  }
+});
+</script>
+</body>
+</html>

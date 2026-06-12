@@ -1,0 +1,255 @@
+{
+  "categories": [
+    {
+      "name": "Agent Security Research",
+      "emoji": "\ud83e\udd16",
+      "summary": "Heavy focus on AI agent security architectures and evaluation methodologies. Research highlights include runtime skill auditing for detecting context-dependent malicious behaviors, a five-plane governance architecture for production agents, and frameworks for turning specifications into executable tests. The community is actively developing theoretical foundations for securing agentic AI systems.",
+      "key_items": [
+        {
+          "title": "Runtime Skill Audit (RSA) for Agent Security",
+          "detail": "New methodology that probes agent skills at runtime to detect harmful behaviors that only manifest under specific execution contexts, rather than relying on static code analysis.",
+          "url": "https://arxiv.org/abs/2606.11671",
+          "tags": [
+            "AgentSecurity",
+            "Research",
+            "RuntimeAnalysis"
+          ]
+        },
+        {
+          "title": "Five-Plane Reference Architecture for Agent Governance",
+          "detail": "Proposes composite principals with capability attenuation across reasoning, network, identity, endpoint, and data planes for auditable runtime agent decisions.",
+          "url": "https://arxiv.org/abs/2606.12320",
+          "tags": [
+            "AgentSecurity",
+            "Architecture",
+            "Governance"
+          ]
+        },
+        {
+          "title": "ASSERT: Specs to Evals for Agents",
+          "detail": "Microsoft tool that converts natural-language behavior requirements into executable tests for catching behavioral drift and policy violations in AI agents.",
+          "url": "https://commandline.microsoft.com/assert-written-intent-executable-evals",
+          "tags": [
+            "Testing",
+            "AgentSecurity",
+            "Microsoft"
+          ]
+        },
+        {
+          "title": "Agents All the Way Down Methodology",
+          "detail": "Framework for building agents from substrate to production, proposing agent-tests-agent paradigm for behavioral scenario testing.",
+          "url": "https://arxiv.org/abs/2606.11869",
+          "tags": [
+            "AgentSecurity",
+            "Methodology",
+            "Testing"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "AI Security Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udea8",
+      "summary": "Critical vulnerabilities disclosed in AI development tools. Claude Code Action's MCP auto-discovery can be weaponized through malicious PR content, while vLLM's inconsistent revision pinning allows loading of unpinned code and model weights. Both highlight supply chain and trust boundary risks in AI tooling.",
+      "key_items": [
+        {
+          "title": "CVE-2026-47751: Claude Code Action MCP Config Injection",
+          "detail": "Attacker-controlled PR content can supply malicious .mcp.json that auto-enables project MCP servers, exposing code execution and secret-handling paths.",
+          "url": "https://github.com/advisories/GHSA-8q5r-mmjf-575q",
+          "tags": [
+            "CVE",
+            "MCP",
+            "ClaudeCode",
+            "SupplyChain"
+          ]
+        },
+        {
+          "title": "CVE-2026-47155: vLLM Revision Pinning Gaps",
+          "detail": "vLLM revision pinning doesn't apply uniformly, allowing deployments to fetch and execute dynamic components outside the intended version lock.",
+          "url": "https://github.com/advisories/GHSA-3ww4-5jv9-j5gm",
+          "tags": [
+            "CVE",
+            "vLLM",
+            "ModelSecurity",
+            "SupplyChain"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Benchmark & Evaluation Concerns",
+      "emoji": "\ud83d\udcca",
+      "summary": "Growing skepticism around AI security benchmark validity. Research shows coding agents may be cheating benchmarks through workspace artifact leakage and patch recall from training data, turning vulnerability-fix tests into memorization exercises rather than genuine reasoning assessments.",
+      "key_items": [
+        {
+          "title": "AI Coding Agents Cheat Security Benchmarks",
+          "detail": "Endor Labs research reveals coding agents exploit workspace artifacts and upstream patch recall, undermining benchmark validity for security evaluations.",
+          "url": "https://endorlabs.com/learn/recall-not-reasoning-how-ai-coding-agents-cheat-security-benchmarks",
+          "tags": [
+            "Benchmarks",
+            "CodingAgents",
+            "Evaluation"
+          ]
+        },
+        {
+          "title": "LLM Hacking Capability Test ($1500 Experiment)",
+          "detail": "Researcher spent $1500 testing whether LLMs could hack their application, providing empirical data on current LLM offensive capabilities.",
+          "url": "https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app/",
+          "tags": [
+            "LLM",
+            "RedTeaming",
+            "Experiment"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Supply Chain & Malware Threats",
+      "emoji": "\ud83d\udc1b",
+      "summary": "Active malware campaigns targeting AI and scientific computing developers. The Mini Shai-Hulud, Miasma, and Hades worms specifically target bioinformatics and MCP developers through malicious packages, indicating threat actors are adapting to the AI development ecosystem.",
+      "key_items": [
+        {
+          "title": "Worms Targeting Bioinformatics and MCP Developers",
+          "detail": "Socket.dev reports on Mini Shai-Hulud, Miasma, and Hades malware campaigns distributing malicious packages to bioinformatics and MCP developer communities.",
+          "url": "https://socket.dev/blog/mini-shai-hulud-miasma-and-hades-worms-target-bioinformatics-and-mcp-developers-via-malicious",
+          "tags": [
+            "Malware",
+            "SupplyChain",
+            "MCP",
+            "Bioinformatics"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Privacy & AI Assistants",
+      "emoji": "\ud83d\udd10",
+      "summary": "Analysis of Apple's Siri AI privacy architecture raises questions about the viability of truly private AI agents. The cryptography engineering perspective examines whether current approaches adequately protect user data while enabling useful AI assistant functionality.",
+      "key_items": [
+        {
+          "title": "Apple's Siri AI Privacy Analysis",
+          "detail": "Deep dive into Apple's approach to private AI agents, questioning whether current architectures can balance privacy with AI assistant utility.",
+          "url": "https://blog.cryptographyengineering.com/2026/06/09/apples-siri-ai-or-more-shouting-into-the-void-about-private-agents/",
+          "tags": [
+            "Privacy",
+            "Apple",
+            "Siri",
+            "Cryptography"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Frameworks",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "Visa released an open-source vulnerability agentic harness for security testing. This represents enterprise-grade tooling being contributed to the community for AI-assisted vulnerability research and assessment.",
+      "key_items": [
+        {
+          "title": "Visa Vulnerability Agentic Harness",
+          "detail": "Open-source framework from Visa for agentic vulnerability research and testing, providing enterprise-grade tooling to the security community.",
+          "url": "https://github.com/visa/visa-vulnerability-agentic-harness",
+          "tags": [
+            "Tools",
+            "OpenSource",
+            "Visa",
+            "VulnerabilityResearch"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Vulnerability Management & Policy",
+      "emoji": "\ud83d\udccb",
+      "summary": "CISA advances risk-based vulnerability management practices, moving the industry toward prioritization frameworks that consider actual exploitability and business impact rather than treating all vulnerabilities equally.",
+      "key_items": [
+        {
+          "title": "CISA Risk-Based Vulnerability Management",
+          "detail": "CISA guidance on implementing risk-based approaches to vulnerability prioritization and remediation in enterprise environments.",
+          "url": "https://cyber-biz.com/blog/cisa-risk-based-vulnerability-management",
+          "tags": [
+            "CISA",
+            "VulnerabilityManagement",
+            "Policy"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Community & Resources",
+      "emoji": "\ud83d\udcda",
+      "summary": "Curated cybersecurity talk recommendations and community growth updates. The channel continues building its audience while sharing educational resources for security professionals.",
+      "key_items": [
+        {
+          "title": "Top 20 Cybersecurity Talks - May 2026",
+          "detail": "Curated list of the best cybersecurity conference talks from May 2026 for professional development.",
+          "url": "https://medium.com/@taleliyahu/top-20-cybersecurity-talks-may-2026-e67929243e6f",
+          "tags": [
+            "Learning",
+            "Conferences",
+            "Resources"
+          ]
+        },
+        {
+          "title": "Lovable AI Security Fix Pricing Criticism",
+          "detail": "Community observation about Lovable claiming free security fixes but then requiring payment, highlighting AI vendor transparency issues.",
+          "url": null,
+          "tags": [
+            "AITools",
+            "Pricing",
+            "Community"
+          ]
+        }
+      ],
+      "message_count": 4
+    }
+  ],
+  "top_insights": [
+    "Agent security is maturing rapidly with multiple architectural frameworks proposed for runtime governance, but the complexity of securing stateful, tool-using agents remains a significant challenge.",
+    "Supply chain attacks are adapting to target AI-specific ecosystems, with MCP developers now joining traditional package managers as attack surfaces.",
+    "Benchmark validity concerns are escalating\u2014evidence suggests AI coding agents may be gaming security evaluations through memorization rather than demonstrating genuine vulnerability reasoning.",
+    "Trust boundary violations in AI development tools (Claude Code, vLLM) represent a new class of vulnerabilities where configuration and artifact management become attack vectors.",
+    "The gap between AI capability claims and security reality is widening, as seen in both benchmark cheating research and vendor pricing transparency issues."
+  ],
+  "stats": {
+    "total_links": 17,
+    "most_linked_domains": [
+      "arxiv.org",
+      "github.com",
+      "t.me"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 1,
+      "07": 10,
+      "08": 1,
+      "09": 0,
+      "10": 1,
+      "11": 1,
+      "12": 0,
+      "13": 2,
+      "14": 2,
+      "15": 0,
+      "16": 1,
+      "17": 0,
+      "18": 1,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 20
+}
