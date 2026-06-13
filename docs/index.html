@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">17</span>
+    <span class="stat-value">18</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">203</span>
+    <span class="stat-value">220</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">184</span>
+    <span class="stat-value">201</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">19</span>
+    <span class="stat-value">20</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -242,7 +242,7 @@
 <main class="main">
 
   
-  <div class="section-title">📈 Activity Trend (last 17 days)</div>
+  <div class="section-title">📈 Activity Trend (last 18 days)</div>
   <div class="chart-card">
     <h3>Messages &amp; Links per Day</h3>
     <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-06-12.html">
+    <a class="digest-card today" href="aisechu_digest_2026-06-13.html">
+      <div>
+        <div class="digest-date">
+          Saturday, June 13 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">Prompt Injection Research</span><span class="cat-tag">LLM Agent Security</span><span class="cat-tag">MCP Security Vulnerabilities</span><span class="cat-tag">Supply Chain Security</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">Prompt injection research is maturing from attack-centric to stakeholder-centric evaluation, recognizing that different victims (users, platforms, third parties) require distinct measurement approaches.</div><div class="digest-insight-item">MCP (Model Context Protocol) is emerging as a significant attack surface with both CVEs and IETF standardization efforts appearing simultaneously, indicating rapid but insecure adoption.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">17</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">17</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-06-12.html">
       <div>
         <div class="digest-date">
           Friday, June 12 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">Agent Security Research</span><span class="cat-tag">AI Security Vulnerabilities & CVEs</span><span class="cat-tag">AI Benchmark & Evaluation Concerns</span><span class="cat-tag">Supply Chain & Malware Threats</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Agent security is maturing rapidly with multiple architectural frameworks proposed for runtime governance, but the complexity of securing stateful, tool-using agents remains a significant challenge.</div><div class="digest-insight-item">Supply chain attacks are adapting to target AI-specific ecosystems, with MCP developers now joining traditional package managers as attack surfaces.</div></div>
@@ -663,12 +687,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-06-12 08:16 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-06-13 08:15 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17]};
+const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {

@@ -1,0 +1,239 @@
+{
+  "categories": [
+    {
+      "name": "Prompt Injection Research",
+      "emoji": "\ud83d\udc89",
+      "summary": "Significant research activity focused on prompt injection vulnerabilities in LLM agents. Two major papers emerged: a stakeholder-centric benchmarking approach that evaluates attacks by who gets harmed (user/seller/platform), and PI-Hunter, an automated red-teaming framework for exposing indirect prompt injections in tool-using agents. Both emphasize that current agents fail to reliably resist tested attack vectors.",
+      "key_items": [
+        {
+          "title": "Stakeholder-Centric Prompt Injection Benchmarking",
+          "detail": "Reframes web-agent prompt injection evaluation around harm attribution, measuring both outcome and process failures including stealthy task-preserving manipulation.",
+          "url": "https://arxiv.org/abs/2606.13385",
+          "tags": [
+            "PromptInjection",
+            "LLMSecurity",
+            "Benchmarking"
+          ]
+        },
+        {
+          "title": "PI-Hunter: Automated Red-Teaming Framework",
+          "detail": "Generates source-aware test cases and iteratively mutates them via feedback to expose latent malicious instructions from untrusted environments in agent workflows.",
+          "url": "https://arxiv.org/abs/2606.12737",
+          "tags": [
+            "RedTeaming",
+            "PromptInjection",
+            "Automation"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "LLM Agent Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Research addressing fundamental security challenges in persistent LLM agent systems. SMSR introduces certified defenses against runtime memory poisoning using HMAC-signed writes and randomized retrieval ablation. OCELOT proposes inference-leakage budgets for privacy-preserving agents, treating privacy as trajectory-level posterior-risk control rather than simple text filtering.",
+      "key_items": [
+        {
+          "title": "SMSR: Certified Defense Against Memory Poisoning",
+          "detail": "Addresses multi-session poisoning in persistent agents where attacker-written memories are later retrieved as guidance, using cryptographic signing and majority voting.",
+          "url": "https://arxiv.org/abs/2606.12703",
+          "tags": [
+            "AgentSecurity",
+            "MemoryPoisoning",
+            "CertifiedDefense"
+          ]
+        },
+        {
+          "title": "OCELOT: Privacy-Preserving LLM Agent Budgets",
+          "detail": "Audits outbound agent communications against leakage budgets based on posterior-risk improvement rather than pattern matching.",
+          "url": "https://arxiv.org/abs/2606.12341",
+          "tags": [
+            "Privacy",
+            "AgentSecurity",
+            "InferenceLeakage"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "MCP Security Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "Critical security issues emerging in the Model Context Protocol ecosystem. A CVE was disclosed for Meta Ads MCP exposing operator tokens via unauthenticated HTTP requests, while an IETF draft addresses MCP security considerations more broadly. These highlight the immature security posture of emerging AI agent protocols.",
+      "key_items": [
+        {
+          "title": "CVE-2026-48039: Meta Ads MCP Token Leak",
+          "detail": "Unauthenticated HTTP requests can trigger tool execution exposing operator Meta access tokens due to missing authentication boundaries.",
+          "url": "https://github.com/advisories/GHSA-9gw6-46qc-99vr",
+          "tags": [
+            "CVE",
+            "MCP",
+            "TokenLeak"
+          ]
+        },
+        {
+          "title": "IETF Draft: MCP Security Considerations",
+          "detail": "Formal security considerations document for the Model Context Protocol under IETF review.",
+          "url": "https://datatracker.ietf.org/doc/draft-mohiuddin-mcp-security-considerations/",
+          "tags": [
+            "MCP",
+            "Standards",
+            "IETF"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Supply Chain Security",
+      "emoji": "\ud83d\udce6",
+      "summary": "Cloud Security Alliance released a whitepaper on npm supply chain attacks specifically targeting AI toolchains. The report covers TeamPCP, Miasma threats, and npm v12 implications, highlighting how foundational package infrastructure creates systemic risk for AI development pipelines.",
+      "key_items": [
+        {
+          "title": "npm Supply Chain Under Siege Report",
+          "detail": "CSA whitepaper examining TeamPCP, Miasma, and npm v12 threats to AI toolchain supply chain security.",
+          "url": "https://labs.cloudsecurityalliance.org/research/csa-whitepaper-npm-ai-toolchain-supply-chain-security-v1-0-c",
+          "tags": [
+            "SupplyChain",
+            "npm",
+            "AIToolchain"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Offensive Security & Tradecraft",
+      "emoji": "\u2694\ufe0f",
+      "summary": "Content covering offensive security techniques and tooling. Notable items include using Replit AI to mask C2 traffic and IDA RPC tooling for reverse engineering workflows, demonstrating the dual-use nature of AI capabilities in security operations.",
+      "key_items": [
+        {
+          "title": "Using Replit AI to Mask C2 Traffic",
+          "detail": "Blog post detailing how Replit AI can be leveraged to obfuscate command and control communications.",
+          "url": "https://askar.so/blogs/watch-your-ai-using-replit-ai-to-mask-your-c2-traffic/",
+          "tags": [
+            "C2",
+            "Evasion",
+            "AI-Enabled"
+          ]
+        },
+        {
+          "title": "IDA RPC Tool Release",
+          "detail": "GitHub release of IDA RPC tooling for remote procedure calls in reverse engineering workflows.",
+          "url": "https://github.com/bkerler/ida_rpc",
+          "tags": [
+            "ReverseEngineering",
+            "IDA",
+            "Tooling"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83c\udfa3",
+      "summary": "Varonis published research on OpenClaw phishing campaigns, contributing to current threat landscape awareness for defenders tracking active adversary operations.",
+      "key_items": [
+        {
+          "title": "OpenClaw Phishing Campaign Analysis",
+          "detail": "Varonis threat research detailing the OpenClaw phishing operation tactics and indicators.",
+          "url": "https://www.varonis.com/blog/openclaw-phishing",
+          "tags": [
+            "Phishing",
+            "ThreatIntel",
+            "Varonis"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Governance & Policy",
+      "emoji": "\ud83d\udccb",
+      "summary": "Substack publication addressing agentic AI governance frameworks, reflecting growing industry focus on establishing oversight mechanisms for autonomous AI systems as they proliferate in enterprise environments.",
+      "key_items": [
+        {
+          "title": "The Ultimate Agentic AI Governance Guide",
+          "detail": "Comprehensive governance framework discussion for managing autonomous AI agent deployments.",
+          "url": "https://open.substack.com/pub/oliverpatel/p/the-ultimate-agentic-ai-governance",
+          "tags": [
+            "Governance",
+            "AgenticAI",
+            "Policy"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Community & Resources",
+      "emoji": "\ud83d\udcfa",
+      "summary": "Channel community engagement and curated learning resources including most-viewed cybersecurity conference videos from May 2026 and channel milestone announcements.",
+      "key_items": [
+        {
+          "title": "Most Viewed Security Conference Videos - May 2026",
+          "detail": "Curated collection of top-performing cybersecurity conference presentations.",
+          "url": "https://awesomecybersecurityconferences.com/videos/most-viewed",
+          "tags": [
+            "Learning",
+            "Conferences",
+            "Videos"
+          ]
+        },
+        {
+          "title": "AISecHub Channel Milestone",
+          "detail": "Channel reached 17 boosts enabling auto-translate functionality for broader accessibility.",
+          "url": "https://t.me/boost/AISecHub",
+          "tags": [
+            "Community",
+            "Milestone"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "Prompt injection research is maturing from attack-centric to stakeholder-centric evaluation, recognizing that different victims (users, platforms, third parties) require distinct measurement approaches.",
+    "MCP (Model Context Protocol) is emerging as a significant attack surface with both CVEs and IETF standardization efforts appearing simultaneously, indicating rapid but insecure adoption.",
+    "Persistent memory in LLM agents creates novel multi-session attack vectors requiring cryptographic integrity controls beyond traditional session-based security models.",
+    "AI is being weaponized for evasion techniques (C2 masking via Replit) while simultaneously being targeted through supply chain attacks on AI toolchains (npm ecosystem threats).",
+    "Heavy research activity concentrated in early morning UTC hours (07:29) suggests automated publication pipelines or coordinated research release schedules from academic institutions."
+  ],
+  "stats": {
+    "total_links": 17,
+    "most_linked_domains": [
+      "arxiv.org",
+      "github.com",
+      "labs.cloudsecurityalliance.org"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 1,
+      "04": 1,
+      "05": 0,
+      "06": 0,
+      "07": 10,
+      "08": 0,
+      "09": 0,
+      "10": 1,
+      "11": 0,
+      "12": 0,
+      "13": 1,
+      "14": 0,
+      "15": 1,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 2,
+      "23": 0
+    }
+  },
+  "total_messages": 17
+}
