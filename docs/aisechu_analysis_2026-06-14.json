@@ -1,0 +1,109 @@
+{
+  "categories": [
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udd13",
+      "summary": "Two notable CVEs were disclosed today, both involving data extraction or bypass vulnerabilities. CVE-2026-46370 exposes a clever ORDER BY oracle attack in Fleet's labels endpoint allowing enrollment secret extraction. CVE-2026-47345 reveals an XSS bypass in TYPO3's HTML Sanitizer due to improper namespace attribute encoding.",
+      "key_items": [
+        {
+          "title": "Fleet ORDER BY Oracle Enables Enrollment Secret Extraction",
+          "detail": "Low-privilege authenticated users can exploit sorting/cursor behavior in the labels host-listing endpoint to binary-search and recover sensitive enrollment secrets.",
+          "url": "https://github.com/advisories/GHSA-vxm7-9x8v-8gm4",
+          "tags": [
+            "CVE-2026-46370",
+            "data-exfiltration",
+            "Fleet"
+          ]
+        },
+        {
+          "title": "TYPO3 HTML Sanitizer XSS Bypass via Namespace Encoding",
+          "detail": "A serialization bug in namespace attribute encoding allows attackers to bypass XSS prevention in typo3/html-sanitizer versions prior to 2.3.2.",
+          "url": "https://github.com/advisories/GHSA-p5j5-4j3q-8mq8",
+          "tags": [
+            "CVE-2026-47345",
+            "XSS",
+            "TYPO3"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Safety & Alignment",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "The UK AI Safety Institute published research examining whether AI systems accurately disclose their identity when questioned. This transparency testing represents growing regulatory interest in AI system honesty and user awareness about AI interactions.",
+      "key_items": [
+        {
+          "title": "AISI RealityTest: Do AI Systems Disclose Their Identity?",
+          "detail": "UK AI Safety Institute research explores whether AI systems truthfully reveal they are AI when directly asked by users, a key transparency concern.",
+          "url": "https://www.aisi.gov.uk/blog/realitytest-do-ai-systems-disclose-their-identity-when-asked",
+          "tags": [
+            "AI-transparency",
+            "AISI",
+            "identity-disclosure"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Research & Papers",
+      "emoji": "\ud83d\udcda",
+      "summary": "Anthropic announced Fable Mythos access, signaling continued expansion of AI model capabilities and access programs from leading AI labs.",
+      "key_items": [
+        {
+          "title": "Anthropic Fable Mythos Access Announcement",
+          "detail": "Anthropic released news regarding Fable Mythos access, expanding their AI model offering and access programs.",
+          "url": "https://www.anthropic.com/news/fable-mythos-access",
+          "tags": [
+            "Anthropic",
+            "model-release",
+            "AI-access"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Oracle-based data extraction attacks continue to emerge as a significant threat vector, with ORDER BY manipulation enabling binary-search exfiltration of sensitive secrets.",
+    "HTML sanitization remains a challenging security domain, with namespace handling edge cases creating XSS bypass opportunities in mature libraries.",
+    "Government AI safety bodies are actively researching AI transparency fundamentals, including basic identity disclosure behavior.",
+    "Activity was concentrated in early morning and evening UTC hours, with a midday lull in channel content."
+  ],
+  "stats": {
+    "total_links": 4,
+    "most_linked_domains": [
+      "github.com",
+      "anthropic.com",
+      "aisi.gov.uk"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 1,
+      "05": 0,
+      "06": 0,
+      "07": 2,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 1,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 1,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 5
+}
