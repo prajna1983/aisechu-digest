@@ -1,0 +1,175 @@
+{
+  "categories": [
+    {
+      "name": "AI Agent Security Vulnerabilities",
+      "emoji": "\ud83e\udd16",
+      "summary": "Critical vulnerabilities in AI agent infrastructure dominated today's feed. OpenClaw AI agent was demonstrated to be exploitable via innocuous-looking inputs like vCards and location pins, enabling code execution and data exfiltration without victim awareness. The MCP ecosystem faces a full-blown security crisis with 40+ CVEs, 106 zero-days, and an NSA advisory warning about 40% of servers lacking authentication.",
+      "key_items": [
+        {
+          "title": "OpenClaw AI Agent Exploited via vCards and Location Pins",
+          "detail": "Imperva and Varonis showed attackers can embed malicious instructions in shared contacts and location pins that OpenClaw executes silently, enabling code execution and secret exfiltration.",
+          "url": "https://thehackernews.com/2026/06/new-attacks-trick-openclaw-ai-agent.html",
+          "tags": [
+            "PromptInjection",
+            "IndirectInjection",
+            "CodeExecution"
+          ]
+        },
+        {
+          "title": "MCP Security Crisis \u2014 40+ CVEs and NSA Advisory",
+          "detail": "Model Context Protocol ecosystem revealed as fastest-growing AI attack surface with 106 zero-days found via VIPER-MCP scanning, widespread authentication failures, and STDIO command injection affecting 150M+ downloads.",
+          "url": "https://chatforest.com/builders-log/mcp-security-crisis-2026-unauthenticated-servers-viper-nsa-owasp-builder-guide",
+          "tags": [
+            "MCPSecurity",
+            "ZeroDay",
+            "NSA"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI Supply Chain & Infrastructure Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "Two critical RCE vulnerabilities threaten AI infrastructure foundations. The Hugging Face Transformers library contains CVE-2026-4372 allowing code execution via poisoned model configs on the Hub\u2014a direct supply chain attack vector. OpenSSL's PKCS7/SMIME RCE affects any AI system processing signed content including model serving endpoints and MCP servers.",
+      "key_items": [
+        {
+          "title": "Hugging Face Transformers RCE \u2014 CVE-2026-4372",
+          "detail": "Malicious AI model configuration files can execute arbitrary code when loaded, enabling supply chain attacks through poisoned models on Hugging Face Hub.",
+          "url": "https://www.esecurityplanet.com/threats/hugging-face-vulnerability-allows-remote-code-execution/",
+          "tags": [
+            "CVE",
+            "SupplyChain",
+            "RCE"
+          ]
+        },
+        {
+          "title": "OpenSSL RCE Affecting AI Infrastructure",
+          "detail": "Crafted PKCS7 or S/MIME messages trigger remote code execution, impacting model serving endpoints, agent-to-agent channels, and MCP servers using TLS.",
+          "url": "https://openssl-library.org/news/secadv/20260609.txt",
+          "tags": [
+            "OpenSSL",
+            "CriticalInfrastructure",
+            "RCE"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Safety & Model Jailbreaks",
+      "emoji": "\u26a0\ufe0f",
+      "summary": "Anthropic's flagship Fable 5 model with dedicated safety classifier and extensive red-teaming was jailbroken within hours of release. Attackers used multi-agent decomposition to bypass safety measures, successfully generating exploit code and dangerous synthesis instructions\u2014highlighting the persistent challenge of defending frontier models against adversarial techniques.",
+      "key_items": [
+        {
+          "title": "Claude Fable 5 Jailbroken Within Hours",
+          "detail": "Multi-agent decomposition attack bypassed safety classifier by breaking harmful requests into innocuous subtopics, producing stack buffer overflow exploits and chemical synthesis walkthroughs.",
+          "url": "https://cyberpress.org/claude-fable-5-jailbreak/",
+          "tags": [
+            "Jailbreak",
+            "ModelSafety",
+            "RedTeaming"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Governance & Policy",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "Major policy developments as the White House imposed export controls on Anthropic in a rapid 24-hour decision cycle. Separately, Anthropic launched a public vulnerability disclosure ledger providing unprecedented transparency into AI-assisted vulnerability discovery\u201423,019 candidates generated with 27 confirmed fixes, revealing both the potential and limitations of scaled AI security research.",
+      "key_items": [
+        {
+          "title": "White House Export Controls on Anthropic",
+          "detail": "Politico details the whirlwind 24 hours leading to White House decision to impose export controls on Anthropic, signaling escalating AI governance actions.",
+          "url": "https://www.politico.com/news/2026/06/13/inside-the-whirlwind-24-hours-that-led-the-white-house-to-slap-export-controls-on-anthropic-00961519",
+          "tags": [
+            "ExportControls",
+            "Policy",
+            "Anthropic"
+          ]
+        },
+        {
+          "title": "Anthropic Vulnerability Disclosure Ledger Launch",
+          "detail": "Public ledger reveals AI-assisted vulnerability discovery metrics: 23,019 candidates generated, 1,596 reached maintainers, 27 fixed\u2014first window into scaled AI security research.",
+          "url": "https://www.vulncheck.com/blog/anthropic-ledger",
+          "tags": [
+            "VulnerabilityDisclosure",
+            "Governance",
+            "Transparency"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Resources & References",
+      "emoji": "\ud83d\udcda",
+      "summary": "OWASP published an AI Agent Security Cheat Sheet providing practitioners with consolidated guidance for securing AI agent deployments. Additional research papers and social media discussions rounded out the community's knowledge-sharing activities for the day.",
+      "key_items": [
+        {
+          "title": "OWASP AI Agent Security Cheat Sheet",
+          "detail": "New cheat sheet in OWASP's repository consolidates security guidance for AI agent implementations, covering common attack vectors and mitigations.",
+          "url": "https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/AI_Agent_Security_Cheat_Sheet.md",
+          "tags": [
+            "OWASP",
+            "BestPractices",
+            "Reference"
+          ]
+        },
+        {
+          "title": "ArXiv Research Paper",
+          "detail": "New AI/security research paper shared from arXiv preprint server.",
+          "url": "https://arxiv.org/abs/2605.17634",
+          "tags": [
+            "Research",
+            "Academic"
+          ]
+        }
+      ],
+      "message_count": 3
+    }
+  ],
+  "top_insights": [
+    "AI agent infrastructure is under siege: MCP's 106 zero-days and OpenClaw's indirect injection vulnerabilities demonstrate that agent-based systems are now the primary AI attack surface.",
+    "Supply chain attacks on AI are maturing rapidly\u2014the Hugging Face RCE via model configs represents a direct vector for compromising downstream consumers at scale.",
+    "Even intensive safety investments fail fast: Claude Fable 5's 1,000+ hours of red-teaming couldn't prevent hours-to-jailbreak via multi-agent decomposition techniques.",
+    "AI governance is accelerating at unprecedented speed\u2014export controls on Anthropic implemented within 24 hours signals a new era of rapid regulatory intervention.",
+    "AI-assisted vulnerability discovery is reaching production scale but with significant noise: Anthropic's ledger shows only 0.1% of AI-generated candidates result in confirmed fixes."
+  ],
+  "stats": {
+    "total_links": 11,
+    "most_linked_domains": [
+      "thehackernews.com",
+      "github.com",
+      "politico.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 4,
+      "04": 1,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 6,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 1,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 13
+}

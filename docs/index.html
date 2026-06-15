@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">19</span>
+    <span class="stat-value">20</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">225</span>
+    <span class="stat-value">238</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">205</span>
+    <span class="stat-value">216</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">21</span>
+    <span class="stat-value">22</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -242,7 +242,7 @@
 <main class="main">
 
   
-  <div class="section-title">📈 Activity Trend (last 19 days)</div>
+  <div class="section-title">📈 Activity Trend (last 20 days)</div>
   <div class="chart-card">
     <h3>Messages &amp; Links per Day</h3>
     <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-06-14.html">
+    <a class="digest-card today" href="aisechu_digest_2026-06-15.html">
+      <div>
+        <div class="digest-date">
+          Monday, June 15 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">AI Agent Security Vulnerabilities</span><span class="cat-tag">AI Supply Chain & Infrastructure Vulnerabilities</span><span class="cat-tag">AI Safety & Model Jailbreaks</span><span class="cat-tag">AI Governance & Policy</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">AI agent infrastructure is under siege: MCP's 106 zero-days and OpenClaw's indirect injection vulnerabilities demonstrate that agent-based systems are now the primary AI attack surface.</div><div class="digest-insight-item">Supply chain attacks on AI are maturing rapidly—the Hugging Face RCE via model configs represents a direct vector for compromising downstream consumers at scale.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">13</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">11</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-06-14.html">
       <div>
         <div class="digest-date">
           Sunday, June 14 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">Cybersecurity Vulnerabilities & CVEs</span><span class="cat-tag">AI Safety & Alignment</span><span class="cat-tag">AI Research & Papers</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Oracle-based data extraction attacks continue to emerge as a significant threat vector, with ORDER BY manipulation enabling binary-search exfiltration of sensitive secrets.</div><div class="digest-insight-item">HTML sanitization remains a challenging security domain, with namespace handling edge cases creating XSS bypass opportunities in mature libraries.</div></div>
@@ -711,12 +735,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-06-14 08:00 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-06-15 08:04 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4]};
+const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5, 13], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4, 11]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
