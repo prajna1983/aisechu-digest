@@ -1,0 +1,100 @@
+{
+  "categories": [
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Today's messages highlight emerging attack vectors targeting AI coding assistants and LLM-based systems. The community shared resources on 'agentjacking' techniques that exploit coding agents through fake error injection, demonstrating how AI development workflows can be manipulated by adversaries.",
+      "key_items": [
+        {
+          "title": "Agentjacking: Exploiting Coding Agents via Fake Sentry Errors",
+          "detail": "Tenet Security published research on a novel attack technique called 'agentjacking' that manipulates AI coding agents by injecting fake Sentry error messages, potentially leading to malicious code execution.",
+          "url": "https://tenetsecurity.ai/blog/agentjacking-coding-agents-with-fake-sentry-errors/",
+          "tags": [
+            "agent-security",
+            "code-injection",
+            "attack-technique"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "New offensive security tooling emerged targeting AI systems, specifically Claude. The release of red teaming tools for LLMs indicates growing interest in adversarial testing of commercial AI assistants and the need for robust security evaluations.",
+      "key_items": [
+        {
+          "title": "Claude-Red: Red Teaming Tool for Claude AI",
+          "detail": "A new GitHub repository provides red teaming capabilities specifically designed for testing and probing Claude AI systems for potential vulnerabilities and jailbreaks.",
+          "url": "https://github.com/SnailSploit/Claude-Red",
+          "tags": [
+            "red-team",
+            "claude",
+            "llm-security",
+            "offensive-tool"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Research & Papers",
+      "emoji": "\ud83d\udcda",
+      "summary": "A curated research collection focusing on applying LLMs to vulnerability detection was shared. This resource aggregates academic work exploring how large language models can be leveraged for automated security analysis and code vulnerability identification.",
+      "key_items": [
+        {
+          "title": "Awesome LLMs for Vulnerability Detection",
+          "detail": "A comprehensive GitHub repository cataloging research papers, tools, and resources on using Large Language Models for automated vulnerability detection in code.",
+          "url": "https://github.com/huhusmang/Awesome-LLMs-for-Vulnerability-Detection",
+          "tags": [
+            "llm",
+            "vulnerability-detection",
+            "research",
+            "awesome-list"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "AI coding assistants are becoming a new attack surface, with techniques like 'agentjacking' demonstrating how development workflows can be compromised through manipulated error messages.",
+    "The dual-use nature of LLMs in security is evident: they're being used both for vulnerability detection (defensive) and as targets for red teaming (offensive).",
+    "Community interest in Claude-specific security research suggests increased scrutiny of commercial AI assistants as they become more integrated into enterprise workflows.",
+    "The intersection of traditional application security (Sentry error handling) with AI agent behavior creates novel vulnerability classes that security teams should monitor."
+  ],
+  "stats": {
+    "total_links": 3,
+    "most_linked_domains": [
+      "github.com",
+      "tenetsecurity.ai"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 2,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 1,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 3
+}
