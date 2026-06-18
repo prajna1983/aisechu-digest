@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "name": "Tutorials & Learning Resources",
+      "emoji": "\ud83d\udcda",
+      "summary": "The channel shared curated video content highlighting the most popular cybersecurity conference presentations from May 2026. This resource aggregates trending educational material for security professionals looking to stay current with industry knowledge and presentations.",
+      "key_items": [
+        {
+          "title": "Most Viewed Cybersecurity Conference Videos - May 2026",
+          "detail": "A curated list of the top-performing cybersecurity conference videos from the previous month, providing a quick way to catch up on trending talks and presentations in the security community.",
+          "url": "https://awesomecybersecurityconferences.com/videos/most-viewed",
+          "tags": [
+            "conference-videos",
+            "learning",
+            "cybersecurity-education"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Channel activity was minimal in the past 24 hours with only a single educational resource shared, suggesting either a slow news day or content curation in progress.",
+    "The focus on conference video aggregation indicates continued community interest in accessible, on-demand security education content.",
+    "Curated 'best of' lists remain a valuable format for helping professionals efficiently identify high-quality learning material amid information overload."
+  ],
+  "stats": {
+    "total_links": 1,
+    "most_linked_domains": [
+      "awesomecybersecurityconferences.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 1,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 1
+}
