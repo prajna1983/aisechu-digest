@@ -1,0 +1,185 @@
+{
+  "categories": [
+    {
+      "name": "Agent Security Research",
+      "emoji": "\ud83e\udd16",
+      "summary": "A significant wave of academic research focuses on security vulnerabilities in LLM agent ecosystems. Papers examine malicious code injection through skill ecosystems (PhantomSkill), detection of malicious PyPI packages using agent workflows (PYPILINE), and improved red-teaming methodologies that separate semantic acceptance from actual sandbox harm (SafeClawBench). These works highlight the growing attack surface as agents gain tool-use capabilities.",
+      "key_items": [
+        {
+          "title": "PhantomSkill: Stealthy Payload Injection in Agent Skills",
+          "detail": "Research demonstrates hiding malicious payloads in agent skill auxiliary resources, rewriting them as innocuous-looking vulnerable code to evade detection while triggering attacker behavior at runtime.",
+          "url": "https://arxiv.org/abs/2606.19191",
+          "tags": [
+            "AgentSecurity",
+            "LLMSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "PYPILINE: Agent-Powered Malicious Package Detection",
+          "detail": "Combines static analysis (AST + API call graphs) with LLM agent workflows to build suspicious-API knowledge bases and generate interpretable risk reports for PyPI packages.",
+          "url": "https://arxiv.org/abs/2606.19063",
+          "tags": [
+            "AgentSecurity",
+            "SupplyChain",
+            "Research"
+          ]
+        },
+        {
+          "title": "SafeClawBench: Multi-Endpoint Agent Red-Teaming",
+          "detail": "New benchmark separates semantic acceptance, audit-visible evidence, and sandbox-observed harm in agent evaluation, revealing that models can pass semantic checks while causing real sandbox harm.",
+          "url": "https://arxiv.org/abs/2606.18356",
+          "tags": [
+            "RedTeam",
+            "Benchmarks",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 6
+    },
+    {
+      "name": "MCP Protocol Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "Multiple CVEs disclosed for Model Context Protocol (MCP) implementations reveal authentication and trust-boundary issues. Vulnerabilities include unauthenticated browser control sessions and cross-origin header leakage on redirects, indicating that MCP security hardening remains an urgent need as adoption grows.",
+      "key_items": [
+        {
+          "title": "CVE-2026-54309: n8n MCP Browser Unauthenticated Sessions",
+          "detail": "HTTP transport mode in @n8n/mcp-browser accepts session and tool-invocation requests without authentication, allowing any network client to initiate browser control.",
+          "url": "https://github.com/advisories/GHSA-qrx8-25qr-5r7v",
+          "tags": [
+            "MCP",
+            "CVE",
+            "Authentication"
+          ]
+        },
+        {
+          "title": "CVE-2026-53840: OpenClaw MCP Header Leakage on Redirects",
+          "detail": "Cross-origin redirects from MCP Streamable HTTP endpoints can forward operator-configured custom headers to untrusted origins, exposing secrets.",
+          "url": "https://github.com/advisories/GHSA-rjxq-qqhf-8hwh",
+          "tags": [
+            "MCP",
+            "CVE",
+            "TrustBoundary"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "AI Infrastructure Vulnerabilities",
+      "emoji": "\u2601\ufe0f",
+      "summary": "Critical vulnerabilities in AI/ML infrastructure continue to emerge. A Vertex AI SDK bucket squatting attack enables cross-tenant RCE through pickle deserialization, while a chrome-devtools-mcp symlink vulnerability allows PID file redirection. These highlight risks in AI platform supply chains and agent tooling.",
+      "key_items": [
+        {
+          "title": "Vertex AI Bucket Squatting RCE via Pickle Deserialization",
+          "detail": "Unit 42 discovered that Vertex AI Python SDK model uploads can be redirected to attacker-controlled buckets, enabling RCE when serialized models are loaded.",
+          "url": "https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model",
+          "tags": [
+            "VertexAI",
+            "RCE",
+            "SupplyChain"
+          ]
+        },
+        {
+          "title": "CVE-2026-53765: Chrome DevTools MCP Symlink Following",
+          "detail": "When XDG_RUNTIME_DIR is unset, the daemon writes PID to a predictable /tmp path, allowing symlink attacks to redirect the write.",
+          "url": "https://github.com/advisories/GHSA-3pvj-jv98-qhjq",
+          "tags": [
+            "CVE",
+            "AgentSecurity",
+            "Linux"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "AI Security Operations & Strategy",
+      "emoji": "\ud83d\udcca",
+      "summary": "Industry focus shifts toward operationalizing AI in security workflows. Microsoft's MDASH moves beyond benchmarks to integrate agentic vulnerability detection into production pipelines, while CSA research warns that AI-accelerated vulnerability discovery may outpace organizational remediation capacity, creating systemic patch debt.",
+      "key_items": [
+        {
+          "title": "Microsoft MDASH: Production AI Security Integration",
+          "detail": "Microsoft claims MDASH advances agentic vulnerability detection by integrating into real engineering workflows across Windows, Azure, and identity systems rather than relying solely on benchmarks.",
+          "url": "https://microsoft.com/en-us/security/blog/2026/06/17/beyond-the-benchmark-advancing-security-at-ai-speed",
+          "tags": [
+            "Microsoft",
+            "AIRedTeam",
+            "Enterprise"
+          ]
+        },
+        {
+          "title": "CSA Report: AI-Accelerated Patch Debt Crisis",
+          "detail": "Cloud Security Alliance frames the scaling mismatch where AI finds vulnerabilities faster than organizations can validate and deploy fixes, creating operational rather than purely technical bottlenecks.",
+          "url": "https://labs.cloudsecurityalliance.org/research/ai-accelerated-vuln-discovery-systemic-patch-debt-v1-0-csa-s",
+          "tags": [
+            "CSA",
+            "VulnManagement",
+            "Strategy"
+          ]
+        }
+      ],
+      "message_count": 6
+    },
+    {
+      "name": "Community & Networking",
+      "emoji": "\ud83d\udc65",
+      "summary": "The AISecHub community continues to grow, with the LinkedIn group approaching 10,000 members, indicating strong interest in the AI security intersection.",
+      "key_items": [
+        {
+          "title": "AISecHub LinkedIn Group Approaching 10K Members",
+          "detail": "Community milestone showing sustained growth in professionals interested in AI and cybersecurity convergence.",
+          "url": "https://www.linkedin.com/groups/14545517",
+          "tags": [
+            "Community",
+            "LinkedIn"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "MCP (Model Context Protocol) implementations show recurring authentication and trust-boundary weaknesses, suggesting the protocol ecosystem needs security-focused design reviews before broader enterprise adoption.",
+    "Agent skill ecosystems are emerging as a significant attack surface, with research demonstrating both offensive techniques (PhantomSkill) and defensive approaches (PYPILINE) for this vector.",
+    "The AI security community is grappling with a throughput mismatch: AI accelerates both vulnerability discovery and attack capability faster than defensive remediation can scale.",
+    "Pickle/serialization attacks remain a persistent threat in ML infrastructure, with the Vertex AI bucket squatting attack demonstrating cross-tenant RCE potential through model artifact manipulation.",
+    "Benchmark-focused security evaluation is giving way to production-integrated approaches, as evidenced by Microsoft's MDASH emphasis on operational signals over synthetic test results."
+  ],
+  "stats": {
+    "total_links": 22,
+    "most_linked_domains": [
+      "arxiv.org",
+      "github.com",
+      "labs.cloudsecurityalliance.org"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 1,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 18,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 1,
+      "16": 0,
+      "17": 1,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 22
+}
