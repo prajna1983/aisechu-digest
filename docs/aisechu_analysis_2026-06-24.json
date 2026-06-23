@@ -1,0 +1,61 @@
+{
+  "categories": [
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "Government cybersecurity agencies are issuing coordinated warnings about AI's transformative impact on the threat landscape. The Five Eyes alliance has released a joint statement urging organizational leaders to take immediate action on AI-related cyber risks, signaling heightened international concern about AI-enabled threats.",
+      "key_items": [
+        {
+          "title": "Five Eyes Alliance Issues Joint AI Cyber Risk Warning",
+          "detail": "Cybersecurity agencies from the Five Eyes nations (US, UK, Canada, Australia, New Zealand) released a coordinated statement highlighting how AI is fundamentally shifting cyber risk and calling on leaders to act now to address emerging threats.",
+          "url": "https://www.cyber.gc.ca/en/news-events/five-eyes-cyber-security-agencies-statement-ai-shift-cyber-risk-why-leaders-must-act-now",
+          "tags": [
+            "Five Eyes",
+            "AI Risk",
+            "Government Policy",
+            "Cyber Strategy"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "International government coordination on AI cyber risks is intensifying, with Five Eyes nations issuing joint advisories\u2014indicating AI security is now a top-tier geopolitical concern.",
+    "The emphasis on leadership action suggests regulators expect organizational governance and strategy changes, not just technical controls, to address AI-driven threats.",
+    "Low message volume today may indicate a quieter news cycle, though the single item carries significant weight given its multi-nation governmental source."
+  ],
+  "stats": {
+    "total_links": 1,
+    "most_linked_domains": [
+      "www.cyber.gc.ca"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 1,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 1
+}
