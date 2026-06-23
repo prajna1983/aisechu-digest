@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "name": "Cybersecurity Training & Simulation",
+      "emoji": "\ud83c\udfaf",
+      "summary": "The FBI showcases its Kinetic Cyber Range, a realistic training environment designed to prepare agents for real-world cyber operations. This highlights the growing emphasis on hands-on, immersive training facilities to combat evolving cyber threats.",
+      "key_items": [
+        {
+          "title": "FBI's Kinetic Cyber Range provides realistic field training",
+          "detail": "The FBI's dedicated cyber range offers agents immersive, realistic scenarios to prepare for actual field operations, representing a significant investment in practical cybersecurity readiness.",
+          "url": "https://www.fbi.gov/news/stories/inside-the-fbis-kinetic-cyber-range",
+          "tags": [
+            "FBI",
+            "training",
+            "cyber-range",
+            "law-enforcement"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "The Five Eyes alliance has issued a joint statement addressing the critical intersection of AI and cybersecurity risk. This coordinated international guidance signals urgent concern from top intelligence agencies about AI-driven shifts in the threat landscape and calls for immediate leadership action.",
+      "key_items": [
+        {
+          "title": "Five Eyes agencies issue joint AI cybersecurity risk warning",
+          "detail": "Cybersecurity agencies from the Five Eyes nations have released a coordinated statement urging leaders to act now on AI-related cyber risks, emphasizing the transformative impact AI is having on the threat environment.",
+          "url": "https://www.cyber.gc.ca/en/news-events/five-eyes-cyber-security-agencies-statement-ai-shift-cyber-risk-why-leaders-must-act-now",
+          "tags": [
+            "Five-Eyes",
+            "AI-risk",
+            "policy",
+            "international-cooperation"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Government and intelligence agencies are ramping up both defensive training infrastructure and policy coordination to address evolving cyber threats.",
+    "The Five Eyes joint statement signals that AI-driven cyber risk is now a top-tier international security concern requiring immediate executive attention.",
+    "Investment in realistic cyber training environments like the FBI's Kinetic Cyber Range reflects recognition that traditional training methods are insufficient for modern threat landscapes."
+  ],
+  "stats": {
+    "total_links": 2,
+    "most_linked_domains": [
+      "fbi.gov",
+      "cyber.gc.ca"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 1,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 1,
+      "23": 0
+    }
+  },
+  "total_messages": 2
+}
