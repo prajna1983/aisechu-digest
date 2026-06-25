@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISecHub Daily Digest — Thursday, June 25 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6584;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --link: #79c0ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #0d1b2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 24px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+    .channel-badge:hover { background: rgba(108,99,255,0.25); }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #e8eaf6 30%, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent2);
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Charts row ── */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .chart-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* ── Insights ── */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .insight-item {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Category cards ── */
+    .categories-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .cat-card:hover { border-color: var(--accent); }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-emoji {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      background: var(--surface2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-name { font-size: 16px; font-weight: 600; }
+    .cat-count {
+      margin-left: auto;
+      background: rgba(108,99,255,0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .cat-summary {
+      padding: 14px 24px 10px;
+      font-size: 14px;
+      color: #b0bcd4;
+      line-height: 1.65;
+    }
+    .cat-items {
+      padding: 10px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item-card {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .item-card:hover { border-color: var(--border); }
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .item-title a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .item-title a:hover { text-decoration: underline; }
+    .item-detail {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .item-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    /* ── Domains ── */
+    .domain-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .domain-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--accent2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="channel-badge" href="https://t.me/AISecHub" target="_blank">
+      ✈️ t.me/AISecHub
+    </a>
+    <h1>AISecHub Daily Digest</h1>
+    <p class="subtitle">Thursday, June 25 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-value">8</span>
+    <span class="stat-label">Messages</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">4</span>
+    <span class="stat-label">Categories</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">8</span>
+    <span class="stat-label">Links Shared</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">4</span>
+    <span class="stat-label">Key Insights</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="section-title">📊 Activity & Distribution</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>Messages by Category</h3>
+      <div class="chart-wrap">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>Posting Activity (SGT hour)</h3>
+      <div class="chart-wrap">
+        <canvas id="activityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">💡 Top Insights</div>
+  <div class="insights-list">
+    <div class="insight-item">🔹 Agent trust boundaries are under intense scrutiny—today's content reveals vulnerabilities in memory systems, IDE plugins, and prototyping tools that all stem from insufficient isolation between untrusted inputs and execution contexts.</div>
+<div class="insight-item">🔹 The macOS.Gaslight backdoor signals adversaries are adapting to AI-assisted analysis by targeting the human-AI interface rather than automated defenses.</div>
+<div class="insight-item">🔹 Supply chain security for AI agents is emerging as a distinct discipline, with new methods for scanning third-party skills and formalizing trust in agent memory writes.</div>
+<div class="insight-item">🔹 Major cloud vendors (AWS, Microsoft) are actively patching AI development tooling, indicating these attack surfaces are being probed in the wild.</div>
+  </div>
+
+  <div class="section-title">📂 Categories</div>
+  <div class="categories-grid">
+    
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🤖</div>
+        <div class="cat-name">Agent Security Research</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">A strong focus on securing AI agent architectures emerged today, with research addressing long-term memory poisoning, malicious skill detection, and the broader potential for agentic AI to transform cybersecurity workflows. Papers introduced concepts like 'origin-bound authority' for memory trust and attention-based methods for scanning third-party agent skills at scale.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2606.24322" target="_blank" rel="noopener">Origin-Bound Authority for LLM Agent Memory ↗</a></div>
+          <div class="item-detail">Research formalizes how summarization and trusted-tool echoes can launder poisoned content in agent memory, proposing origin-bound authority as a defense primitive.</div>
+          <div class='item-tags'><span class="tag">memory-poisoning</span><span class="tag">agent-trust</span><span class="tag">research</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2606.23416" target="_blank" rel="noopener">Attention-Based Malicious Skill Detection ↗</a></div>
+          <div class="item-detail">Locate-and-Judge method prioritizes high-attention instruction spans for deeper review, enabling scalable marketplace scanning for malicious agent skills.</div>
+          <div class='item-tags'><span class="tag">skill-marketplace</span><span class="tag">supply-chain</span><span class="tag">detection</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2606.23138" target="_blank" rel="noopener">Agentic AI for Cybersecurity Bottlenecks ↗</a></div>
+          <div class="item-detail">Paper maps labor-intensive security problems to agentic capabilities, demonstrating where automation could expand practical defense coverage.</div>
+          <div class='item-tags'><span class="tag">automation</span><span class="tag">supply-chain-analysis</span><span class="tag">research</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🚨</div>
+        <div class="cat-name">Vulnerabilities & CVEs</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Critical trust boundary issues surfaced in AI development tooling. AWS disclosed two CVEs in Amazon Q Developer IDE plugins allowing command execution and path traversal, while Microsoft patched AutoGen Studio to prevent untrusted web content from steering agents into host command execution.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://aws.amazon.com/security/security-bulletins/2026-047-aws" target="_blank" rel="noopener">AWS Amazon Q Developer IDE Plugin Flaws ↗</a></div>
+          <div class="item-detail">CVE-2026-12957 and CVE-2026-12958 allow auto-execution of commands from project config and symlink-based path traversal; fixed in version 1.69.0.</div>
+          <div class='item-tags'><span class="tag">CVE</span><span class="tag">AWS</span><span class="tag">IDE-security</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://bleepingcomputer.com/news/security/microsoft-fixes-autogen-studio-flaw-that-enabled-code-execution" target="_blank" rel="noopener">Microsoft AutoGen Studio Code Execution Fix ↗</a></div>
+          <div class="item-detail">AutoJack attack chain demonstrated how agent prototyping UIs become execution primitives when untrusted web content reaches tool/action paths.</div>
+          <div class='item-tags'><span class="tag">Microsoft</span><span class="tag">AutoGen</span><span class="tag">RCE</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🎭</div>
+        <div class="cat-name">Threat Intelligence & Malware</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">SentinelOne revealed macOS.Gaslight, a novel Rust-based backdoor that inverts the typical prompt injection target—attacking the human analyst reviewing sandbox output rather than the sandbox itself. This represents an evolution in adversarial tactics against AI-assisted analysis workflows.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.sentinelone.com/labs/macos-gaslight-rust-backdoor-turns-prompt-injection-on-the-analyst-not-the-sandbox/" target="_blank" rel="noopener">macOS.Gaslight Targets Analysts via Prompt Injection ↗</a></div>
+          <div class="item-detail">Rust backdoor embeds prompt injection payloads designed to manipulate AI-assisted analysts rather than automated sandboxes, representing a new evasion vector.</div>
+          <div class='item-tags'><span class="tag">macOS</span><span class="tag">prompt-injection</span><span class="tag">malware</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛠️</div>
+        <div class="cat-name">Security Tools & Resources</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">New tooling for both offensive and defensive AI security work appeared. A 66-tool MCP server for dark web intelligence raises significant trust boundary concerns, while CSA published an evaluation of PyRIT for agentic AI red teaming exercises.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/badchars/darknet-mcp-server" target="_blank" rel="noopener">Darknet MCP Server for Threat Intelligence ↗</a></div>
+          <div class="item-detail">66-tool MCP server reaching Tor/.onion and breach data expands model trust boundaries; all retrieved content should be treated as untrusted.</div>
+          <div class='item-tags'><span class="tag">MCP</span><span class="tag">dark-web</span><span class="tag">OSINT</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://cloudsecurityalliance.org/artifacts/evaluating-pyrit-for-agentic-ai-red-teaming" target="_blank" rel="noopener">CSA PyRIT Evaluation for AI Red Teaming ↗</a></div>
+          <div class="item-detail">Cloud Security Alliance published guidance on evaluating PyRIT for agentic AI red teaming engagements.</div>
+          <div class='item-tags'><span class="tag">red-team</span><span class="tag">PyRIT</span><span class="tag">evaluation</span></div>
+        </div></div>
+    </div>
+  </div>
+
+  
+    <div class="section-title">🌐 Most-Referenced Domains</div>
+    <div class="domain-chips"><span class="domain-chip">🔗 arxiv.org</span><span class="domain-chip">🔗 github.com</span><span class="domain-chip">🔗 aws.amazon.com</span></div>
+
+</main>
+
+<footer>
+  Generated 2026-06-25 08:02 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+</footer>
+
+<script>
+const PALETTE = [
+  "#6c63ff","#00d4aa","#ff6584","#ffd166","#06d6a0",
+  "#118ab2","#ef476f","#ffc43d","#1b998b","#e9c46a"
+];
+
+// Category distribution chart
+const catData = {"labels": ["Agent Security Research", "Vulnerabilities & CVEs", "Threat Intelligence & Malware", "Security Tools & Resources"], "values": [3, 2, 1, 2]};
+new Chart(document.getElementById("categoryChart"), {
+  type: "doughnut",
+  data: {
+    labels: catData.labels,
+    datasets: [{
+      data: catData.values,
+      backgroundColor: PALETTE.slice(0, catData.labels.length),
+      borderWidth: 2,
+      borderColor: "#1a1d27",
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "right",
+        labels: { color: "#8892b0", font: { size: 11 }, boxWidth: 12, padding: 10 }
+      }
+    }
+  }
+});
+
+// Activity by hour chart
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]};
+new Chart(document.getElementById("activityChart"), {
+  type: "bar",
+  data: {
+    labels: actData.hours,
+    datasets: [{
+      label: "Messages",
+      data: actData.counts,
+      backgroundColor: "rgba(108,99,255,0.7)",
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: "#8892b0", font: { size: 10 } }, grid: { color: "#2e3250" } },
+      y: { ticks: { color: "#8892b0", font: { size: 10 }, stepSize: 1 }, grid: { color: "#2e3250" } }
+    }
+  }
+});
+</script>
+</body>
+</html>

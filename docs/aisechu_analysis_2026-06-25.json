@@ -1,0 +1,157 @@
+{
+  "categories": [
+    {
+      "name": "Agent Security Research",
+      "emoji": "\ud83e\udd16",
+      "summary": "A strong focus on securing AI agent architectures emerged today, with research addressing long-term memory poisoning, malicious skill detection, and the broader potential for agentic AI to transform cybersecurity workflows. Papers introduced concepts like 'origin-bound authority' for memory trust and attention-based methods for scanning third-party agent skills at scale.",
+      "key_items": [
+        {
+          "title": "Origin-Bound Authority for LLM Agent Memory",
+          "detail": "Research formalizes how summarization and trusted-tool echoes can launder poisoned content in agent memory, proposing origin-bound authority as a defense primitive.",
+          "url": "https://arxiv.org/abs/2606.24322",
+          "tags": [
+            "memory-poisoning",
+            "agent-trust",
+            "research"
+          ]
+        },
+        {
+          "title": "Attention-Based Malicious Skill Detection",
+          "detail": "Locate-and-Judge method prioritizes high-attention instruction spans for deeper review, enabling scalable marketplace scanning for malicious agent skills.",
+          "url": "https://arxiv.org/abs/2606.23416",
+          "tags": [
+            "skill-marketplace",
+            "supply-chain",
+            "detection"
+          ]
+        },
+        {
+          "title": "Agentic AI for Cybersecurity Bottlenecks",
+          "detail": "Paper maps labor-intensive security problems to agentic capabilities, demonstrating where automation could expand practical defense coverage.",
+          "url": "https://arxiv.org/abs/2606.23138",
+          "tags": [
+            "automation",
+            "supply-chain-analysis",
+            "research"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udea8",
+      "summary": "Critical trust boundary issues surfaced in AI development tooling. AWS disclosed two CVEs in Amazon Q Developer IDE plugins allowing command execution and path traversal, while Microsoft patched AutoGen Studio to prevent untrusted web content from steering agents into host command execution.",
+      "key_items": [
+        {
+          "title": "AWS Amazon Q Developer IDE Plugin Flaws",
+          "detail": "CVE-2026-12957 and CVE-2026-12958 allow auto-execution of commands from project config and symlink-based path traversal; fixed in version 1.69.0.",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-047-aws",
+          "tags": [
+            "CVE",
+            "AWS",
+            "IDE-security"
+          ]
+        },
+        {
+          "title": "Microsoft AutoGen Studio Code Execution Fix",
+          "detail": "AutoJack attack chain demonstrated how agent prototyping UIs become execution primitives when untrusted web content reaches tool/action paths.",
+          "url": "https://bleepingcomputer.com/news/security/microsoft-fixes-autogen-studio-flaw-that-enabled-code-execution",
+          "tags": [
+            "Microsoft",
+            "AutoGen",
+            "RCE"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Threat Intelligence & Malware",
+      "emoji": "\ud83c\udfad",
+      "summary": "SentinelOne revealed macOS.Gaslight, a novel Rust-based backdoor that inverts the typical prompt injection target\u2014attacking the human analyst reviewing sandbox output rather than the sandbox itself. This represents an evolution in adversarial tactics against AI-assisted analysis workflows.",
+      "key_items": [
+        {
+          "title": "macOS.Gaslight Targets Analysts via Prompt Injection",
+          "detail": "Rust backdoor embeds prompt injection payloads designed to manipulate AI-assisted analysts rather than automated sandboxes, representing a new evasion vector.",
+          "url": "https://www.sentinelone.com/labs/macos-gaslight-rust-backdoor-turns-prompt-injection-on-the-analyst-not-the-sandbox/",
+          "tags": [
+            "macOS",
+            "prompt-injection",
+            "malware"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Resources",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "New tooling for both offensive and defensive AI security work appeared. A 66-tool MCP server for dark web intelligence raises significant trust boundary concerns, while CSA published an evaluation of PyRIT for agentic AI red teaming exercises.",
+      "key_items": [
+        {
+          "title": "Darknet MCP Server for Threat Intelligence",
+          "detail": "66-tool MCP server reaching Tor/.onion and breach data expands model trust boundaries; all retrieved content should be treated as untrusted.",
+          "url": "https://github.com/badchars/darknet-mcp-server",
+          "tags": [
+            "MCP",
+            "dark-web",
+            "OSINT"
+          ]
+        },
+        {
+          "title": "CSA PyRIT Evaluation for AI Red Teaming",
+          "detail": "Cloud Security Alliance published guidance on evaluating PyRIT for agentic AI red teaming engagements.",
+          "url": "https://cloudsecurityalliance.org/artifacts/evaluating-pyrit-for-agentic-ai-red-teaming",
+          "tags": [
+            "red-team",
+            "PyRIT",
+            "evaluation"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "Agent trust boundaries are under intense scrutiny\u2014today's content reveals vulnerabilities in memory systems, IDE plugins, and prototyping tools that all stem from insufficient isolation between untrusted inputs and execution contexts.",
+    "The macOS.Gaslight backdoor signals adversaries are adapting to AI-assisted analysis by targeting the human-AI interface rather than automated defenses.",
+    "Supply chain security for AI agents is emerging as a distinct discipline, with new methods for scanning third-party skills and formalizing trust in agent memory writes.",
+    "Major cloud vendors (AWS, Microsoft) are actively patching AI development tooling, indicating these attack surfaces are being probed in the wild."
+  ],
+  "stats": {
+    "total_links": 8,
+    "most_linked_domains": [
+      "arxiv.org",
+      "github.com",
+      "aws.amazon.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 6,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 2,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 8
+}
