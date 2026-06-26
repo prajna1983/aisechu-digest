@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "name": "AI Agent Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Research this period focused on the emerging threat landscape around autonomous AI agents. A notable paper introduced the concept of 'agentic surveillance' where AI agents compile and transmit reports using available context and tools, along with evasion techniques adapted from prompt injection methods to deceive or manipulate surveilling agents.",
+      "key_items": [
+        {
+          "title": "SurveilBench: Testing Agent Surveillance Evasion",
+          "detail": "New benchmark formalizes agentic surveillance and tests evasion methods including hiding, deception, and over-escalation triggering against surveilling AI agents.",
+          "url": "https://arxiv.org/abs/2606.25836",
+          "tags": [
+            "agent-security",
+            "prompt-injection",
+            "benchmark"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "LLM Security Evaluation",
+      "emoji": "\ud83d\udd2c",
+      "summary": "Multiple papers addressed critical gaps in how we evaluate LLM security systems. Research highlighted that automated jailbreak judges suffer from calibration issues and adversarial brittleness, while peer review systems face manipulation vectors across the entire decision pipeline. The findings emphasize that security evaluations must test for strategic manipulation, not just average performance.",
+      "key_items": [
+        {
+          "title": "Jailbreak Judge Reliability Under Scrutiny",
+          "detail": "Study reveals automated ASR judges are miscalibrated against human labels and vulnerable to adversarial attacks, with simple wrapper text capable of flipping judge decisions.",
+          "url": "https://arxiv.org/abs/2606.25487",
+          "tags": [
+            "jailbreak",
+            "evaluation",
+            "adversarial-robustness"
+          ]
+        },
+        {
+          "title": "LLM Peer Review Attack Surface Analysis",
+          "detail": "Survey maps attack vectors in LLM-assisted peer review including prompt injection, retrieval manipulation, data poisoning, and reward hacking across untrusted inputs.",
+          "url": "https://arxiv.org/abs/2606.25057",
+          "tags": [
+            "peer-review",
+            "attack-surface",
+            "pipeline-security"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Miscellaneous",
+      "emoji": "\ud83d\udcac",
+      "summary": "Channel operator noted infrastructure challenges with API token limits, highlighting the practical costs of running AI-powered content curation across multiple platforms and models.",
+      "key_items": [
+        {
+          "title": "API Cost Challenges for AI Tooling",
+          "detail": "Channel admin highlighted that combined spending of $320/month across Claude, Codex, and Ollama still results in token exhaustion issues.",
+          "url": null,
+          "tags": [
+            "infrastructure",
+            "api-costs"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "The reliability of security evaluation tools is emerging as a critical concern\u2014if the judges themselves can be fooled, reported attack success rates become meaningless.",
+    "Agentic AI systems introduce novel threat models where the AI itself becomes both the surveillance mechanism and the target of evasion techniques.",
+    "Research is increasingly treating LLM systems as adversarial pipelines with multiple untrusted input vectors rather than monolithic models to be tested in isolation.",
+    "Prompt injection techniques are evolving beyond direct attacks to become general-purpose manipulation methods applicable to agent oversight and evaluation systems."
+  ],
+  "stats": {
+    "total_links": 3,
+    "most_linked_domains": [
+      "arxiv.org"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 3,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 1,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 4
+}
