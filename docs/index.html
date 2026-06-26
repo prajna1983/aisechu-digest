@@ -222,15 +222,15 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">30</span>
+    <span class="stat-value">31</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">294</span>
+    <span class="stat-value">303</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">271</span>
+    <span class="stat-value">277</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-06-26.html">
+    <a class="digest-card today" href="aisechu_digest_2026-06-27.html">
+      <div>
+        <div class="digest-date">
+          Saturday, June 27 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">LLM Agent Security Research</span><span class="cat-tag">MCP Protocol Security</span><span class="cat-tag">AI Tool Vulnerabilities</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">Classical security principles (reference monitors, least privilege, supply chain integrity) are being systematically applied to LLM agent architectures, suggesting the field is maturing toward established security frameworks.</div><div class="digest-insight-item">MCP (Model Context Protocol) is emerging as a significant attack surface with both protocol-level poisoning attacks and implementation vulnerabilities in major deployments like GitHub's MCP server.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">9</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">6</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-06-26.html">
       <div>
         <div class="digest-date">
           Friday, June 26 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI Agent Security</span><span class="cat-tag">LLM Security Evaluation</span><span class="cat-tag">Miscellaneous</span></div>
         <div class="digest-insights"><div class="digest-insight-item">The reliability of security evaluation tools is emerging as a critical concern—if the judges themselves can be fooled, reported attack success rates become meaningless.</div><div class="digest-insight-item">Agentic AI systems introduce novel threat models where the AI itself becomes both the surveillance mechanism and the target of evasion techniques.</div></div>
@@ -975,12 +999,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-06-26 08:05 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-06-27 07:58 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26"], "messages": [12, 14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4], "links": [12, 13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3]};
+const trendData = {"labels": ["05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26", "06-27"], "messages": [14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4, 9], "links": [13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3, 6]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {

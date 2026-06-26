@@ -1,0 +1,130 @@
+{
+  "categories": [
+    {
+      "name": "LLM Agent Security Research",
+      "emoji": "\ud83e\udd16",
+      "summary": "Significant research activity focused on securing LLM agents, with papers addressing prompt injection defenses, deterministic control planes, and agent identity management. The research emphasizes treating agent security through traditional security principles like reference monitors, least privilege, and supply chain integrity. A notable trend is the application of classical security frameworks to emerging agentic AI systems.",
+      "key_items": [
+        {
+          "title": "Adaptive Evaluation Framework for Prompt Injection Defenses",
+          "detail": "Paper reframes out-of-band agent defenses as classic reference-monitor and least-privilege integrity controls, demonstrating Progent reduced attack success ~6\u00d7 against Qwen2.5-7B in AgentDojo tests.",
+          "url": "https://arxiv.org/abs/2606.26479",
+          "tags": [
+            "prompt-injection",
+            "LLM-agents",
+            "defense-evaluation"
+          ]
+        },
+        {
+          "title": "Deterministic Control Plane for Coding Agents",
+          "detail": "Proposes treating agent rules and IDE configs as supply chain artifacts, introducing content-addressed configs with attestations, permission gating, policy blocklists, and drift detection.",
+          "url": "https://arxiv.org/abs/2606.26924",
+          "tags": [
+            "supply-chain",
+            "coding-agents",
+            "access-control"
+          ]
+        },
+        {
+          "title": "Agent Name Service (ANS) Security Analysis",
+          "detail": "Cloud Security Alliance analysis of DNS+PKI-based agent identity binding, highlighting that DNS/PKI trust chain becomes the core security boundary for agent-to-agent authorization.",
+          "url": "https://labs.cloudsecurityalliance.org/research/agentic-identity-ans-security-analysis-v1-0",
+          "tags": [
+            "agent-identity",
+            "DNS",
+            "PKI"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "MCP Protocol Security",
+      "emoji": "\ud83d\udd17",
+      "summary": "Two distinct security issues emerged around the Model Context Protocol (MCP): a novel threshold poisoning attack that distributes malicious instructions across multiple tools using Shamir secret shares, and a critical cross-user trust boundary vulnerability in GitHub's MCP server. These findings highlight MCP as an emerging attack surface requiring dedicated security attention.",
+      "key_items": [
+        {
+          "title": "ShareLock: Threshold Tool-Poisoning Attack Against MCP",
+          "detail": "Novel attack splits hidden instructions into Shamir secret shares across multiple MCP tool descriptions, evading manual review and description-based detectors by keeping each tool benign-looking in isolation.",
+          "url": "https://arxiv.org/abs/2606.27027",
+          "tags": [
+            "tool-poisoning",
+            "evasion",
+            "Shamir-shares"
+          ]
+        },
+        {
+          "title": "CVE-2026-48529: GitHub MCP Server Cross-User Data Leak",
+          "detail": "Process-global singleton in HTTP lockdown mode can mix users' GraphQL clients, causing cross-user trust boundary failures via shared server state.",
+          "url": "https://github.com/advisories/GHSA-pjp5-fpmr-3349",
+          "tags": [
+            "CVE",
+            "GitHub",
+            "authentication-bypass"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Tool Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "A local privilege escalation and information disclosure vulnerability was disclosed in Claude Code's /copy command, demonstrating that even sophisticated AI coding assistants can contain classic security flaws like insecure temporary file handling and missing symlink protections.",
+      "key_items": [
+        {
+          "title": "CVE-2026-46406: Claude Code Insecure Temp File Handling",
+          "detail": "Claude Code's /copy command wrote to predictable /tmp path with world-readable permissions and no symlink defenses, enabling local users to read responses or redirect writes via symlink attacks.",
+          "url": "https://github.com/advisories/GHSA-4vp2-6q8c-pvq2",
+          "tags": [
+            "CVE",
+            "Claude-Code",
+            "local-privilege-escalation"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Classical security principles (reference monitors, least privilege, supply chain integrity) are being systematically applied to LLM agent architectures, suggesting the field is maturing toward established security frameworks.",
+    "MCP (Model Context Protocol) is emerging as a significant attack surface with both protocol-level poisoning attacks and implementation vulnerabilities in major deployments like GitHub's MCP server.",
+    "Agent identity and trust establishment is receiving formal security analysis attention, with DNS+PKI approaches being evaluated as foundational infrastructure for agent-to-agent authentication.",
+    "Even leading AI development tools contain classic vulnerability patterns (insecure temp files, missing symlink protections), indicating a gap between AI capability sophistication and basic security hygiene.",
+    "Adaptive, defense-aware evaluation methodologies are being advocated over static benchmarks for assessing AI security defenses, reflecting lessons learned from adversarial ML."
+  ],
+  "stats": {
+    "total_links": 6,
+    "most_linked_domains": [
+      "arxiv.org",
+      "github.com",
+      "labs.cloudsecurityalliance.org"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 1,
+      "05": 0,
+      "06": 0,
+      "07": 6,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 2,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 9
+}
