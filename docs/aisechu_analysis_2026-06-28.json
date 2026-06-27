@@ -1,0 +1,132 @@
+{
+  "categories": [
+    {
+      "name": "MCP Security Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "A significant cluster of Model Context Protocol (MCP) security advisories emerged today, revealing a pattern of authentication bypass vulnerabilities across multiple implementations. These flaws consistently stem from insecure default configurations\u2014particularly servers binding to 0.0.0.0 without authentication\u2014and incomplete authorization scope enforcement, enabling unauthenticated or improperly-scoped tool invocation.",
+      "key_items": [
+        {
+          "title": "Amazon Q Developer MCP config flaw enables malicious repo code execution",
+          "detail": "Opening a malicious repository could register attacker-controlled MCP servers through config handling, allowing command execution via the agent's tool interface. Amazon has issued a patch.",
+          "url": "https://thehackernews.com/2026/06/amazon-q-developer-flaw-could-let.html",
+          "tags": [
+            "MCP",
+            "AgentSecurity",
+            "Amazon"
+          ]
+        },
+        {
+          "title": "CVE-2026-49357: LINE Desktop MCP exposes tools without authentication",
+          "detail": "Streamable HTTP mode binds the MCP server to 0.0.0.0, exposing LINE Desktop read/send tools without MCP authentication, reducing security to mere network reachability.",
+          "url": "https://github.com/advisories/GHSA-4hf8-5mjm-rfgq",
+          "tags": [
+            "CVE",
+            "MCP",
+            "LINE"
+          ]
+        },
+        {
+          "title": "CVE-2026-49257: mcp-pinot auth bypass via default oauth disabled setting",
+          "detail": "When oauthenabled defaults to false and the server listens on 0.0.0.0, remote clients can invoke MCP tools without authentication. Fixed in v3.1.0.",
+          "url": "https://github.com/advisories/GHSA-73cv-556c-w3g6",
+          "tags": [
+            "CVE",
+            "MCP",
+            "OAuth"
+          ]
+        },
+        {
+          "title": "CVE-2026-49291: mcp-memory-service OAuth scope bypass allows writes with read-only tokens",
+          "detail": "OAuth scope validation occurs only at the /mcp JSON-RPC boundary, allowing read-scoped clients to reach tools/call handlers and invoke mutating operations like store_memory and delete_memory.",
+          "url": "https://github.com/advisories/GHSA-2r68-g678-7qr3",
+          "tags": [
+            "CVE",
+            "MCP",
+            "OAuth",
+            "AuthZ"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "AI Red-Teaming Research",
+      "emoji": "\ud83c\udfaf",
+      "summary": "New research introduces MIRROR, a sophisticated red-teaming framework for multimodal agentic RAG systems. The approach combines memory-guided Monte Carlo tree search with novelty constraints to systematically discover cross-surface attack vectors including retrieval poisoning, image injection, and orchestrator manipulation.",
+      "key_items": [
+        {
+          "title": "MIRROR: Memory-guided MCTS for attacking agentic RAG systems",
+          "detail": "Novel red-teaming methodology uses deterministic novelty gates to prevent retrieval-context copying while generating diverse attack surfaces against multimodal agentic RAG architectures.",
+          "url": "https://arxiv.org/abs/2606.26793",
+          "tags": [
+            "Research",
+            "RedTeaming",
+            "RAG",
+            "MCTS"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "LLM Application Security Research",
+      "emoji": "\ud83d\udcc4",
+      "summary": "Empirical research examines prompt injection vulnerabilities in real-world LLM deployment scenarios, specifically automated r\u00e9sum\u00e9 screening. Findings reveal nuanced dynamics where injection effectiveness depends on applicant pool composition and injection prevalence, with potential for weaker candidates to manipulate rankings.",
+      "key_items": [
+        {
+          "title": "Prompt injection dynamics in LLM r\u00e9sum\u00e9 screening systems",
+          "detail": "Controlled experiments demonstrate injection text is most effective when applicants are similar and few inject; effectiveness diminishes as injection becomes common, but can still enable weaker candidates to outrank stronger ones in mixed pools.",
+          "url": "https://arxiv.org/abs/2606.27287",
+          "tags": [
+            "Research",
+            "PromptInjection",
+            "LLM",
+            "HR"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "MCP implementations show a systemic pattern of insecure defaults\u2014binding to 0.0.0.0 without authentication appears across multiple independent projects, suggesting the protocol's flexibility is creating security footguns for developers.",
+    "Authorization boundary confusion is emerging as a key vulnerability class in AI tool ecosystems, where scope checks at API gateways fail to propagate to underlying tool handlers.",
+    "Red-teaming methodologies are maturing to address multimodal agentic systems, with MCTS-based approaches enabling systematic exploration of complex attack surfaces across retrieval, vision, and orchestration layers.",
+    "Prompt injection research is moving from proof-of-concept to studying game-theoretic dynamics in competitive scenarios, reflecting real-world adoption of LLMs in adversarial contexts like hiring."
+  ],
+  "stats": {
+    "total_links": 8,
+    "most_linked_domains": [
+      "github.com",
+      "arxiv.org",
+      "thehackernews.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 6,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 6
+}

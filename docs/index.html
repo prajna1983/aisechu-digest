@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">31</span>
+    <span class="stat-value">32</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">303</span>
+    <span class="stat-value">309</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">277</span>
+    <span class="stat-value">285</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">33</span>
+    <span class="stat-value">34</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-06-27.html">
+    <a class="digest-card today" href="aisechu_digest_2026-06-28.html">
+      <div>
+        <div class="digest-date">
+          Sunday, June 28 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">MCP Security Vulnerabilities</span><span class="cat-tag">AI Red-Teaming Research</span><span class="cat-tag">LLM Application Security Research</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">MCP implementations show a systemic pattern of insecure defaults—binding to 0.0.0.0 without authentication appears across multiple independent projects, suggesting the protocol's flexibility is creating security footguns for developers.</div><div class="digest-insight-item">Authorization boundary confusion is emerging as a key vulnerability class in AI tool ecosystems, where scope checks at API gateways fail to propagate to underlying tool handlers.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">6</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">8</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-06-27.html">
       <div>
         <div class="digest-date">
           Saturday, June 27 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">LLM Agent Security Research</span><span class="cat-tag">MCP Protocol Security</span><span class="cat-tag">AI Tool Vulnerabilities</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Classical security principles (reference monitors, least privilege, supply chain integrity) are being systematically applied to LLM agent architectures, suggesting the field is maturing toward established security frameworks.</div><div class="digest-insight-item">MCP (Model Context Protocol) is emerging as a significant attack surface with both protocol-level poisoning attacks and implementation vulnerabilities in major deployments like GitHub's MCP server.</div></div>
@@ -999,12 +1023,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-06-27 07:58 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-06-28 07:57 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26", "06-27"], "messages": [14, 23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4, 9], "links": [13, 22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3, 6]};
+const trendData = {"labels": ["05-27", "05-28", "05-29", "05-30", "05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26", "06-27", "06-28"], "messages": [23, 10, 7, 8, 8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4, 9, 6], "links": [22, 10, 9, 7, 9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3, 6, 8]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
