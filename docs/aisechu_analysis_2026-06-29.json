@@ -1,0 +1,119 @@
+{
+  "categories": [
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "MCP (Model Context Protocol) server vulnerabilities continue to emerge as a critical attack surface in AI agent infrastructure. A new advisory highlights trust-boundary failures including missing spending limits on payment tools, LAN-exposed HTTP transports, and SSRF vectors through catalog configuration. These issues underscore the need for robust security controls in AI agent communication protocols.",
+      "key_items": [
+        {
+          "title": "MCP-Server Trust Boundary Failures Disclosed",
+          "detail": "Advisory GHSA-rp72-5v5q-2446 reveals three critical security issues in @cardano402/mcp-server: unconstrained payment tool signing, LAN-accessible HTTP transport, and SSRF via attacker-controlled catalog.server.url parameter.",
+          "url": "https://github.com/advisories/GHSA-rp72-5v5q-2446",
+          "tags": [
+            "MCP",
+            "AgentSecurity",
+            "SSRF",
+            "Advisory"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83d\udcf0",
+      "summary": "The open source security landscape is undergoing a fundamental shift from vulnerability discovery to remediation capacity. With tools like Trivy and KICS accelerating bug detection, the bottleneck has moved downstream to coordinated fixes, patch validation, and actual deployment. Initiatives like GitHub's fund, Akrites, and Patch the Planet reflect this industry-wide pivot toward repair infrastructure.",
+      "key_items": [
+        {
+          "title": "Open Source Security Shifts to Repair Capacity",
+          "detail": "As vulnerability discovery becomes cheaper and more scalable, the security community is recognizing that the real challenge lies in verified fixes, coordinated remediation, and ensuring patches reach production systems.",
+          "url": "https://cyber-biz.com/blog/open-source-security-reset",
+          "tags": [
+            "OpenSource",
+            "Remediation",
+            "Trivy",
+            "KICS"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Tutorials & Learning Resources",
+      "emoji": "\ud83d\udcda",
+      "summary": "The AI Security Newsletter for June 2026 provides a comprehensive digest of the month's AI security research, adversarial AI developments, red team techniques, and LLM security insights. This curated resource consolidates reports, tools, videos, and upcoming events for security professionals tracking the AI threat landscape.",
+      "key_items": [
+        {
+          "title": "AI Security Newsletter - June 2026 Released",
+          "detail": "Monthly digest covering AI security research, adversarial AI, red teaming, LLM security, tools, and upcoming events compiled by Tal Eliyahu.",
+          "url": "https://www.linkedin.com/pulse/ai-security-newsletter-june-2026-tal-eliyahu-rmpwf/",
+          "tags": [
+            "AIsecurity",
+            "AdversarialAI",
+            "RedTeamAI",
+            "LLMsecurity"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Miscellaneous",
+      "emoji": "\ud83d\udcac",
+      "summary": "Channel activity included a personal announcement from a community member celebrating an engagement, adding a human touch to the otherwise technical discourse.",
+      "key_items": [
+        {
+          "title": "Community Member Engagement Announcement",
+          "detail": "A channel participant shared personal news about getting engaged, humorously framing it as combining token holdings.",
+          "url": null,
+          "tags": [
+            "Community",
+            "OffTopic"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "MCP (Model Context Protocol) servers are emerging as a high-risk attack surface requiring immediate attention from AI infrastructure teams, with trust-boundary failures enabling payment fraud, lateral movement, and SSRF attacks.",
+    "The security industry is experiencing a paradigm shift where vulnerability discovery is no longer the bottleneck\u2014the challenge has moved to coordinated remediation and verified deployment of patches.",
+    "Curated AI security digests and newsletters are becoming essential resources as the field's complexity and pace of research exceeds individual tracking capacity.",
+    "Agent security and AI tool communication protocols represent the next frontier of security research as autonomous AI systems proliferate."
+  ],
+  "stats": {
+    "total_links": 5,
+    "most_linked_domains": [
+      "github.com",
+      "linkedin.com",
+      "cyber-biz.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 1,
+      "08": 0,
+      "09": 1,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 1,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 2,
+      "23": 0
+    }
+  },
+  "total_messages": 5
+}
