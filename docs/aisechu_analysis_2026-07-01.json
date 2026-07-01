@@ -1,0 +1,268 @@
+{
+  "categories": [
+    {
+      "name": "Prompt Injection & Jailbreak Research",
+      "emoji": "\ud83d\udc89",
+      "summary": "Significant research this period reveals that prompt injection vulnerabilities remain pervasive across all major LLMs, with non-English prompts showing consistently higher malicious compliance rates than English\u2014exposing critical gaps in multilingual safety alignment. Novel jailbreak techniques exploiting role-model framing and multi-stage obfuscated attacks continue to bypass safety guardrails, while researchers propose unified defense approaches to address blind spots in activation-based defenses.",
+      "key_items": [
+        {
+          "title": "Multilingual Prompt Injection Study Exposes Safety Gap",
+          "detail": "All six tested LLMs (DeepSeek, GPT, Gemini, Grok, Llama, Qwen) show measurable prompt injection compliance, with non-English prompts yielding higher malicious compliance rates than English.",
+          "url": "https://arxiv.org/abs/2606.29602",
+          "tags": [
+            "PromptInjection",
+            "Multilingual",
+            "LLMSecurity"
+          ]
+        },
+        {
+          "title": "Role-Model Jailbreak Bypasses Safety Guardrails",
+          "detail": "Security researchers demonstrated a novel jailbreak technique exploiting role-model framing to extract harmful content like cocaine recipes from multiple frontier models.",
+          "url": "https://www.theregister.com/ai-and-ml/2026/06/30/security-researchers-tricked-llms-into-giving-them-cocaine-recipes-by-abusing-role-models-for-prompt-injection/",
+          "tags": [
+            "Jailbreak",
+            "LLMSafety"
+          ]
+        },
+        {
+          "title": "Unified Defense for Activation-Cone Blind Spots",
+          "detail": "Research evaluating five defense paradigms across seven models identifies blind spots in activation-based defenses and proposes a unified approach to jailbreak defense.",
+          "url": "https://arxiv.org/pdf/2606.29441v1",
+          "tags": [
+            "JailbreakDefense",
+            "LLMSafety"
+          ]
+        }
+      ],
+      "message_count": 5
+    },
+    {
+      "name": "AI Agent Security & Supply Chain",
+      "emoji": "\ud83e\udd16",
+      "summary": "Critical supply chain vulnerabilities in AI agent ecosystems were exposed this period. Tencent Zhuque Lab's analysis of 50,000 ClawHub skills found 74.6% declare network permissions, with a malicious skill successfully bypassing all security checks and compromising 26,000+ agents through pickle deserialization RCE. Mozilla 0Din researchers also demonstrated a sophisticated Claude Code attack using indirect prompt injection via DNS TXT records to achieve reverse shell access on developer machines.",
+      "key_items": [
+        {
+          "title": "ClawHub Skills Enable RCE Backdoors on 26K+ Agents",
+          "detail": "A controlled experiment showed a malicious skill could bypass ClawHub security scanners and compromise over 26,000 agents through hidden pickle deserialization vulnerabilities.",
+          "url": "https://cybersecuritynews.com/malicious-ai-agent-skill-bypasses/",
+          "tags": [
+            "ClawHub",
+            "SupplyChain",
+            "RCE"
+          ]
+        },
+        {
+          "title": "Claude Code Attack via Harmless-Looking Repositories",
+          "detail": "Mozilla 0Din researchers chained an error message, DNS TXT record, and shell script to spawn reverse shells on developer machines with no malicious code visible in the repository.",
+          "url": "https://www.securityweek.com/new-attack-abuses-claude-code-and-harmless-looking-repositories-to-hijack-developer-machines/",
+          "tags": [
+            "ClaudeCode",
+            "PromptInjection",
+            "SupplyChain"
+          ]
+        },
+        {
+          "title": "MESA Framework for Multi-Agent Communication Security",
+          "detail": "First systematic framework enabling defenders to prioritize which inter-agent communication channels to harden in multi-agent systems.",
+          "url": "https://arxiv.org/pdf/2606.30602v1",
+          "tags": [
+            "MultiAgent",
+            "CommunicationSecurity"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "LLM Agent Forensics & Detection",
+      "emoji": "\ud83d\udd0d",
+      "summary": "Novel forensic detection capabilities emerged for identifying compromised AI agents. Research discovered that memory-poisoning attacks leave distinctive behavioral signatures in tool-call logs\u2014specifically a memory_recall_fact \u2192 email_send_email transition that achieves AUC 0.99 detection rates. Separate research proposes multi-layer fingerprinting techniques to unmask LLM-powered web agents that bypass traditional anti-bot mechanisms.",
+      "key_items": [
+        {
+          "title": "Memory Poisoning Detection via Tool-Call Signatures",
+          "detail": "A simple rule exploiting the memory_recall \u2192 email_send invariant achieves AUC 0.956, with Random Forest over 19 trajectory features hitting AUC 0.990, generalizing to GPT-4.1/4o without retraining.",
+          "url": "https://arxiv.org/abs/2606.30566",
+          "tags": [
+            "MemoryPoisoning",
+            "AgentForensics",
+            "Detection"
+          ]
+        },
+        {
+          "title": "Multi-Layer Fingerprinting for LLM Web Agent Detection",
+          "detail": "New techniques proposed to detect LLM-powered web agents that bypass traditional anti-bot mechanisms, relevant for defending against autonomous AI scraping and attack automation.",
+          "url": "https://arxiv.org/pdf/2606.30119v1",
+          "tags": [
+            "WebAgents",
+            "BotDetection",
+            "Fingerprinting"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "Industry News & AI Policy",
+      "emoji": "\ud83d\udcf0",
+      "summary": "Major AI labs face unprecedented government intervention as OpenAI and Anthropic limit access to their most advanced models pending cybersecurity reviews. GPT-5.6 Sol is restricted to approximately 20 pre-vetted Trump-approved customers, while Anthropic's Mythos 5 was partially re-released after a two-week government-ordered shutdown. OpenAI positions GPT-5.6 Sol as matching Mythos Preview on ExploitBench while using one-third the output tokens.",
+      "key_items": [
+        {
+          "title": "Government-Mandated AI Model Access Restrictions",
+          "detail": "GPT-5.6 Sol restricted to ~20 pre-vetted customers; Anthropic's Mythos 5 partially re-released after government-ordered shutdown; Fable 5 remains offline during cybersecurity review.",
+          "url": "https://www.securityweek.com/openai-and-anthropic-limit-new-ai-models-to-trump-approved-customers-during-cybersecurity-review/",
+          "tags": [
+            "AIRegulation",
+            "GPT56Sol",
+            "Mythos5"
+          ]
+        },
+        {
+          "title": "OpenAI GPT-5.6 Sol Cybersecurity Capabilities",
+          "detail": "OpenAI's new model matches Mythos Preview on ExploitBench with one-third the output tokens, shows stronger affinity for defensive tasks, and underwent 700,000+ GPU hours of automated red-teaming.",
+          "url": "https://www.securityweek.com/openai-unveils-gpt-5-6-sol-as-its-most-advanced-cybersecurity-ai/",
+          "tags": [
+            "GPT56Sol",
+            "RedTeaming",
+            "Cybersecurity"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Security Threat Landscape Reports",
+      "emoji": "\ud83d\udcca",
+      "summary": "Cisco released its comprehensive State of AI Security 2026 Report covering the evolving threat landscape including prompt injection evolution, AI supply chain fragility, MCP agentic AI risk surfaces, and diverging global AI policy approaches across US, EU, and China regulatory frameworks.",
+      "key_items": [
+        {
+          "title": "Cisco State of AI Security 2026 Report",
+          "detail": "Comprehensive analysis covering prompt injection evolution, AI supply chain fragility, MCP agentic AI risk surface, and global AI policy divergence between US innovation-first, EU regulation, and China dual-track approaches.",
+          "url": "https://blogs.cisco.com/ai/cisco-state-of-ai-security-2026-report",
+          "tags": [
+            "Cisco",
+            "ThreatLandscape",
+            "MCP",
+            "AIPolicy"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Model Hub & Inference Security",
+      "emoji": "\ud83c\udfea",
+      "summary": "Research identified new attack surfaces on Hugging Face-style model hosting platforms where AI-Apps expose pre-trained models to inference-time attacks through poorly isolated hosting environments. Separately, research found that LLMs used for vulnerability detection exhibit the same cognitive biases affecting human judgment, with implications for automated security review pipelines.",
+      "key_items": [
+        {
+          "title": "Model Hub Inference-Time Attack Surface",
+          "detail": "New research identifies how AI-Apps on Hugging Face-style platforms expose pre-trained models to inference-time attacks through insufficient isolation in hosting environments.",
+          "url": "https://arxiv.org/pdf/2606.30373v1",
+          "tags": [
+            "ModelHubs",
+            "HuggingFace",
+            "InferenceAttacks"
+          ]
+        },
+        {
+          "title": "Cognitive Biases in LLM Vulnerability Detection",
+          "detail": "LLMs used for vulnerability detection are susceptible to the same cognitive biases affecting human judgment, with direct implications for automated security review pipelines.",
+          "url": "https://arxiv.org/pdf/2606.30587v1",
+          "tags": [
+            "VulnerabilityDetection",
+            "LLMBias",
+            "CodeSecurity"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Cybersecurity Vulnerabilities",
+      "emoji": "\ud83d\udea8",
+      "summary": "An anonymous researcher irresponsibly disclosed working exploit code for zero-day vulnerabilities across 15 software products without vendor notification. Attackers are already actively exploiting at least two of these vulnerabilities in the wild, highlighting ongoing tensions between security research and responsible disclosure practices.",
+      "key_items": [
+        {
+          "title": "Exploitarium 0-Day Dump Already Being Exploited",
+          "detail": "Anonymous researcher dumped working exploit code for zero-days across 15 products without vendor notification; at least two are already being exploited in the wild.",
+          "url": "https://www.theregister.com/security/2026/06/29/anonymous-researcher-drops-0-day-exploitarium-repo/5263961",
+          "tags": [
+            "ZeroDay",
+            "ExploitDisclosure",
+            "VulnerabilityResearch"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Resources",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "MITRE released an ATLAS knowledge base agent on GitHub, providing practitioners with automated tooling for adversarial threat landscape analysis specific to AI/ML systems. Separately, research on Hephaestus argues that AI-native cybersecurity research requires fundamentally different automation architectures than general-purpose AI scientist systems.",
+      "key_items": [
+        {
+          "title": "MITRE ATLAS Knowledge Base Agent",
+          "detail": "New GitHub release from MITRE providing an agent for the ATLAS (Adversarial Threat Landscape for AI Systems) knowledge base.",
+          "url": "https://github.com/mitre-atlas/atlas-knowledge-base-agent",
+          "tags": [
+            "MITRE",
+            "ATLAS",
+            "Tools"
+          ]
+        },
+        {
+          "title": "Hephaestus: AI Scientist for Cybersecurity",
+          "detail": "Research argues that AI-native cybersecurity research requires fundamentally different automation architectures than general-purpose AI scientist systems due to adversarial domain dynamics.",
+          "url": "https://arxiv.org/pdf/2606.29981v1",
+          "tags": [
+            "AIScientist",
+            "Automation",
+            "CybersecurityResearch"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "Multilingual safety alignment represents a critical and systemic gap across all major LLMs\u2014non-English prompts consistently achieve higher malicious compliance rates, suggesting safety training is disproportionately focused on English-language attacks.",
+    "AI agent supply chains are emerging as a high-impact attack surface, with ClawHub skill marketplace compromises demonstrating how a single malicious skill can bypass security scanners and propagate to tens of thousands of agents.",
+    "Forensic detection of compromised AI agents is becoming feasible through behavioral invariants\u2014memory poisoning attacks leave distinctive tool-call signatures that enable high-accuracy detection without model retraining.",
+    "Government intervention in frontier AI deployment has reached unprecedented levels, with both OpenAI and Anthropic facing mandatory access restrictions and cybersecurity reviews for their most capable models.",
+    "The boundary between prompt injection and memory-channel attacks is now forensically distinguishable, enabling more targeted defensive strategies for different attack vectors on LLM agents."
+  ],
+  "stats": {
+    "total_links": 21,
+    "most_linked_domains": [
+      "arxiv.org",
+      "securityweek.com",
+      "cybersecuritynews.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 1,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 4,
+      "08": 14,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 1,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 21
+}
