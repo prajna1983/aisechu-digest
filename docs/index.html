@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">36</span>
+    <span class="stat-value">37</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">371</span>
+    <span class="stat-value">384</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">347</span>
+    <span class="stat-value">360</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">40</span>
+    <span class="stat-value">41</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-07-04.html">
+    <a class="digest-card today" href="aisechu_digest_2026-07-05.html">
+      <div>
+        <div class="digest-date">
+          Sunday, July 5 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">AI Coding Tool Vulnerabilities</span><span class="cat-tag">AI Agent Attack Techniques</span><span class="cat-tag">Autonomous AI Threats</span><span class="cat-tag">AI Safety & Model Security</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">AI coding assistants are becoming critical attack vectors, with Cursor AI's CVSS 9.8 vulnerabilities and Alibaba's Claude Code ban signaling enterprise recognition that agentic tools with code execution privileges create significant trust boundary problems.</div><div class="digest-insight-item">The first documented fully autonomous AI ransomware attack (JadePuffer) represents a paradigm shift where agentic AI can now execute complete attack chains without human intervention, from initial exploitation through ransomware deployment.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">13</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">13</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-07-04.html">
       <div>
         <div class="digest-date">
           Saturday, July 4 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI Agent Security & MCP Vulnerabilities</span><span class="cat-tag">Critical AI Infrastructure Vulnerabilities</span><span class="cat-tag">LLM Safety & Jailbreak Research</span><span class="cat-tag">Anthropic Claude Security Developments</span></div>
         <div class="digest-insights"><div class="digest-insight-item">The MCP (Model Context Protocol) ecosystem is emerging as a critical attack surface, with multiple CVEs revealing systemic trust boundary failures in agent-tool communication, authentication, and authorization mechanisms.</div><div class="digest-insight-item">AI agents have crossed a significant threshold: Sysdig documented what appears to be the first fully autonomous AI-agent-conducted ransomware attack, exploiting the Langflow RCE from initial access through payload deployment.</div></div>
@@ -1119,12 +1143,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-07-04 07:58 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-07-05 07:56 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["05-31", "06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26", "06-27", "06-28", "06-29", "06-30", "07-01", "07-04"], "messages": [8, 2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4, 9, 6, 5, 4, 21, 32], "links": [9, 1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3, 6, 8, 5, 4, 21, 32]};
+const trendData = {"labels": ["06-02", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26", "06-27", "06-28", "06-29", "06-30", "07-01", "07-04", "07-05"], "messages": [2, 11, 8, 16, 15, 9, 4, 14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4, 9, 6, 5, 4, 21, 32, 13], "links": [1, 10, 7, 8, 11, 7, 14, 14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3, 6, 8, 5, 4, 21, 32, 13]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {

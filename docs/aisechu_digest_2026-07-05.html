@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISecHub Daily Digest — Sunday, July 5 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6584;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --link: #79c0ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #0d1b2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 24px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+    .channel-badge:hover { background: rgba(108,99,255,0.25); }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #e8eaf6 30%, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent2);
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Charts row ── */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .chart-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* ── Insights ── */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .insight-item {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Category cards ── */
+    .categories-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .cat-card:hover { border-color: var(--accent); }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-emoji {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      background: var(--surface2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-name { font-size: 16px; font-weight: 600; }
+    .cat-count {
+      margin-left: auto;
+      background: rgba(108,99,255,0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .cat-summary {
+      padding: 14px 24px 10px;
+      font-size: 14px;
+      color: #b0bcd4;
+      line-height: 1.65;
+    }
+    .cat-items {
+      padding: 10px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item-card {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .item-card:hover { border-color: var(--border); }
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .item-title a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .item-title a:hover { text-decoration: underline; }
+    .item-detail {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .item-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    /* ── Domains ── */
+    .domain-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .domain-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--accent2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="channel-badge" href="https://t.me/AISecHub" target="_blank">
+      ✈️ t.me/AISecHub
+    </a>
+    <h1>AISecHub Daily Digest</h1>
+    <p class="subtitle">Sunday, July 5 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-value">13</span>
+    <span class="stat-label">Messages</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">8</span>
+    <span class="stat-label">Categories</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">13</span>
+    <span class="stat-label">Links Shared</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">5</span>
+    <span class="stat-label">Key Insights</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="section-title">📊 Activity & Distribution</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>Messages by Category</h3>
+      <div class="chart-wrap">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>Posting Activity (SGT hour)</h3>
+      <div class="chart-wrap">
+        <canvas id="activityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">💡 Top Insights</div>
+  <div class="insights-list">
+    <div class="insight-item">🔹 AI coding assistants are becoming critical attack vectors, with Cursor AI's CVSS 9.8 vulnerabilities and Alibaba's Claude Code ban signaling enterprise recognition that agentic tools with code execution privileges create significant trust boundary problems.</div>
+<div class="insight-item">🔹 The first documented fully autonomous AI ransomware attack (JadePuffer) represents a paradigm shift where agentic AI can now execute complete attack chains without human intervention, from initial exploitation through ransomware deployment.</div>
+<div class="insight-item">🔹 Prompt injection is evolving beyond direct attacks to include sophisticated delivery mechanisms like SEO poisoning with hidden HTML, enabling adversaries to compromise AI agents that browse or process web content.</div>
+<div class="insight-item">🔹 The attacker-defender asymmetry is widening as Chinese LLMs demonstrate strong offensive capabilities while defensive AI applications lag behind, creating structural advantages for threat actors.</div>
+<div class="insight-item">🔹 Enterprise AI governance is maturing rapidly, with major organizations like Alibaba implementing preemptive bans on AI coding tools and governments actively adjusting model access policies based on security assessments.</div>
+  </div>
+
+  <div class="section-title">📂 Categories</div>
+  <div class="categories-grid">
+    
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">💻</div>
+        <div class="cat-name">AI Coding Tool Vulnerabilities</div>
+        <div class="cat-count">4 msgs</div>
+      </div>
+      <div class="cat-summary">Critical vulnerabilities in AI-powered development tools dominated security news, with Cursor AI IDE receiving particular attention. Two severe flaws (CVE-2026-50548 and CVE-2026-50549) with CVSS 9.8 scores enable prompt injection attacks to escalate to OS-level remote code execution, highlighting the expanding attack surface when AI agents have code execution privileges on developer machines.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.securityweek.com/critical-cursor-ai-ide-flaws-could-lead-to-os-level-remote-code-execution/" target="_blank" rel="noopener">Cursor AI IDE DuneSlide Vulnerabilities Enable RCE ↗</a></div>
+          <div class="item-detail">Two critical flaws allow attackers controlling content processed by Cursor AI agents to inject instructions that execute arbitrary commands on developer machines through sandbox bypass and symbolic link exploitation.</div>
+          <div class='item-tags'><span class="tag">CVE-2026-50548</span><span class="tag">CVE-2026-50549</span><span class="tag">prompt-injection</span><span class="tag">RCE</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://cybersecuritynews.com/alibaba-to-ban-claude-code/" target="_blank" rel="noopener">Alibaba Bans Claude Code Over Backdoor Concerns ↗</a></div>
+          <div class="item-detail">Alibaba instructed employees to stop using Anthropic's Claude Code agent starting July 10, 2026, citing supply chain security concerns about AI tools that execute code and access development environments.</div>
+          <div class='item-tags'><span class="tag">enterprise-security</span><span class="tag">supply-chain</span><span class="tag">Claude</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🎯</div>
+        <div class="cat-name">AI Agent Attack Techniques</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">New attack vectors targeting AI agents emerged as primary concerns, with SEO poisoning combined with hidden HTML prompt injections enabling adversaries to manipulate web-browsing AI agents. These techniques exploit the fact that AI agents parse raw HTML including elements invisible to humans, creating novel attack surfaces for data exfiltration and unauthorized actions.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://cybersecuritynews.com/hackers-abuse-seo-poisoning-and-hidden-html/" target="_blank" rel="noopener">SEO Poisoning Enables Hidden Prompt Injection Attacks ↗</a></div>
+          <div class="item-detail">Attackers rank poisoned pages highly in search results and embed invisible prompt-injection payloads in HTML to trick AI agents into executing unintended actions like fraudulent payments or unauthorized API calls.</div>
+          <div class='item-tags'><span class="tag">SEO-poisoning</span><span class="tag">prompt-injection</span><span class="tag">agent-security</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-13341" target="_blank" rel="noopener">Kong Konnect MCP Server Prompt Injection Flaw ↗</a></div>
+          <div class="item-detail">CVE-2026-13341 in Kong Konnect MCP server allows remote attackers to use prompt injection against the Model Context Protocol tool layer to execute unintended API requests.</div>
+          <div class='item-tags'><span class="tag">CVE-2026-13341</span><span class="tag">MCP</span><span class="tag">prompt-injection</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🤖</div>
+        <div class="cat-name">Autonomous AI Threats</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">A watershed moment in AI-enabled threats arrived with documentation of the first fully autonomous AI-driven ransomware attack. The JadePuffer campaign demonstrated that agentic AI can now conduct complete attack chains from initial access through data exfiltration and ransomware deployment without human operator intervention.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/" target="_blank" rel="noopener">First End-to-End Agentic AI Ransomware Attack Documented ↗</a></div>
+          <div class="item-detail">JadePuffer exploited CVE-2025-3248 in Langflow to gain RCE, then autonomously performed reconnaissance, credential extraction, database dumping, network scanning, data exfiltration, and ransomware deployment.</div>
+          <div class='item-tags'><span class="tag">ransomware</span><span class="tag">agentic-AI</span><span class="tag">Langflow</span><span class="tag">CVE-2025-3248</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛡️</div>
+        <div class="cat-name">AI Safety & Model Security</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Anthropic provided transparency into their latest model's security architecture with detailed documentation of Claude Fable 5's safeguards. The disclosure offers the security community a reference architecture for AI safety including constitutional classifiers, behavioral monitoring, and structured jailbreak resistance testing methodologies.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://cybersecuritynews.com/anthropic-claude-fable-5-cybersecurity/" target="_blank" rel="noopener">Anthropic Publishes Claude Fable 5 Security Framework ↗</a></div>
+          <div class="item-detail">Technical details reveal constitutional classifiers for input safety, behavioral monitoring for guardrail activation detection, and structured jailbreak resistance testing as core components of the model's security architecture.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">model-safety</span><span class="tag">jailbreak-prevention</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🎭</div>
+        <div class="cat-name">AI-Assisted Fraud & Social Engineering</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Practical demonstrations of AI-assisted fraud emerged with a researcher showing how Claude AI can be manipulated to generate convincing fraudulent materials. The incident highlights the convergence of prompt engineering to bypass guardrails with traditional social engineering against human targets.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://cybersecuritynews.com/claude-ai-score-free-tickets-music/" target="_blank" rel="noopener">Claude AI Exploited for Concert Ticket Fraud ↗</a></div>
+          <div class="item-detail">A security researcher bypassed Claude's refusal guardrails to generate fraudulent ticket confirmations and social engineering scripts that convinced venue staff to issue free tickets to major US music events.</div>
+          <div class='item-tags'><span class="tag">social-engineering</span><span class="tag">fraud</span><span class="tag">guardrail-bypass</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📰</div>
+        <div class="cat-name">Industry News & Policy</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Government AI policy shifted with US officials lifting restrictions on Anthropic's Claude model access following a cybersecurity alarm. This reversal signals ongoing volatility in regulatory approaches to AI model access and carries implications for organizations tracking government controls around AI security risk.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://securityweek.com/trump-administration-lifts-restrictions-on-anthropics-claude-models-after-cybersecurity-alarm/" target="_blank" rel="noopener">US Lifts Claude Model Access Restrictions ↗</a></div>
+          <div class="item-detail">Trump administration reversed restrictions on Anthropic Claude model access after a cybersecurity alarm, affecting teams tracking government controls around model access and AI security risk management.</div>
+          <div class='item-tags'><span class="tag">AI-governance</span><span class="tag">policy</span><span class="tag">Anthropic</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📦</div>
+        <div class="cat-name">Supply Chain & Dependency Risks</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Traditional NLP libraries revealed dangerous trust assumptions with NLTK's Stanford interfaces allowing untrusted JAR execution. The vulnerability demonstrates that AI/ML supply chain risks extend beyond modern LLM tooling to established libraries where user-controlled paths can lead to arbitrary code execution.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/advisories/GHSA-9r6g-266r-89x4" target="_blank" rel="noopener">NLTK Stanford Interfaces Allow Untrusted JAR Execution ↗</a></div>
+          <div class="item-detail">CVE-2026-12252 affects NLTK 3.9.3 and earlier where five Stanford NLP interface classes accept user-controlled JAR paths and execute them via subprocess.Popen without integrity checks.</div>
+          <div class='item-tags'><span class="tag">CVE-2026-12252</span><span class="tag">NLTK</span><span class="tag">supply-chain</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">⚔️</div>
+        <div class="cat-name">Offensive AI Capabilities</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Analysis of Chinese LLMs revealed an asymmetric capability profile that favors offensive operations over defensive applications. These models demonstrate strong performance in exploit generation, phishing lure creation, and reconnaissance automation while offering weaker utility for defensive tasks like log analysis and threat detection.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.industryevents.com/news/chinese-llms-broaden-the-gap-between-attackers-defenders-20260704" target="_blank" rel="noopener">Chinese LLMs Widen Attacker-Defender Gap ↗</a></div>
+          <div class="item-detail">Recent Chinese LLM releases lower barriers to offensive cyber operations while providing limited defensive utility, risking an expanded capability gap particularly for organizations lacking resources to deploy AI defensively.</div>
+          <div class='item-tags'><span class="tag">offensive-AI</span><span class="tag">threat-landscape</span><span class="tag">capability-gap</span></div>
+        </div></div>
+    </div>
+  </div>
+
+  
+    <div class="section-title">🌐 Most-Referenced Domains</div>
+    <div class="domain-chips"><span class="domain-chip">🔗 securityweek.com</span><span class="domain-chip">🔗 cybersecuritynews.com</span><span class="domain-chip">🔗 github.com</span></div>
+
+</main>
+
+<footer>
+  Generated 2026-07-05 07:56 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+</footer>
+
+<script>
+const PALETTE = [
+  "#6c63ff","#00d4aa","#ff6584","#ffd166","#06d6a0",
+  "#118ab2","#ef476f","#ffc43d","#1b998b","#e9c46a"
+];
+
+// Category distribution chart
+const catData = {"labels": ["AI Coding Tool Vulnerabilities", "AI Agent Attack Techniques", "Autonomous AI Threats", "AI Safety & Model Security", "AI-Assisted Fraud & Social Engineering", "Industry News & Policy", "Supply Chain & Dependency Risks", "Offensive AI Capabilities"], "values": [4, 3, 1, 1, 1, 1, 1, 1]};
+new Chart(document.getElementById("categoryChart"), {
+  type: "doughnut",
+  data: {
+    labels: catData.labels,
+    datasets: [{
+      data: catData.values,
+      backgroundColor: PALETTE.slice(0, catData.labels.length),
+      borderWidth: 2,
+      borderColor: "#1a1d27",
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "right",
+        labels: { color: "#8892b0", font: { size: 11 }, boxWidth: 12, padding: 10 }
+      }
+    }
+  }
+});
+
+// Activity by hour chart
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0]};
+new Chart(document.getElementById("activityChart"), {
+  type: "bar",
+  data: {
+    labels: actData.hours,
+    datasets: [{
+      label: "Messages",
+      data: actData.counts,
+      backgroundColor: "rgba(108,99,255,0.7)",
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: "#8892b0", font: { size: 10 } }, grid: { color: "#2e3250" } },
+      y: { ticks: { color: "#8892b0", font: { size: 10 }, stepSize: 1 }, grid: { color: "#2e3250" } }
+    }
+  }
+});
+</script>
+</body>
+</html>

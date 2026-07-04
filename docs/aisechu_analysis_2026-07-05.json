@@ -1,0 +1,212 @@
+{
+  "categories": [
+    {
+      "name": "AI Coding Tool Vulnerabilities",
+      "emoji": "\ud83d\udcbb",
+      "summary": "Critical vulnerabilities in AI-powered development tools dominated security news, with Cursor AI IDE receiving particular attention. Two severe flaws (CVE-2026-50548 and CVE-2026-50549) with CVSS 9.8 scores enable prompt injection attacks to escalate to OS-level remote code execution, highlighting the expanding attack surface when AI agents have code execution privileges on developer machines.",
+      "key_items": [
+        {
+          "title": "Cursor AI IDE DuneSlide Vulnerabilities Enable RCE",
+          "detail": "Two critical flaws allow attackers controlling content processed by Cursor AI agents to inject instructions that execute arbitrary commands on developer machines through sandbox bypass and symbolic link exploitation.",
+          "url": "https://www.securityweek.com/critical-cursor-ai-ide-flaws-could-lead-to-os-level-remote-code-execution/",
+          "tags": [
+            "CVE-2026-50548",
+            "CVE-2026-50549",
+            "prompt-injection",
+            "RCE"
+          ]
+        },
+        {
+          "title": "Alibaba Bans Claude Code Over Backdoor Concerns",
+          "detail": "Alibaba instructed employees to stop using Anthropic's Claude Code agent starting July 10, 2026, citing supply chain security concerns about AI tools that execute code and access development environments.",
+          "url": "https://cybersecuritynews.com/alibaba-to-ban-claude-code/",
+          "tags": [
+            "enterprise-security",
+            "supply-chain",
+            "Claude"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "AI Agent Attack Techniques",
+      "emoji": "\ud83c\udfaf",
+      "summary": "New attack vectors targeting AI agents emerged as primary concerns, with SEO poisoning combined with hidden HTML prompt injections enabling adversaries to manipulate web-browsing AI agents. These techniques exploit the fact that AI agents parse raw HTML including elements invisible to humans, creating novel attack surfaces for data exfiltration and unauthorized actions.",
+      "key_items": [
+        {
+          "title": "SEO Poisoning Enables Hidden Prompt Injection Attacks",
+          "detail": "Attackers rank poisoned pages highly in search results and embed invisible prompt-injection payloads in HTML to trick AI agents into executing unintended actions like fraudulent payments or unauthorized API calls.",
+          "url": "https://cybersecuritynews.com/hackers-abuse-seo-poisoning-and-hidden-html/",
+          "tags": [
+            "SEO-poisoning",
+            "prompt-injection",
+            "agent-security"
+          ]
+        },
+        {
+          "title": "Kong Konnect MCP Server Prompt Injection Flaw",
+          "detail": "CVE-2026-13341 in Kong Konnect MCP server allows remote attackers to use prompt injection against the Model Context Protocol tool layer to execute unintended API requests.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-13341",
+          "tags": [
+            "CVE-2026-13341",
+            "MCP",
+            "prompt-injection"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Autonomous AI Threats",
+      "emoji": "\ud83e\udd16",
+      "summary": "A watershed moment in AI-enabled threats arrived with documentation of the first fully autonomous AI-driven ransomware attack. The JadePuffer campaign demonstrated that agentic AI can now conduct complete attack chains from initial access through data exfiltration and ransomware deployment without human operator intervention.",
+      "key_items": [
+        {
+          "title": "First End-to-End Agentic AI Ransomware Attack Documented",
+          "detail": "JadePuffer exploited CVE-2025-3248 in Langflow to gain RCE, then autonomously performed reconnaissance, credential extraction, database dumping, network scanning, data exfiltration, and ransomware deployment.",
+          "url": "https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/",
+          "tags": [
+            "ransomware",
+            "agentic-AI",
+            "Langflow",
+            "CVE-2025-3248"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Safety & Model Security",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Anthropic provided transparency into their latest model's security architecture with detailed documentation of Claude Fable 5's safeguards. The disclosure offers the security community a reference architecture for AI safety including constitutional classifiers, behavioral monitoring, and structured jailbreak resistance testing methodologies.",
+      "key_items": [
+        {
+          "title": "Anthropic Publishes Claude Fable 5 Security Framework",
+          "detail": "Technical details reveal constitutional classifiers for input safety, behavioral monitoring for guardrail activation detection, and structured jailbreak resistance testing as core components of the model's security architecture.",
+          "url": "https://cybersecuritynews.com/anthropic-claude-fable-5-cybersecurity/",
+          "tags": [
+            "Anthropic",
+            "model-safety",
+            "jailbreak-prevention"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI-Assisted Fraud & Social Engineering",
+      "emoji": "\ud83c\udfad",
+      "summary": "Practical demonstrations of AI-assisted fraud emerged with a researcher showing how Claude AI can be manipulated to generate convincing fraudulent materials. The incident highlights the convergence of prompt engineering to bypass guardrails with traditional social engineering against human targets.",
+      "key_items": [
+        {
+          "title": "Claude AI Exploited for Concert Ticket Fraud",
+          "detail": "A security researcher bypassed Claude's refusal guardrails to generate fraudulent ticket confirmations and social engineering scripts that convinced venue staff to issue free tickets to major US music events.",
+          "url": "https://cybersecuritynews.com/claude-ai-score-free-tickets-music/",
+          "tags": [
+            "social-engineering",
+            "fraud",
+            "guardrail-bypass"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83d\udcf0",
+      "summary": "Government AI policy shifted with US officials lifting restrictions on Anthropic's Claude model access following a cybersecurity alarm. This reversal signals ongoing volatility in regulatory approaches to AI model access and carries implications for organizations tracking government controls around AI security risk.",
+      "key_items": [
+        {
+          "title": "US Lifts Claude Model Access Restrictions",
+          "detail": "Trump administration reversed restrictions on Anthropic Claude model access after a cybersecurity alarm, affecting teams tracking government controls around model access and AI security risk management.",
+          "url": "https://securityweek.com/trump-administration-lifts-restrictions-on-anthropics-claude-models-after-cybersecurity-alarm/",
+          "tags": [
+            "AI-governance",
+            "policy",
+            "Anthropic"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Supply Chain & Dependency Risks",
+      "emoji": "\ud83d\udce6",
+      "summary": "Traditional NLP libraries revealed dangerous trust assumptions with NLTK's Stanford interfaces allowing untrusted JAR execution. The vulnerability demonstrates that AI/ML supply chain risks extend beyond modern LLM tooling to established libraries where user-controlled paths can lead to arbitrary code execution.",
+      "key_items": [
+        {
+          "title": "NLTK Stanford Interfaces Allow Untrusted JAR Execution",
+          "detail": "CVE-2026-12252 affects NLTK 3.9.3 and earlier where five Stanford NLP interface classes accept user-controlled JAR paths and execute them via subprocess.Popen without integrity checks.",
+          "url": "https://github.com/advisories/GHSA-9r6g-266r-89x4",
+          "tags": [
+            "CVE-2026-12252",
+            "NLTK",
+            "supply-chain"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Offensive AI Capabilities",
+      "emoji": "\u2694\ufe0f",
+      "summary": "Analysis of Chinese LLMs revealed an asymmetric capability profile that favors offensive operations over defensive applications. These models demonstrate strong performance in exploit generation, phishing lure creation, and reconnaissance automation while offering weaker utility for defensive tasks like log analysis and threat detection.",
+      "key_items": [
+        {
+          "title": "Chinese LLMs Widen Attacker-Defender Gap",
+          "detail": "Recent Chinese LLM releases lower barriers to offensive cyber operations while providing limited defensive utility, risking an expanded capability gap particularly for organizations lacking resources to deploy AI defensively.",
+          "url": "https://www.industryevents.com/news/chinese-llms-broaden-the-gap-between-attackers-defenders-20260704",
+          "tags": [
+            "offensive-AI",
+            "threat-landscape",
+            "capability-gap"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "AI coding assistants are becoming critical attack vectors, with Cursor AI's CVSS 9.8 vulnerabilities and Alibaba's Claude Code ban signaling enterprise recognition that agentic tools with code execution privileges create significant trust boundary problems.",
+    "The first documented fully autonomous AI ransomware attack (JadePuffer) represents a paradigm shift where agentic AI can now execute complete attack chains without human intervention, from initial exploitation through ransomware deployment.",
+    "Prompt injection is evolving beyond direct attacks to include sophisticated delivery mechanisms like SEO poisoning with hidden HTML, enabling adversaries to compromise AI agents that browse or process web content.",
+    "The attacker-defender asymmetry is widening as Chinese LLMs demonstrate strong offensive capabilities while defensive AI applications lag behind, creating structural advantages for threat actors.",
+    "Enterprise AI governance is maturing rapidly, with major organizations like Alibaba implementing preemptive bans on AI coding tools and governments actively adjusting model access policies based on security assessments."
+  ],
+  "stats": {
+    "total_links": 13,
+    "most_linked_domains": [
+      "securityweek.com",
+      "cybersecuritynews.com",
+      "github.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 3,
+      "07": 2,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 1,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 7,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 13
+}
