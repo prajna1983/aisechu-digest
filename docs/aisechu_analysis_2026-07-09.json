@@ -1,0 +1,299 @@
+{
+  "categories": [
+    {
+      "name": "AI Agent Security Vulnerabilities",
+      "emoji": "\ud83e\udd16",
+      "summary": "A critical wave of vulnerabilities affecting AI agents across major platforms dominated today's feed. From Google's Dialogflow CX cross-agent compromise to GitHub's GitLost data leakage and Writer AI's cross-tenant session token exposure, the agentic AI ecosystem is showing systemic isolation failures. These findings underscore that agent-to-agent and tenant-to-tenant boundaries remain fundamentally weak across the industry.",
+      "key_items": [
+        {
+          "title": "Dialogflow CX Rogue Agent Hijacking Vulnerability",
+          "detail": "Orca Security discovered insufficient isolation between Dialogflow CX agents allowing cross-agent data theft and conversation hijacking within the same GCP project. Google has patched the issue.",
+          "url": "https://thehackernews.com/2026/07/rogue-agent-flaw-could-have-let.html",
+          "tags": [
+            "GoogleCloud",
+            "DialogflowCX",
+            "CrossAgentCompromise"
+          ]
+        },
+        {
+          "title": "GitLost: GitHub Agentic Workflows Private Repo Leakage",
+          "detail": "Noma Labs found that malicious prompts can trick GitHub's Claude/Copilot agents into exfiltrating private repository data as public comments. No fix currently available.",
+          "url": "https://thehackernews.com/2026/07/public-github-issue-could-trick-github.html",
+          "tags": [
+            "GitHub",
+            "PromptInjection",
+            "DataLeakage"
+          ]
+        },
+        {
+          "title": "Writer AI Cross-Tenant Session Token Exposure",
+          "detail": "A critical session isolation flaw in Writer's enterprise AI platform allowed agent previews to leak session tokens across organizational tenants. Now patched.",
+          "url": "https://thehackernews.com/2026/07/writer-ai-flaw-could-let-agent-previews.html",
+          "tags": [
+            "EnterpriseAI",
+            "SessionIsolation",
+            "MultiTenant"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "MCP & Agentic Infrastructure Security",
+      "emoji": "\ud83d\udd17",
+      "summary": "The Model Context Protocol ecosystem faces severe security challenges with nearly 5,000 issues cataloged across 2,259 public MCP servers. Research also revealed Unicode TAG-block attacks that can conceal malicious tool metadata from human reviewers, exploiting gaps between protocol transmission and UI rendering. These findings highlight the urgent need for input validation and approval-view integrity in the agentic AI stack.",
+      "key_items": [
+        {
+          "title": "4,982 Security Issues Across Public MCP Servers",
+          "detail": "Sweeping audit exposed widespread lack of input validation, authentication, and access controls across the MCP ecosystem that connects LLMs to data sources and tools.",
+          "url": "https://cybersecuritynews.com/security-issues-mcp-servers/",
+          "tags": [
+            "MCP",
+            "SupplyChain",
+            "MassiveAudit"
+          ]
+        },
+        {
+          "title": "Unicode TAG-Block Tool Metadata Concealment Attack",
+          "detail": "Researchers demonstrated approval-view fidelity gaps where Unicode TAG characters hide malicious payloads in tool descriptions that appear benign during human review.",
+          "url": "https://arxiv.org/abs/2607.05744",
+          "tags": [
+            "MCP",
+            "Unicode",
+            "ApprovalBypass"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Research & Papers",
+      "emoji": "\ud83d\udcc4",
+      "summary": "Academic research this cycle focused on execution security for AI coding agents and novel authorization frameworks. A comprehensive survey mapped the fragmented landscape of sandbox isolation and TOCTOU vulnerabilities, while aiAuthZ proposed cryptographic identity-bound authorization to prevent context-forged tool calls. Both papers address the fundamental trust problem of agents executing unverified tool invocations.",
+      "key_items": [
+        {
+          "title": "Survey: Execution-Security for AI Coding Agents",
+          "detail": "Comprehensive mapping of sandbox isolation, capability control, and policy enforcement research. Catalogs CVE-2026-21852 (CVSS 7.5) data exfiltration in Claude.",
+          "url": "https://arxiv.org/abs/2607.05743",
+          "tags": [
+            "Sandbox",
+            "CVE",
+            "CodeAgents"
+          ]
+        },
+        {
+          "title": "aiAuthZ: Cryptographic Agent Authorization Framework",
+          "detail": "Proposes off-host, identity-bound authorization requiring cryptographic proof of user authorization for each AI agent tool invocation to prevent context forgery.",
+          "url": "https://arxiv.org/abs/2607.05518",
+          "tags": [
+            "Authorization",
+            "ZeroTrust",
+            "ToolCalls"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "New open-source security tooling emerged for protecting LLM applications and AI APIs. The ai-security-pipeline provides real-time PII detection and output validation, while ai-security-gateway delivers zero-trust API protection aligned with NIST AI RMF 1.1. The Agent Control Standard (ACS) aims to standardize how safety policies are enforced across agent frameworks through declarative, portable runtime controls.",
+      "key_items": [
+        {
+          "title": "ai-security-pipeline: LLM Output Validation Tool",
+          "detail": "Open-source pipeline for PII detection, tokenization, LLM output validation, auto-repair, and outbound DLP checks. Sits between LLM apps and end users.",
+          "url": "https://github.com/hsinjuitsai/ai-security-pipeline",
+          "tags": [
+            "PII",
+            "DLP",
+            "OutputValidation"
+          ]
+        },
+        {
+          "title": "ai-security-gateway: Zero-Trust AI API Middleware",
+          "detail": "Enterprise-grade FastAPI middleware performing recursive PII masking and anomaly monitoring aligned with NIST AI Risk Management Framework 1.1.",
+          "url": "https://github.com/OilSeller2001/ai-security-gateway",
+          "tags": [
+            "ZeroTrust",
+            "NIST",
+            "APISecurity"
+          ]
+        },
+        {
+          "title": "Agent Control Standard (ACS) Released",
+          "detail": "Open standard defining middleware hooks for agent platforms and portable safety policy enforcement at runtime. Declarative controls across frameworks.",
+          "url": "https://github.com/Agent-Control-Standard/ACS",
+          "tags": [
+            "AgentSafety",
+            "Standards",
+            "RuntimeEnforcement"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Threat Intelligence & Active Exploitation",
+      "emoji": "\u26a0\ufe0f",
+      "summary": "Active exploitation of indirect prompt injection targeting AI agents with financial tool access is now confirmed in the wild. Attackers are injecting malicious instructions into data sources processed by agents, triggering unauthorized cryptocurrency payments. This represents a significant escalation from theoretical prompt injection research to real-world financial theft via agentic AI systems.",
+      "key_items": [
+        {
+          "title": "Active Prompt Injection Attacks Enabling Crypto Theft",
+          "detail": "Rescana reports ongoing exploitation where attackers inject instructions into agent data sources to execute unauthorized cryptocurrency payments without user approval.",
+          "url": "https://www.rescana.com/post/active-exploitation-alert-indirect-prompt-injection-attacks-target-ai-agents-to-facilitate-unauthorized-cryptocurrency-p",
+          "tags": [
+            "ActiveExploitation",
+            "PromptInjection",
+            "CryptoTheft"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & AI Policy",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "Major regulatory and government developments emerged with OpenAI securing US Commerce Department clearance for GPT-5.6's public launch, signaling evolving export controls for frontier AI. CISA is now reportedly deploying Anthropic's Mythos model for federal software vulnerability scanning, marking significant adoption of AI for government cybersecurity operations.",
+      "key_items": [
+        {
+          "title": "OpenAI GPT-5.6 Receives US Government Launch Clearance",
+          "detail": "Department of Commerce approved OpenAI's GPT-5.6 for broad public release, marking a milestone in US frontier AI governance and export control policy.",
+          "url": "https://cybersecuritynews.com/openai-gpt-5-6-model/",
+          "tags": [
+            "OpenAI",
+            "ExportControl",
+            "FrontierAI"
+          ]
+        },
+        {
+          "title": "CISA Deploying Anthropic Mythos for Federal Software Audits",
+          "detail": "CISA's Attack Surface Evaluation team is using Anthropic's Mythos AI to scan government software for vulnerabilities and conduct simulated hacking exercises.",
+          "url": "https://www.securityweek.com/cisa-reportedly-using-anthropics-mythos-to-scan-government-software-for-flaws/",
+          "tags": [
+            "CISA",
+            "Anthropic",
+            "GovTech"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Enterprise AI Security Trends",
+      "emoji": "\ud83c\udfe2",
+      "summary": "DigiCert research confirms that the majority of organizations deploying AI are experiencing security incidents, validating concerns about the security-adoption gap. Analysis of AI-generated code's impact on software supply chains highlights new attack surfaces through model poisoning and dependency hallucination, challenging traditional SBOM approaches. macOS is emerging as a testing ground for AI agent capabilities and potential abuse vectors.",
+      "key_items": [
+        {
+          "title": "Majority of AI-Deploying Companies Report Security Incidents",
+          "detail": "DigiCert study finds most enterprises rushing AI deployment without adequate security controls, resulting in data exposure, model manipulation, and agent misuse.",
+          "url": "https://www.theregister.com/security/2026/07/07/enterprise-ai-still-smarting-from-leaping-before-looking/5267353",
+          "tags": [
+            "EnterpriseAI",
+            "SecurityMaturity",
+            "DigiCert"
+          ]
+        },
+        {
+          "title": "AI-Generated Code Transforms Supply Chain Security",
+          "detail": "Analysis of how LLM-generated code introduces model poisoning, prompt injection in code generation, and dependency hallucination risks requiring evolved SBOM approaches.",
+          "url": "https://thehackernews.com/2026/07/what-changes-when-your-software-supply.html",
+          "tags": [
+            "SupplyChain",
+            "SBOM",
+            "AICode"
+          ]
+        },
+        {
+          "title": "macOS Emerging as AI Agent Proving Ground",
+          "detail": "Study finds macOS automation frameworks and accessibility APIs provide rich attack surface for both legitimate AI agent automation and potential malicious desktop control.",
+          "url": "https://www.helpnetsecurity.com/2026/07/08/macos-ai-agents-automation/",
+          "tags": [
+            "macOS",
+            "DesktopAgents",
+            "Automation"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Resources & Frameworks",
+      "emoji": "\ud83d\udcda",
+      "summary": "Curated resource collections and frameworks were shared including AI security thought leadership materials, the SAIL Framework 2.0 documentation, and video compilations from cybersecurity conferences. These resources support practitioners seeking to deepen their understanding of AI security best practices and governance frameworks.",
+      "key_items": [
+        {
+          "title": "AI Security Thought Leadership Collection",
+          "detail": "Curated collection of AI security thought leadership resources from the Awesome AI Security repository.",
+          "url": "https://www.awesomeaisecurity.com/resources/thought-leadership",
+          "tags": [
+            "Resources",
+            "ThoughtLeadership"
+          ]
+        },
+        {
+          "title": "SAIL Framework 2.0 (2026)",
+          "detail": "Updated SAIL Framework documentation released for AI security governance and risk management.",
+          "url": "https://45700826.hs-sites.com/hubfs/SAIL%20Framework%202.0%202026.pdf",
+          "tags": [
+            "Framework",
+            "Governance",
+            "SAIL"
+          ]
+        },
+        {
+          "title": "Most Viewed Security Conference Videos - June 2026",
+          "detail": "Compilation of top-viewed cybersecurity conference presentations from June 2026.",
+          "url": "https://awesomecybersecurityconferences.com/videos/most-viewed",
+          "tags": [
+            "Conferences",
+            "Videos",
+            "Learning"
+          ]
+        }
+      ],
+      "message_count": 4
+    }
+  ],
+  "top_insights": [
+    "Agent isolation failures are systemic across the industry, with cross-agent, cross-tenant, and cross-repository compromise vectors discovered in Google, GitHub, and Writer AI platforms within the same 24-hour period.",
+    "The MCP ecosystem is critically exposed with nearly 5,000 security issues across 2,259 servers, combined with novel Unicode-based approval bypass attacks that fundamentally undermine human review of tool permissions.",
+    "Indirect prompt injection has crossed from theoretical research to active financial exploitation, with confirmed attacks using AI agents to execute unauthorized cryptocurrency payments.",
+    "A security-adoption gap is widening as DigiCert confirms majority of AI-deploying enterprises are experiencing incidents, while AI-generated code introduces novel supply chain attack surfaces that traditional SBOM approaches cannot address.",
+    "Government involvement in frontier AI is accelerating on both regulatory and operational fronts\u2014CISA is deploying AI for vulnerability scanning while Commerce Department clearance signals evolving export controls for advanced models."
+  ],
+  "stats": {
+    "total_links": 19,
+    "most_linked_domains": [
+      "thehackernews.com",
+      "arxiv.org",
+      "github.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 1,
+      "06": 15,
+      "07": 0,
+      "08": 1,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 3,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 20
+}
