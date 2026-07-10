@@ -1,0 +1,278 @@
+{
+  "categories": [
+    {
+      "name": "AI Coding Assistant Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "A significant security theme emerged around AI coding assistants being vulnerable to sandbox escape attacks. The GhostApproval symlink attack successfully compromised six major tools including Claude Code, Cursor, and Amazon Q Developer, exposing a fundamental weakness in human-in-the-loop approval mechanisms. GitHub Copilot was also shown to be jailbreakable through workflow-level attack construction, where harmful requests wrapped in normal engineering tasks bypassed safety filters.",
+      "key_items": [
+        {
+          "title": "GhostApproval: Symlink Attack Compromises Six AI Coding Assistants",
+          "detail": "Wiz researchers demonstrated that symbolic links in repositories can trick AI coding tools into writing to sensitive locations outside their sandbox, while misleading human reviewers during approval.",
+          "url": "https://www.securityweek.com/ai-coding-tools-tricked-into-hacking-developer-machine-via-decades-old-technique/",
+          "tags": [
+            "symlink",
+            "sandbox-escape",
+            "Claude Code",
+            "Cursor"
+          ]
+        },
+        {
+          "title": "GitHub Copilot Jailbroken via Workflow-Level Attack Construction",
+          "detail": "Alan Turing Institute researchers showed that while direct harmful prompts were refused by Copilot backends, assembling harmful goals piece-by-piece across development steps successfully bypassed safety filters.",
+          "url": "https://www.helpnetsecurity.com/2026/07/09/github-coding-agent-jailbreak/",
+          "tags": [
+            "jailbreak",
+            "GitHub Copilot",
+            "safety bypass"
+          ]
+        },
+        {
+          "title": "Human-in-the-Loop Approval Mechanisms Proven Insufficient",
+          "detail": "Analysis reveals that UI misrepresentation during confirmation prompts allows attackers to trick both AI assistants and their human supervisors simultaneously.",
+          "url": "https://www.csoonline.com/article/4195235/ai-coding-tool-hole-illustrates-a-big-problem-with-human-in-the-loop.html",
+          "tags": [
+            "HITL",
+            "UI security",
+            "trust boundaries"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "CVEs in AI/ML Infrastructure",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Multiple critical vulnerabilities were disclosed in AI infrastructure components this cycle. Path traversal and command injection flaws affected OpenLLM, Flowise, and MCP text editor tools, while authentication bypass in Ruflo's agent meta-harness and credential leakage in n8n's AI Agents feature highlight the expanding attack surface of AI deployment platforms.",
+      "key_items": [
+        {
+          "title": "CVE-2026-15035: Command Injection in OpenLLM",
+          "detail": "A command injection vulnerability in OpenLLM 0.6.30 allows manipulation of the cmd argument in the async_run_command function, affecting the Model Repository Directory Name Handler.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15035",
+          "tags": [
+            "OpenLLM",
+            "command injection",
+            "CVE"
+          ]
+        },
+        {
+          "title": "CVE-2026-56273: Path Traversal in Flowise Vector Stores",
+          "detail": "Flowise before 3.1.0 accepts unsanitized basePath parameters, allowing authenticated users to write vector store data to arbitrary filesystem locations.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56273",
+          "tags": [
+            "Flowise",
+            "path traversal",
+            "LLM apps"
+          ]
+        },
+        {
+          "title": "CVE-2026-59726: Unauthenticated Access in Ruflo Agent Meta-Harness",
+          "detail": "Ruflo versions before 3.16.3 exposed endpoints without authentication, allowing network attackers to execute terminal commands, access API keys, and corrupt learning patterns.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59726",
+          "tags": [
+            "Ruflo",
+            "authentication bypass",
+            "agent harness"
+          ]
+        },
+        {
+          "title": "CVE-2026-59207: n8n AI Agents Credential Leakage",
+          "detail": "The AI Agents feature in n8n failed to enforce HTTP domain restrictions when MCP tools pointed to arbitrary URLs, enabling credential exfiltration by member-level users.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59207",
+          "tags": [
+            "n8n",
+            "credential theft",
+            "MCP"
+          ]
+        },
+        {
+          "title": "CVE-2026-15138: Path Traversal in MCP Text Editor",
+          "detail": "The tumf mcp-text-editor up to 1.0.2 contains a path traversal vulnerability in the _validate_file_path function.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15138",
+          "tags": [
+            "MCP",
+            "path traversal",
+            "CVE"
+          ]
+        }
+      ],
+      "message_count": 5
+    },
+    {
+      "name": "AI Agent Security Research",
+      "emoji": "\ud83d\udcda",
+      "summary": "Academic research focused heavily on securing persistent AI agents and understanding jailbreak mechanisms. New papers introduced Token-Flow Firewall for runtime auditing of long-lived agents, Prismata for cross-site prompt injection isolation in web agents, and ScopeJudge for pre-execution gating in offensive security contexts. Mechanistic interpretability work revealed specific model components responsible for safety override failures.",
+      "key_items": [
+        {
+          "title": "Token-Flow Firewall: Runtime Auditing for Persistent AI Agents",
+          "detail": "Proposes semantic runtime auditing to detect prompt injection and goal hijacking in persistent agents that accumulate state across many turns and tool calls.",
+          "url": "https://arxiv.org/abs/2607.08395",
+          "tags": [
+            "runtime security",
+            "persistent agents",
+            "prompt injection"
+          ]
+        },
+        {
+          "title": "Mechanistic Interpretability of LLM Jailbreaks",
+          "detail": "Internal attribution graphs trace activation pathways exploited by jailbreak prompts, identifying specific attention heads and MLP layers responsible for safety override.",
+          "url": "https://arxiv.org/abs/2607.07903",
+          "tags": [
+            "interpretability",
+            "jailbreaks",
+            "model internals"
+          ]
+        },
+        {
+          "title": "Prismata: Per-Origin Context Isolation for Web Agents",
+          "detail": "Proposes confining cross-site prompt injection by isolating prompt contexts per web origin, similar to browser same-origin policy evolution.",
+          "url": "https://arxiv.org/abs/2607.08147",
+          "tags": [
+            "web agents",
+            "prompt injection",
+            "isolation"
+          ]
+        },
+        {
+          "title": "ScopeJudge: Pre-Execution Gating for Offensive Security Agents",
+          "detail": "Addresses the challenge of inferring engagement boundaries from user intent to prevent out-of-scope actions in offensive security automation.",
+          "url": "https://arxiv.org/abs/2607.07774",
+          "tags": [
+            "offensive security",
+            "scope control",
+            "red team"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "Security Tools & Frameworks",
+      "emoji": "\ud83d\udd27",
+      "summary": "New open-source tools emerged for AI security assessment and threat modeling. The Agentic Framework Auditor provides automated prompt injection scanning across multiple agent frameworks, while SAILORS offers a practitioner-level threat modeling framework specifically designed for individual AI capabilities rather than full system architectures.",
+      "key_items": [
+        {
+          "title": "Agentic Framework Auditor: Automated Prompt Injection Scanner",
+          "detail": "Framework-agnostic tool that scans agent prompt systems, skills, planners, and workflows for prompt injection vulnerabilities and behavioral risks across Codex, Claude Code, LangGraph, CrewAI, and AutoGen.",
+          "url": "https://github.com/IllimitedEnterprise/agentic-framework-auditor",
+          "tags": [
+            "open-source",
+            "prompt injection",
+            "agent security"
+          ]
+        },
+        {
+          "title": "SAILORS: Threat Modeling for AI Capabilities",
+          "detail": "New threat modeling framework positioning between STRIDE and MAESTRO, enabling security teams to model risks around language models, embeddings, and agent tool use at the component level.",
+          "url": "https://github.com/vinayavasu/SAILORS",
+          "tags": [
+            "threat modeling",
+            "open-source",
+            "AI capabilities"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Enterprise AI Security & Governance",
+      "emoji": "\ud83c\udfe2",
+      "summary": "AWS released its Agentic AI Solutions Framework for SAP with deny-by-default rules and separate agent identities, addressing enterprise access control challenges. The UK government launched Cyber Shield, a national-scale agentic AI defense program. Microsoft warned that AI-accelerated vulnerability discovery will make Patch Tuesdays larger while simultaneously shrinking the patch gap as attackers leverage the same capabilities.",
+      "key_items": [
+        {
+          "title": "AWS Implements Deny-by-Default for ERP AI Agents",
+          "detail": "The new Agentic AI Solutions Framework for SAP provisions separate identities for agents and enforces deny-by-default rules when operating across enterprise systems with sensitive financial data.",
+          "url": "https://www.helpnetsecurity.com/2026/07/10/aws-agentic-ai-erp-automation/",
+          "tags": [
+            "AWS",
+            "SAP",
+            "access control",
+            "enterprise"
+          ]
+        },
+        {
+          "title": "UK Launches National Cyber Shield Agentic AI Program",
+          "detail": "NCSC's Cyber Shield aims to use frontier AI for identifying and resolving national cyber risk at machine speed, calling for collaboration from academia, CNI organizations, and frontier labs.",
+          "url": "https://www.securityweek.com/uk-government-rolls-out-agentic-ai-defense-plan-alongside-industry-pledge/",
+          "tags": [
+            "UK",
+            "NCSC",
+            "national defense",
+            "policy"
+          ]
+        },
+        {
+          "title": "Microsoft Warns of Busier Patch Tuesdays Due to AI",
+          "detail": "AI-powered code generation and security scanning are accelerating vulnerability discovery on both sides, with Microsoft warning that the patch gap is shrinking as attackers also leverage AI.",
+          "url": "https://www.theregister.com/security/2026/07/10/microsoft-warns-customers-ai-will-mean-busier-patch-tuesdays/5269618",
+          "tags": [
+            "Microsoft",
+            "patch management",
+            "AI acceleration"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Geopolitical AI Security",
+      "emoji": "\ud83c\udf10",
+      "summary": "China's National Vulnerability Database issued a security alert claiming Claude Code versions 2.1.91 through 2.1.196 contain backdoor monitoring code that collects user location and identity data. The alert recommends immediate uninstallation, marking a notable geopolitical dimension to AI development tool trust.",
+      "key_items": [
+        {
+          "title": "China's CNVDB Warns of 'Backdoor Code' in Claude Code",
+          "detail": "The alert claims Claude Code versions released between April and June 2026 contain built-in monitoring mechanisms forwarding user data to remote servers. Anthropic has not responded.",
+          "url": "https://www.theregister.com/security/2026/07/08/china-ditch-older-claude-versions-with-backdoor-code/5268371",
+          "tags": [
+            "China",
+            "Claude Code",
+            "backdoor",
+            "geopolitics"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "AI coding assistants face a systemic trust boundary problem: both GhostApproval and Copilot jailbreaks demonstrate that sandbox escapes can succeed while deceiving human reviewers, undermining the human-in-the-loop safety assumption.",
+    "The AI infrastructure attack surface is rapidly expanding with five distinct CVEs affecting agent harnesses, workflow platforms, and vector stores in a single 24-hour period.",
+    "Research is converging on runtime security for persistent agents, with multiple papers proposing isolation and auditing mechanisms that mirror web browser security evolution.",
+    "The AI vulnerability discovery arms race is accelerating patch cycles on both offense and defense, with Microsoft explicitly warning of compressed timelines.",
+    "Geopolitical tensions are manifesting in AI tool trust, with China's backdoor allegations against Claude Code signaling potential fragmentation in global AI development ecosystems."
+  ],
+  "stats": {
+    "total_links": 21,
+    "most_linked_domains": [
+      "nvd.nist.gov",
+      "arxiv.org",
+      "securityweek.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 10,
+      "07": 0,
+      "08": 9,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 19
+}
