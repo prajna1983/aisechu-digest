@@ -1,0 +1,242 @@
+{
+  "categories": [
+    {
+      "name": "AI Infrastructure Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "Multiple critical vulnerabilities were disclosed affecting AI infrastructure components. MCP servers and AI gateways are under active exploitation, with SSRF vulnerabilities in both AstrBot and Helicone AI Gateway allowing attackers to reach internal services and cloud metadata endpoints. Internet-wide scanning campaigns are actively probing for exposed MCP servers and leaked Claude API credentials.",
+      "key_items": [
+        {
+          "title": "CVE-2026-15501: AstrBot MCP SSRF Vulnerability",
+          "detail": "AstrBot versions up to 4.25.2 allow unauthenticated SSRF via the MCP test connection endpoint, enabling requests to internal services.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15501",
+          "tags": [
+            "CVE",
+            "MCP",
+            "SSRF"
+          ]
+        },
+        {
+          "title": "CVE-2026-15508: Helicone AI Gateway AWS Metadata SSRF",
+          "detail": "Helicone ai-gateway allows attackers to access AWS metadata service through path manipulation, potentially exposing cloud credentials.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15508",
+          "tags": [
+            "CVE",
+            "SSRF",
+            "AWS"
+          ]
+        },
+        {
+          "title": "Internet-Wide Scans Targeting MCP and Claude Credentials",
+          "detail": "Active reconnaissance campaigns are probing for exposed MCP servers and leaked Claude API credentials, building attack pipelines for AI infrastructure.",
+          "url": "https://cybersecuritynews.com/internet-wide-scans-target-mcp-servers-claude-credentials/",
+          "tags": [
+            "MCP",
+            "Reconnaissance",
+            "CredentialLeak"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI Agent Security Research",
+      "emoji": "\ud83e\udd16",
+      "summary": "Significant research emerged on attacking AI agents, including novel memory manipulation and agent-on-agent exploitation techniques. The MemGhost attack demonstrates persistent false memory implantation via single emails, while automated red-teaming frameworks show agents can discover and exploit vulnerabilities in production coding assistants like Claude Code and Codex.",
+      "key_items": [
+        {
+          "title": "MemGhost: Persistent False Memory Injection in AI Agents",
+          "detail": "Single malicious email can implant false memories that survive restarts and influence future agent decisions, enabling long-term manipulation.",
+          "url": "https://thehackernews.com/2026/07/new-memghost-attack-plants-persistent.html",
+          "tags": [
+            "AgentSecurity",
+            "PromptInjection",
+            "LLM"
+          ]
+        },
+        {
+          "title": "Agent Hacks Agent: Automated Production Agent Red-Teaming",
+          "detail": "Research framework enables LLM agents to automatically discover exploits in Claude Code and Codex by operating over untrusted content and workspace state.",
+          "url": "https://arxiv.org/abs/2607.11698",
+          "tags": [
+            "RedTeaming",
+            "AgentSecurity",
+            "Research"
+          ]
+        },
+        {
+          "title": "NetInjectBench: Prompt Injection in Network Operations Agents",
+          "detail": "New benchmark reveals how tickets, alerts, and ChatOps messages can carry injected instructions causing agents to execute unauthorized network commands.",
+          "url": "https://arxiv.org/abs/2607.10490",
+          "tags": [
+            "PromptInjection",
+            "SOC",
+            "Benchmark"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI Coding Tool Incidents",
+      "emoji": "\u26a0\ufe0f",
+      "summary": "Major data exposure incidents involving AI coding assistants dominated headlines. SpaceXAI announced emergency data deletion after Grok Build CLI was found shipping private repos and unredacted secrets to cloud storage. A Cursor 0-day was disclosed through full disclosure after vendor non-response, and suspicious DeepSeek cache clearing commands raised concerns.",
+      "key_items": [
+        {
+          "title": "SpaceXAI Emergency Data Deletion After Grok CLI Exposure",
+          "detail": "Wire-level analysis revealed Grok Build CLI shipping entire private repositories and secrets to Google Cloud, prompting full data deletion announcement.",
+          "url": null,
+          "tags": [
+            "DataExposure",
+            "Grok",
+            "Secrets"
+          ]
+        },
+        {
+          "title": "Cursor 0-Day Full Disclosure",
+          "detail": "Mindgard published full disclosure of a Cursor vulnerability after vendor reportedly failed to respond to responsible disclosure attempts.",
+          "url": "https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left",
+          "tags": [
+            "0day",
+            "Disclosure",
+            "CodingAssistant"
+          ]
+        },
+        {
+          "title": "DeepSeek Cache Clearing Command Observed",
+          "detail": "Suspicious command to delete OpenAI Codex cache directory was shared, suggesting potential privacy or security concerns with AI tool data handling.",
+          "url": null,
+          "tags": [
+            "DeepSeek",
+            "Privacy",
+            "Cache"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI Security Methodologies",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Emerging AI security practices are reshaping defensive strategies. Yellow Teaming is establishing itself as a distinct discipline focused on testing AI behavior and alignment boundaries rather than traditional perimeter defenses. Research also confirms that human skepticism remains the most effective defense against AI-generated social engineering attacks.",
+      "key_items": [
+        {
+          "title": "Yellow Teams: The Future of AI Security Testing",
+          "detail": "New discipline at the intersection of red teaming and AI safety focuses on probing what AI systems can be made to do rather than how to break into them.",
+          "url": "https://www.darkreading.com/cybersecurity-operations/yellow-teams-defining-future-ai-security",
+          "tags": [
+            "YellowTeam",
+            "AISafety",
+            "RedTeaming"
+          ]
+        },
+        {
+          "title": "Human Skepticism Outperforms Automated AI Attack Detection",
+          "detail": "Controlled experiments show trained humans questioning AI-generated content consistently outperform automated detection against AI social engineering.",
+          "url": "https://www.helpnetsecurity.com/2026/07/14/ai-attacks-skeptical-human/",
+          "tags": [
+            "HumanInTheLoop",
+            "Phishing",
+            "Defense"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "MCP Security Research",
+      "emoji": "\ud83d\udcca",
+      "summary": "The Model Context Protocol ecosystem received focused security analysis with a large-scale empirical study examining runtime MCP server vulnerabilities and the reliability of existing security scanners. The research catalogs common vulnerability patterns and evaluates detection tooling effectiveness at scale.",
+      "key_items": [
+        {
+          "title": "Large-Scale MCP Security Study and Scanner Reliability",
+          "detail": "Empirical research catalogs common vulnerability patterns in MCP server implementations and evaluates whether current security scanners can detect them.",
+          "url": "https://arxiv.org/abs/2607.11086",
+          "tags": [
+            "MCP",
+            "Research",
+            "VulnerabilityResearch"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI-Assisted Threat Actor Activity",
+      "emoji": "\ud83c\udfad",
+      "summary": "Threat actors are increasingly leveraging AI coding assistants for attack automation. A PowerShell script with clear AI-generation hallmarks\u2014detailed comments, consistent formatting, and unnatural verbosity\u2014was observed being used for Active Directory reconnaissance, marking a shift in how attackers develop their tooling.",
+      "key_items": [
+        {
+          "title": "AI-Generated PowerShell Used for AD Reconnaissance",
+          "detail": "Attacker observed using LLM-generated PowerShell script with characteristic AI patterns to enumerate Active Directory environments.",
+          "url": "https://thehackernews.com/2026/07/attacker-uses-suspected-ai-generated.html",
+          "tags": [
+            "PowerShell",
+            "ActiveDirectory",
+            "ThreatActor"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udd27",
+      "summary": "Google released Mantis, a new security-related tool on GitHub. While details from the message are minimal, the release suggests continued investment in AI security tooling from major tech companies.",
+      "key_items": [
+        {
+          "title": "Google Mantis Tool Release",
+          "detail": "Google published Mantis to GitHub, adding to the ecosystem of AI security tools from major technology companies.",
+          "url": "https://github.com/google/mantis",
+          "tags": [
+            "Google",
+            "Tool",
+            "OpenSource"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "MCP infrastructure is under active attack: Multiple CVEs, internet-wide scanning campaigns, and security research all converge on Model Context Protocol as a critical emerging attack surface requiring immediate attention.",
+    "AI coding assistants are both attack vectors and attacker tools: The Grok CLI data exposure and Cursor 0-day show AI tools creating risk, while AI-generated reconnaissance scripts demonstrate threat actors weaponizing the same technology.",
+    "AI agent memory and context are exploitable: MemGhost and agent-on-agent attacks reveal that persistent state in AI agents creates new vulnerability classes beyond traditional prompt injection.",
+    "Human-in-the-loop defense remains critical: Despite AI attack sophistication, trained human skepticism still outperforms automated detection, suggesting security awareness training must evolve for the AI era.",
+    "Yellow Teaming is emerging as a distinct AI security discipline, signaling maturation of the field beyond traditional red team/blue team paradigms."
+  ],
+  "stats": {
+    "total_links": 14,
+    "most_linked_domains": [
+      "arxiv.org",
+      "thehackernews.com",
+      "nvd.nist.gov"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 1,
+      "04": 0,
+      "05": 0,
+      "06": 1,
+      "07": 0,
+      "08": 0,
+      "09": 10,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 2,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 14
+}

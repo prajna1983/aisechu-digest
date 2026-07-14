@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">43</span>
+    <span class="stat-value">44</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">471</span>
+    <span class="stat-value">485</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">456</span>
+    <span class="stat-value">470</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">47</span>
+    <span class="stat-value">51</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-07-11.html">
+    <a class="digest-card today" href="aisechu_digest_2026-07-15.html">
+      <div>
+        <div class="digest-date">
+          Wednesday, July 15 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">AI Infrastructure Vulnerabilities</span><span class="cat-tag">AI Agent Security Research</span><span class="cat-tag">AI Coding Tool Incidents</span><span class="cat-tag">AI Security Methodologies</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">MCP infrastructure is under active attack: Multiple CVEs, internet-wide scanning campaigns, and security research all converge on Model Context Protocol as a critical emerging attack surface requiring immediate attention.</div><div class="digest-insight-item">AI coding assistants are both attack vectors and attacker tools: The Grok CLI data exposure and Cursor 0-day show AI tools creating risk, while AI-generated reconnaissance scripts demonstrate threat actors weaponizing the same technology.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">14</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">14</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-07-11.html">
       <div>
         <div class="digest-date">
           Saturday, July 11 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI Coding Assistant Vulnerabilities</span><span class="cat-tag">CVEs in AI/ML Infrastructure</span><span class="cat-tag">AI Agent Security Research</span><span class="cat-tag">Security Tools & Frameworks</span></div>
         <div class="digest-insights"><div class="digest-insight-item">AI coding assistants face a systemic trust boundary problem: both GhostApproval and Copilot jailbreaks demonstrate that sandbox escapes can succeed while deceiving human reviewers, undermining the human-in-the-loop safety assumption.</div><div class="digest-insight-item">The AI infrastructure attack surface is rapidly expanding with five distinct CVEs affecting agent harnesses, workflow platforms, and vector stores in a single 24-hour period.</div></div>
@@ -1287,12 +1311,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-07-11 07:53 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-07-15 07:45 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["06-09", "06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26", "06-27", "06-28", "06-29", "06-30", "07-01", "07-04", "07-05", "07-06", "07-07", "07-08", "07-09", "07-10", "07-11"], "messages": [4, 14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4, 9, 6, 5, 4, 21, 32, 13, 10, 10, 10, 20, 18, 19], "links": [14, 14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3, 6, 8, 5, 4, 21, 32, 13, 14, 15, 9, 19, 18, 21]};
+const trendData = {"labels": ["06-10", "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25", "06-26", "06-27", "06-28", "06-29", "06-30", "07-01", "07-04", "07-05", "07-06", "07-07", "07-08", "07-09", "07-10", "07-11", "07-15"], "messages": [14, 22, 20, 17, 5, 13, 3, 1, 22, 6, 5, 4, 2, 1, 8, 4, 9, 6, 5, 4, 21, 32, 13, 10, 10, 10, 20, 18, 19, 14], "links": [14, 13, 17, 17, 4, 11, 3, 1, 22, 8, 5, 2, 2, 1, 8, 3, 6, 8, 5, 4, 21, 32, 13, 14, 15, 9, 19, 18, 21, 14]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
