@@ -1,0 +1,213 @@
+{
+  "categories": [
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udd13",
+      "summary": "Multiple critical CVEs affecting AI-related infrastructure were disclosed, with a strong focus on MCP (Model Context Protocol) vulnerabilities. The Better Auth library saw two separate authentication bypass issues allowing token minting without proper verification. Additional vulnerabilities in Penpot MCP exposed unauthenticated RCE, while AI Copilot WordPress plugin and text-generation-inference tool revealed privilege escalation and SSRF risks respectively.",
+      "key_items": [
+        {
+          "title": "Better Auth OAuth Race Condition (CVE-2026-53518)",
+          "detail": "Non-atomic authorization code redemption allows concurrent requests to mint multiple valid token sets from a single code, affecting oauth-provider, oidc-provider, and mcp plugins.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53518",
+          "tags": [
+            "MCP",
+            "OAuth",
+            "race-condition"
+          ]
+        },
+        {
+          "title": "Better Auth Refresh Token Bypass (CVE-2026-53512)",
+          "detail": "Legacy MCP and OIDC plugins fail to verify client_secret on refresh_token grants, enabling attackers with valid refresh tokens to mint new access tokens.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53512",
+          "tags": [
+            "MCP",
+            "authentication-bypass"
+          ]
+        },
+        {
+          "title": "Penpot MCP Unauthenticated RCE (CVE-2026-45805)",
+          "detail": "ReplServer bound to 0.0.0.0:4403 exposed /execute endpoint allowing arbitrary JavaScript execution without authentication.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45805",
+          "tags": [
+            "MCP",
+            "RCE",
+            "unauthenticated"
+          ]
+        },
+        {
+          "title": "AI Copilot WordPress Privilege Escalation (CVE-2026-9810)",
+          "detail": "OAuth tokens not bound to specific users allow attackers to gain administrator privileges through the public login flow.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9810",
+          "tags": [
+            "WordPress",
+            "privilege-escalation"
+          ]
+        },
+        {
+          "title": "Text-Generation-Inference SSRF (CVE-2026-63086)",
+          "detail": "Chat feature allows unauthenticated attackers to supply malicious image URLs for internal network scanning and cloud metadata access.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63086",
+          "tags": [
+            "SSRF",
+            "LLM-infrastructure"
+          ]
+        }
+      ],
+      "message_count": 5
+    },
+    {
+      "name": "AI Research & Papers",
+      "emoji": "\ud83d\udcc4",
+      "summary": "New research highlights critical vulnerabilities in LLM-based security systems. Context Contamination research demonstrated 88.2% attack success rates against LLMs analyzing network logs, introducing the novel 'Context Stitching' technique. Separate studies evaluated prompt injection risks in memory-based agents like Claude Code and OpenAI Codex, revealing persistent vulnerabilities even in state-of-the-art models.",
+      "key_items": [
+        {
+          "title": "Context Contamination in LLM Log Analysis",
+          "detail": "Novel Context Stitching attack fragments payloads across log entries to exploit LLM long-context reasoning with 76.4% success; layered defenses reduce attacks by 90.4% but 8.4% residual vulnerability remains.",
+          "url": "https://arxiv.org/abs/2607.14493",
+          "tags": [
+            "prompt-injection",
+            "log-analysis",
+            "evasion"
+          ]
+        },
+        {
+          "title": "Bad Memory: Prompt Injection in Agentic Systems",
+          "detail": "Evaluation of Claude Code and OpenAI Codex across Claude Haiku 4.5, Opus 4.7, GPT-5.2, and GPT-5.5 reveals prompt injection risks in memory-based agents.",
+          "url": "https://arxiv.org/abs/2607.14611",
+          "tags": [
+            "agentic-AI",
+            "prompt-injection",
+            "memory-systems"
+          ]
+        },
+        {
+          "title": "FlowGuard: MCP Security Detection Framework",
+          "detail": "Achieves F1 scores of 0.879-0.942 on command injection and file system access detection across 1,880 MCP cases with 2.23x latency reduction over existing scanners.",
+          "url": "https://arxiv.org/abs/2607.14754",
+          "tags": [
+            "MCP",
+            "detection",
+            "dynamic-analysis"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "Two new open-source security tools emerged targeting AI agent protection. The security-llm-finetuning project provides QLoRA fine-tuning for cybersecurity incident triage, while clawdefender offers comprehensive input sanitization for AI agents against prompt injection, SSRF, and credential exfiltration attacks.",
+      "key_items": [
+        {
+          "title": "Security LLM Fine-Tuning Framework",
+          "detail": "QLoRA-based framework for fine-tuning 4B parameter models on evidence-grounded cybersecurity incident triage tasks.",
+          "url": "https://github.com/garrett-williams/security-llm-finetuning",
+          "tags": [
+            "QLoRA",
+            "incident-response",
+            "open-source"
+          ]
+        },
+        {
+          "title": "ClawDefender: AI Agent Security Scanner",
+          "detail": "Input sanitizer detecting prompt injection, command injection, SSRF, credential exfiltration, and path traversal attacks targeting AI agents.",
+          "url": "https://github.com/rin-proxy/clawdefender",
+          "tags": [
+            "scanner",
+            "input-validation",
+            "agent-security"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83c\udfaf",
+      "summary": "Real-world attacks exploiting AI security weaknesses are scaling rapidly. Over 1 million phishing emails have successfully bypassed AI filters using text salting techniques that exploit LLM parsing weaknesses, demonstrating that adversarial evasion against AI-based defenses is now a mainstream attack vector.",
+      "key_items": [
+        {
+          "title": "1M+ Emails Bypass AI Filters via Text Salting",
+          "detail": "Hidden text characters invisible to humans confuse AI email security filters, allowing phishing campaigns to reach inboxes at scale.",
+          "url": "https://www.darkreading.com/threat-intelligence/1m-emails-hidden-text-dupe-ai-security-filters",
+          "tags": [
+            "phishing",
+            "evasion",
+            "email-security"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Agent Security Strategy",
+      "emoji": "\ud83e\udd16",
+      "summary": "Industry guidance is emerging on securing autonomous AI agents. Microsoft published comprehensive guidance on least privilege principles for AI agents, emphasizing managed identity and RBAC controls. Analysts warn that traditional security playbooks fail against agents that operate faster than detection systems and can borrow credentials ephemerally.",
+      "key_items": [
+        {
+          "title": "Microsoft: Least Privilege for AI Agents",
+          "detail": "Guidance on managed identity and RBAC implementation for agents performing multi-step tasks across systems without per-step human approval.",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/07/16/least-privilege-for-ai-agents-identity-access-and-tool-binding",
+          "tags": [
+            "Microsoft",
+            "RBAC",
+            "identity-management"
+          ]
+        },
+        {
+          "title": "AI Agents Break Traditional Security Models",
+          "detail": "Agents operating faster than human-speed security scans can borrow credentials and disappear before detection, requiring new architectural approaches.",
+          "url": "https://www.bleepingcomputer.com/news/security/ai-agents-broke-the-security-playbook-heres-what-replaces-it",
+          "tags": [
+            "agent-security",
+            "architecture",
+            "detection-gap"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "MCP (Model Context Protocol) has emerged as a critical attack surface with 3 CVEs disclosed in 24 hours, indicating rapid adoption is outpacing security hardening.",
+    "LLM-based security tools show fundamental weaknesses: 88.2% attack success in log analysis and 1M+ phishing emails bypassing AI filters suggest adversarial robustness remains unsolved.",
+    "Authentication bypass patterns dominate AI infrastructure vulnerabilities, with OAuth race conditions and missing client secret validation appearing across multiple projects.",
+    "The speed differential between AI agents and traditional security controls creates a detection gap that existing playbooks cannot address, requiring architectural rethinking.",
+    "Defensive tooling is emerging alongside attacks: FlowGuard and ClawDefender represent a growing ecosystem of AI-specific security instrumentation."
+  ],
+  "stats": {
+    "total_links": 16,
+    "most_linked_domains": [
+      "nvd.nist.gov",
+      "arxiv.org",
+      "github.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 7,
+      "15": 0,
+      "16": 6,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 13
+}
