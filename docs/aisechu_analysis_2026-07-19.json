@@ -1,0 +1,256 @@
+{
+  "categories": [
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udea8",
+      "summary": "Critical vulnerabilities continue to emerge in AI-integrated systems. A notable IBM Langflow RCE vulnerability (CVE-2026-7755) highlights risks in MCP server configuration validation. The Microsoft 365 Copilot EchoLeak incident demonstrates that existing prompt injection classifiers may provide false confidence, as the zero-click exploit bypassed Microsoft's XPIA classifier entirely.",
+      "key_items": [
+        {
+          "title": "IBM Langflow RCE via MCP Configuration (CVE-2026-7755)",
+          "detail": "IBM Langflow OSS versions 1.0.0-1.10.0 vulnerable to remote code execution due to incomplete validation of MCP server configuration files.",
+          "url": "https://github.com/advisories/GHSA-m94m-8f9x-f6r4",
+          "tags": [
+            "CVE",
+            "MCP",
+            "RCE",
+            "Langflow"
+          ]
+        },
+        {
+          "title": "AI Security Tools Creating False Sense of Safety",
+          "detail": "Analysis of Microsoft 365 Copilot's EchoLeak vulnerability reveals that prompt injection classifiers like XPIA can fail silently while appearing operational.",
+          "url": "https://www.unite.ai/ai-security-theater-prompt-injection-guardrail-vulnerabilities",
+          "tags": [
+            "PromptInjection",
+            "Microsoft",
+            "Guardrails"
+          ]
+        },
+        {
+          "title": "Hugging Face Security Incident Disclosure",
+          "detail": "Hugging Face published details about a July 2026 security incident affecting their platform.",
+          "url": "https://huggingface.co/blog/security-incident-july-2026",
+          "tags": [
+            "HuggingFace",
+            "Incident",
+            "Disclosure"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "New offensive and defensive security tools targeting AI systems were shared. Notable releases include NeuroSploit for AI exploitation research, Capital One's VulnHunter for vulnerability detection, and an agent-rules-audit scanner that detects prompt injection payloads in AI agent configuration files. OpenAI also launched a Codex security plugin for desktop environments.",
+      "key_items": [
+        {
+          "title": "NeuroSploit - AI Exploitation Framework",
+          "detail": "New GitHub repository providing tools for AI system exploitation research and testing.",
+          "url": "https://github.com/JoasASantos/NeuroSploit",
+          "tags": [
+            "Offensive",
+            "Exploitation",
+            "Research"
+          ]
+        },
+        {
+          "title": "Capital One VulnHunter",
+          "detail": "Open-source vulnerability hunting tool released by Capital One for security analysis.",
+          "url": "https://github.com/capitalone/vulnhunter",
+          "tags": [
+            "VulnerabilityScanning",
+            "OpenSource",
+            "CapitalOne"
+          ]
+        },
+        {
+          "title": "Agent Rules Audit Scanner",
+          "detail": "Offline scanner for AI agent instruction files that flags prompt injection payloads, hidden Unicode, encoded blobs, and exfiltration patterns in AGENTS.md, CLAUDE.md, and MCP configs.",
+          "url": "https://github.com/bharat3645/agent-rules-audit",
+          "tags": [
+            "PromptInjection",
+            "MCP",
+            "AgentSecurity"
+          ]
+        },
+        {
+          "title": "OpenAI Codex Security Plugin",
+          "detail": "OpenAI released a desktop security plugin for Codex as part of their Daybreak initiative.",
+          "url": "https://openai.com/daybreak/codex-security-plugin/#desktop-codex",
+          "tags": [
+            "OpenAI",
+            "Codex",
+            "Plugin"
+          ]
+        },
+        {
+          "title": "AI Agent Toolkit - 5 Development Agents",
+          "detail": "Monorepo containing 5 AI-powered CLI agents for documentation, testing, code review, refactoring, and security auditing workflows.",
+          "url": "https://github.com/MarceloAdan73/ai-agent-toolkit",
+          "tags": [
+            "Agents",
+            "DevSecOps",
+            "Automation"
+          ]
+        }
+      ],
+      "message_count": 5
+    },
+    {
+      "name": "AI Agent Security & Risks",
+      "emoji": "\ud83e\udd16",
+      "summary": "Growing concern around autonomous AI agents taking actions without explicit approval. Anthropic's selective rollout of Mythos acknowledges the dual-use nature of powerful agent capabilities. Prompt injection remains the most urgent risk as agents process content containing unauthorized commands, creating novel attack surfaces distinct from traditional malware.",
+      "key_items": [
+        {
+          "title": "When AI Agents Stop Asking and Start Acting",
+          "detail": "Newsweek analysis explores risks of autonomous AI agents, highlighting Anthropic's cautious Mythos rollout and prompt injection as the most urgent threat vector.",
+          "url": "https://www.newsweek.com/ai-agents-stop-asking-start-acting-12211577",
+          "tags": [
+            "Agents",
+            "Anthropic",
+            "PromptInjection",
+            "Autonomy"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "Major government initiatives are reshaping AI and cybersecurity coordination. The White House launched GOLD EAGLE, a clearinghouse for unprecedented vulnerability coordination between open-source partners and critical infrastructure companies. Microsoft previewed their Black Hat USA 2026 presence, focusing on trust defense in the age of AI agents and supply chain attacks.",
+      "key_items": [
+        {
+          "title": "White House GOLD EAGLE Initiative Launched",
+          "detail": "New federal clearinghouse enables coordinated vulnerability patching at unprecedented speed and scale for open-source and critical infrastructure partners.",
+          "url": "https://www.whitehouse.gov/releases/2026/07/white-house-launches-gold-eagle-initiative-for-unprecedented-cybersecurity-vulnerability-coordination/",
+          "tags": [
+            "WhiteHouse",
+            "Policy",
+            "VulnerabilityManagement",
+            "CriticalInfrastructure"
+          ]
+        },
+        {
+          "title": "Microsoft Black Hat USA 2026 Preview",
+          "detail": "Microsoft Security will present on how AI agents create new attack surfaces for reaching code, data, and infrastructure, and how threat intelligence must evolve.",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/07/17/microsoft-at-black-hat-usa-2026-defending-trust-in-the-age-of-ai-and-supply-chain-attacks",
+          "tags": [
+            "BlackHat",
+            "Microsoft",
+            "SupplyChain",
+            "ThreatIntel"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Research & Papers",
+      "emoji": "\ud83d\udcca",
+      "summary": "UK AISI published analysis comparing open-weight models to frontier models on cyber capabilities, providing insights into the security implications of increasingly capable open models.",
+      "key_items": [
+        {
+          "title": "UK AISI: Open-Weight vs Frontier Models on Cyber",
+          "detail": "Research examining how far leading open-weight models lag behind frontier models on cybersecurity-related capabilities.",
+          "url": "https://www.aisi.gov.uk/blog/how-far-behind-the-frontier-are-leading-open-weight-models-on-cyber",
+          "tags": [
+            "AISI",
+            "OpenWeight",
+            "CyberCapabilities",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83d\udd0d",
+      "summary": "Technical research on macOS terminal exploitation techniques was shared, demonstrating DNS exfiltration via ANSI escape codes and potential fixes for this attack vector.",
+      "key_items": [
+        {
+          "title": "macOS Terminal DNS Exfiltration via ANSI Escape Codes",
+          "detail": "Embrace The Red published research on terminal-based DNS exfiltration techniques using ANSI escape codes and proposed mitigations.",
+          "url": "https://embracethered.com/blog/posts/2026/macos-terminal-dillma-dns-exfil-ansi-escape-code-fix/",
+          "tags": [
+            "macOS",
+            "DNSExfil",
+            "Terminal",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Miscellaneous",
+      "emoji": "\ud83d\udccc",
+      "summary": "Additional shared resources include a Claude code artifact and social media discussion on AI security topics.",
+      "key_items": [
+        {
+          "title": "Claude Code Artifact Shared",
+          "detail": "Link to a Claude AI code artifact, context not provided in message.",
+          "url": "https://claude.ai/code/artifact/bfdfaef9-bc62-4dfe-ba9e-c58a26c9accf",
+          "tags": [
+            "Claude",
+            "Code"
+          ]
+        },
+        {
+          "title": "X/Twitter Discussion on AI Security",
+          "detail": "Link to elder_plinius post discussing AI security topics.",
+          "url": "https://x.com/elder_plinius/status/2078155279817167135",
+          "tags": [
+            "Social",
+            "Discussion"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "AI security guardrails are proving insufficient: The EchoLeak incident demonstrates that prompt injection classifiers can fail silently, creating dangerous false confidence in defensive measures.",
+    "MCP (Model Context Protocol) configurations are emerging as a significant attack surface, with both new vulnerabilities (CVE-2026-7755) and defensive tools (agent-rules-audit) targeting this vector.",
+    "Government coordination on AI vulnerabilities is accelerating: The GOLD EAGLE initiative signals unprecedented public-private partnership for rapid vulnerability patching at scale.",
+    "The autonomous AI agent paradigm shift is creating novel security challenges that don't map to traditional malware patterns, requiring new defensive frameworks.",
+    "Open-weight model capabilities are being systematically benchmarked against frontier models for cyber applications, indicating growing concern about democratized offensive AI capabilities."
+  ],
+  "stats": {
+    "total_links": 18,
+    "most_linked_domains": [
+      "github.com",
+      "microsoft.com",
+      "whitehouse.gov"
+    ],
+    "activity_by_hour": {
+      "00": 2,
+      "01": 3,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 5,
+      "07": 0,
+      "08": 0,
+      "09": 1,
+      "10": 0,
+      "11": 0,
+      "12": 2,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 1,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 15
+}
