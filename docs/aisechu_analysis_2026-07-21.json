@@ -1,0 +1,71 @@
+{
+  "categories": [
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udd13",
+      "summary": "Two critical vulnerabilities were disclosed in Network-AI, an npm package used for AI-driven network operations. Both CVEs affect versions in the 5.12-5.13 range and involve authentication bypass issues\u2014one through improper cryptographic signature verification allowing forged payloads, and another through missing authorization checks on approval endpoints. These vulnerabilities could allow unauthenticated attackers to gain elevated privileges including shell execution capabilities.",
+      "key_items": [
+        {
+          "title": "CVE-2026-64623: Cryptographic Signature Bypass in Network-AI",
+          "detail": "The APSAdapter component accepts any non-empty string as a valid signature, enabling attackers to forge delegation payloads and obtain permission-grant tokens for sensitive resources including SHELL_EXEC.",
+          "url": "https://github.com/advisories/GHSA-37v5-gpcx-w9fc",
+          "tags": [
+            "CVE",
+            "cryptographic-bypass",
+            "authentication",
+            "critical"
+          ]
+        },
+        {
+          "title": "CVE-2026-64622: Authorization Check Bypass in Network-AI",
+          "detail": "ApprovalInbox GET routes fail to enforce configured authorization checks, exposing sensitive approval request details to unauthenticated actors even when secrets are configured.",
+          "url": "https://github.com/advisories/GHSA-xvgx-9rph-3pj6",
+          "tags": [
+            "CVE",
+            "authorization-bypass",
+            "information-disclosure"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "AI infrastructure components are showing patterns of authentication and authorization implementation flaws, suggesting a need for more rigorous security review of AI-adjacent tooling.",
+    "Network-AI package users should immediately upgrade to version 5.13.4 or later to remediate both critical vulnerabilities affecting authentication mechanisms.",
+    "The combination of signature bypass and authorization bypass in the same package indicates potential systemic security architecture issues in AI middleware components."
+  ],
+  "stats": {
+    "total_links": 2,
+    "most_linked_domains": [
+      "github.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 2,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 2
+}
