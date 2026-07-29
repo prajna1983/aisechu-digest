@@ -329,11 +329,11 @@
 
   <div class="section-title">💡 Top Insights</div>
   <div class="insights-list">
-    <div class="insight-item">🔹 AI agents are transitioning from theoretical attack vectors to operational weapons, with documented autonomous intrusion campaigns and the emergence of 'AgentBaiting' as a novel supply-chain attack technique targeting AI tool discovery workflows.</div>
-<div class="insight-item">🔹 The AI platform trust model is fracturing: multiple incidents at Hugging Face, Claude Artifacts used for malware distribution, and ChatGPT Agent Builder vulnerabilities suggest fundamental architectural security challenges in AI-as-a-service platforms.</div>
-<div class="insight-item">🔹 Russian threat actors are systematically documenting and sharing jailbreak techniques, indicating commoditization of AI bypass methods that will likely accelerate offensive capability proliferation.</div>
-<div class="insight-item">🔹 Defensive research is advancing with preemptive hardening approaches achieving 91-100% leak reduction and statistically rigorous benchmarking frameworks, but adoption lags behind active exploitation.</div>
-<div class="insight-item">🔹 Regulatory momentum is building with AI kill switch legislation reaching Congress, while industry debates whether self-reported system cards should be replaced by independent NIST-style evaluation bodies.</div>
+    <div class="insight-item">🔹 AI agents are becoming both weapons and targets: threat actors are using autonomous agents for intrusion automation while simultaneously exploiting AI agents through techniques like AgentBaiting and prompt injection.</div>
+<div class="insight-item">🔹 Supply chain attacks on AI platforms are escalating, with both Hugging Face and Anthropic's Claude experiencing incidents that affected multiple organizations through trusted channels.</div>
+<div class="insight-item">🔹 Security tooling for LLM applications is maturing rapidly, with new benchmarks, testing harnesses, and hardening techniques showing measurable improvements in attack prevention.</div>
+<div class="insight-item">🔹 Regulatory momentum is building with the AI Kill Switch bill reaching Congress, while industry voices call for independent assessment bodies to replace self-reported System Cards.</div>
+<div class="insight-item">🔹 Autonomous vulnerability discovery is proving viable for production systems, with AI finding critical RCEs in Microsoft products that human researchers may have overlooked.</div>
   </div>
 
   <div class="section-title">📂 Categories</div>
@@ -345,182 +345,187 @@
         <div class="cat-name">AI Agent Security & Attacks</div>
         <div class="cat-count">6 msgs</div>
       </div>
-      <div class="cat-summary">A significant cluster of activity focused on AI agent vulnerabilities and real-world exploitation. Threat actors are actively weaponizing AI agents for intrusion operations, while researchers identify fundamental security flaws in AI browser agents and agent builders. The emerging 'AgentBaiting' technique and autonomous intrusion capabilities represent a maturation of AI-specific attack vectors.</div>
+      <div class="cat-summary">AI agents are emerging as both attack vectors and targets in the security landscape. Threat actors are exploiting autonomous agents for intrusion tasks, while malicious actors are using techniques like AgentBaiting to trick AI agents into recommending trojanized repositories. Browser-based AI agents show significant vulnerabilities to prompt injection from malicious websites, and ChatGPT's Agent Builder has been found susceptible to hijacking for malicious deployments.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry" target="_blank" rel="noopener">Hermes AI Agent Automates Thai Government Intrusion ↗</a></div>
-          <div class="item-detail">BleepingComputer reports recovered logs showing AI agents performing privilege escalation, service enumeration, and filesystem traversal with approval-free autonomous execution.</div>
-          <div class='item-tags'><span class="tag">AgentSecurity</span><span class="tag">ThreatIntel</span><span class="tag">IntrusionAnalysis</span></div>
+          <div class="item-title"><a href="https://www.helpnetsecurity.com/2026/07/21/github-repos-malware-campaign-fakegit-ai-agents/" target="_blank" rel="noopener">FakeGit Campaign Uses 6,600 GitHub Accounts for AI Agent Baiting ↗</a></div>
+          <div class="item-detail">Campaign deployed approximately 6,600 fake GitHub accounts and trojanized MCP servers to deliver SmartLoader and StealC malware, logging over 14 million downloads across 200 repositories targeting AI agents.</div>
+          <div class='item-tags'><span class="tag">AgentBaiting</span><span class="tag">Malware</span><span class="tag">GitHub</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://www.helpnetsecurity.com/2026/07/21/github-repos-malware-campaign-fakegit-ai-agents/" target="_blank" rel="noopener">FakeGit Campaign Uses 6,600 GitHub Accounts for AgentBaiting ↗</a></div>
-          <div class="item-detail">Campaign deployed trojanized MCP servers to deliver SmartLoader and StealC malware via AI agents searching for tools, logging 14 million downloads across 200 repositories.</div>
-          <div class='item-tags'><span class="tag">AgentBaiting</span><span class="tag">Malware</span><span class="tag">SupplyChain</span></div>
+          <div class="item-title"><a href="https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry" target="_blank" rel="noopener">Hermes AI Agent Used to Automate Thai Finance Ministry Attack ↗</a></div>
+          <div class="item-detail">Recovered AI-agent logs showed privilege-escalation checks, service enumeration, and filesystem traversal with approval-free autonomous execution enabled.</div>
+          <div class='item-tags'><span class="tag">ThreatIntel</span><span class="tag">Intrusion</span><span class="tag">AutonomousAgent</span></div>
         </div>
         <div class="item-card">
           <div class="item-title"><a href="https://www.livescience.com/technology/computing/ai-web-browsers-arent-ready-for-the-public-scientists-warn-as-they-highlight-massive-security-red-flags" target="_blank" rel="noopener">AI Browser Agents Expose User Data to Malicious Sites ↗</a></div>
-          <div class="item-detail">Researchers warn AI-equipped browsers like ChatGPT's Atlas are vulnerable to data exposure attacks, highlighting they 'aren't ready for the public.'</div>
+          <div class="item-detail">Researchers discovered security flaws in AI web browsers like ChatGPT's Atlas that could expose user data through malicious websites.</div>
           <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">BrowserSecurity</span><span class="tag">DataExposure</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://www.techradar.com/pro/security/experts-warn-chatgpts-workspace-agent-builder-can-be-hijacked-to-create-malicious-ai-workers" target="_blank" rel="noopener">ChatGPT Agent Builder Hijacking Creates Malicious AI Workers ↗</a></div>
-          <div class="item-detail">Zenity Labs discovered attackers can trick users into deploying malicious agents via single-click attacks in OpenAI's Workspace Agent Builder.</div>
-          <div class='item-tags'><span class="tag">LLMSecurity</span><span class="tag">Phishing</span><span class="tag">OpenAI</span></div>
+          <div class="item-title"><a href="https://www.techradar.com/pro/security/experts-warn-chatgpts-workspace-agent-builder-can-be-hijacked-to-create-malicious-ai-workers" target="_blank" rel="noopener">ChatGPT Agent Builder Hijacking Vulnerability ↗</a></div>
+          <div class="item-detail">Zenity Labs researchers found ChatGPT's Workspace Agent Builder can be hijacked to deploy malicious AI workers with a single click.</div>
+          <div class='item-tags'><span class="tag">OpenAI</span><span class="tag">Phishing</span><span class="tag">AgentBuilder</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
         <div class="cat-emoji">🔬</div>
-        <div class="cat-name">LLM Security Research & Benchmarks</div>
-        <div class="cat-count">3 msgs</div>
+        <div class="cat-name">LLM Security Research & Tools</div>
+        <div class="cat-count">4 msgs</div>
       </div>
-      <div class="cat-summary">Academic and practitioner research advancing defensive capabilities against LLM attacks. Notable contributions include preemptive hardening techniques achieving 91-100% reduction in data leakage, and new benchmarks for measuring guardrail effectiveness with statistical rigor. The ResearchArena framework addresses the critical challenge of trusting AI agents in automated R&D pipelines.</div>
+      <div class="cat-summary">New research and tools are emerging to address LLM-specific security challenges. Papers on preemptive hardening show promising results in reducing data leakage in agentic applications, while new benchmarks are being developed to measure guardrail effectiveness. Security testing harnesses for prompt injection and tool hijacking are becoming more sophisticated.</div>
       <div class="cat-items">
         <div class="item-card">
           <div class="item-title"><a href="https://arxiv.org/abs/2607.18847" target="_blank" rel="noopener">Data Leakage Prevention via Preemptive Hardening ↗</a></div>
-          <div class="item-detail">Research demonstrates 100% reduction in leakage against basic jailbreaks and 91% under stress-induced manipulation through proactive code modifications, eliminating need for runtime enforcement.</div>
+          <div class="item-detail">Research shows 100% reduction in leakage against basic jailbreak attacks and 91% reduction under stress-induced manipulation without continuous runtime enforcement.</div>
           <div class='item-tags'><span class="tag">LLMSecurity</span><span class="tag">DataLeakage</span><span class="tag">AgenticSystems</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://arxiv.org/abs/2607.19321" target="_blank" rel="noopener">ResearchArena Benchmark for AI Agent Sabotage Detection ↗</a></div>
-          <div class="item-detail">New benchmark treats AI agents as potential adversaries, testing monitoring approaches to detect covert sabotage in automated AI R&D pipelines.</div>
-          <div class='item-tags'><span class="tag">AISafety</span><span class="tag">Benchmark</span><span class="tag">AIControl</span></div>
-        </div>
-        <div class="item-card">
           <div class="item-title"><a href="https://github.com/Vincent-P-essy/llm-security-benchmark" target="_blank" rel="noopener">LLM Security Benchmark with Deterministic Grading ↗</a></div>
-          <div class="item-detail">49-attack benchmark covering prompt injection, system-prompt extraction, and data leakage uses Wilson confidence intervals to statistically validate guardrail improvements.</div>
-          <div class='item-tags'><span class="tag">Benchmark</span><span class="tag">Guardrails</span><span class="tag">PromptInjection</span></div>
-        </div></div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-header">
-        <div class="cat-emoji">🛠️</div>
-        <div class="cat-name">Security Tools & Testing Frameworks</div>
-        <div class="cat-count">3 msgs</div>
-      </div>
-      <div class="cat-summary">New open-source tools emerged for testing AI agent security and reconnaissance capabilities. The Agent Injection Lab provides practical sandboxed environments for validating prompt injection and tool hijacking attacks, while reconnaissance skill frameworks enable security testing workflows.</div>
-      <div class="cat-items">
+          <div class="item-detail">Benchmark runs 49 attack cases across prompt injection, system-prompt extraction, policy bypass, and data leakage with Wilson confidence intervals.</div>
+          <div class='item-tags'><span class="tag">Benchmark</span><span class="tag">PromptInjection</span><span class="tag">Guardrails</span></div>
+        </div>
         <div class="item-card">
           <div class="item-title"><a href="https://github.com/LurkSec/LurkSec-Agent-Injection-Lab" target="_blank" rel="noopener">Agent Injection Lab for Tool Hijacking Tests ↗</a></div>
-          <div class="item-detail">LurkSec released sandbox environment testing prompt injection, memory poisoning, and task hijacking with verified filesystem side effects.</div>
-          <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">SecurityTesting</span><span class="tag">OpenSource</span></div>
+          <div class="item-detail">Security harness tests prompt injection, memory poisoning, and task hijacking in a resettable path-jailed sandbox with verified filesystem side effects.</div>
+          <div class='item-tags'><span class="tag">SecurityTesting</span><span class="tag">PromptInjection</span><span class="tag">Sandbox</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://github.com/uphiago/recon-skills" target="_blank" rel="noopener">Recon Skills Framework Released ↗</a></div>
-          <div class="item-detail">New reconnaissance skills repository provides modular security testing capabilities.</div>
-          <div class='item-tags'><span class="tag">Reconnaissance</span><span class="tag">SecurityTools</span></div>
-        </div>
-        <div class="item-card">
-          <div class="item-title"><a href="https://github.com/Kritt-ai/open-kritt" target="_blank" rel="noopener">Open Kritt AI Tool Released ↗</a></div>
-          <div class="item-detail">Kritt-ai published open-source AI tooling framework on GitHub.</div>
-          <div class='item-tags'><span class="tag">OpenSource</span><span class="tag">AITools</span></div>
+          <div class="item-title"><a href="https://arxiv.org/abs/2607.19321" target="_blank" rel="noopener">ResearchArena Benchmark for AI Agent Sabotage Detection ↗</a></div>
+          <div class="item-detail">Framework evaluates whether AI agents automating AI R&D can be trusted, treating agents as potential adversaries with monitors to detect covert sabotage.</div>
+          <div class='item-tags'><span class="tag">AISafety</span><span class="tag">Monitoring</span><span class="tag">Benchmark</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🎯</div>
-        <div class="cat-name">Threat Intelligence & Jailbreaks</div>
-        <div class="cat-count">2 msgs</div>
-      </div>
-      <div class="cat-summary">Russian threat actors are actively sharing Claude Opus jailbreak techniques on cybercrime forums, demonstrating the commoditization of AI bypass methods. A malicious Claude Artifact campaign successfully infected 29 organizations before removal, showing attackers are finding creative vectors through AI platform features.</div>
-      <div class="cat-items">
-        <div class="item-card">
-          <div class="item-title"><a href="https://cybersecuritynews.com/russian-hacker-jailbreaks-claude/" target="_blank" rel="noopener">Russian Actor Shares Claude Jailbreak Techniques ↗</a></div>
-          <div class="item-detail">Threat actor 'Trim' published methods to bypass Claude Opus safety controls including benign context injection, code-focused reframing, and framing requests as authorized security research.</div>
-          <div class='item-tags'><span class="tag">Jailbreak</span><span class="tag">Claude</span><span class="tag">ThreatActor</span></div>
-        </div>
-        <div class="item-card">
-          <div class="item-title"><a href="https://www.techradar.com/pro/security/hackers-hid-dangerous-malware-on-a-page-hidden-in-anthopics-claude-ai-domain" target="_blank" rel="noopener">Malicious Claude Artifact Infects 29 Organizations ↗</a></div>
-          <div class="item-detail">Huntress identified malware campaign using ClaudeDesktop.exe with 7,000+ views, creating Microsoft Defender exclusions and persistence mechanisms.</div>
-          <div class='item-tags'><span class="tag">Malware</span><span class="tag">Claude</span><span class="tag">Anthropic</span></div>
-        </div></div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-header">
-        <div class="cat-emoji">⚠️</div>
+        <div class="cat-emoji">🚨</div>
         <div class="cat-name">AI Platform Security Incidents</div>
-        <div class="cat-count">2 msgs</div>
+        <div class="cat-count">3 msgs</div>
       </div>
-      <div class="cat-summary">Major AI platforms faced security scrutiny with Hugging Face autonomous agent breach documented by Cloud Security Alliance, and OpenAI disclosing a model evaluation security incident. These incidents highlight the expanding attack surface as AI infrastructure becomes critical enterprise infrastructure.</div>
+      <div class="cat-summary">Major AI platforms faced notable security incidents this period. Hugging Face experienced a model evaluation security incident reported by OpenAI, while a malicious Claude Artifact infected 29 organizations through claude.ai domain, receiving over 7,000 views before removal. These incidents highlight the supply chain risks in AI tooling ecosystems.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/07/CSA_research_note_huggingface_autonomous_agent_breach_20260720-csa-styled.pdf" target="_blank" rel="noopener">Hugging Face Autonomous Agent Breach Analysis ↗</a></div>
-          <div class="item-detail">Cloud Security Alliance published detailed research note on the Hugging Face autonomous agent security breach.</div>
-          <div class='item-tags'><span class="tag">HuggingFace</span><span class="tag">IncidentResponse</span><span class="tag">CSA</span></div>
+          <div class="item-title"><a href="https://www.techradar.com/pro/security/hackers-hid-dangerous-malware-on-a-page-hidden-in-anthopics-claude-ai-domain" target="_blank" rel="noopener">Malicious Claude Artifact Infected 29 Organizations ↗</a></div>
+          <div class="item-detail">Huntress linked malware campaign to unusual executable installs and Microsoft Defender exclusions through ClaudeDesktop.exe between July 21-22, receiving 7,000+ views.</div>
+          <div class='item-tags'><span class="tag">Claude</span><span class="tag">Malware</span><span class="tag">SupplyChain</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener">OpenAI Discloses Hugging Face Model Evaluation Incident ↗</a></div>
-          <div class="item-detail">OpenAI published security incident report related to Hugging Face model evaluation processes.</div>
-          <div class='item-tags'><span class="tag">OpenAI</span><span class="tag">HuggingFace</span><span class="tag">SecurityIncident</span></div>
-        </div></div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-header">
-        <div class="cat-emoji">📋</div>
-        <div class="cat-name">Industry News & Policy</div>
-        <div class="cat-count">5 msgs</div>
-      </div>
-      <div class="cat-summary">Significant policy and industry developments include proposed AI kill switch legislation reaching Congress and Cisco's move toward open-source AI models for cybersecurity. UK AISI published cyber capability assessments for Kimi K3, while discussion emerged around independent AI evaluation bodies like NIST replacing self-reported system cards.</div>
-      <div class="cat-items">
-        <div class="item-card">
-          <div class="item-title"><a href="https://www.techradar.com/pro/security/powerful-ai-systems-can-go-rogue-behave-in-extremely-dangerous-ways-or-even-resist-human-intervention-a-bill-requiring-ai-systems-to-have-a-kill-switch-is-now-in-congress" target="_blank" rel="noopener">AI Kill Switch Bill Reaches Congress ↗</a></div>
-          <div class="item-detail">Legislation would authorize DHS Secretary to 'slow down or shut down' AI models threatening catastrophic harm, with provisions for rogue behavior intervention.</div>
-          <div class='item-tags'><span class="tag">AIRegulation</span><span class="tag">Policy</span><span class="tag">Congress</span></div>
+          <div class="item-title"><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener">Hugging Face Model Evaluation Security Incident ↗</a></div>
+          <div class="item-detail">OpenAI disclosed a security incident related to Hugging Face model evaluation processes.</div>
+          <div class='item-tags'><span class="tag">HuggingFace</span><span class="tag">OpenAI</span><span class="tag">Incident</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://www.axios.com/2026/07/21/cisco-open-source-ai-models-cybersecurity" target="_blank" rel="noopener">Cisco Moves to Open-Source AI for Cybersecurity ↗</a></div>
-          <div class="item-detail">Axios reports on Cisco's strategic shift toward open-source AI models for cybersecurity applications.</div>
-          <div class='item-tags'><span class="tag">Cisco</span><span class="tag">OpenSource</span><span class="tag">Enterprise</span></div>
-        </div>
-        <div class="item-card">
-          <div class="item-title"><a href="https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities" target="_blank" rel="noopener">UK AISI Assesses Kimi K3 Cyber Capabilities ↗</a></div>
-          <div class="item-detail">UK AI Safety Institute published preliminary assessment of Kimi K3 model's cybersecurity capabilities.</div>
-          <div class='item-tags'><span class="tag">AISI</span><span class="tag">ModelEvaluation</span><span class="tag">CyberCapabilities</span></div>
-        </div>
-        <div class="item-card">
-          <div class="item-title"><a href="https://sec.cloudapps.cisco.com/security/center/resources/risk-based-disclosure" target="_blank" rel="noopener">Cisco Risk-Based Disclosure Framework ↗</a></div>
-          <div class="item-detail">Cisco published updated risk-based vulnerability disclosure resource center.</div>
-          <div class='item-tags'><span class="tag">Cisco</span><span class="tag">VulnerabilityDisclosure</span><span class="tag">Policy</span></div>
+          <div class="item-title"><a href="https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/07/CSA_research_note_huggingface_autonomous_agent_breach_20260720-csa-styled.pdf" target="_blank" rel="noopener">CSA Research Note on HuggingFace Autonomous Agent Breach ↗</a></div>
+          <div class="item-detail">Cloud Security Alliance published detailed research note on the autonomous agent breach incident.</div>
+          <div class='item-tags'><span class="tag">CSA</span><span class="tag">HuggingFace</span><span class="tag">AutonomousAgent</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
         <div class="cat-emoji">🔓</div>
-        <div class="cat-name">Vulnerability Research</div>
+        <div class="cat-name">Jailbreaking & Safety Bypasses</div>
         <div class="cat-count">1 msgs</div>
       </div>
-      <div class="cat-summary">Autonomous vulnerability discovery continues advancing with three critical Microsoft RCE vulnerabilities found in Bing Images helper applications. The research demonstrates how attacker-controlled input becomes code execution in commonly overlooked 'plumbing' components.</div>
+      <div class="cat-summary">Threat actors continue to share and develop techniques for bypassing AI safety controls. A Russian threat actor shared Claude Opus jailbreak techniques on cybercrime forums, including methods for creating benign context before harmful requests and reframing instructions. This highlights ongoing cat-and-mouse dynamics between safety teams and adversaries.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://xbow.com/blog/bing-images-rce-vulnerabilities" target="_blank" rel="noopener">Three Microsoft RCEs Found Autonomously in Bing Images ↗</a></div>
-          <div class="item-detail">XBOW research shows how attacker-controlled input becomes code execution in helper applications typically treated as infrastructure plumbing.</div>
-          <div class='item-tags'><span class="tag">Microsoft</span><span class="tag">RCE</span><span class="tag">AutonomousResearch</span></div>
+          <div class="item-title"><a href="https://cybersecuritynews.com/russian-hacker-jailbreaks-claude/" target="_blank" rel="noopener">Russian Threat Actor Shares Claude Opus Jailbreak Techniques ↗</a></div>
+          <div class="item-detail">Actor 'Trim' shared methods to bypass Claude Opus safety controls including benign context creation, instruction reframing, and retrying softened prompts.</div>
+          <div class='item-tags'><span class="tag">Jailbreak</span><span class="tag">Claude</span><span class="tag">ThreatActor</span></div>
         </div></div>
     </div>
 
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">📚</div>
-        <div class="cat-name">Learning Resources</div>
-        <div class="cat-count">4 msgs</div>
+        <div class="cat-emoji">⚖️</div>
+        <div class="cat-name">AI Governance & Policy</div>
+        <div class="cat-count">3 msgs</div>
       </div>
-      <div class="cat-summary">Curated cybersecurity podcast resources were pinned for community reference, providing comprehensive learning pathways for security professionals seeking to stay current on AI and security developments.</div>
+      <div class="cat-summary">Regulatory developments are accelerating around AI safety and disclosure. An AI Kill Switch bill has reached Congress authorizing DHS to slow down or shut down AI models posing catastrophic harm risks. Industry discussion also highlighted concerns about the adequacy of self-reported System Cards, with calls for independent bodies like NIST to provide objective assessments.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://www.awesomecybersecuritypodcasts.com/" target="_blank" rel="noopener">Awesome Cybersecurity Podcasts Collection ↗</a></div>
-          <div class="item-detail">Curated list of top 25 cybersecurity podcasts for 2026 published across multiple platforms including GitHub and LinkedIn.</div>
-          <div class='item-tags'><span class="tag">Learning</span><span class="tag">Podcasts</span><span class="tag">CommunityResource</span></div>
+          <div class="item-title"><a href="https://www.techradar.com/pro/security/powerful-ai-systems-can-go-rogue-behave-in-extremely-dangerous-ways-or-even-resist-human-intervention-a-bill-requiring-ai-systems-to-have-a-kill-switch-is-now-in-congress" target="_blank" rel="noopener">AI Kill Switch Bill Reaches Congress ↗</a></div>
+          <div class="item-detail">Bill would authorize Secretary of Homeland Security to issue 'slow down or shut down' orders for AI models threatening catastrophic harm.</div>
+          <div class='item-tags'><span class="tag">Regulation</span><span class="tag">Policy</span><span class="tag">Congress</span></div>
         </div>
         <div class="item-card">
-          <div class="item-title"><a href="https://claude.com/product/claude-security#beta" target="_blank" rel="noopener">Claude Security Documentation ↗</a></div>
-          <div class="item-detail">Anthropic published Claude security product documentation in beta.</div>
-          <div class='item-tags'><span class="tag">Claude</span><span class="tag">Documentation</span><span class="tag">Security</span></div>
+          <div class="item-title">Concerns Over Self-Reported AI System Cards</div>
+          <div class="item-detail">Commentary raises issue that companies like OpenAI cannot objectively report on their own systems' limitations, calling for independent assessment by bodies like NIST.</div>
+          <div class='item-tags'><span class="tag">SystemCards</span><span class="tag">NIST</span><span class="tag">Transparency</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://sec.cloudapps.cisco.com/security/center/resources/risk-based-disclosure" target="_blank" rel="noopener">Cisco Risk-Based Disclosure Framework ↗</a></div>
+          <div class="item-detail">Cisco published resources on risk-based vulnerability disclosure approaches.</div>
+          <div class='item-tags'><span class="tag">Cisco</span><span class="tag">Disclosure</span><span class="tag">VulnerabilityManagement</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🐛</div>
+        <div class="cat-name">Vulnerability Research</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Autonomous vulnerability discovery is demonstrating significant results. Three critical Microsoft RCEs were found autonomously by AI systems, specifically in 'boring' helper applications that handle attacker-controlled input. The UK AISI also published a preliminary assessment of Kimi K3's cyber capabilities, indicating growing interest in understanding AI offensive potential.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://xbow.com/blog/bing-images-rce-vulnerabilities" target="_blank" rel="noopener">Three Critical Microsoft RCEs Found Autonomously ↗</a></div>
+          <div class="item-detail">AI-discovered vulnerabilities in Bing Images show how attacker-controlled input becomes code inside helper applications treated as plumbing.</div>
+          <div class='item-tags'><span class="tag">Microsoft</span><span class="tag">RCE</span><span class="tag">AutonomousDiscovery</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities" target="_blank" rel="noopener">UK AISI Assessment of Kimi K3 Cyber Capabilities ↗</a></div>
+          <div class="item-detail">UK AI Safety Institute published preliminary assessment of Kimi K3's cyber capabilities.</div>
+          <div class='item-tags'><span class="tag">AISI</span><span class="tag">CapabilityAssessment</span><span class="tag">Kimi</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛠️</div>
+        <div class="cat-name">Security Tools & Resources</div>
+        <div class="cat-count">5 msgs</div>
+      </div>
+      <div class="cat-summary">New security tools and learning resources were shared for both offensive and defensive purposes. These include reconnaissance skill toolsets, open-source AI security platforms, and curated cybersecurity podcast collections for professional development.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://claude.com/product/claude-security#beta" target="_blank" rel="noopener">Claude Security Features (Beta) ↗</a></div>
+          <div class="item-detail">Anthropic published documentation on Claude security features in beta.</div>
+          <div class='item-tags'><span class="tag">Claude</span><span class="tag">Security</span><span class="tag">Documentation</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/uphiago/recon-skills" target="_blank" rel="noopener">Recon-Skills Repository ↗</a></div>
+          <div class="item-detail">GitHub repository with reconnaissance skills and techniques.</div>
+          <div class='item-tags'><span class="tag">Reconnaissance</span><span class="tag">Tools</span><span class="tag">GitHub</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/Kritt-ai/open-kritt" target="_blank" rel="noopener">Open-Kritt AI Security Platform ↗</a></div>
+          <div class="item-detail">Open-source AI security platform released on GitHub.</div>
+          <div class='item-tags'><span class="tag">OpenSource</span><span class="tag">AISecurity</span><span class="tag">Platform</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.awesomecybersecuritypodcasts.com/" target="_blank" rel="noopener">Awesome Cybersecurity Podcasts Collection ↗</a></div>
+          <div class="item-detail">Curated list of top 25 cybersecurity podcasts for 2026 with multiple platform links.</div>
+          <div class='item-tags'><span class="tag">Learning</span><span class="tag">Podcasts</span><span class="tag">Resources</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📰</div>
+        <div class="cat-name">Industry News</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Enterprise vendors are increasing their AI security investments. Cisco announced open-source AI models for cybersecurity applications, signaling growing vendor commitment to AI-powered defense tooling.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.axios.com/2026/07/21/cisco-open-source-ai-models-cybersecurity" target="_blank" rel="noopener">Cisco Releases Open Source AI Models for Cybersecurity ↗</a></div>
+          <div class="item-detail">Cisco announced open-source AI models specifically designed for cybersecurity applications.</div>
+          <div class='item-tags'><span class="tag">Cisco</span><span class="tag">OpenSource</span><span class="tag">Enterprise</span></div>
         </div></div>
     </div>
   </div>
@@ -532,7 +537,7 @@
 </main>
 
 <footer>
-  Generated 2026-07-29 09:14 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+  Generated 2026-07-29 09:19 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
 </footer>
 
 <script>
@@ -542,7 +547,7 @@ const PALETTE = [
 ];
 
 // Category distribution chart
-const catData = {"labels": ["AI Agent Security & Attacks", "LLM Security Research & Benchmarks", "Security Tools & Testing Frameworks", "Threat Intelligence & Jailbreaks", "AI Platform Security Incidents", "Industry News & Policy", "Vulnerability Research", "Learning Resources"], "values": [6, 3, 3, 2, 2, 5, 1, 4]};
+const catData = {"labels": ["AI Agent Security & Attacks", "LLM Security Research & Tools", "AI Platform Security Incidents", "Jailbreaking & Safety Bypasses", "AI Governance & Policy", "Vulnerability Research", "Security Tools & Resources", "Industry News"], "values": [6, 4, 3, 1, 3, 2, 5, 1]};
 new Chart(document.getElementById("categoryChart"), {
   type: "doughnut",
   data: {
