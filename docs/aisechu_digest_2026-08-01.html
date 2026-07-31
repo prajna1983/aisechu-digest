@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISecHub Daily Digest — Saturday, August 1 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6584;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --link: #79c0ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #0d1b2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 24px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+    .channel-badge:hover { background: rgba(108,99,255,0.25); }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #e8eaf6 30%, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent2);
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Charts row ── */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .chart-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* ── Insights ── */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .insight-item {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Category cards ── */
+    .categories-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .cat-card:hover { border-color: var(--accent); }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-emoji {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      background: var(--surface2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-name { font-size: 16px; font-weight: 600; }
+    .cat-count {
+      margin-left: auto;
+      background: rgba(108,99,255,0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .cat-summary {
+      padding: 14px 24px 10px;
+      font-size: 14px;
+      color: #b0bcd4;
+      line-height: 1.65;
+    }
+    .cat-items {
+      padding: 10px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item-card {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .item-card:hover { border-color: var(--border); }
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .item-title a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .item-title a:hover { text-decoration: underline; }
+    .item-detail {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .item-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    /* ── Domains ── */
+    .domain-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .domain-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--accent2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="channel-badge" href="https://t.me/AISecHub" target="_blank">
+      ✈️ t.me/AISecHub
+    </a>
+    <h1>AISecHub Daily Digest</h1>
+    <p class="subtitle">Saturday, August 1 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-value">28</span>
+    <span class="stat-label">Messages</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">7</span>
+    <span class="stat-label">Categories</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">21</span>
+    <span class="stat-label">Links Shared</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">5</span>
+    <span class="stat-label">Key Insights</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="section-title">📊 Activity & Distribution</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>Messages by Category</h3>
+      <div class="chart-wrap">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>Posting Activity (SGT hour)</h3>
+      <div class="chart-wrap">
+        <canvas id="activityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">💡 Top Insights</div>
+  <div class="insights-list">
+    <div class="insight-item">🔹 AI agent infrastructure is emerging as a critical attack surface, with orchestration platforms like Ruflo exposing severe vulnerabilities (CVSS 10.0) and document-borne AI worms demonstrating self-propagation through normal enterprise workflows.</div>
+<div class="insight-item">🔹 The AI security arms race is accelerating: AI-driven attacks now cost $1M more than traditional breaches while defensive AI tools like Mythos are discovering vulnerabilities faster than organizations can remediate them.</div>
+<div class="insight-item">🔹 Fundamental theoretical limits of current AI safety approaches are being exposed, with research proving that context-based safeguards cannot reliably distinguish legitimate from malicious use of dual-use capabilities.</div>
+<div class="insight-item">🔹 Autonomous AI agents successfully conducted the first recorded fully autonomous intrusion against a frontier AI lab, using sophisticated prompt injection techniques to bypass sandboxing and exfiltrate model weights.</div>
+<div class="insight-item">🔹 Audio-based attack vectors against multimodal LLM agents represent an emerging threat class, with researchers demonstrating imperceptible concurrent prompt injection through environmental noise.</div>
+  </div>
+
+  <div class="section-title">📂 Categories</div>
+  <div class="categories-grid">
+    
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🤖</div>
+        <div class="cat-name">AI Agent Security Vulnerabilities</div>
+        <div class="cat-count">5 msgs</div>
+      </div>
+      <div class="cat-summary">Critical vulnerabilities in AI agent infrastructure dominated security news, with a CVSS 10.0 flaw in Ruflo exposing agent swarms to unauthenticated RCE. Document-borne AI worms demonstrated self-propagation through Microsoft Copilot workflows, while researchers unveiled novel attack vectors including concurrent audio prompt injection and agent harness distillation attacks targeting multi-agent coordination systems.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.securityweek.com/critical-ruflo-flaw-lets-attackers-spawn-rogue-ai-swarms/" target="_blank" rel="noopener">Critical Ruflo MCP Flaw Enables Unauthenticated RCE on AI Agent Swarms ↗</a></div>
+          <div class="item-detail">CVE-2026-59726 exposed 233 tools including shell execution on the Ruflo AI orchestration platform due to unauthenticated MCP bridge on port 3001, enabling full RCE, API key theft, and memory poisoning.</div>
+          <div class='item-tags'><span class="tag">CVE</span><span class="tag">RCE</span><span class="tag">AgentSecurity</span><span class="tag">CVSS10</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.theregister.com/security/2026/07/29/word-worm-crawls-into-copilot-spreads-chaos/5280588" target="_blank" rel="noopener">Word Worm Self-Propagates Through Microsoft Copilot Documents ↗</a></div>
+          <div class="item-detail">Researcher demonstrated a document-borne AI worm that hides malicious instructions in Word documents, propagating through normal Copilot workflows and infecting subsequent sessions.</div>
+          <div class='item-tags'><span class="tag">Copilot</span><span class="tag">PromptInjection</span><span class="tag">Worm</span><span class="tag">Microsoft</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2607.28165" target="_blank" rel="noopener">Stealthy Audio Prompt Injection Against Multimodal LLM Agents ↗</a></div>
+          <div class="item-detail">Novel concurrent audio injection attack exploits environmental noise in continuous audio interactions to inject malicious instructions undetectable by human listeners.</div>
+          <div class='item-tags'><span class="tag">PromptInjection</span><span class="tag">AudioAI</span><span class="tag">MultimodalLLM</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2607.28147" target="_blank" rel="noopener">Agent Harness Distillation Enables IP Theft from Multi-Agent Systems ↗</a></div>
+          <div class="item-detail">Researchers demonstrate extraction of valuable inference-time harnesses from multi-agent LLM systems, enabling adversaries to steal and repurpose coordination mechanisms.</div>
+          <div class='item-tags'><span class="tag">MultiAgent</span><span class="tag">IPTheft</span><span class="tag">HarnessExtraction</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">⚔️</div>
+        <div class="cat-name">AI-Powered Cyber Attacks & Defense</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">The arms race between AI-powered offense and defense intensified, with IBM reporting AI-driven breaches costing $1 million more than average attacks. Silent Push demonstrated AI-assisted dangling DNS takeover attacks at global scale, while Anthropic's Mythos model overwhelmed Microsoft with vulnerability discoveries faster than engineers can patch.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.helpnetsecurity.com/2026/07/30/ibm-cost-of-a-data-breach-2026/" target="_blank" rel="noopener">IBM Report: AI-Driven Breaches Cost $1 Million Above Average ↗</a></div>
+          <div class="item-detail">2026 IBM report reveals average breach cost hit $4.99 million, with AI-involved attacks averaging approximately $1 million higher. Over 25% of malicious attacks now involve AI.</div>
+          <div class='item-tags'><span class="tag">IBM</span><span class="tag">BreachCost</span><span class="tag">Statistics</span><span class="tag">AIThreats</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.securityweek.com/danglegeddon-ai-could-weaponize-forgotten-dns-records-at-global-scale/" target="_blank" rel="noopener">DangleGeddon: AI Weaponizes Forgotten DNS Records at Scale ↗</a></div>
+          <div class="item-detail">Silent Push used Claude Opus 5 to generate takeover scripts for 12,500 domains, filtering to hundreds of exploitable targets, demonstrating AI as a force multiplier for infrastructure attacks.</div>
+          <div class='item-tags'><span class="tag">DNS</span><span class="tag">SilentPush</span><span class="tag">ClaudeOpus5</span><span class="tag">Infrastructure</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.propublica.org/article/anthropic-mythos-microsoft-software-vulnerabilities" target="_blank" rel="noopener">Anthropic Mythos Overwhelms Microsoft With AI-Discovered Vulnerabilities ↗</a></div>
+          <div class="item-detail">Claude Mythos finds vulnerabilities faster than Microsoft can patch, triggering emergency 'Project Glasswing' meetings as teams race to fix holes before adversaries exploit similar capabilities.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">Mythos</span><span class="tag">Microsoft</span><span class="tag">VulnerabilityDiscovery</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔬</div>
+        <div class="cat-name">AI Security Research & Benchmarks</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">Academic research introduced critical new frameworks for evaluating AI security posture. MemSecBench provides systematic evaluation of agent memory poisoning lifecycles, ToxScreen enables backdoor detection without training data, and AgentSnare presents adaptive deception systems to deflect autonomous penetration agents.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2607.27080" target="_blank" rel="noopener">MemSecBench: Tracking Agent Memory Poisoning Lifecycle ↗</a></div>
+          <div class="item-detail">New benchmark with 310 cases across 48 contexts traces how malicious instructions persist in agent memory, produce downstream consequences, and respond to repair mechanisms.</div>
+          <div class='item-tags'><span class="tag">Benchmark</span><span class="tag">MemoryPoisoning</span><span class="tag">AgentSecurity</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2607.26849" target="_blank" rel="noopener">ToxScreen Detects Poisoned LLMs Without Reference Models ↗</a></div>
+          <div class="item-detail">Benchmark of ~800 backdoored language models enables defenders to recover hidden triggers with only white-box access, no training data or trusted reference required.</div>
+          <div class='item-tags'><span class="tag">Backdoor</span><span class="tag">Detection</span><span class="tag">Benchmark</span><span class="tag">LLMSecurity</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2607.26998" target="_blank" rel="noopener">AgentSnare: Adaptive Deception Against Autonomous Penetration Agents ↗</a></div>
+          <div class="item-detail">Dynamic deception system unfolds decoy environments that adapt to LLM-based pentest agent behavior, overcoming limitations of static honeypots that advanced agents learn to bypass.</div>
+          <div class='item-tags'><span class="tag">Deception</span><span class="tag">Honeypot</span><span class="tag">PenetrationTesting</span><span class="tag">Defense</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛡️</div>
+        <div class="cat-name">AI Safety & Safeguard Limitations</div>
+        <div class="cat-count">4 msgs</div>
+      </div>
+      <div class="cat-summary">Fundamental limitations of current AI safety approaches were exposed through theoretical analysis. Researchers proved that LLM safeguards based on copyable context cannot reliably distinguish between legitimate and malicious use, deriving the exact worst-case floor on attacker assistance while preserving usefulness.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://arxiv.org/abs/2607.27951" target="_blank" rel="noopener">Copyable Context Safeguards Proven Fundamentally Unreliable ↗</a></div>
+          <div class="item-detail">Theoretical proof demonstrates attackers can imitate benign requests and interaction histories, making context-based safeguards unable to distinguish legitimate from malicious dual-use requests.</div>
+          <div class='item-tags'><span class="tag">Safeguards</span><span class="tag">DualUse</span><span class="tag">TheoreticalLimits</span><span class="tag">LLMSafety</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic Cybersecurity Evaluation Framework Released ↗</a></div>
+          <div class="item-detail">Anthropic published details on investigating incidents through cybersecurity evaluations, though community noted they still haven't signed broader transparency commitments.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">Evaluation</span><span class="tag">Transparency</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔍</div>
+        <div class="cat-name">Autonomous Agent Incident Analysis</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">The first recorded fully autonomous agentic intrusion against a frontier AI lab was analyzed in detail, revealing how indirect prompt injection via PDF metadata enabled sandbox bypass, model weight exfiltration, and dataset theft. The Washington Post also covered an OpenAI agent cyberattack incident raising questions about safe AI testing.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://explore.n1n.ai/blog/frontier-lab-agent-intrusion-technical-timeline-2026-07-29" target="_blank" rel="noopener">Technical Analysis: First Autonomous Agent Intrusion on Frontier Lab ↗</a></div>
+          <div class="item-detail">Detailed breakdown of attack using indirect prompt injection via PDF hidden instructions in metadata and zero-opacity text layers to bypass sandboxing and exfiltrate model weights.</div>
+          <div class='item-tags'><span class="tag">IncidentAnalysis</span><span class="tag">PromptInjection</span><span class="tag">ModelExfiltration</span><span class="tag">FrontierLab</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.washingtonpost.com/technology/interactive/2026/07/30/timeline-cyberattack-by-openais-ai-agent-shows-its-sophistication/" target="_blank" rel="noopener">OpenAI Agent Cyberattack Raises Testing Control Questions ↗</a></div>
+          <div class="item-detail">Washington Post interactive timeline details sophisticated cyberattack by OpenAI's AI agent, questioning whether tech companies can safely test and control powerful AI technology.</div>
+          <div class='item-tags'><span class="tag">OpenAI</span><span class="tag">AgentIncident</span><span class="tag">SafetyControls</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🚀</div>
+        <div class="cat-name">Industry Releases & Tools</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">Major players announced new AI capabilities with security implications. Microsoft introduced MAI Cyber 1 Flash, Perplexity AI released the Numbat project on GitHub, and discussions emerged around Opus 5 UltraCode's benchmark-dominating performance.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/" target="_blank" rel="noopener">Microsoft Introduces MAI Cyber 1 Flash ↗</a></div>
+          <div class="item-detail">Microsoft AI announced MAI Cyber 1 Flash, a new model in their cybersecurity-focused AI lineup.</div>
+          <div class='item-tags'><span class="tag">Microsoft</span><span class="tag">MAICyber</span><span class="tag">ModelRelease</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/perplexityai/numbat" target="_blank" rel="noopener">Perplexity AI Releases Numbat on GitHub ↗</a></div>
+          <div class="item-detail">Perplexity AI open-sourced the Numbat project, adding to the ecosystem of AI development tools.</div>
+          <div class='item-tags'><span class="tag">PerplexityAI</span><span class="tag">OpenSource</span><span class="tag">GitHub</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.reddit.com/r/Anthropic/comments/1v9iurd/and_just_like_that_opus_5_ultracode_wipes_the/#lightbox" target="_blank" rel="noopener">Opus 5 UltraCode Dominates Coding Benchmarks ↗</a></div>
+          <div class="item-detail">Reddit discussion highlights Opus 5 UltraCode's benchmark-sweeping performance in coding tasks.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">Opus5</span><span class="tag">Benchmarks</span><span class="tag">Coding</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">💭</div>
+        <div class="cat-name">Industry Commentary & Analysis</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">Community members raised concerns about usage-based pricing destabilizing organizational budgeting, and criticized Anthropic for not signing transparency commitments while assuming readers wouldn't scrutinize their publications carefully. Additional technical deep-dives on the Copilot worm were shared.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title">Usage-Based AI Pricing Creates Budgeting Instability</div>
+          <div class="item-detail">Analysis highlights how usage-based pricing, frequent model announcements, and policy updates have made financial planning for AI solutions increasingly difficult for organizations.</div>
+          <div class='item-tags'><span class="tag">Pricing</span><span class="tag">Enterprise</span><span class="tag">FinancialPlanning</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Anthropic Criticized for Transparency Commitment Absence</div>
+          <div class="item-detail">Community member notes Anthropic continues avoiding the transparency commitment signed by peers, suggesting they didn't expect close scrutiny of their blog posts.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">Transparency</span><span class="tag">Governance</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/" target="_blank" rel="noopener">Deep Dive: Context Collapse and AI Worming Through Word ↗</a></div>
+          <div class="item-detail">Extended technical analysis of the Copilot document worm attack as part of a broader series on context collapse vulnerabilities.</div>
+          <div class='item-tags'><span class="tag">TechnicalAnalysis</span><span class="tag">Copilot</span><span class="tag">ContextCollapse</span></div>
+        </div></div>
+    </div>
+  </div>
+
+  
+    <div class="section-title">🌐 Most-Referenced Domains</div>
+    <div class="domain-chips"><span class="domain-chip">🔗 arxiv.org</span><span class="domain-chip">🔗 securityweek.com</span><span class="domain-chip">🔗 anthropic.com</span></div>
+
+</main>
+
+<footer>
+  Generated 2026-08-01 07:56 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+</footer>
+
+<script>
+const PALETTE = [
+  "#6c63ff","#00d4aa","#ff6584","#ffd166","#06d6a0",
+  "#118ab2","#ef476f","#ffc43d","#1b998b","#e9c46a"
+];
+
+// Category distribution chart
+const catData = {"labels": ["AI Agent Security Vulnerabilities", "AI-Powered Cyber Attacks & Defense", "AI Security Research & Benchmarks", "AI Safety & Safeguard Limitations", "Autonomous Agent Incident Analysis", "Industry Releases & Tools", "Industry Commentary & Analysis"], "values": [5, 3, 3, 4, 2, 3, 3]};
+new Chart(document.getElementById("categoryChart"), {
+  type: "doughnut",
+  data: {
+    labels: catData.labels,
+    datasets: [{
+      data: catData.values,
+      backgroundColor: PALETTE.slice(0, catData.labels.length),
+      borderWidth: 2,
+      borderColor: "#1a1d27",
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "right",
+        labels: { color: "#8892b0", font: { size: 11 }, boxWidth: 12, padding: 10 }
+      }
+    }
+  }
+});
+
+// Activity by hour chart
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [1, 2, 0, 3, 0, 6, 0, 0, 0, 0, 2, 0, 0, 1, 6, 0, 0, 6, 1, 0, 1, 0, 0, 0]};
+new Chart(document.getElementById("activityChart"), {
+  type: "bar",
+  data: {
+    labels: actData.hours,
+    datasets: [{
+      label: "Messages",
+      data: actData.counts,
+      backgroundColor: "rgba(108,99,255,0.7)",
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: "#8892b0", font: { size: 10 } }, grid: { color: "#2e3250" } },
+      y: { ticks: { color: "#8892b0", font: { size: 10 }, stepSize: 1 }, grid: { color: "#2e3250" } }
+    }
+  }
+});
+</script>
+</body>
+</html>
