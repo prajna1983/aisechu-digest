@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">56</span>
+    <span class="stat-value">57</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">651</span>
+    <span class="stat-value">655</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">620</span>
+    <span class="stat-value">622</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">69</span>
+    <span class="stat-value">70</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-08-02.html">
+    <a class="digest-card today" href="aisechu_digest_2026-08-03.html">
+      <div>
+        <div class="digest-date">
+          Monday, August 3 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">Cybersecurity Vulnerabilities & CVEs</span><span class="cat-tag">Security Tools & Releases</span><span class="cat-tag">AI & ML Security</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">Developer tooling security remains a critical concern as RCE vulnerabilities in widely-used IDEs like VS Code and Cursor could enable large-scale supply chain attacks.</div><div class="digest-insight-item">Major technology companies like Uber continue to contribute to the open-source security ecosystem with new tool releases.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">4</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">2</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-08-02.html">
       <div>
         <div class="digest-date">
           Sunday, August 2 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">AI-Powered Vulnerability Discovery</span><span class="cat-tag">Prompt Injection & Agent Attacks</span><span class="cat-tag">AI Safety & Safeguard Research</span><span class="cat-tag">Multi-Agent System Security</span></div>
         <div class="digest-insights"><div class="digest-insight-item">AI vulnerability discovery is reaching an inflection point where automated systems can identify bugs faster than human teams can remediate them, fundamentally changing the patch-race dynamic between defenders and attackers.</div><div class="digest-insight-item">Prompt injection attacks are evolving beyond text into multimodal vectors (audio, PDF metadata) that are increasingly difficult for humans to detect, while autonomous agents provide larger attack surfaces.</div></div>
@@ -1599,12 +1623,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-08-02 07:51 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-08-03 07:52 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["06-23", "06-24", "06-25", "06-26", "06-27", "06-28", "06-29", "06-30", "07-01", "07-04", "07-05", "07-06", "07-07", "07-08", "07-09", "07-10", "07-11", "07-15", "07-16", "07-18", "07-19", "07-20", "07-21", "07-22", "07-23", "07-29", "07-30", "07-31", "08-01", "08-02"], "messages": [2, 1, 8, 4, 9, 6, 5, 4, 21, 32, 13, 10, 10, 10, 20, 18, 19, 14, 5, 13, 15, 4, 2, 12, 13, 33, 6, 17, 28, 18], "links": [2, 1, 8, 3, 6, 8, 5, 4, 21, 32, 13, 14, 15, 9, 19, 18, 21, 14, 5, 16, 18, 4, 2, 11, 12, 28, 6, 17, 21, 10]};
+const trendData = {"labels": ["06-24", "06-25", "06-26", "06-27", "06-28", "06-29", "06-30", "07-01", "07-04", "07-05", "07-06", "07-07", "07-08", "07-09", "07-10", "07-11", "07-15", "07-16", "07-18", "07-19", "07-20", "07-21", "07-22", "07-23", "07-29", "07-30", "07-31", "08-01", "08-02", "08-03"], "messages": [1, 8, 4, 9, 6, 5, 4, 21, 32, 13, 10, 10, 10, 20, 18, 19, 14, 5, 13, 15, 4, 2, 12, 13, 33, 6, 17, 28, 18, 4], "links": [1, 8, 3, 6, 8, 5, 4, 21, 32, 13, 14, 15, 9, 19, 18, 21, 14, 5, 16, 18, 4, 2, 11, 12, 28, 6, 17, 21, 10, 2]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
