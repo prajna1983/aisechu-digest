@@ -1,0 +1,136 @@
+{
+  "categories": [
+    {
+      "name": "Cybersecurity Vulnerabilities & CVEs",
+      "emoji": "\ud83d\udd13",
+      "summary": "A critical one-click RCE vulnerability was discovered affecting multiple popular development environments including Cursor, VS Code, and Google Antigravity. This highlights ongoing security concerns in developer tooling that could enable remote code execution with minimal user interaction.",
+      "key_items": [
+        {
+          "title": "One-Click RCE in Cursor, VS Code, and Google Antigravity",
+          "detail": "Aisle security researchers discovered a critical remote code execution vulnerability affecting popular code editors, requiring only a single click to exploit.",
+          "url": "https://aisle.com/blog/aisle-discovers-1-click-rce-vulnerability-in-cursor-vs-code-and-google-antigravity",
+          "tags": [
+            "RCE",
+            "VS Code",
+            "Cursor",
+            "IDE Security"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Multiple reports emerged about AI models discovering security vulnerabilities, with Claude Code reportedly finding issues in Bitcoin-related code. The AI Now Institute also published a brief on 'Friendly Fire' exploits, examining risks associated with AI systems.",
+      "key_items": [
+        {
+          "title": "Claude Code Discovers Bitcoin Vulnerability",
+          "detail": "Reddit discussion highlights an instance where Claude's code analysis capabilities identified a security issue in Bitcoin-related software.",
+          "url": "https://www.reddit.com/r/Bitcoin/comments/1vddeuy/are_you_kidding_me_claude_code_found_the/",
+          "tags": [
+            "Claude",
+            "Bitcoin",
+            "AI Code Analysis"
+          ]
+        },
+        {
+          "title": "GLM-5.2 Model Security Analysis Follow-up",
+          "detail": "Update on AI model security testing, specifically examining GLM-5.2 trained in June with additional findings.",
+          "url": "https://www.reddit.com/r/Bitcoin/comments/1vdes1l/update_to_my_last_post_glm52_trained_june_16th_no/",
+          "tags": [
+            "GLM",
+            "AI Models",
+            "Security Testing"
+          ]
+        },
+        {
+          "title": "AI Now Institute: Friendly Fire Exploit Brief",
+          "detail": "Research publication examining exploitation vectors and risks in AI systems, focusing on unintended harmful behaviors.",
+          "url": "https://ainowinstitute.org/publications/friendly-fire-exploit-brief",
+          "tags": [
+            "AI Safety",
+            "Exploits",
+            "Research"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "Uber released ADR, a new tool on GitHub for security or architecture decision records. This continues the trend of major tech companies open-sourcing internal security and development tools.",
+      "key_items": [
+        {
+          "title": "Uber ADR Tool Release",
+          "detail": "Uber open-sourced their ADR (Architecture Decision Records) tool on GitHub for documentation and decision tracking.",
+          "url": "https://github.com/uber/ADR",
+          "tags": [
+            "Uber",
+            "Open Source",
+            "DevSecOps"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Miscellaneous",
+      "emoji": "\ud83d\udcdd",
+      "summary": "One message contained no content or links, possibly a deleted message or placeholder.",
+      "key_items": [
+        {
+          "title": "Empty Message",
+          "detail": "A message with no text or link content was posted, potentially deleted or a formatting issue.",
+          "url": null,
+          "tags": [
+            "No Content"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "AI-assisted code analysis is increasingly uncovering vulnerabilities in production systems, as demonstrated by Claude Code finding issues in Bitcoin-related software.",
+    "Developer tooling security remains a critical concern, with RCE vulnerabilities discovered in widely-used IDEs like VS Code and Cursor.",
+    "The intersection of AI safety and security research is gaining attention, with institutions like AI Now publishing exploit briefs on AI system vulnerabilities.",
+    "Major tech companies continue open-sourcing security and development tools, contributing to community-driven security improvements."
+  ],
+  "stats": {
+    "total_links": 6,
+    "most_linked_domains": [
+      "reddit.com",
+      "github.com",
+      "aisle.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 1,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 4,
+      "11": 0,
+      "12": 1,
+      "13": 0,
+      "14": 0,
+      "15": 1,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 7
+}
