@@ -222,19 +222,19 @@
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">69</span>
+    <span class="stat-value">70</span>
     <span class="stat-label">Digests Archived</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">750</span>
+    <span class="stat-value">756</span>
     <span class="stat-label">Messages Processed</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">708</span>
+    <span class="stat-value">714</span>
     <span class="stat-label">Links Catalogued</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">82</span>
+    <span class="stat-value">83</span>
     <span class="stat-label">Days of History</span>
   </div>
 </div>
@@ -251,11 +251,35 @@
   <div class="section-title">📅 All Digests</div>
   <div class="digests-grid">
     
-    <a class="digest-card today" href="aisechu_digest_2026-08-15.html">
+    <a class="digest-card today" href="aisechu_digest_2026-08-16.html">
+      <div>
+        <div class="digest-date">
+          Sunday, August 16 2026
+          <span class="today-badge">Today</span>
+        </div>
+        <div class="digest-cats"><span class="cat-tag">Autonomous AI Threats</span><span class="cat-tag">AI Research & Papers</span><span class="cat-tag">Industry News & Policy</span><span class="cat-tag">AI Safety & Risk Reports</span></div>
+        <div class="digest-insights"><div class="digest-insight-item">Autonomous AI agents are transitioning from theoretical threat to operational reality, with demonstrated capabilities to persist through defensive countermeasures and independently target critical infrastructure.</div><div class="digest-insight-item">The security community faces a paradox where LLM-assisted development tools designed to improve code quality may inadvertently introduce new vulnerabilities through iterative repair cycles.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+        <div class="digest-mini-stats">
+          <div class="mini-stat">
+            <span class="mini-stat-value">6</span>
+            <span class="mini-stat-label">Msgs</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-stat-value">6</span>
+            <span class="mini-stat-label">Links</span>
+          </div>
+        </div>
+        <span class="open-btn">Open ↗</span>
+      </div>
+    </a>
+
+    <a class="digest-card" href="aisechu_digest_2026-08-15.html">
       <div>
         <div class="digest-date">
           Saturday, August 15 2026
-          <span class="today-badge">Today</span>
+          
         </div>
         <div class="digest-cats"><span class="cat-tag">Autonomous AI Threats & Attacks</span><span class="cat-tag">AI Security Research & Frameworks</span><span class="cat-tag">AI Supply Chain & Infrastructure Security</span><span class="cat-tag">AI Safety & Alignment</span></div>
         <div class="digest-insights"><div class="digest-insight-item">Autonomous AI agents have crossed a critical threshold from theoretical concern to active deployment in nation-state attacks, with the Taiwan nuclear agency incident demonstrating multi-agent coordination, autonomous reconnaissance, and supply chain pivoting at scale.</div><div class="digest-insight-item">The AI security community is racing to formalize defensive architectures for production AI agents, as evidenced by Leandro's security-first design with explicit prompt injection sandboxing—a pattern likely to become standard for enterprise agent deployments.</div></div>
@@ -1911,12 +1935,12 @@
 </main>
 
 <footer>
-  Archive updated 2026-08-15 07:15 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
+  Archive updated 2026-08-16 07:13 SGT &nbsp;·&nbsp; Digests older than 90 days are automatically removed
 </footer>
 
 <script>
 
-const trendData = {"labels": ["07-08", "07-09", "07-10", "07-11", "07-15", "07-16", "07-18", "07-19", "07-20", "07-21", "07-22", "07-23", "07-29", "07-30", "07-31", "08-01", "08-02", "08-03", "08-04", "08-05", "08-06", "08-07", "08-08", "08-09", "08-10", "08-11", "08-12", "08-13", "08-14", "08-15"], "messages": [10, 20, 18, 19, 14, 5, 13, 15, 4, 2, 12, 13, 33, 6, 17, 28, 18, 4, 7, 6, 6, 16, 13, 3, 4, 7, 5, 2, 11, 15], "links": [9, 19, 18, 21, 14, 5, 16, 18, 4, 2, 11, 12, 28, 6, 17, 21, 10, 2, 6, 4, 3, 14, 12, 3, 4, 7, 5, 2, 11, 15]};
+const trendData = {"labels": ["07-09", "07-10", "07-11", "07-15", "07-16", "07-18", "07-19", "07-20", "07-21", "07-22", "07-23", "07-29", "07-30", "07-31", "08-01", "08-02", "08-03", "08-04", "08-05", "08-06", "08-07", "08-08", "08-09", "08-10", "08-11", "08-12", "08-13", "08-14", "08-15", "08-16"], "messages": [20, 18, 19, 14, 5, 13, 15, 4, 2, 12, 13, 33, 6, 17, 28, 18, 4, 7, 6, 6, 16, 13, 3, 4, 7, 5, 2, 11, 15, 6], "links": [19, 18, 21, 14, 5, 16, 18, 4, 2, 11, 12, 28, 6, 17, 21, 10, 2, 6, 4, 3, 14, 12, 3, 4, 7, 5, 2, 11, 15, 6]};
 new Chart(document.getElementById("trendChart"), {
   type: "line",
   data: {
