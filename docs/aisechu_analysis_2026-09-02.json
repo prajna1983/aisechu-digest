@@ -1,0 +1,114 @@
+{
+  "categories": [
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "This batch highlights emerging authentication frameworks for AI agents and Microsoft's zero trust approach to AI systems. The focus is on establishing trust boundaries and security assessments specifically designed for AI workloads in enterprise environments.",
+      "key_items": [
+        {
+          "title": "AI Agent Authentication via Web Bot Auth (ARD/OAuth)",
+          "detail": "WebDecoy explores authentication mechanisms for AI agents, addressing the challenge of how bots and autonomous agents should authenticate on the web using ARD and OAuth protocols.",
+          "url": "https://webdecoy.com/blog/ai-agent-authentication-web-bot-auth-ard-oauth/",
+          "tags": [
+            "authentication",
+            "ai-agents",
+            "oauth",
+            "web-security"
+          ]
+        },
+        {
+          "title": "Microsoft Zero Trust Assessment for AI",
+          "detail": "Microsoft's official zero trust assessment framework now includes dedicated guidance for AI systems, providing structured evaluation criteria for securing AI deployments.",
+          "url": "https://microsoft.github.io/zerotrustassessment/docs/category/ai",
+          "tags": [
+            "zero-trust",
+            "microsoft",
+            "assessment",
+            "enterprise"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "A reverse engineering toolkit was shared, providing skills and techniques relevant to security researchers and malware analysts working on binary analysis and software reversing tasks.",
+      "key_items": [
+        {
+          "title": "Reverse Engineering Skills Repository",
+          "detail": "GitHub repository containing reverse engineering techniques and skill resources for security practitioners focused on binary analysis.",
+          "url": "https://github.com/zhaoxuya520/reverse-skill",
+          "tags": [
+            "reverse-engineering",
+            "tools",
+            "github",
+            "binary-analysis"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Tutorials & Learning Resources",
+      "emoji": "\ud83d\udcda",
+      "summary": "Enterprise-focused architectural guidance emerged for deploying agentic AI systems in 2026, offering reference patterns for organizations building autonomous AI capabilities at scale.",
+      "key_items": [
+        {
+          "title": "Enterprise Agentic AI Reference Architecture 2026",
+          "detail": "Comprehensive architectural blueprint published on Qiita covering design patterns and infrastructure considerations for deploying agentic AI systems in enterprise environments.",
+          "url": "https://qiita.com/nohanaga/items/e8a9b8eafe364239e2e3",
+          "tags": [
+            "architecture",
+            "agentic-ai",
+            "enterprise",
+            "reference-design"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Enterprise AI security is maturing rapidly, with dedicated zero trust frameworks and authentication standards emerging specifically for AI agents and autonomous systems.",
+    "The agentic AI paradigm is driving new architectural patterns and security considerations that extend beyond traditional application security models.",
+    "Authentication for AI agents represents a critical unsolved challenge, with new protocols like ARD being proposed alongside established OAuth mechanisms.",
+    "Microsoft's investment in AI-specific zero trust assessment tools signals mainstream enterprise adoption of AI security governance frameworks."
+  ],
+  "stats": {
+    "total_links": 4,
+    "most_linked_domains": [
+      "github.com",
+      "qiita.com",
+      "microsoft.github.io",
+      "webdecoy.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 2,
+      "02": 0,
+      "03": 2,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 4
+}
