@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83c\udfaf",
+      "summary": "Google Cloud's threat intelligence team explores the evolving landscape of adversarial AI, examining how threat actors are progressing from basic prompt-based attacks toward more autonomous AI-powered offensive capabilities. This represents a significant shift in the threat landscape as AI tools become more sophisticated weapons in attackers' arsenals.",
+      "key_items": [
+        {
+          "title": "Evolution of Adversarial AI: From Prompting to Autonomy",
+          "detail": "Google Cloud analysis examining how adversarial use of AI is maturing from simple prompt injection and jailbreaking techniques toward autonomous agent-based attack methodologies.",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai",
+          "tags": [
+            "adversarial-ai",
+            "threat-evolution",
+            "autonomous-agents"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Safety & Alignment",
+      "emoji": "\u26a0\ufe0f",
+      "summary": "The UK's National Cyber Security Centre addresses the growing organizational risk of shadow AI\u2014unauthorized AI tools and services being used within enterprises without proper security oversight. This highlights the governance challenges organizations face as AI adoption accelerates faster than security policies can adapt.",
+      "key_items": [
+        {
+          "title": "NCSC Warns of Hidden Risks from Shadow AI",
+          "detail": "UK National Cyber Security Centre blog exploring the security implications of unauthorized AI tool usage in organizations, including data leakage, compliance violations, and unvetted model risks.",
+          "url": "https://www.ncsc.gov.uk/blogs/the-hidden-risks-of-shadow-ai",
+          "tags": [
+            "shadow-ai",
+            "governance",
+            "enterprise-security",
+            "ncsc"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Both government and industry sources are signaling increased concern about AI as both a threat vector and an ungoverned risk within organizations.",
+    "The adversarial AI landscape is rapidly maturing, with attackers moving beyond simple prompt manipulation toward agentic, autonomous attack frameworks.",
+    "Shadow AI represents an emerging blind spot for enterprise security teams, as employee-driven AI adoption outpaces formal security assessment processes.",
+    "Authoritative sources (Google Cloud, NCSC) are actively publishing guidance, indicating AI security is becoming a mainstream priority for national and corporate security strategies."
+  ],
+  "stats": {
+    "total_links": 2,
+    "most_linked_domains": [
+      "cloud.google.com",
+      "ncsc.gov.uk"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 1,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 1,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 2
+}
