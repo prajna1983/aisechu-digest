@@ -1,0 +1,243 @@
+{
+  "categories": [
+    {
+      "name": "AI-Powered Attacks & Threat Intelligence",
+      "emoji": "\ud83c\udfaf",
+      "summary": "State-sponsored and criminal actors are weaponizing AI agents at scale. Russian APT Midnight Blizzard automated malware evasion using Claude in feedback loops, while a separate campaign deployed hundreds of AI agents built on OpenAI Codex and DeepSeek to compromise nearly 400 organizations through PaperCut vulnerabilities. These incidents mark a significant escalation in AI-assisted offensive operations.",
+      "key_items": [
+        {
+          "title": "AI Agents Exploited PaperCut to Breach 395+ Organizations",
+          "detail": "GreyNoise traced an attacker using hundreds of AI agents on OpenAI Codex and DeepSeek to exploit PaperCut MF/NG bugs, achieving domain admin in 7 minutes at one US high school.",
+          "url": "https://www.theregister.com/security/2026/09/10/hundreds-of-ai-agents-helped-papercut-attacker-hit-395-orgs-and-some-went-off-script/5295650",
+          "tags": [
+            "AI Agents",
+            "PaperCut",
+            "Mass Exploitation"
+          ]
+        },
+        {
+          "title": "Midnight Blizzard Automated Malware Evasion with Claude",
+          "detail": "Anthropic's threat intel report reveals Russian state actors used Claude to iteratively test and modify malware until it evaded security products, fully automating the evasion cycle.",
+          "url": "https://www.securityweek.com/anthropic-says-russian-hackers-used-claude-ai-to-automate-malware-evasion/",
+          "tags": [
+            "APT",
+            "Claude",
+            "Malware Evasion",
+            "Russia"
+          ]
+        },
+        {
+          "title": "Anthropic Threat Intelligence Report (September 2026)",
+          "detail": "Primary source document from Anthropic detailing detection and countermeasures for AI-assisted threats.",
+          "url": "https://www-cdn.anthropic.com/e50be2e51e7695dc4b1366a37a245a597377d3b5/Anthropic-Detecting-and-countering-091026.pdf",
+          "tags": [
+            "Threat Report",
+            "Anthropic"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "LLM & Agent Security Vulnerabilities",
+      "emoji": "\ud83d\udd13",
+      "summary": "Critical vulnerabilities continue to emerge in AI agent architectures and protocols. A sandbox escape in Claude Code allowed arbitrary command execution through poisoned git repositories, while systematic analysis of the A2A protocol revealed 11 exploitable flaws including credential harvesting and cross-client injection. These findings highlight the immature security posture of agentic AI infrastructure.",
+      "key_items": [
+        {
+          "title": "Beltdown: Claude Code Sandbox Escape via Poisoned Repos",
+          "detail": "Untrusted repositories can escape Claude Code's macOS sandbox through unhardened git commands, executing as privileged user without prompts. Fixed in version 2.1.247.",
+          "url": "https://www.accomplish.ai/blog/beltdown-escaping-the-claude-code-sandbox/",
+          "tags": [
+            "Claude Code",
+            "Sandbox Escape",
+            "Supply Chain"
+          ]
+        },
+        {
+          "title": "A2ABreak: 11 Vulnerabilities in Agent2Agent Protocol",
+          "detail": "First systematic security analysis of Linux Foundation's A2A protocol uncovered 11 protocol-level flaws exploitable by compliant adversaries, including credential harvesting in delegation chains.",
+          "url": "https://arxiv.org/abs/2609.10871",
+          "tags": [
+            "A2A Protocol",
+            "Agent Security",
+            "Protocol Analysis"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Prompt Injection & Evasion Techniques",
+      "emoji": "\ud83d\udc89",
+      "summary": "New attack vectors demonstrate sophisticated methods to bypass AI safety filters. PuzzleMask hides malicious payloads in plain English prose that fast screening models miss but downstream models execute. Meanwhile, ToxicRAG shows single-document poisoning can compromise RAG systems with 61-91% success rates across major benchmarks.",
+      "key_items": [
+        {
+          "title": "PuzzleMask Bypasses AI Safety Screening Models",
+          "detail": "Check Point's technique wraps policy-breaking payloads in ordinary English that quick-check models assess as safe, while downstream models with more reasoning time execute the hidden instructions.",
+          "url": "https://cybersecuritynews.com/malicious-ai-commands/",
+          "tags": [
+            "Prompt Injection",
+            "Filter Bypass",
+            "Check Point"
+          ]
+        },
+        {
+          "title": "ToxicRAG: Single-Document RAG Poisoning",
+          "detail": "Attack compromises RAG systems with one poisoned document per target, achieving 61-91% success rates across NQ, HotpotQA, and MS-MARCO with multiple LLMs and retrievers.",
+          "url": "https://arxiv.org/abs/2609.11082",
+          "tags": [
+            "RAG",
+            "Data Poisoning",
+            "Knowledge Base Attacks"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Security Detection & Defense",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Promising defensive research emerged with DriftNet achieving near-perfect detection of prompt injection in agent trajectories. The dual-head Transformer approach demonstrates that post-hoc analysis of tool-call logs can reliably identify and localize injection points, offering a practical monitoring layer for deployed agents.",
+      "key_items": [
+        {
+          "title": "DriftNet Detects Prompt Injection in LLM Agent Trajectories",
+          "detail": "Dual-head trajectory Transformer achieves 0.983 F1 for trajectory-level detection and 98.7% exact injection-point recovery on the AgentDrift benchmark.",
+          "url": "https://arxiv.org/abs/2609.10892",
+          "tags": [
+            "Detection",
+            "Prompt Injection",
+            "Agent Security"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udd27",
+      "summary": "NVIDIA's garak LLM security testing framework received a significant update mapping probes to EU AI Act risk categories, reflecting the growing need to align security testing with regulatory requirements. AWS also published comprehensive guidance for deploying security agents.",
+      "key_items": [
+        {
+          "title": "garak v0.17.0 Adds EU AI Act Compliance Mapping",
+          "detail": "New release adds reference tags that surface and group LLM security probe results by EU AI Act risk categories, plus improvements to AgentBreaker detector.",
+          "url": "https://github.com/NVIDIA/garak/releases/tag/v0.17.0",
+          "tags": [
+            "garak",
+            "Red Teaming",
+            "EU AI Act",
+            "NVIDIA"
+          ]
+        },
+        {
+          "title": "AWS Security Agent Best Practices Guide",
+          "detail": "AWS published comprehensive guidance for deploying and configuring security agents within their ecosystem.",
+          "url": "https://aws.github.io/aws-security-services-best-practices/guides/security-agent/",
+          "tags": [
+            "AWS",
+            "Best Practices",
+            "Security Agents"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Governance & Policy",
+      "emoji": "\u2696\ufe0f",
+      "summary": "Regulatory activity intensified with California enacting 13 child protection laws including chatbot interaction limits for minors, while the UK government released an AI risk management toolkit. These developments signal increasing government intervention in AI deployment practices.",
+      "key_items": [
+        {
+          "title": "California Limits Minors' Chatbot Interactions",
+          "detail": "Governor Newsom signed 13 bills including limits on chatbot interaction time for minors and requirements to remove addictive features for users under 16.",
+          "url": "https://calmatters.org/economy/technology/2026/09/california-enacts-laws-restricting-chatbots-protecting-kids-online/",
+          "tags": [
+            "California",
+            "Child Safety",
+            "Regulation"
+          ]
+        },
+        {
+          "title": "UK AI Risk Management Toolkit Published",
+          "detail": "UK government released comprehensive guidance for managing AI risks across deployment lifecycle.",
+          "url": "https://www.gov.uk/government/publications/ai-risk-management-toolkit/ai-risk-management-toolkit-guidance",
+          "tags": [
+            "UK",
+            "Risk Management",
+            "Governance"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Research & Methodology",
+      "emoji": "\ud83d\udd2c",
+      "summary": "Emerging practices in AI-assisted vulnerability research were documented, while questions around responsible disclosure norms in the AI era were raised through commentary on the HuggingFace security.txt incident.",
+      "key_items": [
+        {
+          "title": "AI-Assisted Vulnerability Research Methodology",
+          "detail": "Practical guide on leveraging AI tools for security research workflows and vulnerability discovery.",
+          "url": "https://quentinkaiser.be/security/2026/07/18/ia-assisted-vuln-research/",
+          "tags": [
+            "Vulnerability Research",
+            "Methodology",
+            "AI Tools"
+          ]
+        },
+        {
+          "title": "Commentary on HuggingFace Security Disclosure Norms",
+          "detail": "Discussion on ethical considerations around security research and disclosure practices in the AI ecosystem.",
+          "url": "https://huggingface.co/security.txt",
+          "tags": [
+            "Responsible Disclosure",
+            "Ethics",
+            "HuggingFace"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "AI agents are being weaponized at industrial scale\u2014the PaperCut campaign used hundreds of autonomous agents to compromise nearly 400 organizations, signaling a shift from AI-assisted to AI-executed attacks.",
+    "State actors have closed the feedback loop on AI-assisted offense: Midnight Blizzard's automated malware evasion cycle represents a new capability tier where AI continuously adapts to defeat security products without human intervention.",
+    "Agent infrastructure security remains critically immature: both Claude Code's sandbox escape and A2A protocol's 11 vulnerabilities demonstrate that agentic AI systems are being deployed faster than they can be secured.",
+    "Defensive tooling is maturing with regulatory alignment: garak's EU AI Act mapping reflects the convergence of security testing and compliance requirements that organizations will need to navigate.",
+    "The filtering arms race is tilting toward attackers: PuzzleMask's exploitation of the latency gap between fast screening and deep reasoning models reveals a fundamental architectural weakness in current AI safety guardrails."
+  ],
+  "stats": {
+    "total_links": 15,
+    "most_linked_domains": [
+      "arxiv.org",
+      "securityweek.com",
+      "theregister.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 1,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 2,
+      "12": 0,
+      "13": 9,
+      "14": 0,
+      "15": 0,
+      "16": 1,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 1,
+      "22": 1,
+      "23": 0
+    }
+  },
+  "total_messages": 15
+}
