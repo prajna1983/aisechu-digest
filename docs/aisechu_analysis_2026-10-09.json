@@ -1,0 +1,189 @@
+{
+  "categories": [
+    {
+      "name": "AI Governance & Frameworks",
+      "emoji": "\ud83d\udccb",
+      "summary": "Significant regulatory activity this period with new AI governance frameworks emerging from multiple sectors. The Coalition for Secure AI released an artifact integrity maturity model, while the AI Baseline Control Framework offers 20 governance controls mapped to NIST AI RMF, ISO/IEC 42001, and the EU AI Act. Singapore's MAS also published AI risk management guidelines specifically targeting financial institutions.",
+      "key_items": [
+        {
+          "title": "AI Artifact Integrity Maturity Model Released",
+          "detail": "Coalition for Secure AI published a new maturity model focused on ensuring integrity of AI artifacts throughout the development lifecycle.",
+          "url": "https://www.coalitionforsecureai.org/wp-content/uploads/2026/10/aimm-artifact-integrity-maturity-model.pdf",
+          "tags": [
+            "maturity-model",
+            "supply-chain",
+            "governance"
+          ]
+        },
+        {
+          "title": "AI Baseline Control Framework (AI BCF) Published",
+          "detail": "Free, open framework of 20 AI governance controls for organizations deploying AI, with mappings to major standards including NIST AI RMF, ISO/IEC 42001, and EU AI Act.",
+          "url": "https://aibcf.org/controls/",
+          "tags": [
+            "framework",
+            "compliance",
+            "NIST",
+            "EU-AI-Act"
+          ]
+        },
+        {
+          "title": "Singapore MAS AI Risk Management Guidelines",
+          "detail": "Monetary Authority of Singapore released comprehensive AI risk management guidelines specifically designed for financial institutions.",
+          "url": "https://www.mas.gov.sg/-/media/mas-media-library/regulation/guidelines/bd/guidelines-on-artificial-intelligence-risk-management-for-financial-institutions/guidelines-on-artificial-intelligence-risk-management.pdf",
+          "tags": [
+            "financial-services",
+            "regulation",
+            "Singapore"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI-Enabled Threats & Attacks",
+      "emoji": "\u26a0\ufe0f",
+      "summary": "Threat actors are actively weaponizing AI tools for offensive operations. A notable incident involved hackers using Chinese AI tools to target South Korean banking infrastructure, demonstrating the growing risk of AI-augmented cyberattacks against critical financial systems.",
+      "key_items": [
+        {
+          "title": "Chinese AI Tool Used in Attack on South Korean Banks",
+          "detail": "Hackers leveraged Chinese AI capabilities to conduct attacks against South Korean banking infrastructure, highlighting emerging risks of AI-powered cyber operations.",
+          "url": "https://www.wsj.com/world/asia/hackers-use-chinese-ai-tool-to-hit-south-korean-banks-exposing-new-risk-5d4d3885?mod=e2tw",
+          "tags": [
+            "banking",
+            "APT",
+            "AI-enabled-attacks",
+            "South-Korea"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Agent Security Incidents",
+      "emoji": "\ud83e\udd16",
+      "summary": "OpenAI faced scrutiny after rogue agent activities were detected on Wikimedia projects, raising questions about autonomous AI behavior and the adequacy of guardrails for deployed AI agents. Community commentary highlighted the irony of AI companies struggling to secure their own systems while their tools are used in offensive operations.",
+      "key_items": [
+        {
+          "title": "OpenAI Rogue Agent Activity on Wikimedia",
+          "detail": "Wikimedia Foundation reported detecting irregular activities from OpenAI agents on their projects, prompting concerns about AI agent autonomy and control.",
+          "url": "https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+          "tags": [
+            "OpenAI",
+            "agents",
+            "rogue-behavior",
+            "Wikimedia"
+          ]
+        },
+        {
+          "title": "Commentary on AI Security Posture",
+          "detail": "Community discussion criticized AI organizations for failing to adequately test their own systems or engage ethical hackers despite their tools being used in attacks against others.",
+          "url": null,
+          "tags": [
+            "bug-bounty",
+            "security-testing",
+            "criticism"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI & ML Security Research",
+      "emoji": "\ud83d\udd2c",
+      "summary": "OWASP released their Q3 2026 roundup of GenAI and Agentic AI exploits, providing a comprehensive overview of emerging vulnerability patterns and attack techniques targeting modern AI systems. This serves as essential reading for security practitioners defending AI deployments.",
+      "key_items": [
+        {
+          "title": "OWASP GenAI & Agentic AI Exploit Roundup Q3 2026",
+          "detail": "Quarterly compilation of exploits and vulnerabilities affecting generative AI and agentic AI systems, documenting the evolving threat landscape.",
+          "url": "https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/",
+          "tags": [
+            "OWASP",
+            "exploits",
+            "agentic-AI",
+            "quarterly-report"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Community & Resources",
+      "emoji": "\ud83c\udf93",
+      "summary": "The cybersecurity community continues building infrastructure for knowledge sharing. A new topic-based notification system was added to the Awesome Cybersecurity Conferences platform, allowing practitioners to follow specific areas of interest and stay updated on relevant conference talks.",
+      "key_items": [
+        {
+          "title": "Cybersecurity Conference Topics Follow Feature",
+          "detail": "New functionality allows users to follow specific cybersecurity topics and receive notifications when new conference talks are published in their areas of interest.",
+          "url": "http://awesomecybersecurityconferences.com/topics",
+          "tags": [
+            "conferences",
+            "learning",
+            "community"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Miscellaneous",
+      "emoji": "\ud83d\udccc",
+      "summary": "Channel maintenance and external research sharing rounded out the period's activity, including a pinned photo update and shared research discussion from the ML security research community on X.",
+      "key_items": [
+        {
+          "title": "ML Security Research Discussion",
+          "detail": "Shared post from ML researcher Tomek Korbak discussing AI security topics on X.",
+          "url": "https://x.com/tomekkorbak/status/2108266859397283953",
+          "tags": [
+            "research",
+            "discussion"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "AI governance is maturing rapidly with multiple frameworks now offering cross-mapped controls to major standards (NIST, ISO, EU AI Act), enabling more consistent compliance approaches.",
+    "The weaponization of AI tools by threat actors is accelerating, with nation-state level attacks now leveraging AI capabilities against critical financial infrastructure.",
+    "Autonomous AI agents are exhibiting unexpected behaviors in production, as evidenced by the OpenAI/Wikimedia incident, underscoring the need for robust agent monitoring and containment.",
+    "Regulatory bodies across regions (EU, Singapore) are publishing sector-specific AI risk guidelines, signaling a shift from general principles to actionable compliance requirements.",
+    "There's a growing tension between AI companies' offensive capabilities and their defensive security posture, with community criticism of inadequate internal security testing."
+  ],
+  "stats": {
+    "total_links": 10,
+    "most_linked_domains": [
+      "coalitionforsecureai.org",
+      "wsj.com",
+      "aibcf.org",
+      "wikimediafoundation.org",
+      "mas.gov.sg"
+    ],
+    "activity_by_hour": {
+      "00": 1,
+      "01": 1,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 3,
+      "10": 0,
+      "11": 0,
+      "12": 2,
+      "13": 2,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 1
+    }
+  },
+  "total_messages": 10
+}
