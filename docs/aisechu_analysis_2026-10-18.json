@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Today's focus centers on defensive mechanisms against AI-specific threats, including novel honeypot approaches for detecting insider threats from AI agents and Microsoft's new tool for scanning LLM backdoors. These developments reflect growing industry attention to securing AI systems from both external attacks and internal compromises.",
+      "key_items": [
+        {
+          "title": "Honeypots for AI Agent Insider Threats Research",
+          "detail": "A research paper exploring the use of honeypot techniques specifically designed to detect and trap malicious AI agents acting as insider threats within organizations.",
+          "url": "https://static1.squarespace.com/static/64edf8e7f2b10d716b5ba0e1/t/6ad0a9f40808196925dec208/1792059892074/Honeypots+for+AI+Agent+Insider+Threats.pdf",
+          "tags": [
+            "honeypots",
+            "AI agents",
+            "insider threats",
+            "research"
+          ]
+        },
+        {
+          "title": "Microsoft LLM Backdoor Scanner Tool Release",
+          "detail": "Microsoft has released an open-source tool designed to detect backdoors in large language models, addressing supply chain security concerns in AI/ML pipelines.",
+          "url": "https://github.com/microsoft/llm-backdoor-scanner",
+          "tags": [
+            "Microsoft",
+            "LLM security",
+            "backdoor detection",
+            "open-source"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83c\udfaf",
+      "summary": "North Korean threat actor Kimsuky has been observed leveraging AI and LLM technologies in their attack operations. This represents a significant evolution in nation-state tradecraft, demonstrating how adversaries are adopting AI tools to enhance their capabilities.",
+      "key_items": [
+        {
+          "title": "Kimsuky APT Group Using AI/LLM in Operations",
+          "detail": "Genians reports on the Kimsuky threat group incorporating AI and large language models into their attack methodologies, signaling increased sophistication in DPRK cyber operations.",
+          "url": "https://www.genians.co.kr/en/blog/threat_intelligence/kimsuky_ai_llm",
+          "tags": [
+            "Kimsuky",
+            "APT",
+            "North Korea",
+            "AI-enabled attacks"
+          ]
+        }
+      ],
+      "message_count": 1
+    }
+  ],
+  "top_insights": [
+    "Nation-state actors like Kimsuky are actively integrating AI/LLM capabilities into their offensive operations, raising the bar for defensive teams.",
+    "The security community is rapidly developing specialized tools to address AI-specific threats, with Microsoft's LLM backdoor scanner representing enterprise-grade focus on ML supply chain security.",
+    "AI agent autonomy introduces novel insider threat vectors that require new detection paradigms like AI-specific honeypots.",
+    "Today's activity shows a balanced focus on both offensive threat evolution and defensive tooling development in the AI security space."
+  ],
+  "stats": {
+    "total_links": 3,
+    "most_linked_domains": [
+      "github.com",
+      "squarespace.com",
+      "genians.co.kr"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 1,
+      "13": 2,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 3
+}
