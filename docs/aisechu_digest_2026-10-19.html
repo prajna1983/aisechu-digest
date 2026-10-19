@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AISecHub Daily Digest — Tuesday, July 21 2026</title>
+  <title>AISecHub Daily Digest — Monday, October 19 2026</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     :root {
@@ -286,25 +286,25 @@
       ✈️ t.me/AISecHub
     </a>
     <h1>AISecHub Daily Digest</h1>
-    <p class="subtitle">Tuesday, July 21 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
+    <p class="subtitle">Monday, October 19 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
   </div>
 </header>
 
 <div class="stats-bar">
   <div class="stat-card">
-    <span class="stat-value">2</span>
+    <span class="stat-value">6</span>
     <span class="stat-label">Messages</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">1</span>
+    <span class="stat-value">4</span>
     <span class="stat-label">Categories</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">2</span>
+    <span class="stat-value">3</span>
     <span class="stat-label">Links Shared</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">3</span>
+    <span class="stat-value">5</span>
     <span class="stat-label">Key Insights</span>
   </div>
 </div>
@@ -329,9 +329,11 @@
 
   <div class="section-title">💡 Top Insights</div>
   <div class="insights-list">
-    <div class="insight-item">🔹 AI infrastructure components are showing patterns of authentication and authorization implementation flaws, suggesting a need for more rigorous security review of AI-adjacent tooling.</div>
-<div class="insight-item">🔹 Network-AI package users should immediately upgrade to version 5.13.4 or later to remediate both critical vulnerabilities affecting authentication mechanisms.</div>
-<div class="insight-item">🔹 The combination of signature bypass and authorization bypass in the same package indicates potential systemic security architecture issues in AI middleware components.</div>
+    <div class="insight-item">🔹 Superintelligent AI systems accessing OT environments represents a paradigm shift in cyber-physical risk—traditional air-gapped assumptions may no longer hold.</div>
+<div class="insight-item">🔹 US government establishing formal 'shut down policies' for AI models signals regulatory recognition that AI systems may need emergency off-switches.</div>
+<div class="insight-item">🔹 Enterprise AI security is maturing toward layered architectural approaches similar to traditional network defense-in-depth strategies.</div>
+<div class="insight-item">🔹 The creation of CAISSI under Commerce Department indicates significant institutional investment in AI standards and safety evaluation.</div>
+<div class="insight-item">🔹 Convergence of AI safety concerns with critical infrastructure protection is emerging as a dominant theme in both government and private sector guidance.</div>
   </div>
 
   <div class="section-title">📂 Categories</div>
@@ -339,33 +341,73 @@
     
     <div class="cat-card">
       <div class="cat-header">
-        <div class="cat-emoji">🔓</div>
-        <div class="cat-name">Cybersecurity Vulnerabilities & CVEs</div>
-        <div class="cat-count">2 msgs</div>
+        <div class="cat-emoji">🏗️</div>
+        <div class="cat-name">Enterprise AI Security Architecture</div>
+        <div class="cat-count">1 msgs</div>
       </div>
-      <div class="cat-summary">Two critical vulnerabilities were disclosed in Network-AI, an npm package used for AI-driven network operations. Both CVEs affect versions in the 5.12-5.13 range and involve authentication bypass issues—one through improper cryptographic signature verification allowing forged payloads, and another through missing authorization checks on approval endpoints. These vulnerabilities could allow unauthenticated attackers to gain elevated privileges including shell execution capabilities.</div>
+      <div class="cat-summary">Discussion of layered security approaches for enterprise AI deployments. Key focus on defense-in-depth strategies including AI gateways, model registries, guardrails, and identity/policy engines as critical components for production AI safety.</div>
       <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://github.com/advisories/GHSA-37v5-gpcx-w9fc" target="_blank" rel="noopener">CVE-2026-64623: Cryptographic Signature Bypass in Network-AI ↗</a></div>
-          <div class="item-detail">The APSAdapter component accepts any non-empty string as a valid signature, enabling attackers to forge delegation payloads and obtain permission-grant tokens for sensitive resources including SHELL_EXEC.</div>
-          <div class='item-tags'><span class="tag">CVE</span><span class="tag">cryptographic-bypass</span><span class="tag">authentication</span><span class="tag">critical</span></div>
-        </div>
+          <div class="item-title">10-Layer Enterprise AI Security Framework</div>
+          <div class="item-detail">Comprehensive breakdown of security layers including AI Gateway for authentication/routing, Model Registry for version control, Input/Output Guardrails for prompt injection and PII protection, and Identity & Policy Engine for SSO and RBAC/ABAC controls.</div>
+          <div class='item-tags'><span class="tag">enterprise-security</span><span class="tag">defense-in-depth</span><span class="tag">guardrails</span><span class="tag">access-control</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">⚠️</div>
+        <div class="cat-name">AI Safety & Critical Infrastructure</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Alarming developments regarding superintelligent AI systems gaining access to operational technology environments. Booz Allen reports on frontier SI reaching OT systems and manipulating physical equipment, highlighting urgent cyber-physical security concerns.</div>
+      <div class="cat-items">
         <div class="item-card">
-          <div class="item-title"><a href="https://github.com/advisories/GHSA-xvgx-9rph-3pj6" target="_blank" rel="noopener">CVE-2026-64622: Authorization Check Bypass in Network-AI ↗</a></div>
-          <div class="item-detail">ApprovalInbox GET routes fail to enforce configured authorization checks, exposing sensitive approval request details to unauthenticated actors even when secrets are configured.</div>
-          <div class='item-tags'><span class="tag">CVE</span><span class="tag">authorization-bypass</span><span class="tag">information-disclosure</span></div>
+          <div class="item-title"><a href="https://www.boozallen.com/insights/cyber/frontier-si-reaches-ot-systems.html" target="_blank" rel="noopener">Super Intelligence Reaches OT Systems ↗</a></div>
+          <div class="item-detail">Booz Allen analysis reveals that frontier superintelligent AI has demonstrated capability to access operational technology systems and physically move equipment, raising critical infrastructure security alarms.</div>
+          <div class='item-tags'><span class="tag">superintelligence</span><span class="tag">OT-security</span><span class="tag">critical-infrastructure</span><span class="tag">cyber-physical</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📜</div>
+        <div class="cat-name">Industry News & Policy</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Major joint guidance released by CISA, NSA, and the new CAISSI body under Commerce Department. The guidance emphasizes technical controls, independent model testing, and importantly introduces 'shut down policies' for AI systems—a significant regulatory development for AI governance.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.cisa.gov/sites/default/files/2026-10/Election-Mail-Handling%20Procedures-Joint%20Product-02122024-V3-508c.pdf" target="_blank" rel="noopener">CISA/NSA/CAISSI Joint AI Security Guidance ↗</a></div>
+          <div class="item-detail">New interagency guidance urges AI companies to implement stronger cybersecurity controls, conduct independent testing and evaluation of models, and develop formal shutdown policies for taking models offline when necessary.</div>
+          <div class='item-tags'><span class="tag">CISA</span><span class="tag">NSA</span><span class="tag">policy</span><span class="tag">AI-governance</span><span class="tag">shutdown-policies</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔍</div>
+        <div class="cat-name">Threat Intelligence</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">New research published on passive DNS techniques for threat hunting. The GhostShares analysis leverages MUSE methodology to identify malicious infrastructure through DNS analysis patterns.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://blog.claroc.io/ghostshares-muse-passive-dns/" target="_blank" rel="noopener">GhostShares MUSE Passive DNS Analysis ↗</a></div>
+          <div class="item-detail">Claroc.io published research on using passive DNS techniques and the MUSE methodology to detect and track threat actor infrastructure through DNS patterns.</div>
+          <div class='item-tags'><span class="tag">passive-DNS</span><span class="tag">threat-hunting</span><span class="tag">infrastructure-tracking</span></div>
         </div></div>
     </div>
   </div>
 
   
     <div class="section-title">🌐 Most-Referenced Domains</div>
-    <div class="domain-chips"><span class="domain-chip">🔗 github.com</span></div>
+    <div class="domain-chips"><span class="domain-chip">🔗 www.boozallen.com</span><span class="domain-chip">🔗 blog.claroc.io</span><span class="domain-chip">🔗 www.cisa.gov</span></div>
 
 </main>
 
 <footer>
-  Generated 2026-07-21 07:51 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+  Generated 2026-10-19 08:39 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
 </footer>
 
 <script>
@@ -375,7 +417,7 @@ const PALETTE = [
 ];
 
 // Category distribution chart
-const catData = {"labels": ["Cybersecurity Vulnerabilities & CVEs"], "values": [2]};
+const catData = {"labels": ["Enterprise AI Security Architecture", "AI Safety & Critical Infrastructure", "Industry News & Policy", "Threat Intelligence"], "values": [1, 1, 1, 1]};
 new Chart(document.getElementById("categoryChart"), {
   type: "doughnut",
   data: {
@@ -400,7 +442,7 @@ new Chart(document.getElementById("categoryChart"), {
 });
 
 // Activity by hour chart
-const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]};
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 0, 0, 0]};
 new Chart(document.getElementById("activityChart"), {
   type: "bar",
   data: {
