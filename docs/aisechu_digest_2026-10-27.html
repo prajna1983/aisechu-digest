@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISecHub Daily Digest — Tuesday, October 27 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6584;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --link: #79c0ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #0d1b2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 24px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+    .channel-badge:hover { background: rgba(108,99,255,0.25); }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #e8eaf6 30%, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent2);
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Charts row ── */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .chart-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* ── Insights ── */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .insight-item {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Category cards ── */
+    .categories-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .cat-card:hover { border-color: var(--accent); }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-emoji {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      background: var(--surface2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-name { font-size: 16px; font-weight: 600; }
+    .cat-count {
+      margin-left: auto;
+      background: rgba(108,99,255,0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .cat-summary {
+      padding: 14px 24px 10px;
+      font-size: 14px;
+      color: #b0bcd4;
+      line-height: 1.65;
+    }
+    .cat-items {
+      padding: 10px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item-card {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .item-card:hover { border-color: var(--border); }
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .item-title a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .item-title a:hover { text-decoration: underline; }
+    .item-detail {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .item-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    /* ── Domains ── */
+    .domain-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .domain-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--accent2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="channel-badge" href="https://t.me/AISecHub" target="_blank">
+      ✈️ t.me/AISecHub
+    </a>
+    <h1>AISecHub Daily Digest</h1>
+    <p class="subtitle">Tuesday, October 27 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-value">21</span>
+    <span class="stat-label">Messages</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">7</span>
+    <span class="stat-label">Categories</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">15</span>
+    <span class="stat-label">Links Shared</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">5</span>
+    <span class="stat-label">Key Insights</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="section-title">📊 Activity & Distribution</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>Messages by Category</h3>
+      <div class="chart-wrap">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>Posting Activity (SGT hour)</h3>
+      <div class="chart-wrap">
+        <canvas id="activityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">💡 Top Insights</div>
+  <div class="insights-list">
+    <div class="insight-item">🔹 AI security is becoming bidirectional: not only are AI systems being used to enhance security capabilities, but AI companies themselves are becoming high-value targets as demonstrated by the Anthropic breach.</div>
+<div class="insight-item">🔹 Consumer IoT privacy erosion continues with Samsung's passive audio surveillance representing a shift from wake-word triggered to always-on ambient monitoring in consumer devices.</div>
+<div class="insight-item">🔹 AI sandbox and guardrail security remains a significant challenge, with both AWS MCP sandbox escapes and LLM jailbreaks demonstrating the difficulty of constraining AI system behaviors.</div>
+<div class="insight-item">🔹 Open-weight model safety is under scrutiny as Cohere's research highlights concerning behaviors, raising questions about the security implications of widely-deployed open models.</div>
+<div class="insight-item">🔹 The convergence of offensive security and AI is accelerating, with LLM-based penetration testing moving from experimental to practical consideration in security workflows.</div>
+  </div>
+
+  <div class="section-title">📂 Categories</div>
+  <div class="categories-grid">
+    
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛡️</div>
+        <div class="cat-name">AI Safety & Alignment</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">Significant concerns emerged around AI model behavior and identity governance. Cohere published research on concerning behaviors in popular open-weight models, while discussions around AI agent authority and identity management highlight the growing need for robust governance frameworks in autonomous AI systems.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model" target="_blank" rel="noopener">Cohere reveals concerning behavior in popular open-weight AI model ↗</a></div>
+          <div class="item-detail">Research highlighting problematic behaviors discovered in widely-used open-weight AI models, raising questions about deployment safety.</div>
+          <div class='item-tags'><span class="tag">open-weight</span><span class="tag">model-behavior</span><span class="tag">AI-safety</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://khaledzaky.com/blog/the-agent-has-an-identity-who-gave-it-authority/" target="_blank" rel="noopener">AI agent identity and authority governance questioned ↗</a></div>
+          <div class="item-detail">Analysis exploring the fundamental question of who grants authority to AI agents and how their identity should be managed.</div>
+          <div class='item-tags'><span class="tag">AI-agents</span><span class="tag">governance</span><span class="tag">identity</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/togg53192-cmd/jailbreaks/blob/main/deepseek-4-1.md?plain=1" target="_blank" rel="noopener">DeepSeek jailbreak techniques documented ↗</a></div>
+          <div class="item-detail">Public repository documenting jailbreak methods for DeepSeek models, illustrating ongoing challenges in AI guardrail enforcement.</div>
+          <div class='item-tags'><span class="tag">jailbreak</span><span class="tag">DeepSeek</span><span class="tag">prompt-injection</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔓</div>
+        <div class="cat-name">Cybersecurity Vulnerabilities & CVEs</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Critical web application security research dominated with Wiz publishing detailed analysis of PHP remote code execution vulnerabilities. The PHP2Shell research demonstrates ongoing risks in legacy web technologies that remain widely deployed across enterprise environments.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.wiz.io/blog/php2shell-php-rce" target="_blank" rel="noopener">PHP2Shell: PHP RCE vulnerability analysis by Wiz ↗</a></div>
+          <div class="item-detail">Comprehensive technical breakdown of PHP remote code execution vulnerabilities with exploitation techniques and mitigation strategies.</div>
+          <div class='item-tags'><span class="tag">PHP</span><span class="tag">RCE</span><span class="tag">web-security</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🤖</div>
+        <div class="cat-name">AI & ML Security</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">Multiple stories highlight the intersection of AI systems and security challenges. A major breach at Anthropic by cybersecurity startup Cathedral made headlines, while research on breaking AWS MCP Python sandboxes demonstrates vulnerabilities in AI infrastructure. LLM-based penetration testing approaches continue to evolve.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.washingtonpost.com/technology/2026/10/26/researchers-cybersecurity-start-up-cathedral-got-inside-anthropic/" target="_blank" rel="noopener">Cathedral cybersecurity startup breaches Anthropic ↗</a></div>
+          <div class="item-detail">Washington Post reports on researchers from cybersecurity startup Cathedral successfully compromising Anthropic's systems, raising concerns about AI company security postures.</div>
+          <div class='item-tags'><span class="tag">Anthropic</span><span class="tag">breach</span><span class="tag">AI-company</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://xplo1t-sec.github.io/posts/breaking-the-aws-mcp-python-sandbox/" target="_blank" rel="noopener">AWS MCP Python sandbox escape vulnerability ↗</a></div>
+          <div class="item-detail">Technical writeup demonstrating methods to break out of AWS Model Context Protocol Python sandboxes, exposing risks in AI deployment infrastructure.</div>
+          <div class='item-tags'><span class="tag">AWS</span><span class="tag">MCP</span><span class="tag">sandbox-escape</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://utkusen.substack.com/p/how-llm-based-penetration-testing" target="_blank" rel="noopener">LLM-based penetration testing methodology explored ↗</a></div>
+          <div class="item-detail">Analysis of how large language models are being integrated into penetration testing workflows and their current capabilities and limitations.</div>
+          <div class='item-tags'><span class="tag">LLM</span><span class="tag">pentesting</span><span class="tag">automation</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">👁️</div>
+        <div class="cat-name">Privacy & Surveillance</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Alarming revelations about Samsung smart TV passive audio surveillance emerged. Devices are reportedly classifying ambient sounds including baby crying and dog barking without wake words, transmitting event counts to Samsung servers—representing a significant escalation in consumer IoT privacy concerns.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://x.com/log4j/status/2113014142600953868" target="_blank" rel="noopener">Samsung TVs passively monitoring household audio ↗</a></div>
+          <div class="item-detail">Confirmed reports that Samsung smart TVs classify ambient audio events (dogs barking, babies crying) and report counts to Samsung servers without any wake word activation.</div>
+          <div class='item-tags'><span class="tag">Samsung</span><span class="tag">privacy</span><span class="tag">IoT</span><span class="tag">surveillance</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔧</div>
+        <div class="cat-name">Security Tools & Releases</div>
+        <div class="cat-count">3 msgs</div>
+      </div>
+      <div class="cat-summary">Several security-focused repositories gained attention this period. Apple released security documentation for Private Cloud Compute, while new tools like Basilisk and Nyxis emerged from the community, expanding the offensive and defensive security toolkit landscape.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/apple/security-pcc" target="_blank" rel="noopener">Apple releases Private Cloud Compute security documentation ↗</a></div>
+          <div class="item-detail">Apple published official security documentation for their Private Cloud Compute infrastructure on GitHub, providing transparency into their secure AI computation approach.</div>
+          <div class='item-tags'><span class="tag">Apple</span><span class="tag">PCC</span><span class="tag">documentation</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/regaan/basilisk" target="_blank" rel="noopener">Basilisk security tool released ↗</a></div>
+          <div class="item-detail">New security tool repository published, expanding available resources for security researchers and practitioners.</div>
+          <div class='item-tags'><span class="tag">tool</span><span class="tag">open-source</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/NyxFoundation/nyxis" target="_blank" rel="noopener">Nyxis framework from Nyx Foundation ↗</a></div>
+          <div class="item-detail">The Nyx Foundation released Nyxis, a new security framework for the community.</div>
+          <div class='item-tags'><span class="tag">framework</span><span class="tag">open-source</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🕵️</div>
+        <div class="cat-name">Threat Intelligence</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Dark web monitoring channels shared threat intelligence updates, keeping the community informed about emerging threats and underground activity. The continuous flow of threat intel remains crucial for proactive defense postures.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://x.com/dailydarkweb/status/2114525741689774449" target="_blank" rel="noopener">Daily Dark Web threat intelligence update ↗</a></div>
+          <div class="item-detail">Ongoing threat intelligence shared from dark web monitoring sources tracking emerging threats and underground activity.</div>
+          <div class='item-tags'><span class="tag">threat-intel</span><span class="tag">dark-web</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📌</div>
+        <div class="cat-name">Miscellaneous</div>
+        <div class="cat-count">8 msgs</div>
+      </div>
+      <div class="cat-summary">Several messages contained unverified information or lacked sufficient context for categorization. Community members appropriately flagged uncertainty about some shared content, demonstrating healthy skepticism in information sharing.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title">Unverified content flagged by community</div>
+          <div class="item-detail">Community member expressed uncertainty about authenticity of shared content, highlighting importance of verification.</div>
+          <div class='item-tags'><span class="tag">unverified</span><span class="tag">community</span></div>
+        </div></div>
+    </div>
+  </div>
+
+  
+    <div class="section-title">🌐 Most-Referenced Domains</div>
+    <div class="domain-chips"><span class="domain-chip">🔗 x.com</span><span class="domain-chip">🔗 github.com</span><span class="domain-chip">🔗 wiz.io</span></div>
+
+</main>
+
+<footer>
+  Generated 2026-10-27 09:46 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+</footer>
+
+<script>
+const PALETTE = [
+  "#6c63ff","#00d4aa","#ff6584","#ffd166","#06d6a0",
+  "#118ab2","#ef476f","#ffc43d","#1b998b","#e9c46a"
+];
+
+// Category distribution chart
+const catData = {"labels": ["AI Safety & Alignment", "Cybersecurity Vulnerabilities & CVEs", "AI & ML Security", "Privacy & Surveillance", "Security Tools & Releases", "Threat Intelligence", "Miscellaneous"], "values": [3, 2, 3, 1, 3, 1, 8]};
+new Chart(document.getElementById("categoryChart"), {
+  type: "doughnut",
+  data: {
+    labels: catData.labels,
+    datasets: [{
+      data: catData.values,
+      backgroundColor: PALETTE.slice(0, catData.labels.length),
+      borderWidth: 2,
+      borderColor: "#1a1d27",
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "right",
+        labels: { color: "#8892b0", font: { size: 11 }, boxWidth: 12, padding: 10 }
+      }
+    }
+  }
+});
+
+// Activity by hour chart
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 5, 2, 0, 0, 0, 0, 1, 0, 0, 1, 0, 2]};
+new Chart(document.getElementById("activityChart"), {
+  type: "bar",
+  data: {
+    labels: actData.hours,
+    datasets: [{
+      label: "Messages",
+      data: actData.counts,
+      backgroundColor: "rgba(108,99,255,0.7)",
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: "#8892b0", font: { size: 10 } }, grid: { color: "#2e3250" } },
+      y: { ticks: { color: "#8892b0", font: { size: 10 }, stepSize: 1 }, grid: { color: "#2e3250" } }
+    }
+  }
+});
+</script>
+</body>
+</html>
