@@ -1,0 +1,149 @@
+{
+  "categories": [
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Significant focus on the intersection of AI systems and security frameworks. MITRE's announcement to add AI-enabled systems as a new platform in ATT&CK Enterprise marks a pivotal shift in how the security community will categorize and track threats against AI infrastructure. CrowdStrike's research on AI guardrail vulnerabilities highlights emerging attack surfaces in deployed AI systems.",
+      "key_items": [
+        {
+          "title": "MITRE ATT&CK Adding AI Platform",
+          "detail": "MITRE announces AI-enabled systems will be added as a new platform in ATT&CK Enterprise, enabling standardized threat modeling for AI infrastructure.",
+          "url": "https://www.mitre.org/news-insights/news-release/mitre-attck-enterprise-add-ai-platform",
+          "tags": [
+            "MITRE",
+            "ATT&CK",
+            "AI-platform",
+            "threat-modeling"
+          ]
+        },
+        {
+          "title": "AI Guardrails Exposing Vulnerabilities",
+          "detail": "CrowdStrike research explores how AI safety guardrails can paradoxically create or expose security vulnerabilities in AI systems.",
+          "url": "https://www.crowdstrike.com/en-us/blog/when-ai-guardrails-expose-vulnerabilities/",
+          "tags": [
+            "CrowdStrike",
+            "guardrails",
+            "vulnerabilities"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Security Tools & Releases",
+      "emoji": "\ud83d\udee0\ufe0f",
+      "summary": "New tooling releases focused on ML security operations and system maintenance utilities. The MLSecOps framework release on Zenodo provides practitioners with operational security tooling for machine learning pipelines.",
+      "key_items": [
+        {
+          "title": "MLSecOps v1.3.0 Release",
+          "detail": "New version of MLSecOps framework released on Zenodo, providing security operations tooling for ML environments.",
+          "url": "https://zenodo.org/records/23570649?preview_file=MHaghighian%2FMLSecOps-v1.3.0.zip",
+          "tags": [
+            "MLSecOps",
+            "tooling",
+            "release"
+          ]
+        },
+        {
+          "title": "dsh-purge GitHub Tool",
+          "detail": "New utility tool released on GitHub for system purging operations.",
+          "url": "https://github.com/YuJunZhiXue/dsh-purge",
+          "tags": [
+            "GitHub",
+            "utility",
+            "open-source"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI Safety & Alignment",
+      "emoji": "\u2696\ufe0f",
+      "summary": "Technical deep-dive into abliteration techniques for AI model modification. This research area is critical for understanding both safety interventions and potential adversarial manipulation of AI model behaviors.",
+      "key_items": [
+        {
+          "title": "How Abliteration Works Explained",
+          "detail": "Technical explanation of abliteration techniques used to modify AI model behaviors, relevant for both safety research and adversarial understanding.",
+          "url": "https://calebfahlgren.com/how-abliteration-works",
+          "tags": [
+            "abliteration",
+            "model-modification",
+            "technical"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Tutorials & Learning Resources",
+      "emoji": "\ud83d\udcda",
+      "summary": "Educational content focusing on offensive AI security capabilities. OWASP's LLM exploit generation guide and research on AI-powered pentesting agents provide practitioners with practical knowledge on emerging attack methodologies.",
+      "key_items": [
+        {
+          "title": "OWASP LLM Exploit Generation Guide 2.0",
+          "detail": "Updated OWASP guide covering exploit generation techniques using large language models for security testing.",
+          "url": "https://genai.owasp.org/resource/llm-exploit-generation-guide-2-0/",
+          "tags": [
+            "OWASP",
+            "LLM",
+            "exploit-generation",
+            "guide"
+          ]
+        },
+        {
+          "title": "Hacking Back AI Pentesting Agents",
+          "detail": "Research article exploring offensive techniques against AI-powered penetration testing agents, examining both capabilities and countermeasures.",
+          "url": "https://plaintext.do/en/blog/hacking-back-ai-pentesting-agents/",
+          "tags": [
+            "pentesting",
+            "AI-agents",
+            "offensive-security"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "MITRE's decision to add AI as a platform in ATT&CK Enterprise signals mainstream recognition that AI systems require dedicated threat modeling frameworks, fundamentally changing how organizations will approach AI security.",
+    "The juxtaposition of AI guardrail vulnerabilities and abliteration techniques suggests a growing tension between AI safety measures and their potential exploitation vectors.",
+    "Offensive AI security is maturing rapidly, with both OWASP guides and independent research exploring LLM-powered exploitation and attacks against AI security tools themselves.",
+    "MLSecOps tooling releases indicate the field is moving from theoretical frameworks to practical operational security implementations for ML pipelines."
+  ],
+  "stats": {
+    "total_links": 7,
+    "most_linked_domains": [
+      "zenodo.org",
+      "mitre.org",
+      "owasp.org"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 2,
+      "16": 0,
+      "17": 1,
+      "18": 0,
+      "19": 4,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 7
+}
