@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AISecHub Daily Digest — Friday, November 6 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6584;
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --link: #79c0ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%, #0d1b2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0 24px;
+      text-align: center;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 24px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+    .channel-badge:hover { background: rgba(108,99,255,0.25); }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #e8eaf6 30%, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent2);
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Charts row ── */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .chart-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* ── Insights ── */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .insight-item {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Category cards ── */
+    .categories-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .cat-card:hover { border-color: var(--accent); }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-emoji {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      background: var(--surface2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-name { font-size: 16px; font-weight: 600; }
+    .cat-count {
+      margin-left: auto;
+      background: rgba(108,99,255,0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .cat-summary {
+      padding: 14px 24px 10px;
+      font-size: 14px;
+      color: #b0bcd4;
+      line-height: 1.65;
+    }
+    .cat-items {
+      padding: 10px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item-card {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .item-card:hover { border-color: var(--border); }
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .item-title a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .item-title a:hover { text-decoration: underline; }
+    .item-detail {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .item-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    /* ── Domains ── */
+    .domain-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .domain-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--accent2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="channel-badge" href="https://t.me/AISecHub" target="_blank">
+      ✈️ t.me/AISecHub
+    </a>
+    <h1>AISecHub Daily Digest</h1>
+    <p class="subtitle">Friday, November 6 2026 &nbsp;·&nbsp; Last 24 hours &nbsp;·&nbsp; Powered by Claude</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-value">20</span>
+    <span class="stat-label">Messages</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">8</span>
+    <span class="stat-label">Categories</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">18</span>
+    <span class="stat-label">Links Shared</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">5</span>
+    <span class="stat-label">Key Insights</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="section-title">📊 Activity & Distribution</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>Messages by Category</h3>
+      <div class="chart-wrap">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>Posting Activity (SGT hour)</h3>
+      <div class="chart-wrap">
+        <canvas id="activityChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">💡 Top Insights</div>
+  <div class="insights-list">
+    <div class="insight-item">🔹 Government bodies are rapidly mobilizing around AI risks—the DOJ's Super Intelligence Task Force and Texas AG lawsuit signal regulatory pressure is accelerating faster than industry self-governance.</div>
+<div class="insight-item">🔹 LLMjacking represents a new attack paradigm where cloud-hosted AI becomes a monetizable target, shifting threat models from data theft to compute theft.</div>
+<div class="insight-item">🔹 The credibility of 'independent' AI safety assessments is under scrutiny, suggesting the ecosystem needs more transparent evaluation methodologies.</div>
+<div class="insight-item">🔹 Security tooling is becoming AI-native, with releases like Cloudflare's audit skill and OpenAI's GPT-6 Cyber indicating security workflows will increasingly embed LLM capabilities.</div>
+<div class="insight-item">🔹 Frameworks are proliferating—NIST's incident management guide and the Frontier Model Forum's jailbreak framework show the industry is codifying AI security practices in real-time.</div>
+  </div>
+
+  <div class="section-title">📂 Categories</div>
+  <div class="categories-grid">
+    
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛡️</div>
+        <div class="cat-name">AI Safety & Alignment</div>
+        <div class="cat-count">4 msgs</div>
+      </div>
+      <div class="cat-summary">Significant regulatory and safety developments this period, including a Texas lawsuit against OpenAI over ChatGPT safety concerns and METR's contested 'independent' assessment of Anthropic's AI R&D acceleration risks. The Frontier Model Forum also released a new cyber jailbreak framework, signaling increased industry attention to model security boundaries.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://texasscorecard.com/state/paxton-sues-openai-ceo-sam-altman-over-chatgpt-safety/" target="_blank" rel="noopener">Texas AG Sues OpenAI Over ChatGPT Safety ↗</a></div>
+          <div class="item-detail">Attorney General Paxton filed suit against Sam Altman and OpenAI, raising legal questions about AI safety disclosures and consumer protection.</div>
+          <div class='item-tags'><span class="tag">litigation</span><span class="tag">openai</span><span class="tag">regulation</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/#our-conclusions-on-risk" target="_blank" rel="noopener">METR's Anthropic AI R&D Assessment Criticized ↗</a></div>
+          <div class="item-detail">Community skepticism over METR's 'independent' evaluation of Anthropic's AI acceleration risks, highlighting ongoing debates about assessment credibility.</div>
+          <div class='item-tags'><span class="tag">anthropic</span><span class="tag">evals</span><span class="tag">independence</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.frontiermodelforum.org/uploads/2026/11/PDF-FMF-Version-1.0-Cyber-Jailbreak-Framework.pdf" target="_blank" rel="noopener">Frontier Model Forum Cyber Jailbreak Framework v1.0 ↗</a></div>
+          <div class="item-detail">Industry consortium releases standardized framework for evaluating and categorizing cyber-related jailbreak attempts on frontier models.</div>
+          <div class='item-tags'><span class="tag">jailbreaks</span><span class="tag">framework</span><span class="tag">frontier-models</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🔐</div>
+        <div class="cat-name">AI & ML Security</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Cloud-hosted LLMs face new monetization-based attacks via 'LLMjacking,' where compromised cloud credentials are used to hijack model inference for profit. Additionally, research into model weight interpretability by Qwen raises both capability and security implications for understanding model internals.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/" target="_blank" rel="noopener">LLMjacking: Monetizing Compromised Cloud Models ↗</a></div>
+          <div class="item-detail">Google Cloud threat intelligence documents a new attack pattern where adversaries compromise cloud accounts to steal LLM compute for resale or abuse.</div>
+          <div class='item-tags'><span class="tag">cloud-security</span><span class="tag">llm-abuse</span><span class="tag">threat-intel</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/" target="_blank" rel="noopener">Qwen Model Weight Interpretation Capabilities ↗</a></div>
+          <div class="item-detail">Simon Willison highlights Qwen's ability to interpret model weights, with implications for both interpretability research and potential adversarial analysis.</div>
+          <div class='item-tags'><span class="tag">interpretability</span><span class="tag">qwen</span><span class="tag">model-analysis</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📰</div>
+        <div class="cat-name">Industry News & Policy</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">Major governmental moves signal intensified focus on AI threats, with the DOJ launching a dedicated Super Intelligence Task Force. OpenAI also announced GPT-6 Cyber, a specialized model for cybersecurity applications, marking a significant commercial expansion into security tooling.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.justice.gov/opa/pr/department-justice-launches-super-intelligence-task-force" target="_blank" rel="noopener">DOJ Launches Super Intelligence Task Force ↗</a></div>
+          <div class="item-detail">The Department of Justice establishes a dedicated task force to address emerging threats and legal challenges posed by superintelligent AI systems.</div>
+          <div class='item-tags'><span class="tag">doj</span><span class="tag">policy</span><span class="tag">superintelligence</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://openai.com/index/introducing-gpt-6-cyber/" target="_blank" rel="noopener">OpenAI Introduces GPT-6 Cyber ↗</a></div>
+          <div class="item-detail">OpenAI unveils a cybersecurity-focused variant of GPT-6, purpose-built for security operations, threat analysis, and defensive applications.</div>
+          <div class='item-tags'><span class="tag">openai</span><span class="tag">gpt-6</span><span class="tag">product-launch</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">🛠️</div>
+        <div class="cat-name">Security Tools & Releases</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Cloudflare released an open-source security audit skill for AI agents, enabling automated security assessments. This reflects the growing trend of embedding security capabilities directly into AI agent workflows.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">Cloudflare Security Audit Skill for AI Agents ↗</a></div>
+          <div class="item-detail">Open-source tool released by Cloudflare that enables AI agents to perform security audits, expanding automated security capabilities.</div>
+          <div class='item-tags'><span class="tag">cloudflare</span><span class="tag">open-source</span><span class="tag">ai-agents</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📚</div>
+        <div class="cat-name">Tutorials & Learning Resources</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">A new hands-on workshop on harness engineering for AI security research was published, teaching practitioners how to build target-specific research contexts and test security hypotheses against authorized targets in controlled environments.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://grahamhelton.github.io/harness-engineering-workshop-book/introduction.html" target="_blank" rel="noopener">Harness Engineering Workshop for AI Security Research ↗</a></div>
+          <div class="item-detail">Comprehensive workshop covering agent response comparison, baseline preservation, and methodology for testing security hypotheses against scoped targets.</div>
+          <div class='item-tags'><span class="tag">workshop</span><span class="tag">security-research</span><span class="tag">methodology</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">👁️</div>
+        <div class="cat-name">AI Agent Privacy & Surveillance</div>
+        <div class="cat-count">1 msgs</div>
+      </div>
+      <div class="cat-summary">Privacy concerns around AI agents continue to surface, with analysis on surveillance capabilities and data exposure risks when deploying autonomous agents. The intersection of IAPP guidance and agent monitoring presents new compliance considerations.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://probablyprivate.com/issue/spying-on-your-agent-iapp-learnings/" target="_blank" rel="noopener">Spying on Your Agents: IAPP Learnings ↗</a></div>
+          <div class="item-detail">Analysis of privacy implications when monitoring AI agents, including regulatory guidance from IAPP on balancing oversight with privacy protection.</div>
+          <div class='item-tags'><span class="tag">privacy</span><span class="tag">ai-agents</span><span class="tag">iapp</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">📄</div>
+        <div class="cat-name">AI Research & Papers</div>
+        <div class="cat-count">2 msgs</div>
+      </div>
+      <div class="cat-summary">NIST published new guidance on AI incident management, providing frameworks for organizations to handle AI-related security events. Additionally, a16z contributed analysis on exploit development bottlenecks in the AI era.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8621.pdf" target="_blank" rel="noopener">NIST Workshop on AI Incident Management ↗</a></div>
+          <div class="item-detail">NIST releases IR 8621, providing structured guidance for managing security incidents involving AI systems across the lifecycle.</div>
+          <div class='item-tags'><span class="tag">nist</span><span class="tag">incident-response</span><span class="tag">framework</span></div>
+        </div>
+        <div class="item-card">
+          <div class="item-title"><a href="https://www.a16z.news/p/the-exploit-was-the-bottleneck" target="_blank" rel="noopener">The Exploit Was the Bottleneck ↗</a></div>
+          <div class="item-detail">a16z analysis examining how exploit development constraints are shifting in an era of AI-assisted vulnerability research.</div>
+          <div class='item-tags'><span class="tag">exploits</span><span class="tag">a16z</span><span class="tag">analysis</span></div>
+        </div></div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-header">
+        <div class="cat-emoji">💬</div>
+        <div class="cat-name">Social & Commentary</div>
+        <div class="cat-count">4 msgs</div>
+      </div>
+      <div class="cat-summary">Several X/Twitter posts from security leaders and researchers were shared, including commentary from CrowdStrike CEO George Kurtz and other practitioners, though specific content requires platform access to evaluate.</div>
+      <div class="cat-items">
+        <div class="item-card">
+          <div class="item-title"><a href="https://x.com/george_kurtz/status/2117536585671483543" target="_blank" rel="noopener">George Kurtz Commentary ↗</a></div>
+          <div class="item-detail">CrowdStrike CEO shared insights via X, relevant to the security community's ongoing discussions.</div>
+          <div class='item-tags'><span class="tag">crowdstrike</span><span class="tag">commentary</span></div>
+        </div></div>
+    </div>
+  </div>
+
+  
+    <div class="section-title">🌐 Most-Referenced Domains</div>
+    <div class="domain-chips"><span class="domain-chip">🔗 x.com</span><span class="domain-chip">🔗 cloud.google.com</span><span class="domain-chip">🔗 texasattorneygeneral.gov</span></div>
+
+</main>
+
+<footer>
+  Generated 2026-11-06 11:00 SGT &nbsp;·&nbsp; Source: <a href="https://t.me/AISecHub" style="color:var(--link)">AISecHub</a> on Telegram
+</footer>
+
+<script>
+const PALETTE = [
+  "#6c63ff","#00d4aa","#ff6584","#ffd166","#06d6a0",
+  "#118ab2","#ef476f","#ffc43d","#1b998b","#e9c46a"
+];
+
+// Category distribution chart
+const catData = {"labels": ["AI Safety & Alignment", "AI & ML Security", "Industry News & Policy", "Security Tools & Releases", "Tutorials & Learning Resources", "AI Agent Privacy & Surveillance", "AI Research & Papers", "Social & Commentary"], "values": [4, 2, 2, 1, 1, 1, 2, 4]};
+new Chart(document.getElementById("categoryChart"), {
+  type: "doughnut",
+  data: {
+    labels: catData.labels,
+    datasets: [{
+      data: catData.values,
+      backgroundColor: PALETTE.slice(0, catData.labels.length),
+      borderWidth: 2,
+      borderColor: "#1a1d27",
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "right",
+        labels: { color: "#8892b0", font: { size: 11 }, boxWidth: 12, padding: 10 }
+      }
+    }
+  }
+});
+
+// Activity by hour chart
+const actData = {"hours": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"], "counts": [2, 0, 0, 0, 1, 2, 0, 0, 0, 1, 0, 1, 1, 0, 1, 3, 0, 3, 1, 0, 0, 0, 0, 1]};
+new Chart(document.getElementById("activityChart"), {
+  type: "bar",
+  data: {
+    labels: actData.hours,
+    datasets: [{
+      label: "Messages",
+      data: actData.counts,
+      backgroundColor: "rgba(108,99,255,0.7)",
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: "#8892b0", font: { size: 10 } }, grid: { color: "#2e3250" } },
+      y: { ticks: { color: "#8892b0", font: { size: 10 }, stepSize: 1 }, grid: { color: "#2e3250" } }
+    }
+  }
+});
+</script>
+</body>
+</html>
