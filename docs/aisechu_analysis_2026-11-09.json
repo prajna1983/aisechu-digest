@@ -1,0 +1,134 @@
+{
+  "categories": [
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Coverage of Shadow AI risks in enterprise environments and the emerging threat of Chinese AI models demonstrating offensive hacking capabilities. The discourse centers on organizational blind spots regarding unauthorized AI usage and benchmark evaluations of AI cyber offense potential.",
+      "key_items": [
+        {
+          "title": "Shadow AI Field Guide for 2026",
+          "detail": "Medium article exploring seven distinct categories of Shadow AI risks facing organizations, providing a pragmatic framework for security professionals to identify and manage unauthorized AI deployments.",
+          "url": "https://medium.com/anton-on-security/seven-shades-of-shadow-ai-a-2026-field-guide-for-pragmatists-76c76d3c984e",
+          "tags": [
+            "shadow-ai",
+            "enterprise-security",
+            "ai-governance"
+          ]
+        },
+        {
+          "title": "Chinese AI Models Excel at Cyber Offense",
+          "detail": "Wired investigation into free Chinese AI models demonstrating alarming proficiency in hacking tasks, accompanied by VALS AI benchmark data quantifying offensive cyber capabilities across models.",
+          "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/",
+          "tags": [
+            "offensive-ai",
+            "threat-landscape",
+            "benchmarks"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83c\udfaf",
+      "summary": "Security researchers sharing threat intelligence and analysis via social media, including insights from MalwareTech on current threat actor activities. Community-driven intelligence sharing remains a key distribution channel for rapid threat awareness.",
+      "key_items": [
+        {
+          "title": "MalwareTech Analysis Thread",
+          "detail": "Security researcher MalwareTech sharing threat intelligence analysis via Twitter/X, continuing their tradition of community-focused malware and threat research dissemination.",
+          "url": "https://x.com/malwaretechblog/status/2119137381299405147",
+          "tags": [
+            "malware-analysis",
+            "threat-research"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Commentary",
+      "emoji": "\ud83d\udce2",
+      "summary": "Security and AI practitioners sharing insights and commentary across social platforms. The period saw multiple thought leaders contributing perspectives on emerging trends in the AI-security intersection space.",
+      "key_items": [
+        {
+          "title": "Security Engineering Perspectives",
+          "detail": "Multiple industry voices including engineering and security professionals sharing commentary and analysis on current AI and security developments.",
+          "url": "https://x.com/ubereng/status/2118769501332463762",
+          "tags": [
+            "industry-commentary",
+            "thought-leadership"
+          ]
+        },
+        {
+          "title": "Community Discussion Threads",
+          "detail": "Various security community members engaging in discourse around AI capabilities and security implications through social media channels.",
+          "url": "https://x.com/chrisrmcguire/status/2118907457749533098",
+          "tags": [
+            "community",
+            "discussion"
+          ]
+        }
+      ],
+      "message_count": 4
+    },
+    {
+      "name": "Miscellaneous",
+      "emoji": "\ud83d\udcce",
+      "summary": "Several messages contained no text or link content, potentially representing media attachments, forwarded content without text, or channel activity markers.",
+      "key_items": [
+        {
+          "title": "Non-text Content",
+          "detail": "Multiple messages without extractable text or links, possibly containing images, videos, or other media formats.",
+          "url": null,
+          "tags": [
+            "media",
+            "unstructured"
+          ]
+        }
+      ],
+      "message_count": 3
+    }
+  ],
+  "top_insights": [
+    "Shadow AI and unauthorized model usage in enterprises is emerging as a critical governance challenge for security teams in 2026.",
+    "Open-source and freely available AI models, particularly from Chinese developers, are demonstrating concerning offensive cyber capabilities that warrant monitoring.",
+    "Twitter/X continues to serve as a primary rapid-dissemination channel for security research and threat intelligence among practitioners.",
+    "The intersection of AI capabilities and cybersecurity threats is intensifying, with formal benchmarking efforts now tracking AI offensive potential.",
+    "Channel activity shows a distributed posting pattern with heavier activity during European/US business hours (11-20 UTC range)."
+  ],
+  "stats": {
+    "total_links": 9,
+    "most_linked_domains": [
+      "x.com",
+      "medium.com",
+      "wired.com"
+    ],
+    "activity_by_hour": {
+      "00": 1,
+      "01": 1,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 2,
+      "12": 0,
+      "13": 0,
+      "14": 3,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 1,
+      "20": 2,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 10
+}
