@@ -1,0 +1,141 @@
+{
+  "categories": [
+    {
+      "name": "AI Safety & Alignment",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Major AI labs are actively publishing frameworks for AI safety governance. OpenAI released a draft framework for classifying AI control incidents by severity, while Anthropic shared research on coordinated vulnerability disclosure timelines. These publications signal increasing industry focus on standardizing AI safety practices and incident response protocols.",
+      "key_items": [
+        {
+          "title": "OpenAI Publishes AI Control Incident Classification Framework",
+          "detail": "A draft framework for categorizing AI control incidents and assessing their severity levels, providing structured guidance for incident response.",
+          "url": "https://cdn.openai.com/pdf/classifying-ai-control-incidents-and-their-severity-a-draft-framework.pdf",
+          "tags": [
+            "OpenAI",
+            "incident-response",
+            "AI-governance"
+          ]
+        },
+        {
+          "title": "Anthropic Research on Vulnerability Disclosure Timelines",
+          "detail": "Anthropic explores coordinated vulnerability disclosure practices specific to AI systems, addressing responsible disclosure in the AI context.",
+          "url": "https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines",
+          "tags": [
+            "Anthropic",
+            "vulnerability-disclosure",
+            "responsible-AI"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83d\udd10",
+      "summary": "Microsoft Research published concerning findings on backdooring AI agents through dormant neuron reprogramming. The 'Lazare' technique demonstrates how adversaries could exploit inactive neural pathways to compromise AI agents, representing a novel attack vector that security teams need to understand.",
+      "key_items": [
+        {
+          "title": "Lazare: Reprogramming Dormant Neurons to Backdoor AI Agents",
+          "detail": "Microsoft researchers demonstrate a technique to inject backdoors into AI agents by manipulating dormant neurons, raising concerns about supply chain security for AI models.",
+          "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+          "tags": [
+            "Microsoft",
+            "backdoor",
+            "AI-agents",
+            "neural-networks"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83c\udfaf",
+      "summary": "Google Cloud's threat intelligence team reports that agentic threat activity has crossed a significant threshold, indicating that AI-powered autonomous threats are becoming a material concern in the threat landscape. This marks a potential inflection point in adversarial AI capabilities.",
+      "key_items": [
+        {
+          "title": "Agentic Threat Activity Crosses Significant Threshold",
+          "detail": "Google Cloud threat intelligence warns that autonomous AI-driven threats have reached a critical level, signaling a new era of AI-powered cyberattacks.",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+          "tags": [
+            "Google",
+            "agentic-AI",
+            "threat-landscape",
+            "autonomous-threats"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83d\udcf0",
+      "summary": "NIST released a special publication (SP 2400-102) related to AI standards, shared multiple times indicating significant community interest. United Airlines also made a newsroom announcement, potentially related to AI or technology initiatives in the aviation sector.",
+      "key_items": [
+        {
+          "title": "NIST Special Publication SP 2400-102 (2026 Draft)",
+          "detail": "NIST published a new special publication document, likely pertaining to AI measurement or evaluation standards based on the publication series.",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.2400-102e2026.ipd.pdf",
+          "tags": [
+            "NIST",
+            "standards",
+            "policy",
+            "AI-governance"
+          ]
+        },
+        {
+          "title": "United Airlines Newsroom Announcement",
+          "detail": "United Airlines published an announcement that caught attention in the AI/security community.",
+          "url": "https://www.united.com/en/us/newsroom/announcements/cision-125496",
+          "tags": [
+            "United Airlines",
+            "industry",
+            "aviation"
+          ]
+        }
+      ],
+      "message_count": 3
+    }
+  ],
+  "top_insights": [
+    "Major AI labs (OpenAI, Anthropic, Microsoft, Google) are simultaneously publishing security and safety research, indicating coordinated industry maturation around AI governance.",
+    "The emergence of 'agentic threats' as a distinct category signals that autonomous AI-powered attacks are transitioning from theoretical to practical concerns.",
+    "Novel attack vectors targeting AI systems (dormant neuron backdoors) are being discovered by major tech companies, expanding the AI threat model significantly.",
+    "Standardization efforts from NIST and voluntary disclosure frameworks from AI labs suggest regulatory and self-governance frameworks are developing in parallel.",
+    "Link-only messages dominate this channel, indicating a community that values primary sources and rapid information sharing over commentary."
+  ],
+  "stats": {
+    "total_links": 6,
+    "most_linked_domains": [
+      "nvlpubs.nist.gov",
+      "cdn.openai.com",
+      "microsoft.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 1,
+      "02": 0,
+      "03": 3,
+      "04": 1,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 1,
+      "23": 1
+    }
+  },
+  "total_messages": 7
+}
