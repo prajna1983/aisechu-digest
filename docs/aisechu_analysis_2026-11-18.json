@@ -1,0 +1,168 @@
+{
+  "categories": [
+    {
+      "name": "AI Safety & Alignment",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "OpenAI released a draft framework for classifying AI control incidents and their severity levels, signaling increased focus on standardizing AI safety metrics. Anthropic published research on coordinated vulnerability disclosure timelines, addressing the critical question of responsible disclosure practices in the AI era. These publications indicate major AI labs are actively working to establish industry norms around safety incident management.",
+      "key_items": [
+        {
+          "title": "OpenAI Draft Framework for AI Control Incident Classification",
+          "detail": "A new framework document outlining how to categorize and assess the severity of AI control incidents, potentially establishing industry standards for incident response.",
+          "url": "https://cdn.openai.com/pdf/classifying-ai-control-incidents-and-their-severity-a-draft-framework.pdf",
+          "tags": [
+            "openai",
+            "ai-safety",
+            "incident-response",
+            "framework"
+          ]
+        },
+        {
+          "title": "Anthropic Research on Vulnerability Disclosure Timelines",
+          "detail": "Research exploring optimal timelines for coordinated vulnerability disclosure in AI systems, balancing security needs with responsible publication practices.",
+          "url": "https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines",
+          "tags": [
+            "anthropic",
+            "disclosure",
+            "vulnerability-management"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "AI & ML Security",
+      "emoji": "\ud83e\udd16",
+      "summary": "Microsoft Research disclosed a novel attack vector involving dormant neuron reprogramming to backdoor AI agents, dubbed 'Lazare.' This research highlights emerging threats where attackers can manipulate inactive portions of neural networks to inject malicious behaviors, representing a sophisticated evolution in adversarial ML attacks.",
+      "key_items": [
+        {
+          "title": "Lazare: Backdooring AI Agents via Dormant Neuron Reprogramming",
+          "detail": "Microsoft researchers demonstrate how dormant neurons in AI models can be reprogrammed to create hidden backdoors, posing significant risks to deployed AI agents.",
+          "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+          "tags": [
+            "microsoft",
+            "backdoor",
+            "adversarial-ml",
+            "ai-agents"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Threat Intelligence",
+      "emoji": "\ud83c\udfaf",
+      "summary": "Google Cloud's threat intelligence team reports that agentic threat activity has crossed a significant threshold, marking a critical milestone in autonomous attack capabilities. This signals that AI-powered threats are maturing from theoretical concerns to operational realities requiring immediate defensive attention.",
+      "key_items": [
+        {
+          "title": "Agentic Threat Activity Reaches Critical Threshold",
+          "detail": "Google Cloud threat intelligence documents a significant escalation in autonomous AI-driven threat activity, indicating a paradigm shift in the threat landscape.",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+          "tags": [
+            "google",
+            "agentic-ai",
+            "threat-landscape",
+            "autonomous-attacks"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Security Tools & Techniques",
+      "emoji": "\ud83d\udd27",
+      "summary": "Security practitioners shared insights on credential security testing methodologies and Microsoft Defender's capabilities against accelerated attack techniques. The Thor Collective published analysis on intentional credential leaking for security research, while detailed coverage of ARTEX showcases how legacy attack patterns are being executed at machine speed.",
+      "key_items": [
+        {
+          "title": "Intentional Credential Leaking for Security Research",
+          "detail": "Thor Collective explores the methodology and implications of purposefully leaking credentials to study attacker behavior and improve defensive strategies.",
+          "url": "https://dispatch.thorcollective.com/p/i-leaked-credentials-on-purpose-for",
+          "tags": [
+            "credential-security",
+            "research",
+            "honeypots"
+          ]
+        },
+        {
+          "title": "ARTEX: Legacy Attacks at Machine Speed vs Microsoft Defender",
+          "detail": "Analysis of how traditional attack techniques are being automated and accelerated, with examination of Microsoft Defender's detection and response capabilities.",
+          "url": "https://jeffreyappel.nl/artex-old-attacks-at-machine-speed-and-how-microsoft-defender-keeps-up/",
+          "tags": [
+            "microsoft-defender",
+            "attack-automation",
+            "edr"
+          ]
+        }
+      ],
+      "message_count": 2
+    },
+    {
+      "name": "Industry News & Policy",
+      "emoji": "\ud83d\udcf0",
+      "summary": "United Airlines published a corporate announcement, while community discussion highlighted frustrations with Snyk's product direction and repeated scanning behaviors. The sentiment suggests growing concerns about security tool vendors prioritizing feature bloat over core value delivery.",
+      "key_items": [
+        {
+          "title": "United Airlines Corporate Announcement",
+          "detail": "United Airlines newsroom release, context suggests potential technology or security-related announcement relevant to the channel's focus.",
+          "url": "https://www.united.com/en/us/newsroom/announcements/cision-125496",
+          "tags": [
+            "united-airlines",
+            "corporate",
+            "announcement"
+          ]
+        },
+        {
+          "title": "Community Frustration with Snyk's Direction",
+          "detail": "Sharp criticism of Snyk's product strategy, particularly around repetitive scanning features, with calls for the company to refocus on delivering meaningful security value.",
+          "url": null,
+          "tags": [
+            "snyk",
+            "appsec",
+            "vendor-criticism"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "Major AI labs (OpenAI, Anthropic) are simultaneously publishing governance frameworks, suggesting coordinated industry movement toward standardized AI safety practices.",
+    "The convergence of Microsoft's dormant neuron backdoor research and Google's agentic threat threshold report indicates AI security threats are rapidly transitioning from academic concerns to operational realities.",
+    "Automation of traditional attacks at 'machine speed' combined with autonomous threat actors signals defenders must fundamentally rethink response time assumptions.",
+    "Security vendor fatigue is emerging as a theme, with practitioners expressing frustration over tools that add complexity without proportional security value."
+  ],
+  "stats": {
+    "total_links": 7,
+    "most_linked_domains": [
+      "microsoft.com",
+      "openai.com",
+      "anthropic.com"
+    ],
+    "activity_by_hour": {
+      "00": 0,
+      "01": 0,
+      "02": 0,
+      "03": 2,
+      "04": 1,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 3,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 1,
+      "23": 1
+    }
+  },
+  "total_messages": 8
+}
