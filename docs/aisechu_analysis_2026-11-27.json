@@ -1,0 +1,159 @@
+{
+  "categories": [
+    {
+      "name": "Agentic AI Threats",
+      "emoji": "\ud83e\udd16",
+      "summary": "A significant focus this period on agentic AI frameworks being weaponized by threat actors. Microsoft published analysis on the ARTEX framework abuse, while Cisco Talos detailed tradecraft from agentic swarm attacks. These developments signal a maturation of AI-powered offensive capabilities that defenders must urgently address.",
+      "key_items": [
+        {
+          "title": "Microsoft warns of ARTEX agentic AI framework abuse by threat actors",
+          "detail": "Detailed analysis of how adversaries are leveraging the ARTEX agentic AI framework for malicious purposes, with guidance for defenders.",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+          "tags": [
+            "agentic-ai",
+            "threat-actors",
+            "microsoft",
+            "defense"
+          ]
+        },
+        {
+          "title": "Talos Intelligence: Tradecraft insights from agentic swarm attacks",
+          "detail": "Cisco Talos provides technical breakdown of escape techniques and tradecraft observed in coordinated agentic AI swarm operations.",
+          "url": "https://blog.talosintelligence.com/the-great-escape-tradecraft-insights-from-an-agentic-swarm/",
+          "tags": [
+            "cisco-talos",
+            "swarm-attacks",
+            "tradecraft",
+            "threat-intelligence"
+          ]
+        },
+        {
+          "title": "AI Threat Watch: Agentic Offensive Frameworks catalog",
+          "detail": "Comprehensive resource tracking known agentic offensive frameworks used in real-world attacks.",
+          "url": "https://ai-threat.watch/aof/",
+          "tags": [
+            "framework-catalog",
+            "offensive-ai",
+            "threat-tracking"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "AI Security Programs & Bug Bounties",
+      "emoji": "\ud83c\udfaf",
+      "summary": "The AI bug bounty ecosystem continues to expand with dedicated platforms emerging for AI-specific vulnerability research. This reflects growing industry recognition that traditional security testing methodologies need adaptation for AI/ML systems.",
+      "key_items": [
+        {
+          "title": "AI Bug Bounty platform launch",
+          "detail": "New dedicated platform for AI vulnerability research and bug bounty submissions at aibugbounty.beacon.host.",
+          "url": "https://aibugbounty.beacon.host/",
+          "tags": [
+            "bug-bounty",
+            "vulnerability-research",
+            "ai-security"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Incident Response & Forensics",
+      "emoji": "\ud83d\udd0d",
+      "summary": "DIVD released a detailed forensics report (DIVD-2026-00014) providing valuable incident response documentation. Such public disclosures continue to benefit the broader security community through shared learnings.",
+      "key_items": [
+        {
+          "title": "DIVD forensics report DIVD-2026-00014 published",
+          "detail": "Dutch Institute for Vulnerability Disclosure released comprehensive forensics documentation for incident 2026-00014.",
+          "url": "https://www.divd.nl/documents/DIVD-2026-00014-forensics-report.pdf",
+          "tags": [
+            "forensics",
+            "divd",
+            "incident-response",
+            "disclosure"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Threat Intelligence Resources",
+      "emoji": "\ud83c\udf10",
+      "summary": "Community-curated resources for threat intelligence practitioners shared, including a comprehensive list of official CERT accounts globally for real-time incident awareness.",
+      "key_items": [
+        {
+          "title": "Global CERT accounts directory (70+ official accounts)",
+          "detail": "Curated Twitter/X list tracking official Computer Emergency Response Team accounts across the world for coordinated threat awareness.",
+          "url": "https://x.com/i/lists/1267657323494797312",
+          "tags": [
+            "cert",
+            "threat-intel",
+            "global-security",
+            "resources"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Community Discussion & Social",
+      "emoji": "\ud83d\udcac",
+      "summary": "Security researchers shared insights and discussions via social media posts, contributing to ongoing community dialogue around current threats and techniques.",
+      "key_items": [
+        {
+          "title": "Security researcher community posts",
+          "detail": "Multiple X/Twitter posts from security researchers sharing insights and commentary on current developments.",
+          "url": "https://x.com/hetmehtaa/status/2125611160808599996",
+          "tags": [
+            "community",
+            "social-media",
+            "discussion"
+          ]
+        }
+      ],
+      "message_count": 2
+    }
+  ],
+  "top_insights": [
+    "Agentic AI has crossed a critical threshold: major security vendors (Microsoft, Cisco Talos) are now publishing dedicated threat research on weaponized AI agent frameworks, indicating these are active in-the-wild threats rather than theoretical concerns.",
+    "The emergence of specialized AI bug bounty platforms signals industry maturation in treating AI/ML systems as distinct attack surfaces requiring dedicated security testing approaches.",
+    "Coordinated AI swarm attacks represent a new paradigm in offensive operations, with documented tradecraft showing sophisticated evasion and coordination capabilities.",
+    "Global CERT coordination remains essential as AI-powered threats increasingly operate across jurisdictional boundaries."
+  ],
+  "stats": {
+    "total_links": 8,
+    "most_linked_domains": [
+      "x.com",
+      "microsoft.com",
+      "blog.talosintelligence.com"
+    ],
+    "activity_by_hour": {
+      "00": 2,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 6,
+      "13": 1,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 10
+}
