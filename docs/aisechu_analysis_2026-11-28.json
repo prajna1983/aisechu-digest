@@ -1,0 +1,172 @@
+{
+  "categories": [
+    {
+      "name": "Agentic AI Threats & Offensive Frameworks",
+      "emoji": "\ud83e\udd16",
+      "summary": "A major theme this period is the emergence of agentic AI frameworks being weaponized by threat actors. Microsoft published analysis on the ARTEX agentic AI framework abuse, while Cisco Talos detailed tradecraft from agentic swarms. Additionally, AI Threat Watch released resources on agentic offensive frameworks, signaling growing concern around autonomous AI-driven attacks.",
+      "key_items": [
+        {
+          "title": "Microsoft Warns of ARTEX Agentic AI Framework Abuse",
+          "detail": "Microsoft Security blog details how threat actors are abusing the ARTEX agentic AI framework, providing defender guidance on detection and mitigation.",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+          "tags": [
+            "agentic-ai",
+            "threat-actors",
+            "microsoft",
+            "defense"
+          ]
+        },
+        {
+          "title": "Talos Intelligence: Tradecraft from Agentic Swarms",
+          "detail": "Cisco Talos analyzes escape techniques and tradecraft observed from agentic AI swarms in real-world incidents.",
+          "url": "https://blog.talosintelligence.com/the-great-escape-tradecraft-insights-from-an-agentic-swarm/",
+          "tags": [
+            "talos",
+            "agentic-swarm",
+            "tradecraft",
+            "threat-intelligence"
+          ]
+        },
+        {
+          "title": "Agentic Offensive Frameworks Resource",
+          "detail": "AI Threat Watch published a dedicated resource page tracking agentic offensive frameworks used in adversarial contexts.",
+          "url": "https://ai-threat.watch/aof/",
+          "tags": [
+            "offensive-ai",
+            "frameworks",
+            "resource"
+          ]
+        }
+      ],
+      "message_count": 3
+    },
+    {
+      "name": "Critical Infrastructure & Government Breaches",
+      "emoji": "\ud83c\udfdb\ufe0f",
+      "summary": "A significant breach of the US Air Force's flagship Cloud One computing platform was reported by Reuters, highlighting ongoing threats to critical government infrastructure and cloud environments.",
+      "key_items": [
+        {
+          "title": "US Air Force Cloud One Platform Breached",
+          "detail": "Reuters reports hackers successfully breached the US Air Force's Cloud One flagship cloud computing platform, raising concerns about military cloud security.",
+          "url": "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/",
+          "tags": [
+            "breach",
+            "us-government",
+            "cloud-security",
+            "military"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Forensics & Incident Reports",
+      "emoji": "\ud83d\udd0d",
+      "summary": "DIVD released a forensics report (DIVD-2026-00014) providing detailed technical analysis of a security incident, contributing to the community's understanding of attack patterns and incident response practices.",
+      "key_items": [
+        {
+          "title": "DIVD Forensics Report 2026-00014",
+          "detail": "Dutch Institute for Vulnerability Disclosure published a comprehensive forensics report documenting incident analysis and findings.",
+          "url": "https://www.divd.nl/documents/DIVD-2026-00014-forensics-report.pdf",
+          "tags": [
+            "forensics",
+            "divd",
+            "incident-response",
+            "report"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "AI Safety & Enterprise Controls",
+      "emoji": "\ud83d\udee1\ufe0f",
+      "summary": "Anthropic announced zero data retention capabilities with enterprise frontier safeguards for Claude, addressing enterprise security and privacy requirements for AI deployment in sensitive environments.",
+      "key_items": [
+        {
+          "title": "Claude Zero Data Retention with Enterprise Safeguards",
+          "detail": "Anthropic details new enterprise features including zero data retention and frontier safeguards for secure Claude deployments.",
+          "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards",
+          "tags": [
+            "anthropic",
+            "claude",
+            "enterprise",
+            "data-privacy",
+            "ai-safety"
+          ]
+        }
+      ],
+      "message_count": 1
+    },
+    {
+      "name": "Community & Social Intelligence",
+      "emoji": "\ud83d\udce1",
+      "summary": "Several X (Twitter) posts were shared containing security and AI-related discussions from community members, including curated lists for tracking relevant accounts and ongoing threat discussions.",
+      "key_items": [
+        {
+          "title": "Security Community Discussion Threads",
+          "detail": "Multiple X posts shared featuring community discussions on emerging threats and AI security topics.",
+          "url": "https://x.com/hetmehtaa/status/2125611160808599996",
+          "tags": [
+            "community",
+            "twitter",
+            "discussion"
+          ]
+        },
+        {
+          "title": "Curated Security Twitter List",
+          "detail": "A curated X list was shared for following relevant security researchers and AI threat analysts.",
+          "url": "https://x.com/i/lists/1270700272285696001",
+          "tags": [
+            "resource",
+            "twitter-list",
+            "community"
+          ]
+        }
+      ],
+      "message_count": 3
+    }
+  ],
+  "top_insights": [
+    "Agentic AI frameworks have emerged as a critical threat vector, with both Microsoft and Cisco Talos publishing detailed analyses on threat actor adoption of autonomous AI systems for offensive operations.",
+    "The breach of US Air Force Cloud One demonstrates that even flagship government cloud platforms remain vulnerable, emphasizing the need for enhanced cloud security postures in critical infrastructure.",
+    "Enterprise AI safety is becoming a competitive differentiator, as evidenced by Anthropic's focus on zero data retention and frontier safeguards to address enterprise security requirements.",
+    "The security community is actively tracking and documenting AI-enabled threats through dedicated resources like AI Threat Watch's agentic offensive frameworks database.",
+    "Coordinated disclosure and forensic transparency from organizations like DIVD continues to strengthen collective defense capabilities."
+  ],
+  "stats": {
+    "total_links": 9,
+    "most_linked_domains": [
+      "x.com",
+      "microsoft.com",
+      "ai-threat.watch"
+    ],
+    "activity_by_hour": {
+      "00": 2,
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      "10": 0,
+      "11": 0,
+      "12": 4,
+      "13": 1,
+      "14": 2,
+      "15": 1,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0
+    }
+  },
+  "total_messages": 10
+}
